@@ -1,0 +1,64 @@
+{
+  "$schema": "h-graphic-brand-v1",
+  "name": "Default Brand",
+  "colors": {
+    "primary": {
+      "value": "#0066CC",
+      "description": "Main brand color - used for primary actions and emphasis"
+    },
+    "secondary": {
+      "value": "#FF6B35",
+      "description": "Accent color - used for highlights and CTAs"
+    },
+    "background": {
+      "value": "#FFFFFF",
+      "description": "Background color"
+    },
+    "text": {
+      "value": "#1A1A2E",
+      "description": "Primary text color"
+    },
+    "muted": {
+      "value": "#6B7280",
+      "description": "Muted/secondary text color"
+    }
+  },
+  "typography": {
+    "display": {
+      "family": "Inter",
+      "weight": "700"
+    },
+    "heading": {
+      "family": "Inter",
+      "weight": "600"
+    },
+    "body": {
+      "family": "Inter",
+      "weight": "400"
+    }
+  },
+  "spacing": {
+    "unit": 8,
+    "scales": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48
+    }
+  },
+  "assets": {
+    "logo": "assets/logo.svg",
+    "icon": "assets/icon.svg",
+    "watermark": "assets/watermark.svg"
+  },
+  "diagram": {
+    "nodeColors": {
+      "default": "#E8F0FE",
+      "accent": "#FFF3E0"
+    },
+    "edgeColor": "#6B7280",
+    "borderRadius": 8
+  }
+}
