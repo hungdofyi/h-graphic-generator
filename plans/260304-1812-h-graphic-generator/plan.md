@@ -3,7 +3,7 @@ title: "h-graphic-generator — CLI + MCP Branded Graphics Tool"
 description: "Full implementation plan for TypeScript CLI and MCP server for branded graphic/diagram generation"
 status: pending
 priority: P1
-effort: 27h
+effort: 31h
 branch: main
 tags: [typescript, cli, mcp, satori, graphics, branded]
 created: 2026-03-04
@@ -30,6 +30,7 @@ Pipeline: HTML/CSS -> Satori (simple) or Puppeteer (complex) -> SVG -> resvg (PN
 |---|-------|--------|--------|------|
 | 1 | Project Setup | 3h | pending | [phase-01](phase-01-project-setup.md) |
 | 2 | Core Engine (Satori + Puppeteer) | 6h | pending | [phase-02](phase-02-core-engine.md) |
+| 2.5 | Style Extraction Pipeline | 4h | pending | [phase-02.5](phase-02.5-style-extraction.md) |
 | 3 | Templates + Mermaid | 6h | pending | [phase-03](phase-03-template-system.md) |
 | 4 | CLI Interface | 4h | pending | [phase-04](phase-04-cli-interface.md) |
 | 5 | MCP Server | 6h | pending | [phase-05](phase-05-mcp-server.md) |
@@ -38,8 +39,9 @@ Pipeline: HTML/CSS -> Satori (simple) or Puppeteer (complex) -> SVG -> resvg (PN
 ## Key Dependencies
 
 - Phase 2 depends on Phase 1
-- Phase 3 depends on Phase 2 (needs types + engine)
-- Phase 4 & 5 depend on Phase 2 + 3 (can run in parallel)
+- Phase 2.5 depends on Phase 2 (needs BrandContext + types)
+- Phase 3 depends on Phase 2 (needs types + engine); can reference Phase 2.5 style profile
+- Phase 4 & 5 depend on Phase 2 + 3 (can run in parallel); Phase 5 includes Phase 2.5 MCP integration
 - Phase 6 runs after all phases
 
 ## Key Decisions
@@ -75,7 +77,7 @@ dist/core/index.js   -> library export
 
 ## Red Team Review
 
-### Session — 2026-03-04
+### Session 1 — 2026-03-04
 **Findings:** 15 (14 accepted, 1 rejected)
 **Severity breakdown:** 4 Critical, 5 High, 6 Medium
 
@@ -96,6 +98,26 @@ dist/core/index.js   -> library export
 | 13 | Deps scattered across phases | Medium | Accept | Phase 1 (consolidated) |
 | 14 | No output directory auto-creation | Medium | Accept | Phase 4, 5 |
 | 15 | No dimension caps (DoS risk) | Medium | Accept | Phase 2 |
+
+### Session 2 — 2026-03-04 (Phase 2.5 only)
+**Findings:** 13 (11 accepted, 2 rejected)
+**Severity breakdown:** 0 Critical, 5 High, 6 Medium
+
+| # | Finding | Severity | Disposition | Applied To |
+|---|---------|----------|-------------|------------|
+| 1 | Model ID `gemini-3-flash` → `gemini-3-flash-preview` | Medium | Accept | Phase 2.5 |
+| 2 | Path traversal via --references flag | High | Accept | Phase 2.5 |
+| 3 | API key leak risk via CLI flag | High | Accept | Phase 2.5 (env-only) |
+| 4 | No magic-byte validation on images | High | Accept | Phase 2.5 |
+| 5 | SVG not supported by Gemini vision API | High | Accept | Phase 2.5 (rasterize first) |
+| 6 | No JSON extraction from LLM response | High | Accept | Phase 2.5 |
+| 7 | Prompt injection via SVG content | High | Reject | SVGs rasterized per #5 |
+| 8 | No runtime schema validation (Zod) | Medium | Accept | Phase 2.5 |
+| 9 | No upper bounds on image count/size | Medium | Accept | Phase 2.5 (100 cap) |
+| 10 | Non-atomic file writes | Medium | Accept | Phase 2.5 (tmp+rename) |
+| 11 | Sharp not yet a dependency | Medium | Accept | Phase 1 installs Sharp |
+| 12 | BrandContext auto-loads style profile | Medium | Accept | Phase 2.5 (explicit load) |
+| 13 | No quality gate on vague responses | Medium | Accept | Phase 2.5 (50 char min) |
 
 ## Validation Log
 
