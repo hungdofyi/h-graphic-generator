@@ -62,8 +62,9 @@ export class BrandContext {
       errors.push('Missing required field: colors.text.value');
     }
 
-    if (!config.typography?.['body']) {
-      errors.push('Missing required field: typography.body');
+    const typo = config.typography as Record<string, unknown> | undefined;
+    if (!typo?.['fonts'] && !typo?.['body'] && !typo?.['scales']) {
+      errors.push('Missing required field: typography (fonts, body, or scales)');
     }
 
     if (errors.length > 0) {

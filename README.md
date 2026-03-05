@@ -54,30 +54,97 @@ hgraphic diagram -i nodes.json -o diagram.png
 hgraphic diagram -i "graph TD; A-->B" -o diagram.png
 ```
 
-## MCP Server Setup (Claude Desktop)
+## MCP Server Setup
 
-1. Build the project: `npm run build`
-2. Add to Claude Desktop config at `~/Library/Application Support/Claude/claude_desktop_config.json`:
+### Claude Code (CLI)
+
+Add to `~/.claude.json` under your project's mcpServers:
 
 ```json
 {
-  "mcpServers": {
-    "h-graphic-generator": {
-      "command": "node",
-      "args": ["/absolute/path/to/h-graphic-generator/dist/mcp/server.js"]
+  "projects": {
+    "/path/to/h-graphic-generator": {
+      "mcpServers": {
+        "h-graphic": {
+          "command": "node",
+          "args": ["/path/to/h-graphic-generator/dist/mcp/server.js"]
+        }
+      }
     }
   }
 }
 ```
 
-3. Restart Claude Desktop
+Restart Claude Code, then verify with `/mcp` command.
+
+### Claude Desktop (GUI)
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "h-graphic": {
+      "command": "node",
+      "args": ["/path/to/h-graphic-generator/dist/mcp/server.js"]
+    }
+  }
+}
+```
+
+Restart Claude Desktop.
+
+### Testing with MCP Inspector
+
+```bash
+npm run build
+npx @modelcontextprotocol/inspector node dist/mcp/server.js
+```
+
+Opens web UI at `http://localhost:6274` to test tools interactively.
 
 ### Available MCP Tools
-- **render_graphic**: Render HTML/CSS to image (primary tool)
-- **generate_from_template**: Create graphic from pre-built template
-- **list_templates**: Discover available templates with previews
-- **get_style_profile**: Learn brand token values and usage examples
-- **validate_brand**: Check brand config integrity
+
+| Tool | Purpose |
+|------|---------|
+| `list_patterns` | Browse Figma-extracted design patterns by category |
+| `get_pattern` | Get detailed styling (backgrounds, containers, typography) for a pattern |
+| `render_graphic` | Render HTML/CSS to image (PNG/SVG/JPG/WebP) |
+| `get_style_profile` | Get brand tokens and usage examples |
+| `list_templates` | List pre-built templates |
+| `generate_from_template` | Create graphic from template |
+| `validate_brand` | Check brand config integrity |
+
+### Graphic Generation Workflow
+
+When using Claude to generate graphics:
+
+1. **Discover patterns** → Call `list_patterns` to browse available designs
+2. **Get pattern details** → Call `get_pattern` for styling (backgrounds, containers, typography)
+3. **Generate HTML/CSS** → Create HTML matching the pattern's structure and styles
+4. **Render to image** → Call `render_graphic` with the HTML
+
+**Example prompt:**
+```
+Create a pricing comparison graphic with 3 tiers
+```
+
+Claude will:
+1. `list_patterns({ category: "landing-page-graphics" })` → finds `pricingComparison`
+2. `get_pattern({ name: "pricingComparison" })` → gets styling details
+3. Generate HTML using pattern's backgrounds, containers, typography
+4. `render_graphic({ html: "...", width: 1920, height: 1080 })` → outputs PNG
+
+### Pattern Categories
+
+| Category | Examples |
+|----------|----------|
+| `landing-page-graphics` | Pricing cards, feature grids, data visualizations |
+| `marketing-graphics` | Campaign banners, feature explainers, before/after |
+| `docs-diagrams` | Technical diagrams, architecture flows |
+| `docs-explainers` | Step-by-step explainers, permission flows |
+| `in-app-graphics` | Data source connections, dashboard publishing |
+| `in-app-spot-illustrations` | Empty states, chart previews, icons |
 
 ## Brand Configuration
 

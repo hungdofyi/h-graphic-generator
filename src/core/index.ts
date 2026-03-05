@@ -10,3 +10,5 @@ export * from './types.js';
 export * from './sanitize.js';
 export * from './style-profile-types.js';
 export * from './image-validation.js';
+export { ExtractionLoader } from './extraction-loader.js';
+export * from './extraction-types.js';
