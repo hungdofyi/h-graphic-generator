@@ -1,0 +1,208 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "In-app Graphics",
+  "extractedAt": "2026-03-05T18:05:00+07:00",
+
+  "backgrounds": {
+    "cardGradientGrayBlue": {
+      "name": "Card Gradient (Gray to Blue)",
+      "css": "linear-gradient(119.15deg, #f9fbfc 1.5%, #e8f2fd 97.88%)",
+      "usage": ["data source cards", "connection cards", "horizontal gradient cards"]
+    },
+    "cardGradientVertical": {
+      "name": "Card Gradient Vertical",
+      "css": "linear-gradient(180deg, #f9fbfc 0%, #e8f2fd 80.42%)",
+      "usage": ["dataset cards", "publish cards", "vertical gradient cards"]
+    },
+    "cardGradientVerticalDeep": {
+      "name": "Card Gradient Vertical (Deep)",
+      "css": "linear-gradient(180deg, #f9fbfc 0%, #e8f2fd 86.25%)",
+      "usage": ["publish state cards", "action cards"]
+    },
+    "fadeOverlay": {
+      "name": "Fade Overlay (White to Blue)",
+      "css": "linear-gradient(180deg, rgba(255,255,255,0) 30.89%, #ebf4ff 125.89%)",
+      "usage": ["dashboard preview overlays", "content fade"]
+    }
+  },
+
+  "containers": {
+    "datasetCard": {
+      "name": "Dataset Card",
+      "background": "white",
+      "border": "2px solid #edf1f5",
+      "borderRadius": "7.6px",
+      "headerBackground": "#e8f2fd",
+      "headerBorder": "bottom 2px solid #edf1f5",
+      "headerBorderRadius": "7.6px 7.6px 0 0",
+      "usage": ["dataset displays", "data container cards"]
+    },
+    "dataModelCard": {
+      "name": "Data Model Card",
+      "background": "white",
+      "border": "1.2px solid #e3e7ed",
+      "borderRadius": "6.4px",
+      "usage": ["data model displays", "schema cards", "entity cards"]
+    },
+    "dashboardPreview": {
+      "name": "Dashboard Preview",
+      "background": "white",
+      "border": "0.5px solid #edf1f5",
+      "borderRadius": "2.5px",
+      "usage": ["dashboard thumbnails", "report previews"]
+    },
+    "chartContainer": {
+      "name": "Chart Container",
+      "background": "transparent",
+      "border": "0.426px solid #edf1f5",
+      "borderRadius": "2px",
+      "usage": ["mini chart displays", "chart thumbnails"]
+    },
+    "thumbnailUnit": {
+      "name": "Thumbnail Unit (TU)",
+      "background": "transparent",
+      "border": "0.5px solid #edf1f5",
+      "borderRadius": "2px",
+      "size": { "width": "43px", "height": "30px" },
+      "usage": ["metric thumbnails", "KPI units"]
+    },
+    "logoContainer": {
+      "name": "Logo Container",
+      "layers": [
+        { "type": "ellipse", "fill": "gradient", "size": "47px" },
+        { "type": "ellipse", "fill": "white", "size": "39px" },
+        { "type": "icon", "size": "32.764px" }
+      ],
+      "usage": ["data source logos", "integration icons"]
+    }
+  },
+
+  "typography": {
+    "cardTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "21.6px",
+      "lineHeight": "30.4px",
+      "color": "#2d3238",
+      "usage": ["card titles", "Dataset/Dashboard labels"]
+    },
+    "dataModelLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "16.8px",
+      "lineHeight": "25.2px",
+      "color": "#2d3238",
+      "usage": ["data model names", "entity labels"]
+    },
+    "buttonText": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "9.17px",
+      "lineHeight": "13.333px",
+      "color": "white",
+      "usage": ["small button labels", "action buttons"]
+    }
+  },
+
+  "chartElements": {
+    "miniBarChart": {
+      "segmentColors": ["#edf1f5", "#e3e7ed"],
+      "barRadius": "0.5px",
+      "barWidth": "6.851px",
+      "usage": ["bar chart thumbnails", "grouped bars"]
+    },
+    "miniPieChart": {
+      "opacity": 0.4,
+      "centerCircle": true,
+      "usage": ["pie chart thumbnails", "donut previews"]
+    },
+    "textPlaceholderBar": {
+      "background": "linear-gradient(90deg, #edf1f5 0%, #f9fbfc 100%)",
+      "height": "5px",
+      "borderRadius": "10px",
+      "usage": ["text skeleton", "loading placeholders"]
+    }
+  },
+
+  "graphicElements": {
+    "connectorArrow": {
+      "description": "Arrow connecting data source to target",
+      "stroke": "gray.400",
+      "strokeWidth": "1.5px",
+      "rotation": "-90deg",
+      "usage": ["data flow arrows", "connection indicators"]
+    },
+    "dataTypeIcon": {
+      "types": {
+        "number": { "symbol": "#", "color": "#2d3238" },
+        "date": { "symbol": "calendar", "color": "#2d3238" },
+        "text": { "symbol": "Aa", "color": "#2d3238" },
+        "object": { "symbol": "o", "color": "#2d3238" }
+      },
+      "usage": ["field type indicators", "schema icons"]
+    },
+    "dividerLine": {
+      "color": "#e3e7ed",
+      "width": "100%",
+      "height": "1.2px",
+      "usage": ["section dividers", "card separators"]
+    }
+  },
+
+  "buttons": {
+    "publishButton": {
+      "background": "#1b7ce4",
+      "border": "0.833px solid transparent",
+      "borderRadius": "2.5px",
+      "padding": { "x": "7.5px", "y": "4.166px" },
+      "textColor": "white",
+      "fontSize": "9.17px",
+      "usage": ["publish actions", "primary small buttons"]
+    }
+  },
+
+  "layoutPatterns": {
+    "dataSourceConnection": {
+      "name": "Data Source Connection",
+      "structure": {
+        "background": "cardGradientGrayBlue",
+        "leftElement": "data icon (47x47)",
+        "connector": "horizontal arrow",
+        "rightElement": "logo container with brand icon"
+      },
+      "usage": ["data source cards", "integration displays"]
+    },
+    "datasetWithModels": {
+      "name": "Dataset with Data Models",
+      "structure": {
+        "background": "cardGradientVertical",
+        "header": "blue header bar with icon + title",
+        "body": "white area with data model cards",
+        "dataModels": "positioned cards with field lists"
+      },
+      "usage": ["dataset visualization", "schema displays"]
+    },
+    "dashboardPublish": {
+      "name": "Dashboard Publish State",
+      "structure": {
+        "background": "cardGradientVerticalDeep",
+        "arrow": "curved arrow from top",
+        "preview": "dashboard thumbnail with charts",
+        "fadeOverlay": "gradient overlay on preview",
+        "button": "centered publish button"
+      },
+      "usage": ["publish flow graphics", "deployment states"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": {
+      "dataIcon": "inapp-data-icon.svg",
+      "connectorArrow": "inapp-connector-arrow.svg",
+      "pieChartMini": "inapp-pie-chart-mini.svg",
+      "barChartMini": "inapp-bar-chart-mini.svg",
+      "dataModelIcon": "inapp-data-model-icon.svg"
+    }
+  }
+}

@@ -1,0 +1,465 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "Landing Page - Graphics",
+  "extractedAt": "2026-03-05T18:00:00+07:00",
+
+  "backgrounds": {
+    "heroGlow": {
+      "name": "Hero Glow (Dark)",
+      "layers": [
+        "linear-gradient(97.67deg, rgba(34,69,99,0.7) 7.71%, rgba(3,21,44,0) 96.23%)",
+        "linear-gradient(90deg, rgb(3,21,44) 0%, rgb(3,21,44) 100%)"
+      ],
+      "backdropBlur": "0.786px",
+      "usage": ["hero banners", "dark code showcases", "dramatic sections"]
+    },
+    "lightGradientOrb": {
+      "name": "Light Gradient Orb",
+      "layers": [
+        { "color": "#136baa", "blur": "79px", "opacity": 0.1, "rotation": "-47deg" },
+        { "color": "#175085", "blur": "79px", "opacity": 0.3, "rotation": "-47deg", "blendMode": "lighten" }
+      ],
+      "usage": ["background decoration", "depth effect on dark backgrounds"]
+    },
+    "pricingGreenFade": {
+      "name": "Pricing Green Fade",
+      "css": "linear-gradient(180deg, white 0%, #ccede0 110.93%)",
+      "usage": ["pricing tier 2", "growth/upgrade emphasis", "eco-friendly sections"]
+    },
+    "pricingBlueFade": {
+      "name": "Pricing Blue Fade",
+      "css": "linear-gradient(180deg, white 0%, #d1e5fa 110.24%)",
+      "usage": ["pricing tier 3", "premium/enterprise emphasis", "AI features"]
+    },
+    "aiInputGradient": {
+      "name": "AI Input Glow",
+      "layers": [
+        "linear-gradient(191.32deg, rgba(142,232,255,0.15) 26.12%, rgba(69,248,206,0) 56.59%)",
+        "linear-gradient(90deg, rgba(144,194,248,0.15) 0%, rgba(144,194,248,0.15) 100%)"
+      ],
+      "usage": ["AI prompts", "interactive inputs", "futuristic elements"]
+    },
+    "codeHeaderGradient": {
+      "name": "Code Header Gradient",
+      "css": "linear-gradient(90deg, #bbd7f7 0%, #fdfeff 100%)",
+      "usage": ["code snippet headers", "file tabs", "editor chrome"]
+    },
+    "featureBarGradient": {
+      "name": "Feature Bar (Vertical Fade)",
+      "css": "linear-gradient(180deg, #5ea3ed 4.93%, rgba(232,242,253,0) 102.39%)",
+      "usage": ["bar charts", "progress indicators", "feature comparison bars"]
+    },
+    "solidWhite": {
+      "name": "Clean White",
+      "css": "#ffffff",
+      "usage": ["cards", "content areas", "clean sections"]
+    },
+    "solidGray100": {
+      "name": "Subtle Gray",
+      "css": "#f5f8fa",
+      "usage": ["card backgrounds", "testimonial areas", "secondary sections"]
+    },
+    "featureShowcaseGlow": {
+      "name": "Feature Showcase Glow (Light)",
+      "layers": [
+        "linear-gradient(118.28deg, rgba(255,255,255,0.1) 0%, rgba(25,122,233,0.15) 45.82%, rgba(0,159,111,0.024) 98.71%)",
+        "linear-gradient(90deg, white 0%, white 100%)"
+      ],
+      "usage": ["feature showcases", "data model visualizations", "light hero sections"]
+    },
+    "codeContainerLight": {
+      "name": "Code Container (Light, Blurred)",
+      "background": "transparent",
+      "backdropBlur": "5px",
+      "border": "3px solid #90cced",
+      "borderRadius": "11px",
+      "opacity": 0.8,
+      "usage": ["code blocks on light bg", "semi-transparent containers"]
+    }
+  },
+
+  "shadows": {
+    "cardTriple": {
+      "name": "Card Triple Shadow",
+      "css": "0px 0px 0px 1px rgba(6,38,76,0.08), 0px 4px 8px rgba(6,38,76,0.06), 0px 1px 2px rgba(6,38,76,0.12)",
+      "usage": ["feature cards", "content cards", "standard elevation"]
+    },
+    "cardElevated": {
+      "name": "Elevated Card Shadow",
+      "css": "0px 29px 58px -10px rgba(128,130,133,0.15)",
+      "usage": ["pricing cards", "hero elements", "high elevation"]
+    },
+    "badgeSubtle": {
+      "name": "Badge Shadow",
+      "css": "0px 3.32px 6.65px rgba(91,109,130,0.12), 0px 0.83px 1.66px rgba(91,109,130,0.12)",
+      "usage": ["tenant badges", "tags", "small chips"]
+    },
+    "inputGlow": {
+      "name": "Input Glow Shadow",
+      "css": "0px 9.66px 28.97px rgba(211,230,250,0.7)",
+      "usage": ["AI input fields", "focused inputs", "interactive elements"]
+    },
+    "innerHighlight": {
+      "name": "Inner Highlight (Inset)",
+      "css": "inset 0px -13.58px 13.64px rgba(0,0,0,0.58), inset 0px 0px 3.02px rgba(255,255,255,0.8)",
+      "usage": ["glossy effects", "premium inputs", "3D depth"]
+    },
+    "datasetSoft": {
+      "name": "Dataset Soft Shadow",
+      "css": "3.44px 3.44px 17.19px rgba(0,0,0,0.1)",
+      "usage": ["dataset cards", "model cards", "soft elevation"]
+    },
+    "datasetInner": {
+      "name": "Dataset Inner Shadow",
+      "css": "0px 6.33px 8.44px 4.22px rgba(0,0,0,0.08)",
+      "usage": ["inner cards", "metric displays", "nested elements"]
+    }
+  },
+
+  "containers": {
+    "featureCard": {
+      "name": "Feature Card",
+      "background": "#f5f8fa",
+      "borderRadius": "24px",
+      "shadow": "cardTriple",
+      "usage": ["feature showcases", "testimonials", "content blocks"]
+    },
+    "featureCardContent": {
+      "name": "Feature Card Content (Inner)",
+      "background": "white",
+      "borderRadius": "24px",
+      "padding": "32px",
+      "shadow": "cardTriple",
+      "usage": ["main content within feature cards"]
+    },
+    "pricingCardBase": {
+      "name": "Pricing Card (Base Tier)",
+      "background": "white",
+      "border": "3.5px solid #e3e7ed",
+      "borderRadius": "19px",
+      "shadow": "cardElevated",
+      "usage": ["basic/free tier", "starter plans"]
+    },
+    "pricingCardGreen": {
+      "name": "Pricing Card (Growth Tier)",
+      "background": "linear-gradient(180deg, white 0%, #ccede0 110.93%)",
+      "border": "3.5px solid #a4e0c8",
+      "borderRadius": "19px",
+      "shadow": "cardElevated",
+      "usage": ["growth tier", "recommended plan", "popular choice"]
+    },
+    "pricingCardBlue": {
+      "name": "Pricing Card (Premium Tier)",
+      "background": "linear-gradient(180deg, white 0%, #d1e5fa 110.24%)",
+      "border": "3.5px solid #bbd7f7",
+      "borderRadius": "19px",
+      "shadow": "cardElevated",
+      "usage": ["premium tier", "enterprise", "AI-powered features"]
+    },
+    "glassPanel": {
+      "name": "Glass Panel",
+      "background": "rgba(37,86,106,0.5)",
+      "backdropBlur": "19px",
+      "border": "1.54px solid rgba(144,204,237,0.7)",
+      "borderRadius": "19px",
+      "usage": ["overlay panels on dark bg", "mirror effects", "hero content areas"]
+    },
+    "glassBadge": {
+      "name": "Glass Badge",
+      "background": "rgba(129,156,189,0.1)",
+      "backdropBlur": "6.6px",
+      "border": "1.5px solid rgba(25,78,190,0.3)",
+      "borderRadius": "20px",
+      "usage": ["workflow badges", "status indicators", "floating labels"]
+    },
+    "tenantBadge": {
+      "name": "Tenant Badge",
+      "background": "linear-gradient(180deg, white 0%, #f5f8fa 100%)",
+      "border": "1.2px solid #d4e1fa",
+      "borderRadius": "32px",
+      "shadow": "badgeSubtle",
+      "padding": "0 8px",
+      "height": "28px",
+      "usage": ["tenant indicators", "user badges", "small tags"]
+    },
+    "codeBlock": {
+      "name": "Code Block (Dark)",
+      "background": "#03152c",
+      "backdropBlur": "0.89px",
+      "borderRadius": "15px",
+      "usage": ["code showcases", "terminal output", "dark syntax blocks"]
+    },
+    "codeSnippet": {
+      "name": "Code Snippet (Light)",
+      "background": "white",
+      "border": "2px solid #8dbef2",
+      "borderRadius": "10px",
+      "headerGradient": "linear-gradient(90deg, #bbd7f7 0%, #fdfeff 100%)",
+      "usage": ["inline code", "code examples", "API snippets"]
+    },
+    "aiInput": {
+      "name": "AI Input Container",
+      "background": "linear-gradient(191.32deg, rgba(142,232,255,0.15) 26.12%, rgba(69,248,206,0) 56.59%), linear-gradient(90deg, rgba(144,194,248,0.15) 0%, rgba(144,194,248,0.15) 100%)",
+      "border": "2px solid #8dbef2",
+      "borderRadius": "14px",
+      "innerShadow": "innerHighlight",
+      "usage": ["AI chat inputs", "conversational interfaces", "smart search"]
+    },
+    "glassContainerLarge": {
+      "name": "Glass Container (Large)",
+      "background": "rgba(129,156,189,0.1)",
+      "backdropBlur": "11px",
+      "border": "3px solid rgba(25,78,190,0.3)",
+      "borderRadius": "11px",
+      "usage": ["data model containers", "dataset groups", "feature wrappers"]
+    },
+    "glassContainerSmall": {
+      "name": "Glass Container (Small)",
+      "background": "rgba(129,156,189,0.1)",
+      "backdropBlur": "11px",
+      "border": "2.5px solid rgba(25,78,190,0.3)",
+      "borderRadius": "11px",
+      "usage": ["individual datasets", "smaller groups", "nested containers"]
+    },
+    "datasetCard": {
+      "name": "Dataset Card",
+      "background": "white",
+      "borderRadius": "5px",
+      "shadow": "3.44px 3.44px 17.19px rgba(0,0,0,0.1)",
+      "usage": ["dataset items", "model cards", "data blocks"]
+    },
+    "datasetCardInner": {
+      "name": "Dataset Card Inner",
+      "background": "#f9fafb",
+      "borderRadius": "8px",
+      "shadow": "0px 6.33px 8.44px 4.22px rgba(0,0,0,0.08)",
+      "usage": ["inner dataset content", "metric cards", "relationship displays"]
+    }
+  },
+
+  "typography": {
+    "heroTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "48px",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.96px",
+      "color": "#05264c",
+      "usage": ["main page titles", "hero headlines"]
+    },
+    "heroAccent": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "48px",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.96px",
+      "color": "#259b6c",
+      "usage": ["highlighted words in titles", "brand emphasis"]
+    },
+    "pricingTitle": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "52px",
+      "color": "#212327",
+      "usage": ["pricing tier names", "large section titles"]
+    },
+    "pricingSubtitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "36px",
+      "color": "#505157",
+      "usage": ["pricing descriptions", "tier taglines"]
+    },
+    "cardTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "22px",
+      "lineHeight": "26px",
+      "letterSpacing": "-0.44px",
+      "color": "#212327",
+      "usage": ["card headers", "feature names"]
+    },
+    "cardBody": {
+      "font": "Inter",
+      "weight": 400,
+      "size": "16px",
+      "lineHeight": "24px",
+      "color": "#505157",
+      "usage": ["card descriptions", "feature explanations"]
+    },
+    "testimonial": {
+      "font": "Inter",
+      "weight": 400,
+      "size": "14px",
+      "lineHeight": "20px",
+      "color": "#505157",
+      "usage": ["testimonials", "quotes", "fine print"]
+    },
+    "badgeLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "12px",
+      "lineHeight": "16px",
+      "color": "#212327",
+      "usage": ["badge text", "small labels", "tags"]
+    },
+    "codeLight": {
+      "font": "JetBrains Mono",
+      "weight": 500,
+      "size": "12px",
+      "lineHeight": "20px",
+      "color": "#505157",
+      "usage": ["code in light mode", "inline code"]
+    },
+    "codeDark": {
+      "font": "IBM Plex Mono",
+      "weight": 500,
+      "size": "21px",
+      "lineHeight": "normal",
+      "color": "white",
+      "usage": ["code in dark mode", "hero code blocks"]
+    },
+    "codeLineNumbers": {
+      "font": "IBM Plex Mono",
+      "weight": 500,
+      "size": "21px",
+      "color": "rgba(144,152,162,0.8)",
+      "usage": ["line numbers", "code gutters"]
+    },
+    "annotation": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "31px",
+      "lineHeight": "50px",
+      "color": "white",
+      "usage": ["annotations on dark bg", "callouts", "explanatory text"]
+    },
+    "complianceBadge": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "14px",
+      "lineHeight": "16px",
+      "color": "#212327",
+      "usage": ["compliance labels", "certifications", "trust badges"]
+    },
+    "datasetTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "45px",
+      "color": "#24292e",
+      "usage": ["dataset/metric names", "data visualization titles"]
+    },
+    "datasetLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "35px",
+      "color": "#24292e",
+      "usage": ["dataset item labels", "field names"]
+    },
+    "datasetGroupLabel": {
+      "font": "Inter",
+      "weight": 400,
+      "size": "41px",
+      "color": "#24292e",
+      "usage": ["dataset group names", "category labels"]
+    },
+    "codeLargeDisplay": {
+      "font": "IBM Plex Mono",
+      "weight": 500,
+      "size": "42px",
+      "lineHeight": "65.6px",
+      "color": "white",
+      "usage": ["large code displays", "hero code examples"]
+    }
+  },
+
+  "syntaxHighlighting": {
+    "darkTheme": {
+      "background": "#03152c",
+      "default": "white",
+      "keyword": "#49a7ef",
+      "function": "#49a7ef",
+      "string": "#009f6f",
+      "variable": "#af77f5",
+      "comment": "#bec1cb",
+      "operator": "white",
+      "usage": ["dark code blocks", "hero code showcases"]
+    },
+    "lightTheme": {
+      "background": "white",
+      "default": "#505157",
+      "keyword": "#1b7ce4",
+      "string": "#259b6c",
+      "number": "#1b7ce4",
+      "usage": ["light code snippets", "inline code"]
+    }
+  },
+
+  "graphicElements": {
+    "annotationDot": {
+      "size": "11.5px",
+      "fill": "#49a7ef",
+      "usage": ["annotation markers", "bullet points on dark bg"]
+    },
+    "annotationLine": {
+      "stroke": "white",
+      "strokeWidth": "1.5px",
+      "usage": ["connecting annotations to code", "callout lines"]
+    },
+    "featureBar": {
+      "gradient": "linear-gradient(180deg, #5ea3ed 4.93%, rgba(232,242,253,0) 102.39%)",
+      "borderRadius": "3.5px 3.5px 0 0",
+      "usage": ["bar charts", "progress bars", "feature comparisons"]
+    },
+    "securityShield": {
+      "description": "Holistics logo surrounded by tenant connection lines",
+      "usage": ["security/multitenant diagrams", "trust graphics"]
+    },
+    "workflowStep": {
+      "innerBg": "white",
+      "outerBg": "rgba(129,156,189,0.1)",
+      "border": "1.5px solid rgba(25,78,190,0.3)",
+      "borderRadius": "20px",
+      "usage": ["workflow diagrams", "process steps", "CI/CD flows"]
+    },
+    "aiCharacter": {
+      "description": "Friendly polygon character with eyes and mouth",
+      "colors": {
+        "body": "blue.300",
+        "eyes": "white with blue.800 pupils"
+      },
+      "usage": ["AI features", "conversational UI", "friendly interactions"]
+    },
+    "datasetIcon": {
+      "description": "Union shape representing a dataset/model",
+      "colors": {
+        "fill": "green.600",
+        "stroke": "none"
+      },
+      "svg": "svg-templates/landing-page/dataset-icon.svg",
+      "usage": ["dataset visualization", "model representation", "data entities"]
+    },
+    "relationshipLine": {
+      "description": "Curved line connecting datasets",
+      "stroke": "#90cced",
+      "strokeWidth": "2px",
+      "usage": ["relationship diagrams", "data flow connections"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": {
+      "checkmark": "checkmark.svg",
+      "tenantIcon": "tenant-icon.svg",
+      "barChart": "bar-chart.svg",
+      "areaChart": "area-chart.svg",
+      "pieChart": "pie-chart.svg",
+      "codeSnippetDots": "code-snippet-dots.svg",
+      "workflowArrows": "workflow-arrows.svg",
+      "annotationDots": "annotation-dots.svg",
+      "aiCharacter": "ai-character.svg",
+      "securityShield": "security-shield.svg"
+    }
+  }
+}

@@ -1,0 +1,455 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "Marketing - Graphics",
+  "extractedAt": "2026-03-05T18:00:00+07:00",
+
+  "backgrounds": {
+    "meshGreenBlue": {
+      "name": "Mesh Green-Blue",
+      "css": "linear-gradient(-84.17deg, #1f815a 43.31%, #05264c 80.08%)",
+      "layers": [
+        "linear-gradient(-84.17deg, var(--light-green-700, #1f815a) 43.31%, var(--light-blue-900, #05264c) 80.08%)"
+      ],
+      "blurElement": {
+        "color": "#05264c",
+        "blur": "156.19px",
+        "rotation": "50.4deg"
+      },
+      "usage": ["hero sections", "feature showcases", "premium announcements"]
+    },
+    "meshTealNavy": {
+      "name": "Mesh Teal-Navy",
+      "css": "linear-gradient(-85.05deg, #2a745d 38.02%, #052540 77.97%)",
+      "blurElement": {
+        "color": "#05264c",
+        "blur": "100px",
+        "rotation": "50.91deg"
+      },
+      "usage": ["UX roundup graphics", "feature callouts"]
+    },
+    "solidNavy": {
+      "name": "Solid Navy",
+      "css": "#05264c",
+      "decorativeElement": {
+        "type": "radialGlow",
+        "color": "rgba(255,255,255,0.15)",
+        "blendMode": "lighten"
+      },
+      "usage": ["before/after comparisons", "dark backgrounds", "file import graphics"]
+    },
+    "schemaGradient": {
+      "name": "Schema Blue Gradient",
+      "css": "linear-gradient(175.13deg, #05264c 5.3%, #104a89 112.55%)",
+      "usage": ["technical diagrams", "schema visualizations", "architecture graphics"]
+    },
+    "greenDiagonal": {
+      "name": "Green Diagonal",
+      "css": "linear-gradient(130.94deg, #7ad1ae 0%, #259b6c 100%)",
+      "usage": ["CSS customization", "feature demos", "code showcases"]
+    },
+    "greenLayeredContainer": {
+      "name": "Green Layered Container",
+      "css": "linear-gradient(123.45deg, #7ad1ae 0%, rgba(40,157,110,0) 108.3%)",
+      "border": "2.404px dashed #a4e0c8",
+      "borderRadius": "12.019px",
+      "usage": ["nested dashboard previews", "layered UI mockups"]
+    },
+    "beforeAfterSplit": {
+      "name": "Before/After Split Background",
+      "layers": [
+        "white (top half)",
+        "#e8f2fd (bottom half)"
+      ],
+      "usage": ["comparison graphics", "before/after layouts"]
+    },
+    "chatGradient": {
+      "name": "Chat Container Gradient",
+      "css": "linear-gradient(180deg, white 70.36%, #e8f2fd 98.98%)",
+      "usage": ["chat UI mockups", "AI conversation displays"]
+    }
+  },
+
+  "shadows": {
+    "screenshotFloat": {
+      "name": "Screenshot Float",
+      "css": "0px 8px 16px -4px rgba(19,21,26,0.12), 0px 2px 4px -1px rgba(19,21,26,0.06), 0px 1px 2px 0px rgba(19,21,26,0.06)",
+      "usage": ["floating screenshots", "elevated mockups"]
+    },
+    "cardLarge": {
+      "name": "Card Large",
+      "css": "0px 16px 32px -8px rgba(19,21,26,0.16), 0px 4px 8px -2px rgba(19,21,26,0.04), 0px 1px 2px -1px rgba(19,21,26,0.04)",
+      "usage": ["feature cards", "prominent elements"]
+    }
+  },
+
+  "containers": {
+    "glassChartContainer": {
+      "name": "Glass Chart Container",
+      "background": "#0b3b73",
+      "backdropBlur": "1.48px",
+      "border": "3px solid #bbd7f7",
+      "borderRadius": "8px",
+      "innerBackground": "white",
+      "innerBorder": "2px solid #8dbef2",
+      "innerBorderRadius": "7px",
+      "usage": ["chart displays", "data visualization containers"]
+    },
+    "glassLabelContainer": {
+      "name": "Glass Before/After Label",
+      "background": "radial-gradient(at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.5) 100%)",
+      "opacity": 0.6,
+      "border": "1px solid white",
+      "borderRadius": "12px",
+      "textShadow": "0px 1px 2px rgba(0,0,0,0.4)",
+      "usage": ["before/after labels on dark backgrounds"]
+    },
+    "codeEditorDark": {
+      "name": "Code Editor Dark",
+      "background": "#212327",
+      "borderRadius": "12.019px",
+      "usage": ["code editor mockups", "AML code displays"]
+    },
+    "nestedDashboard": {
+      "name": "Nested Dashboard Container",
+      "layers": [
+        {
+          "background": "linear-gradient(123.45deg, #7ad1ae 0%, transparent 108.3%)",
+          "border": "2.404px dashed #a4e0c8",
+          "borderRadius": "12.019px"
+        },
+        {
+          "background": "#ccede0",
+          "opacity": 0.85,
+          "borderRadius": "9.615px 9.615px 0 0"
+        },
+        {
+          "background": "#a4e0c8",
+          "border": "dashed #a4e0c8",
+          "borderRadius": "9px 0 0 0"
+        }
+      ],
+      "usage": ["dashboard theming demos", "nested UI mockups"]
+    },
+    "branchLabel": {
+      "name": "Branch Label",
+      "background": "white",
+      "borderRadius": "8px",
+      "usage": ["git branch labels", "schema labels"]
+    },
+    "userCard": {
+      "name": "User Card",
+      "background": "white",
+      "borderRadius": "8px",
+      "size": { "width": "148px", "height": "124px" },
+      "usage": ["user/client icons", "avatar containers"]
+    },
+    "tableContainer": {
+      "name": "Table Container",
+      "background": "white",
+      "border": "3px solid #e3e7ed",
+      "borderRadius": "10px",
+      "usage": ["table mockups", "data displays"]
+    },
+    "chatContainer": {
+      "name": "Chat Container",
+      "background": "linear-gradient(180deg, white 70.36%, #e8f2fd 98.98%)",
+      "border": "3px solid #e3e7ed",
+      "borderRadius": "15px",
+      "usage": ["chat UI mockups", "AI conversation displays"]
+    },
+    "answerHighlightGreen": {
+      "name": "Answer Highlight (Green)",
+      "border": "3px solid #52c396",
+      "borderRadius": "15px",
+      "highlightColor": "#68ab79",
+      "highlightBlendMode": "hard-light",
+      "usage": ["AI answer highlights", "success states"]
+    },
+    "answerHighlightGray": {
+      "name": "Answer Highlight (Gray)",
+      "border": "3px solid #e3e7ed",
+      "borderRadius": "15px",
+      "highlightColor": "#656a72",
+      "highlightBlendMode": "hard-light",
+      "usage": ["before state highlights", "neutral highlights"]
+    },
+    "dashboardTitleBar": {
+      "name": "Dashboard Title Bar",
+      "background": "rgba(255,255,255,0.25)",
+      "border": "2px solid #7ad1ae",
+      "borderRadius": "9px",
+      "usage": ["dashboard titles", "section headers on green backgrounds"]
+    }
+  },
+
+  "typography": {
+    "heroTitle": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "80px",
+      "color": "#05264c",
+      "usage": ["before/after labels", "major section titles"]
+    },
+    "featureHeadline": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "37.697px",
+      "lineHeight": "1.4",
+      "color": "#f9fbfc",
+      "usage": ["feature headlines on dark backgrounds"]
+    },
+    "calloutText": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "36px",
+      "lineHeight": "1.4",
+      "color": "white",
+      "usage": ["UX roundup callouts", "feature descriptions on gradients"]
+    },
+    "branchLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "28px",
+      "color": "#05264c",
+      "usage": ["branch labels", "client labels", "schema labels"]
+    },
+    "projectTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "25px",
+      "color": "#05264c",
+      "usage": ["project names", "dashboard names"]
+    },
+    "dashboardTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "24.916px",
+      "lineHeight": "29.899px",
+      "color": "#259b6c",
+      "usage": ["dashboard titles on themed backgrounds"]
+    },
+    "codeText": {
+      "font": "JetBrains Mono",
+      "weight": 500,
+      "size": "33.707px",
+      "color": "#666970",
+      "highlightColor": "white",
+      "usage": ["code editor text", "AML syntax"]
+    },
+    "beforeAfterLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "45px",
+      "color": "#eaf8f2",
+      "textShadow": "0px 1px 2px rgba(0,0,0,0.4)",
+      "letterSpacing": "-0.45px",
+      "usage": ["before/after labels on dark backgrounds"]
+    },
+    "fileLabel": {
+      "font": "Inter",
+      "weight": 400,
+      "size": "48px",
+      "color": "#e8eaed",
+      "usage": ["file names", "import labels on dark backgrounds"]
+    }
+  },
+
+  "chartElements": {
+    "barChart": {
+      "colors": ["#259b6c", "#7ad1ae", "#ccede0"],
+      "barRadius": "1.415px",
+      "usage": ["stacked bar charts", "comparison charts"]
+    },
+    "horizontalBarChart": {
+      "colors": ["#259b6c", "#7ad1ae", "#ccede0"],
+      "gridLineColor": "rgba(255,255,255,0.1)",
+      "usage": ["horizontal bar charts", "ranking displays"]
+    },
+    "verticalBarChartGreen": {
+      "color": "#52c396",
+      "borderRadius": "5px",
+      "usage": ["CSS demo charts", "themed bar charts"]
+    },
+    "pieChart": {
+      "type": "conic-gradient",
+      "rotation": "-90deg",
+      "usage": ["pie charts", "proportion displays"]
+    },
+    "lineChart": {
+      "strokeColor": "#259b6c",
+      "gridColor": "rgba(0,0,0,0.1)",
+      "usage": ["trend lines", "time series"]
+    }
+  },
+
+  "layoutPatterns": {
+    "uxRoundupCallout": {
+      "name": "UX Roundup Callout",
+      "structure": {
+        "background": "meshTealNavy gradient + blur element",
+        "screenshot": "right side, elevated with shadow, rounded top corners",
+        "calloutText": "left side, multiple lines with arrows pointing to screenshot",
+        "arrows": "connecting lines from text to screenshot areas"
+      },
+      "usage": ["feature announcements", "UX improvement graphics"]
+    },
+    "beforeAfterComparison": {
+      "name": "Before/After Comparison",
+      "structure": {
+        "background": "split (white top, blue.50 bottom)",
+        "beforeSection": "top, gray borders, gray highlights",
+        "afterSection": "bottom, green borders, green highlights",
+        "labels": "large text (80px) on left"
+      },
+      "usage": ["AI feature comparisons", "improvement showcases"]
+    },
+    "schemaFlow": {
+      "name": "Schema Flow Diagram",
+      "structure": {
+        "background": "schemaGradient",
+        "chartContainer": "glass container with chart preview",
+        "branchLabels": "white cards with branch names",
+        "arrows": "curved connectors between elements",
+        "userCards": "avatar containers for clients",
+        "dataFlow": "curved lines connecting branches to users to schemas"
+      },
+      "usage": ["schema switching diagrams", "multi-tenant flows"]
+    },
+    "codeToPreview": {
+      "name": "Code-to-Preview",
+      "structure": {
+        "background": "greenDiagonal gradient",
+        "codeEditor": "dark editor on left",
+        "preview": "layered nested dashboard on right",
+        "connectors": "arrows linking code lines to preview elements"
+      },
+      "usage": ["CSS customization demos", "code-to-UI showcases"]
+    },
+    "fileTransformation": {
+      "name": "File Import/Transformation",
+      "structure": {
+        "background": "solidNavy with radial glow",
+        "beforeFile": "file icon + label (top)",
+        "arrow": "large curved arrow pointing down",
+        "afterFile": "file icon + formatted label (bottom)"
+      },
+      "usage": ["file import graphics", "data transformation flows"]
+    }
+  },
+
+  "graphicElements": {
+    "blurOrb": {
+      "name": "Blur Orb (Mesh Effect)",
+      "color": "#05264c",
+      "blur": "100-156px",
+      "rotation": "50deg",
+      "blendMode": "normal",
+      "usage": ["mesh background depth", "gradient enhancement"]
+    },
+    "radialGlow": {
+      "name": "Radial Glow",
+      "type": "ellipse",
+      "color": "rgba(255,255,255,0.15)",
+      "blendMode": "lighten",
+      "usage": ["dark background accents", "spotlight effects"]
+    },
+    "curvedArrow": {
+      "description": "Curved connector arrows",
+      "stroke": "white or gray.300",
+      "strokeWidth": "3px",
+      "usage": ["flow connections", "schema arrows", "data flow"]
+    },
+    "gradientArrow": {
+      "name": "Gradient Arrow (Green-Cyan-Green)",
+      "description": "Glowing gradient arrow with cyan highlight, used in schema diagrams",
+      "gradient": {
+        "type": "linear",
+        "stops": [
+          { "offset": "23%", "color": "#259b6c" },
+          { "offset": "60%", "color": "#28fff2" },
+          { "offset": "88%", "color": "#259b6c" }
+        ]
+      },
+      "blur": {
+        "type": "feGaussianBlur",
+        "stdDeviation": "5.35px"
+      },
+      "arrowhead": {
+        "fill": "#259b6c",
+        "type": "solid triangle"
+      },
+      "strokeWidth": "3-4px",
+      "usage": ["schema flow arrows", "data transformation arrows", "multi-tenant branch arrows"]
+    },
+    "straightConnector": {
+      "description": "Straight line connectors with arrows",
+      "stroke": "gray.300",
+      "strokeWidth": "2px",
+      "arrowSize": "12px",
+      "usage": ["horizontal/vertical connections"]
+    },
+    "codeHighlightBar": {
+      "description": "Horizontal bar highlighting code line",
+      "background": "linear-gradient(90deg, #1b7ce4 0%, #259b6c 111.55%)",
+      "height": "66px",
+      "usage": ["code line highlight", "active code indicator"]
+    },
+    "textPlaceholder": {
+      "description": "Rounded placeholder bar for text",
+      "background": "#666970",
+      "opacity": 0.5,
+      "borderRadius": "26.966px",
+      "usage": ["code skeleton", "text loading states"]
+    },
+    "highlightOverlay": {
+      "description": "Highlight overlay for screenshots",
+      "green": { "color": "#68ab79", "blendMode": "hard-light" },
+      "gray": { "color": "#656a72", "blendMode": "hard-light" },
+      "usage": ["screenshot highlights", "focus areas"]
+    },
+    "glassFrame": {
+      "description": "Decorative frame around containers",
+      "border": "3px solid #d1e5fa",
+      "background": "linear-gradient(-75.99deg, #245791 10.54%, #193c64 94.55%)",
+      "opacity": 0.3,
+      "borderRadius": "20px",
+      "usage": ["container frames", "emphasis borders"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/marketing/",
+    "files": {
+      "gradientArrowB": "arrow-b.svg",
+      "gradientArrowT": "arrow-t.svg",
+      "gradientArrowLB": "arrow-lb.svg",
+      "gradientArrowRB": "arrow-rb.svg",
+      "polygonArrow": "polygon-arrow.svg",
+      "barColumns": "bar-columns.svg",
+      "lineChart": "line-chart.svg",
+      "chartContainer": "chart-container.svg",
+      "chartBackground": "chart-background.svg",
+      "grid": "grid.svg",
+      "circleOrbit": "circle-orbit.svg",
+      "cursor": "cursor.svg",
+      "codeConnector": "code-connector.svg",
+      "connectionLine": "connection-line.svg",
+      "calloutLine1": "callout-line-1.svg",
+      "calloutLine2": "callout-line-2.svg",
+      "iconDataset": "icon-dataset.svg",
+      "iconDataModel": "icon-data-model.svg",
+      "iconCanvas": "icon-canvas.svg",
+      "iconFavorite": "icon-favorite.svg",
+      "iconVerified": "icon-verified.svg",
+      "docIcon": "doc-icon.svg",
+      "unionShape": "union-shape.svg",
+      "logomarkGroup": "logomark-group.svg",
+      "logoVector": "logo-vector.svg",
+      "blueGradientBg": "blue-gradient-bg.svg",
+      "typeDate": "type-date.svg",
+      "typeCurrency": "type-currency.svg",
+      "typeAggregated": "type-aggregated.svg",
+      "typeCustom": "type-custom.svg"
+    }
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T16:12:00+07:00",
+  "sourcePage": "In-app Spot Illustration",
+  "framesAnalyzed": 55,
+  "sections": [
+    { "name": "Feature Icon", "sectionId": "1:61721", "frameCount": 5 },
+    { "name": "Feature Illustration", "sectionId": "1:61722", "frameCount": 4 },
+    { "name": "Empty state", "sectionId": "1:61720", "frameCount": 19 },
+    { "name": "Chart Preview", "sectionId": "1:61966", "frameCount": 21 },
+    { "name": "Library Component Thumbnail", "sectionId": "1:61969", "frameCount": 6 }
+  ],
+  "spotIllustrationStyles": {
+    "featureIcons": {
+      "container": {
+        "size": 111,
+        "borderRadius": 21.13,
+        "usage": "Feature icon containers"
+      },
+      "backgroundShape": {
+        "background": "gradient: white → blue.50",
+        "border": "blue.400",
+        "borderWidth": 2.4,
+        "borderRadius": 10.6,
+        "innerShadow": "inset 0 0 0.5px rgba(184,201,227,0.37)",
+        "usage": "Primary document/card background"
+      },
+      "backgroundShapeSecondary": {
+        "background": "gradient: blue.50 → blue.100",
+        "border": "blue.300",
+        "borderWidth": 2.4,
+        "borderRadius": 10.6,
+        "innerShadow": "inset 0 0 0.5px rgba(184,201,227,0.37)",
+        "usage": "Secondary stacked document background"
+      }
+    },
+    "emptyStates": {
+      "gradientEllipse": {
+        "type": "radial-gradient",
+        "colors": ["blue.100", "blue.50", "white"],
+        "usage": "Empty state background ellipse"
+      },
+      "dataModelCard": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 0.5,
+        "borderRadius": 2.5,
+        "usage": "Data model cards in empty states"
+      },
+      "cardHeader": {
+        "dividerColor": "gray.300",
+        "iconSize": 6.8,
+        "titleFont": "Inter",
+        "titleWeight": "500",
+        "titleSize": 6.4,
+        "titleColor": "gray.700",
+        "usage": "Data model card headers"
+      },
+      "fieldIndicator": {
+        "types": {
+          "number": { "symbol": "#", "width": 33, "height": 5.6 },
+          "date": { "symbol": "Date", "width": 48, "height": 5.6 },
+          "text": { "symbol": "Aa", "width": 42, "height": 5.6 },
+          "boolean": { "symbol": "o", "width": 48, "height": 5.9 }
+        },
+        "usage": "Field type indicators in data models"
+      },
+      "connectionLine": {
+        "type": "curved",
+        "stroke": "blue.200",
+        "strokeWidth": 1,
+        "usage": "Relationship connection lines between models"
+      }
+    },
+    "chartPreviews": {
+      "metricCard": {
+        "background": "gradient: blue.50 → rgba(232,242,253,0.3)",
+        "border": "blue.200",
+        "borderWidth": 0.82,
+        "borderRadius": 2.8,
+        "usage": "Metric chart preview container"
+      },
+      "metricValue": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 28.5,
+        "color": "gradient: green.500 → green.200",
+        "usage": "Metric value with gradient text"
+      },
+      "chartContainer": {
+        "background": "white",
+        "borderRadius": 3,
+        "usage": "Chart preview container"
+      }
+    },
+    "thumbnails": {
+      "dashboardThumbnail": {
+        "background": "gradient: gray.50 → blue.100",
+        "borderRadius": 8,
+        "usage": "Dashboard template thumbnail"
+      },
+      "widgetCard": {
+        "background": "white",
+        "borderRadius": 3,
+        "usage": "Widget preview card"
+      },
+      "miniBar": {
+        "background": "gradient: green.300 → white",
+        "height": 8.6,
+        "borderRadius": 17.2,
+        "usage": "Mini metric bar indicator"
+      },
+      "miniBarBlue": {
+        "background": "gradient: blue.300 → white",
+        "height": 8.6,
+        "borderRadius": 17.2,
+        "usage": "Alternative mini metric bar"
+      },
+      "pieChartPreview": {
+        "ringColor": "green.400",
+        "centerColor": "white",
+        "opacity": 0.4,
+        "usage": "Pie chart preview element"
+      },
+      "dashboardGrid": {
+        "largeBlock": "blue.300",
+        "smallBlock": "blue.100",
+        "borderRadius": 1,
+        "usage": "Dashboard grid icon elements"
+      }
+    }
+  },
+  "colorMappings": {
+    "backgrounds": {
+      "primary": "white",
+      "surface": "gray.50",
+      "highlight": "blue.50",
+      "highlightAlt": "blue.100",
+      "gradient": "gray.50 → blue.100"
+    },
+    "borders": {
+      "subtle": "gray.300",
+      "document": "blue.300",
+      "documentPrimary": "blue.400",
+      "card": "blue.200"
+    },
+    "accents": {
+      "primary": "green.500",
+      "secondary": "green.300",
+      "tertiary": "blue.300",
+      "quaternary": "blue.100"
+    },
+    "text": {
+      "default": "gray.700",
+      "muted": "gray.600",
+      "accent": "green.500"
+    }
+  },
+  "gradients": {
+    "documentStack": {
+      "type": "linear",
+      "angle": 167,
+      "stops": [
+        { "color": "white", "position": "0%" },
+        { "color": "blue.50", "position": "86%" }
+      ],
+      "usage": "Primary document card gradient"
+    },
+    "documentStackSecondary": {
+      "type": "linear",
+      "angle": 167,
+      "stops": [
+        { "color": "blue.50", "position": "11%" },
+        { "color": "blue.100", "position": "90%" }
+      ],
+      "usage": "Secondary stacked document gradient"
+    },
+    "metricText": {
+      "type": "linear",
+      "direction": "to-b",
+      "stops": [
+        { "color": "green.500", "position": "0%" },
+        { "color": "green.200", "position": "108%" }
+      ],
+      "usage": "Metric value gradient text"
+    },
+    "metricBackground": {
+      "type": "linear",
+      "direction": "to-b",
+      "stops": [
+        { "color": "blue.50", "position": "99%" },
+        { "color": "rgba(232,242,253,0.3)", "position": "100%" }
+      ],
+      "usage": "Metric card background"
+    },
+    "thumbnailBackground": {
+      "type": "linear",
+      "angle": -18,
+      "stops": [
+        { "color": "gray.50", "position": "18%" },
+        { "color": "blue.100", "position": "100%" }
+      ],
+      "usage": "Dashboard thumbnail background"
+    },
+    "miniBar": {
+      "type": "linear",
+      "direction": "to-r",
+      "stops": [
+        { "color": "green.300", "position": "17%" },
+        { "color": "white", "position": "100%" }
+      ],
+      "usage": "Mini metric bar gradient"
+    }
+  },
+  "typography": {
+    "primary": "Inter",
+    "weights": ["400", "500"],
+    "scales": {
+      "cardTitle": { "size": 6.4, "weight": "500", "lineHeight": 9.7 },
+      "metricValue": { "size": 28.5, "weight": "500" }
+    }
+  },
+  "patterns": {
+    "documentStack": {
+      "description": "Stacked document cards with rotation and gradients",
+      "components": ["backgroundShape", "backgroundShapeSecondary", "iconPlaceholder"],
+      "sections": ["Feature Icon", "Feature Illustration"]
+    },
+    "emptyStateRelationship": {
+      "description": "Data models with connection lines on gradient ellipse",
+      "components": ["gradientEllipse", "dataModelCard", "connectionLine"],
+      "sections": ["Empty state"]
+    },
+    "chartMetric": {
+      "description": "Metric card with gradient text value",
+      "components": ["metricCard", "metricValue"],
+      "sections": ["Chart Preview"]
+    },
+    "dashboardThumbnail": {
+      "description": "Dashboard preview with widget grid and charts",
+      "components": ["dashboardThumbnail", "widgetCard", "miniBar", "pieChartPreview"],
+      "sections": ["Library Component Thumbnail"]
+    }
+  },
+  "chartConstructionRules": {
+    "metric": {
+      "type": "decomposed",
+      "structure": "container + gradient text",
+      "container": {
+        "background": "gradient: blue.50 → rgba(232,242,253,0.3)",
+        "border": "blue.200",
+        "borderWidth": 0.824,
+        "borderRadius": 2.77
+      },
+      "text": {
+        "gradient": "green.500 → green.200",
+        "direction": "to-b",
+        "font": "Inter",
+        "weight": "500",
+        "size": 28.5
+      }
+    },
+    "column": {
+      "type": "decomposed",
+      "structure": "5 vertical bars with varying heights",
+      "bar": {
+        "gradient": "blue.200 → blue.50",
+        "direction": "to-b",
+        "borderRadius": "1.317px 1.317px 0 0",
+        "width": 10.7
+      },
+      "arrangement": "evenly spaced, heights vary to show data"
+    },
+    "bar": {
+      "type": "decomposed",
+      "structure": "4 horizontal bars with varying widths",
+      "bar": {
+        "gradient": "blue.200 → blue.50",
+        "direction": "to-b",
+        "borderRadius": "1.241px 1.241px 0 0",
+        "height": 9.927
+      },
+      "arrangement": "stacked vertically, widths increase top to bottom"
+    },
+    "pie": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/pie-chart.svg",
+      "structure": "donut with 3 segments + white center",
+      "segments": [
+        { "name": "largest", "fill": "blue.200", "angle": "~120deg" },
+        { "name": "medium", "fill": "blue.100", "angle": "~140deg" },
+        { "name": "smallest", "fill": "blue.50", "angle": "~100deg" }
+      ],
+      "center": {
+        "fill": "white",
+        "gradient": "white → transparent (to-b)",
+        "ratio": 0.52
+      }
+    },
+    "line": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/line-chart.svg",
+      "structure": "2 curved lines with peaks and valleys",
+      "lines": [
+        { "name": "primary", "stroke": "green.300", "strokeWidth": 2 },
+        { "name": "secondary", "stroke": "blue.200", "strokeWidth": 2 }
+      ]
+    },
+    "area": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/area-chart.svg",
+      "structure": "2 filled area curves",
+      "areas": [
+        { "name": "primary", "fill": "green.300", "opacity": 0.6 },
+        { "name": "secondary", "fill": "blue.200", "opacity": 0.6 }
+      ]
+    },
+    "funnel": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/funnel-chart.svg",
+      "structure": "3 trapezoid layers narrowing downward",
+      "layers": [
+        { "position": "top", "fill": "blue.50", "widest": true },
+        { "position": "middle", "fill": "blue.100" },
+        { "position": "bottom", "fill": "blue.200", "narrowest": true }
+      ]
+    },
+    "gauge": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/gauge-chart.svg",
+      "structure": "semi-circle arc + indicator bar",
+      "arc": {
+        "background": "blue.50",
+        "fill": "gradient: blue.100 → blue.200"
+      },
+      "indicator": {
+        "gradient": "green.300 → green.200",
+        "direction": "to-r",
+        "borderRadius": 1.1
+      }
+    },
+    "table": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/table.svg",
+      "structure": "grid with header row and data rows",
+      "header": { "background": "blue.50" },
+      "rows": { "alternating": ["white", "gray.50"] },
+      "border": "gray.200"
+    }
+  },
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": [
+      "pie-chart.svg",
+      "line-chart.svg",
+      "area-chart.svg",
+      "funnel-chart.svg",
+      "gauge-chart.svg",
+      "table.svg"
+    ],
+    "note": "SVGs use CSS variables: var(--fill-0, #HEX) for theming"
+  }
+}

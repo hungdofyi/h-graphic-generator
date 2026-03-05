@@ -1,0 +1,226 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "In-app Spot Illustration",
+  "extractedAt": "2026-03-05T18:15:00+07:00",
+
+  "backgrounds": {
+    "gradientEllipse": {
+      "name": "Gradient Ellipse (Empty State)",
+      "css": "radial-gradient(ellipse at center, #d1e5fa 0%, #e8f2fd 50%, white 100%)",
+      "usage": ["empty state backgrounds", "illustration backgrounds", "gradient ovals"]
+    },
+    "thumbnailGradient": {
+      "name": "Dashboard Thumbnail Gradient",
+      "css": "linear-gradient(-17.65deg, #f9fbfc 17.9%, #d1e5fa 99.8%)",
+      "usage": ["dashboard thumbnails", "template previews", "library components"]
+    },
+    "chartContainerGradient": {
+      "name": "Chart Container Gradient",
+      "css": "linear-gradient(180deg, white 0%, #f9fbfc 107%)",
+      "usage": ["chart containers", "widget cards"]
+    }
+  },
+
+  "shadows": {
+    "documentInset": {
+      "name": "Document Inset Shadow",
+      "css": "inset 0px 0px 0.528px rgba(184,201,227,0.37)",
+      "usage": ["document cards", "stacked cards"]
+    }
+  },
+
+  "containers": {
+    "documentStackPrimary": {
+      "name": "Document Stack (Primary)",
+      "background": "linear-gradient(167deg, white 0.65%, #e8f2fd 86%)",
+      "border": "2.379px solid #5ea3ed",
+      "borderRadius": "10.565px",
+      "shadow": "inset 0px 0px 0.528px rgba(184,201,227,0.37)",
+      "usage": ["feature icons", "primary document cards", "stacked documents front"]
+    },
+    "documentStackSecondary": {
+      "name": "Document Stack (Secondary)",
+      "background": "linear-gradient(167deg, #e8f2fd 11%, #d1e5fa 90%)",
+      "border": "2.379px solid #8dbef2",
+      "borderRadius": "10.565px",
+      "shadow": "inset 0px 0px 0.528px rgba(184,201,227,0.37)",
+      "usage": ["stacked documents back", "secondary document cards"]
+    },
+    "dataModelCard": {
+      "name": "Data Model Card",
+      "background": "white",
+      "border": "0.5px solid #e3e7ed",
+      "borderRadius": "2.469px",
+      "usage": ["data model displays", "empty state cards", "schema cards"]
+    },
+    "metricCard": {
+      "name": "Metric Card",
+      "background": "linear-gradient(180deg, #e8f2fd 99.24%, rgba(232,242,253,0.3) 100%)",
+      "border": "0.824px solid #bbd7f7",
+      "borderRadius": "2.77px",
+      "usage": ["metric displays", "KPI cards", "chart previews"]
+    },
+    "thumbnailUnit": {
+      "name": "Thumbnail Unit (TU)",
+      "background": "white",
+      "borderRadius": "2.983px",
+      "usage": ["widget thumbnails", "chart preview containers", "library component parts"]
+    },
+    "featureIconContainer": {
+      "name": "Feature Icon Container",
+      "background": "transparent",
+      "borderRadius": "21.13px",
+      "size": { "width": "111px", "height": "111px" },
+      "usage": ["feature icons", "illustration containers"]
+    }
+  },
+
+  "typography": {
+    "dataModelTitle": {
+      "name": "Data Model Title",
+      "font": "Inter",
+      "weight": 500,
+      "size": "6.388px",
+      "lineHeight": "9.723px",
+      "color": "#4c5159",
+      "usage": ["data model headers", "card titles in empty states"]
+    },
+    "metricValue": {
+      "name": "Metric Value (Gradient)",
+      "font": "Inter",
+      "weight": 500,
+      "size": "28.463px",
+      "color": "transparent",
+      "gradient": "linear-gradient(180deg, #2cb67f 0%, #a4e0c8 108%)",
+      "usage": ["metric values", "KPI numbers", "gradient text"]
+    }
+  },
+
+  "graphicElements": {
+    "miniBarGreen": {
+      "name": "Mini Bar (Green Gradient)",
+      "background": "linear-gradient(90deg, #7ad1ae 17%, white 100%)",
+      "height": "8.618px",
+      "borderRadius": "17.235px",
+      "usage": ["mini metric bars", "progress indicators", "dashboard widgets"]
+    },
+    "miniBarBlue": {
+      "name": "Mini Bar (Blue Gradient)",
+      "background": "linear-gradient(90deg, #8dbef2 17%, white 100%)",
+      "height": "8.618px",
+      "borderRadius": "17.235px",
+      "usage": ["alternative metric bars", "secondary indicators"]
+    },
+    "connectionLine": {
+      "name": "Connection Line (Relationship)",
+      "stroke": "#bbd7f7",
+      "strokeWidth": "1px",
+      "type": "curved",
+      "usage": ["relationship lines", "data model connections", "empty state arrows"]
+    },
+    "dashboardGridLarge": {
+      "name": "Dashboard Grid (Large Block)",
+      "background": "#8dbef2",
+      "borderRadius": "1px",
+      "size": "41.473px",
+      "usage": ["dashboard grid icons", "large widget blocks"]
+    },
+    "dashboardGridSmall": {
+      "name": "Dashboard Grid (Small Block)",
+      "background": "#d1e5fa",
+      "borderRadius": "1px",
+      "size": { "width": "41.473px", "height": "31.105px" },
+      "usage": ["dashboard grid icons", "small widget blocks"]
+    },
+    "fieldIndicator": {
+      "name": "Field Type Indicator",
+      "types": {
+        "number": { "symbol": "#", "color": "#4c5159" },
+        "date": { "symbol": "calendar", "color": "#4c5159" },
+        "text": { "symbol": "Aa", "color": "#4c5159" },
+        "boolean": { "symbol": "o", "color": "#4c5159" }
+      },
+      "usage": ["field type indicators", "schema icons", "data model fields"]
+    }
+  },
+
+  "chartElements": {
+    "columnBar": {
+      "name": "Column Chart Bar",
+      "gradient": "linear-gradient(180deg, #bbd7f7 0%, #e8f2fd 100%)",
+      "borderRadius": "1.317px 1.317px 0 0",
+      "width": "10.7px",
+      "usage": ["column chart bars", "bar chart elements"]
+    },
+    "pieChart": {
+      "name": "Pie Chart",
+      "type": "donut",
+      "segments": [
+        { "name": "largest", "fill": "#bbd7f7", "angle": "~120deg" },
+        { "name": "medium", "fill": "#d1e5fa", "angle": "~140deg" },
+        { "name": "smallest", "fill": "#e8f2fd", "angle": "~100deg" }
+      ],
+      "center": { "fill": "white", "ratio": 0.52 },
+      "usage": ["pie chart previews", "donut charts"]
+    },
+    "metricDisplay": {
+      "name": "Metric Display",
+      "container": {
+        "background": "linear-gradient(180deg, #e8f2fd 99%, rgba(232,242,253,0.3) 100%)",
+        "border": "0.824px solid #bbd7f7",
+        "borderRadius": "2.77px"
+      },
+      "text": {
+        "gradient": "linear-gradient(180deg, #2cb67f 0%, #a4e0c8 108%)",
+        "font": "Inter",
+        "weight": 500,
+        "size": "28.463px"
+      },
+      "usage": ["metric charts", "KPI displays"]
+    }
+  },
+
+  "layoutPatterns": {
+    "documentStack": {
+      "name": "Document Stack",
+      "structure": {
+        "layers": "3 stacked cards with rotation",
+        "frontCard": "documentStackPrimary with icon",
+        "backCards": "documentStackSecondary, rotated ±5.5deg",
+        "iconPlacement": "center, 42x42px"
+      },
+      "usage": ["feature icons", "repository illustrations", "document previews"]
+    },
+    "emptyStateRelationship": {
+      "name": "Empty State Relationship",
+      "structure": {
+        "background": "gradientEllipse",
+        "cards": "3 dataModelCards positioned in triangle",
+        "connections": "curved lines between cards"
+      },
+      "usage": ["no relationships empty state", "data model visualization"]
+    },
+    "dashboardThumbnail": {
+      "name": "Dashboard Thumbnail",
+      "structure": {
+        "background": "thumbnailGradient with rounded corners (8px)",
+        "topRow": "3 thumbnail units with mini bars/charts",
+        "bottomLeft": "pie chart or dashboard grid",
+        "bottomRight": "large chart container"
+      },
+      "usage": ["template thumbnails", "dashboard previews", "library components"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": {
+      "pieChart": "pie-chart.svg",
+      "lineChart": "line-chart.svg",
+      "areaChart": "area-chart.svg",
+      "funnelChart": "funnel-chart.svg",
+      "gaugeChart": "gauge-chart.svg",
+      "table": "table.svg"
+    }
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "Docs - Explainers",
+  "extractedAt": "2026-03-05T17:55:00+07:00",
+
+  "backgrounds": {
+    "canvasWhite": {
+      "name": "Canvas White",
+      "css": "white",
+      "usage": ["main canvas", "default background"]
+    },
+    "canvasGray": {
+      "name": "Canvas Gray",
+      "css": "#f5f8fa",
+      "usage": ["PoP diagrams", "tutorial backgrounds", "neutral canvas"]
+    },
+    "regionDashed": {
+      "name": "Dashed Region",
+      "css": "#f9fbfc",
+      "border": "0.991px dashed #b0b6bf",
+      "borderRadius": "7.927px",
+      "usage": ["Holistics regions", "application regions", "bounded areas"]
+    },
+    "frontendRegion": {
+      "name": "Frontend Region (Blue)",
+      "css": "#e8f2fd",
+      "opacity": 0.7,
+      "border": "1.288px solid #bbd7f7",
+      "borderRadius": "7.927px",
+      "usage": ["frontend containers", "iframe regions", "client-side areas"]
+    },
+    "backendRegion": {
+      "name": "Backend Region (Blue)",
+      "css": "#e8f2fd",
+      "opacity": 0.7,
+      "border": "1.288px solid #bbd7f7",
+      "borderRadius": "7.927px",
+      "usage": ["backend containers", "server-side areas", "API regions"]
+    },
+    "dashboardContent": {
+      "name": "Dashboard Content (Green)",
+      "css": "#eaf8f2",
+      "border": "0.991px solid #e3e7ed",
+      "borderRadius": "5.945px",
+      "usage": ["dashboard mockups", "embedded content areas"]
+    },
+    "screenshotOverlay": {
+      "name": "Screenshot Overlay",
+      "css": "rgba(120,119,119,0.3)",
+      "borderRadius": "7px",
+      "usage": ["screenshot blur overlays", "focus dimming", "tutorial highlights"]
+    }
+  },
+
+  "shadows": {
+    "floatingLayer": {
+      "name": "Floating Layer Shadow",
+      "css": "0px 5.621px 12.18px rgba(0,0,0,0.09)",
+      "usage": ["floating screenshots", "layered elements", "tutorial callouts"]
+    },
+    "subtleCard": {
+      "name": "Subtle Card Shadow",
+      "css": "0px 4px 13px rgba(0,0,0,0.04)",
+      "usage": ["sidebar panels", "subtle elevation"]
+    }
+  },
+
+  "containers": {
+    "codeBlock": {
+      "name": "Code Block",
+      "background": "white",
+      "border": "0.975px solid #cbd0d7",
+      "borderRadius": "4.954px",
+      "usage": ["code snippets", "payload examples", "token displays"]
+    },
+    "semanticHighlight": {
+      "name": "Semantic Highlight (Green)",
+      "background": "#eaf8f2",
+      "border": "0.978px solid #259b6c",
+      "borderRadius": "1.982px",
+      "usage": ["highlighted code elements", "embed portal names", "key identifiers"]
+    },
+    "valueContainer": {
+      "name": "Value Container (Green border only)",
+      "background": "transparent",
+      "border": "0.978px solid #259b6c",
+      "borderRadius": "1.982px",
+      "usage": ["code value containers", "grouped elements", "dashboard/dataset groups"]
+    },
+    "blueHighlight": {
+      "name": "Blue Highlight",
+      "background": "#e8f2fd",
+      "border": "0.978px solid #1b7ce4",
+      "borderRadius": "1.982px",
+      "usage": ["token values", "variable highlights", "parameter emphasis"]
+    },
+    "grayHighlight": {
+      "name": "Gray Highlight",
+      "background": "#edf1f5",
+      "border": "0.978px solid #8f99a3",
+      "borderRadius": "1.982px",
+      "usage": ["neutral values", "function names", "static elements"]
+    },
+    "itemContainer": {
+      "name": "Item Container",
+      "background": "white",
+      "border": "0.959px solid #cbd0d7",
+      "borderRadius": "1.982px",
+      "usage": ["list items", "dataset names", "dashboard names"]
+    },
+    "widgetGreen": {
+      "name": "Widget Container (Green)",
+      "background": "#2cb67f",
+      "borderRadius": "5.993px",
+      "usage": ["metric widgets", "KPI containers", "highlighted widgets"]
+    },
+    "screenshotLayer": {
+      "name": "Screenshot Layer",
+      "background": "white",
+      "border": "1px solid #dadce0",
+      "borderRadius": "5px",
+      "shadow": "floatingLayer",
+      "usage": ["screenshot callouts", "UI layer highlights", "tutorial steps"]
+    },
+    "selectorDropdown": {
+      "name": "Selector Dropdown",
+      "background": "white",
+      "border": "1.273px solid #dadce0",
+      "borderRadius": "7px",
+      "usage": ["dropdown panels", "selector UIs", "field choosers"]
+    },
+    "selectorField": {
+      "name": "Selector Field",
+      "background": "white",
+      "border": "1.356px solid #e3e7ed",
+      "borderRadius": "4.068px",
+      "usage": ["dropdown fields", "selectable items"]
+    }
+  },
+
+  "typography": {
+    "sectionTitle": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "24.772px",
+      "color": "#2d3238",
+      "usage": ["section headings", "HOLISTICS/YOUR APPLICATION labels"]
+    },
+    "regionLabel": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "17.788px",
+      "color": "#2d3238",
+      "usage": ["FRONT END/BACK END labels", "region titles"]
+    },
+    "codeTitle": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "14.863px",
+      "color": "#259b6c",
+      "usage": ["code block titles", "Embed Portal/Embed Token labels"]
+    },
+    "code": {
+      "font": "JetBrains Mono",
+      "weight": 500,
+      "size": "10.43px",
+      "lineHeight": "1.8",
+      "color": "#2d3238",
+      "usage": ["code content", "payload examples", "token code"]
+    },
+    "itemLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "12.208px",
+      "color": "#2d3238",
+      "usage": ["list item labels", "dashboard_1, dataset_1 names"]
+    },
+    "codeItemLabel": {
+      "font": "JetBrains Mono",
+      "weight": 400,
+      "size": "10.43px",
+      "lineHeight": "1.8",
+      "color": "#2d3238",
+      "usage": ["code item names in navigation"]
+    },
+    "fieldLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "14.972px",
+      "color": "#2d3238",
+      "usage": ["field labels", "Key ID, Secret labels"]
+    },
+    "annotationLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "12.452px",
+      "color": "#2d3238",
+      "usage": ["flow annotations", "arrow labels", "prebuilt reports"]
+    },
+    "popTitle": {
+      "name": "PoP Title",
+      "font": "Inter",
+      "weight": 500,
+      "size": "20px",
+      "lineHeight": "28.43px",
+      "color": "#13151a",
+      "usage": ["tutorial step titles", "PoP diagram labels"]
+    },
+    "widgetTitle": {
+      "font": "Inter",
+      "weight": 400,
+      "size": "18.835px",
+      "lineHeight": "28.253px",
+      "color": "white",
+      "usage": ["widget labels", "Widget text"]
+    },
+    "widgetMetric": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "18.835px",
+      "lineHeight": "28.253px",
+      "color": "white",
+      "usage": ["widget metric names", "Count of Orders"]
+    },
+    "selectorLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "17.827px",
+      "lineHeight": "40.748px",
+      "color": "#24292e",
+      "usage": ["selector section labels", "Dataset/Field headers"]
+    },
+    "selectorItem": {
+      "font": "Inter",
+      "weight": 400,
+      "size": "16.27px",
+      "lineHeight": "21.695px",
+      "color": "#13151a",
+      "usage": ["selector item text", "Ecommerces/Orders/Created at"]
+    }
+  },
+
+  "graphicElements": {
+    "stepCircle": {
+      "name": "Step Circle (Green)",
+      "size": "24.772px",
+      "background": "#259b6c",
+      "textColor": "white",
+      "textSize": "14.733px",
+      "textWeight": 600,
+      "usage": ["numbered steps", "flow indicators", "1, 2, 3, 4, 5"]
+    },
+    "stepCircleSmall": {
+      "name": "Step Circle Small",
+      "size": "24.772px",
+      "background": "#259b6c",
+      "textColor": "white",
+      "textSize": "12.881px",
+      "textWeight": 600,
+      "usage": ["sub-steps", "3.1, 3.2 indicators"]
+    },
+    "connectionArrow": {
+      "description": "Curved arrows connecting elements",
+      "stroke": "#8f99a3",
+      "strokeWidth": "1px",
+      "usage": ["flow connections", "prebuilt reports arrows", "data exploration arrows"]
+    },
+    "verticalConnector": {
+      "description": "Vertical dashed line with arrow",
+      "stroke": "#dadce0",
+      "strokeWidth": "1px",
+      "usage": ["vertical connections", "update flows", "field mappings"]
+    },
+    "horizontalConnector": {
+      "description": "Horizontal connector with arrow",
+      "stroke": "#dadce0",
+      "strokeWidth": "1px",
+      "usage": ["horizontal connections", "time shift flows"]
+    },
+    "textPlaceholder": {
+      "description": "Gradient text placeholder",
+      "css": "linear-gradient(90deg, #62a389 0%, #d9f2e8 100%)",
+      "opacity": 0.5,
+      "borderRadius": "6.134px",
+      "usage": ["text placeholders", "loading states", "skeleton text"]
+    },
+    "pieChartGradient": {
+      "description": "Gradient fill for pie charts",
+      "css": "linear-gradient(160.43deg, #ccede0 14.345%, #eaf8f2 81.147%)",
+      "opacity": 0.8,
+      "borderRadius": "4.447px",
+      "usage": ["pie chart segments", "data visualization"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": {
+      "stepCircle": "explainer-step-circle.svg",
+      "connectionArrowCurved": "explainer-connection-curved.svg",
+      "connectionArrowStraight": "explainer-arrow-straight.svg",
+      "verticalConnector": "explainer-connector-vertical.svg"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 2411 1174.91" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Grid" opacity="0.15">
+<path id="Vector 38" d="M77.9141 299.872H2041.24" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 39" d="M77.9141 470.595H2041.24" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 40" d="M77.9141 641.313H2041.24" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 41" d="M77.9141 812.034H2041.24" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 42" d="M295.512 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 43" d="M483.438 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 44" d="M671.359 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 45" d="M859.289 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 46" d="M1047.21 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 47" d="M1235.14 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 48" d="M1423.06 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 49" d="M1610.99 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<path id="Vector 50" d="M1798.91 84.2305V1050.14" stroke="var(--stroke-0, #E3E7ED)" stroke-width="5"/>
+<rect id="Grid Shape" y="83.8047" width="2411" height="1091.11" fill="url(#paint0_radial_10_5497)"/>
+<rect id="Grid Shape_2" x="87.0156" width="2096.18" height="684.93" fill="url(#paint1_linear_10_5497)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_10_5497" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(876.5 461) rotate(24.279) scale(1020.24 500.027)">
+<stop stop-color="#020E1A" stop-opacity="0"/>
+<stop offset="1" stop-color="#020E1A"/>
+</radialGradient>
+<linearGradient id="paint1_linear_10_5497" x1="1146.84" y1="49.9981" x2="1137.23" y2="1207" gradientUnits="userSpaceOnUse">
+<stop stop-color="#020E1A"/>
+<stop offset="0.25" stop-color="#072642" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

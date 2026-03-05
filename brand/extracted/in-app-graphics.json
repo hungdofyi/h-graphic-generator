@@ -1,0 +1,397 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T16:02:00+07:00",
+  "sourcePage": "In-app Graphics",
+  "framesAnalyzed": 10,
+  "frames": [
+    { "name": "Data source", "nodeId": "1:56268", "dimensions": { "width": 216, "height": 120 }, "analyzed": true },
+    { "name": "Data Models", "nodeId": "1:56281", "dimensions": { "width": 250, "height": 180 }, "analyzed": true },
+    { "name": "Publish", "nodeId": "1:56344", "dimensions": { "width": 216, "height": 200 }, "analyzed": true },
+    { "name": "Dashboard", "nodeId": "1:56406", "dimensions": { "width": 400, "height": 300 }, "analyzed": false, "note": "Output exceeded token limit" },
+    { "name": "Explore", "nodeId": "1:60809", "dimensions": { "width": 216, "height": 120 }, "analyzed": true },
+    { "name": "Interact", "nodeId": "1:60825", "dimensions": { "width": 216, "height": 120 }, "analyzed": true },
+    { "name": "Relationship", "nodeId": "1:60896", "dimensions": { "width": 216, "height": 180 }, "analyzed": true },
+    { "name": "Dataset", "nodeId": "1:60958", "dimensions": { "width": 216, "height": 180 }, "analyzed": true },
+    { "name": "Dataset (large)", "nodeId": "1:61038", "dimensions": { "width": 768, "height": 640 }, "analyzed": true },
+    { "name": "Relationship (large)", "nodeId": "1:61095", "dimensions": { "width": 768, "height": 640 }, "analyzed": true }
+  ],
+  "illustrationStyles": {
+    "backgrounds": {
+      "gradientGrayToBlue": {
+        "type": "linear-gradient",
+        "angle": 119,
+        "stops": [
+          { "color": "gray.50", "position": "1.5%" },
+          { "color": "blue.50", "position": "98%" }
+        ],
+        "usage": "Data source card background"
+      },
+      "gradientBlueToWhite": {
+        "type": "linear-gradient",
+        "direction": "to-b",
+        "stops": [
+          { "color": "blue.50", "position": "0%" },
+          { "color": "white", "position": "100%" }
+        ],
+        "usage": "Data Models card background"
+      },
+      "gradientGrayToBlueBottom": {
+        "type": "linear-gradient",
+        "direction": "to-b",
+        "stops": [
+          { "color": "gray.50", "position": "0%" },
+          { "color": "blue.50", "position": "80%" }
+        ],
+        "usage": "Publish, Interact, Dataset, Relationship backgrounds"
+      },
+      "gradientBlueToGray": {
+        "type": "linear-gradient",
+        "direction": "to-r",
+        "stops": [
+          { "color": "blue.50", "position": "0%" },
+          { "color": "gray.50", "position": "100%" }
+        ],
+        "usage": "Explore card background"
+      }
+    },
+    "containers": {
+      "dataModelCard": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 0.34,
+        "borderRadius": 1.8,
+        "usage": "Small data model cards"
+      },
+      "dataModelCardLarge": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 1.2,
+        "borderRadius": 6.4,
+        "usage": "Large data model cards"
+      },
+      "datasetContainer": {
+        "background": "white",
+        "border": "gray.200",
+        "borderWidth": 0.56,
+        "borderRadius": 2.1,
+        "usage": "Dataset wrapper"
+      },
+      "datasetContainerLarge": {
+        "background": "white",
+        "border": "gray.200",
+        "borderWidth": 2,
+        "borderRadius": 7.6,
+        "usage": "Large dataset wrapper"
+      },
+      "datasetHeader": {
+        "background": "blue.50",
+        "borderBottom": "gray.200",
+        "borderWidth": 0.56,
+        "borderRadius": "2.1px 2.1px 0 0",
+        "usage": "Dataset title bar"
+      },
+      "dashboardPreview": {
+        "background": "white",
+        "border": "gray.200",
+        "borderWidth": 0.5,
+        "borderRadius": 2.5,
+        "usage": "Dashboard thumbnail containers"
+      },
+      "chartContainer": {
+        "background": "white",
+        "border": "green.400",
+        "borderWidth": 0.5,
+        "usage": "Draggable chart container"
+      },
+      "cardElement": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 0.4,
+        "borderRadius": 1,
+        "usage": "Metric cards in dashboard"
+      }
+    },
+    "chartElements": {
+      "barPrimary": {
+        "fill": "blue.400",
+        "borderRadius": "1.5px 1.5px 0 0",
+        "opacity": 0.5,
+        "usage": "Primary bar chart color"
+      },
+      "barSecondary": {
+        "fill": "blue.200",
+        "borderRadius": "1.5px 1.5px 0 0",
+        "opacity": 0.5,
+        "usage": "Secondary bar chart color"
+      },
+      "barStackedPrimary": {
+        "fill": "blue.400",
+        "usage": "Stacked bar bottom segment"
+      },
+      "barStackedSecondary": {
+        "fill": "blue.200",
+        "usage": "Stacked bar top segment"
+      },
+      "pieChartRing": {
+        "fill": "green.600",
+        "opacity": 0.4,
+        "usage": "Pie chart ring segments"
+      },
+      "chartSegment": {
+        "fill": "gray.200",
+        "borderRadius": 0.5,
+        "usage": "Small chart segment bars"
+      },
+      "chartSegmentAlt": {
+        "fill": "gray.300",
+        "borderRadius": 0.5,
+        "usage": "Alternate small chart bars"
+      },
+      "chartBackground": {
+        "border": "gray.200",
+        "borderWidth": 0.43,
+        "borderRadius": 2,
+        "usage": "Chart widget backgrounds"
+      }
+    },
+    "dataModelElements": {
+      "fieldIcon": {
+        "types": {
+          "number": "#",
+          "date": "calendar",
+          "text": "Aa",
+          "boolean": "o"
+        },
+        "usage": "Field type indicators in data models"
+      },
+      "modelIcon": {
+        "background": "transparent",
+        "color": "gray.800",
+        "usage": "Data model table icon"
+      },
+      "dividerLine": {
+        "stroke": "gray.300",
+        "strokeWidth": 0.34,
+        "usage": "Separator between header and fields"
+      },
+      "dividerLineLarge": {
+        "stroke": "gray.300",
+        "strokeWidth": 1.2,
+        "usage": "Large model separator"
+      }
+    },
+    "relationshipElements": {
+      "connectorLine": {
+        "stroke": "blue.300",
+        "strokeWidth": 1,
+        "usage": "Relationship connection lines"
+      },
+      "cardinalityLabel": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 4,
+        "color": "blue.800",
+        "usage": "1:n relationship labels"
+      },
+      "cardinalityLabelLarge": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 14.4,
+        "color": "blue.800",
+        "usage": "Large 1:n labels"
+      }
+    },
+    "interactionElements": {
+      "dragHandle": {
+        "fill": "green.400",
+        "size": 2,
+        "usage": "Drag handle dots"
+      },
+      "cursorIcon": {
+        "type": "move-cursor",
+        "usage": "Drag interaction cursor"
+      },
+      "resizeHandle": {
+        "fill": "gray.400",
+        "size": 2,
+        "usage": "Resize corner handles"
+      }
+    },
+    "uiComponents": {
+      "publishButton": {
+        "background": "blue.600",
+        "textColor": "white",
+        "font": "Inter",
+        "weight": "500",
+        "size": 9,
+        "borderRadius": 2.5,
+        "paddingX": 7.5,
+        "paddingY": 4,
+        "usage": "Publish action button"
+      },
+      "headerHighlight": {
+        "background": "blue.200",
+        "opacity": 0.6,
+        "usage": "Dashboard header highlight bar"
+      },
+      "metricBadgePositive": {
+        "background": "green.50",
+        "borderRadius": 1.3,
+        "usage": "Positive metric indicator"
+      },
+      "metricBadgeNegative": {
+        "background": "red.50",
+        "borderRadius": 1.3,
+        "usage": "Negative metric indicator"
+      },
+      "textPlaceholder": {
+        "background": "gray.200",
+        "backgroundGradient": "to-r from-gray.200 to-white",
+        "borderRadius": 1.3,
+        "usage": "Text placeholder bars"
+      },
+      "tuWidget": {
+        "border": "gray.200",
+        "borderWidth": 0.5,
+        "borderRadius": 2,
+        "usage": "Top-up widget containers"
+      }
+    },
+    "logoElements": {
+      "logoCircle": {
+        "type": "ellipse",
+        "stroke": "blue.400",
+        "strokeWidth": 1,
+        "usage": "Outer logo circle"
+      },
+      "logoCircleInner": {
+        "type": "ellipse",
+        "fill": "white",
+        "usage": "Inner logo circle background"
+      },
+      "logomark": {
+        "size": 33,
+        "usage": "Holistics logomark icon"
+      }
+    },
+    "decorativeElements": {
+      "arrowConnector": {
+        "stroke": "gray.400",
+        "usage": "Flow arrows between elements"
+      },
+      "orbitRing": {
+        "stroke": "blue.300",
+        "strokeWidth": 1,
+        "rotation": 118,
+        "usage": "Decorative orbit rings around database"
+      }
+    }
+  },
+  "textStyles": {
+    "datasetTitle": {
+      "font": "Inter",
+      "weight": "500",
+      "size": 6,
+      "color": "gray.800",
+      "usage": "Dataset title text"
+    },
+    "datasetTitleLarge": {
+      "font": "Inter",
+      "weight": "500",
+      "size": 21.6,
+      "lineHeight": 30.4,
+      "color": "gray.800",
+      "usage": "Large dataset title"
+    },
+    "dataModelLabel": {
+      "font": "Inter",
+      "weight": "500",
+      "size": 4.7,
+      "color": "gray.800",
+      "usage": "Data model name labels"
+    },
+    "dataModelLabelLarge": {
+      "font": "Inter",
+      "weight": "500",
+      "size": 16.8,
+      "lineHeight": 24.6,
+      "color": "gray.800",
+      "usage": "Large data model labels"
+    },
+    "dashboardTitle": {
+      "font": "Inter",
+      "weight": "500",
+      "size": 9,
+      "color": "blue.900",
+      "usage": "Dashboard title text"
+    }
+  },
+  "colorMappings": {
+    "backgrounds": {
+      "primary": "white",
+      "surface": "gray.50",
+      "highlight": "blue.50",
+      "semantic": "green.50",
+      "error": "red.50"
+    },
+    "borders": {
+      "subtle": "gray.200",
+      "default": "gray.300",
+      "accent": "green.400",
+      "highlight": "blue.300"
+    },
+    "charts": {
+      "primary": "blue.400",
+      "secondary": "blue.200",
+      "tertiary": "gray.200",
+      "quaternary": "gray.300"
+    },
+    "text": {
+      "default": "gray.800",
+      "title": "blue.900",
+      "accent": "blue.800",
+      "onDark": "white"
+    }
+  },
+  "typography": {
+    "primary": "Inter",
+    "weights": ["400", "500", "600"]
+  },
+  "patterns": {
+    "dataSourceConnection": {
+      "description": "Data source icon connecting to Holistics logo",
+      "components": ["logoElements", "arrowConnector", "gradientGrayToBlue"],
+      "frames": ["Data source"]
+    },
+    "dataModelVisualization": {
+      "description": "Database with data model cards showing field types",
+      "components": ["dataModelCard", "fieldIcon", "orbitRing"],
+      "frames": ["Data Models"]
+    },
+    "dashboardPublish": {
+      "description": "Dashboard preview with publish action",
+      "components": ["dashboardPreview", "chartElements", "publishButton"],
+      "frames": ["Publish"]
+    },
+    "dataExploration": {
+      "description": "Hand interaction with chart visualization",
+      "components": ["chartElements", "barPrimary", "barSecondary"],
+      "frames": ["Explore"]
+    },
+    "dashboardInteraction": {
+      "description": "Dashboard with drag-and-drop chart interaction",
+      "components": ["chartContainer", "dragHandle", "cursorIcon", "cardElement"],
+      "frames": ["Interact"]
+    },
+    "datasetWithModels": {
+      "description": "Dataset container with multiple data models",
+      "components": ["datasetContainer", "dataModelCard", "fieldIcon"],
+      "frames": ["Dataset", "Dataset (large)"]
+    },
+    "modelRelationships": {
+      "description": "Data models with 1:n relationship connectors",
+      "components": ["dataModelCard", "connectorLine", "cardinalityLabel"],
+      "frames": ["Relationship", "Relationship (large)"]
+    }
+  }
+}

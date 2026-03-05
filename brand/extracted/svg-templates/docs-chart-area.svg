@@ -1,0 +1,28 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 428.754 209.905" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Chart area">
+<g id="Grid">
+<path id="Vector" d="M24.9047 5.33556H428.217" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.355771" stroke-dasharray="2.13 2.13"/>
+<path id="Vector_2" d="M24.9047 41.6242H428.217" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.355771" stroke-dasharray="2.13 2.13"/>
+<path id="Vector_3" d="M24.9047 77.9129H428.217" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.355771" stroke-dasharray="2.13 2.13"/>
+<path id="Vector_4" d="M24.9047 114.202H428.217" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.355771" stroke-dasharray="2.13 2.13"/>
+<path id="Vector_5" d="M24.9047 150.49H428.217" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.355771" stroke-dasharray="2.13 2.13"/>
+<g id="Group">
+<path id="Vector_6" d="M24.9047 186.779H422.657" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.533657"/>
+<g id="Tick">
+<path id="Vector_7" d="M58.1215 186.779L58.1215 197.326" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.533657"/>
+<path id="Vector_8" d="M164.853 186.779L164.853 197.326" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.533657"/>
+<path id="Vector_9" d="M271.584 186.779L271.584 197.326" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.533657"/>
+<path id="Vector_10" d="M378.316 186.779L378.316 197.326" stroke="var(--stroke-0, #EDF1F5)" stroke-width="0.533657"/>
+</g>
+</g>
+</g>
+<path id="Vector 6.1" d="M29.5876 127.366L68.1304 126.011H89.3855H96.754H106.956L120.276 124.113L136.43 121.674L146.066 122.487L156.268 118.421L165.621 116.795L176.39 112.458L191.694 108.392L196.512 107.036L204.447 104.326L213.799 102.428L223.435 96.7359L233.637 95.6516L242.706 91.3146L252.909 110.289L262.828 108.392L272.463 103.512L284.083 99.9886L291.735 96.7359L301.371 88.875L311.29 92.1278L320.642 81.2852L330.561 80.7431L339.913 71.5269L355.784 68.0031L369.104 66.3767L378.456 59.058L388.942 48.2154L398.294 42.5231L408.497 30.3252L418.132 13.5193L428.051 76.135" stroke="var(--stroke-0, #259B6C)" stroke-width="1.42308"/>
+<path id="Vector 6.1_2" d="M68.1304 125.882L29.5876 127.235V186.424H428.051V76.0631L418.132 13.5193L408.497 30.3059L398.294 42.4898L388.942 48.1756L378.456 59.0057L369.104 66.316L355.784 67.9405L339.913 71.4603L330.561 80.6659L320.642 81.2074L311.29 92.0375L301.371 88.7885L291.735 96.6403L284.083 99.8894L272.463 103.409L262.828 108.283L252.909 110.178L242.706 91.2253L233.637 95.5573L223.435 96.6403L213.799 102.326L204.447 104.221L196.512 106.929L191.694 108.283L176.39 112.344L165.621 116.676L156.268 118.301L146.066 122.362L136.43 121.55L120.276 123.986L106.956 125.882H96.754H89.3855H68.1304Z" fill="url(#paint0_linear_10_10)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_10_10" x1="228.82" y1="-12.0963" x2="228.82" y2="186.424" gradientUnits="userSpaceOnUse">
+<stop stop-color="#47B881" stop-opacity="0.3"/>
+<stop offset="1" stop-color="#47B881" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

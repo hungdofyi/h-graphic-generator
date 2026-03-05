@@ -1,0 +1,563 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T15:58:00+07:00",
+  "sourcePage": "Docs - Explainers",
+  "framesAnalyzed": 7,
+  "frames": [
+    { "name": "Embed Portal Mechanism", "nodeId": "1:1963", "dimensions": { "width": 1920, "height": 1134 }, "analyzed": true },
+    { "name": "Embed Portal's Data Permission (v2)", "nodeId": "1:2159", "dimensions": { "width": 1185, "height": 1300 }, "analyzed": true },
+    { "name": "Rename Tag", "nodeId": "1:2311", "dimensions": { "width": 1200, "height": 880 }, "analyzed": true },
+    { "name": "Custom Chart Flow", "nodeId": "1:2550", "dimensions": { "width": 1835, "height": 768 }, "analyzed": true },
+    { "name": "Pop 1", "nodeId": "1:4601", "dimensions": { "width": 1280, "height": 856 }, "analyzed": true },
+    { "name": "PoP 3", "nodeId": "1:4834", "dimensions": { "width": 1280, "height": 856 }, "analyzed": true },
+    { "name": "PoP 2", "nodeId": "1:5096", "dimensions": { "width": 1280, "height": 856 }, "analyzed": true }
+  ],
+  "explainerStyles": {
+    "containers": {
+      "sectionBackground": {
+        "background": "gray.50",
+        "border": "gray.400",
+        "borderWidth": 1,
+        "borderStyle": "dashed",
+        "borderRadius": 8,
+        "usage": "Major section backgrounds (Holistics BG, Application BG)"
+      },
+      "codeBlock": {
+        "background": "white",
+        "border": "gray.400",
+        "borderWidth": 1,
+        "borderRadius": 5,
+        "usage": "Code snippet containers (embed_payload, iframe)"
+      },
+      "highlightedCode": {
+        "background": "green.50",
+        "border": "green.600",
+        "borderWidth": 1,
+        "borderRadius": 2,
+        "usage": "Highlighted code elements (embed portal, key values)"
+      },
+      "highlightedCodeAlt": {
+        "background": "blue.50",
+        "border": "blue.600",
+        "borderWidth": 1,
+        "borderRadius": 2,
+        "usage": "Alternative code highlights (tokens, blue elements)"
+      },
+      "highlightedCodePurple": {
+        "background": "purple.100",
+        "borderRadius": 3,
+        "usage": "Special value highlights (__ALL__)"
+      },
+      "frontendContainer": {
+        "background": "blue.50",
+        "border": "blue.200",
+        "borderWidth": 1.3,
+        "borderRadius": 8,
+        "opacity": 0.7,
+        "usage": "Frontend section backgrounds"
+      },
+      "dashboardContainer": {
+        "background": "green.50",
+        "border": "gray.300",
+        "borderWidth": 1,
+        "borderRadius": 6,
+        "usage": "Dashboard preview containers"
+      },
+      "dataTable": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 1.3,
+        "borderRadius": 6,
+        "usage": "Data table containers"
+      },
+      "tooltip": {
+        "background": "gray.300",
+        "borderRadius": 5,
+        "padding": 10,
+        "usage": "SQL query tooltips"
+      }
+    },
+    "numberedSteps": {
+      "circleIndicator": {
+        "background": "green.600",
+        "textColor": "white",
+        "size": 25,
+        "borderRadius": "50%",
+        "font": "Inter",
+        "weight": "600",
+        "fontSize": 15,
+        "usage": "Step numbers (1, 2, 3, 4, 5)"
+      },
+      "subStepIndicator": {
+        "background": "green.600",
+        "textColor": "white",
+        "size": 25,
+        "borderRadius": "50%",
+        "fontSize": 13,
+        "usage": "Sub-step numbers (3.1, 3.2)"
+      }
+    },
+    "tags": {
+      "greenTag": {
+        "background": "green.50",
+        "border": "green.200",
+        "borderWidth": 5.5,
+        "borderRadius": "full",
+        "textColor": "green.800",
+        "font": "Inter",
+        "weight": "500",
+        "usage": "Tag A style badges"
+      },
+      "blueTag": {
+        "background": "blue.50",
+        "border": "blue.300",
+        "borderWidth": 5.5,
+        "borderRadius": "full",
+        "textColor": "blue.800",
+        "font": "Inter",
+        "weight": "500",
+        "usage": "Tag B style badges"
+      }
+    },
+    "arrows": {
+      "flowArrow": {
+        "stroke": "gray.600",
+        "strokeWidth": 2,
+        "usage": "Standard flow arrows"
+      },
+      "connectionDot": {
+        "fill": "green.600",
+        "size": 8,
+        "usage": "Connection points"
+      },
+      "connectionDotAlt": {
+        "fill": "blue.600",
+        "size": 8,
+        "usage": "Alternative connection points"
+      }
+    },
+    "dataVisualization": {
+      "tableHeaderRow": {
+        "background": "white",
+        "borderBottom": "gray.300",
+        "usage": "Table header styling"
+      },
+      "dataRowHighlightGreen": {
+        "background": "green.50",
+        "textColor": "green.800",
+        "usage": "Highlighted data rows (Customer 1)"
+      },
+      "dataRowHighlightBlue": {
+        "background": "blue.50",
+        "textColor": "blue.800",
+        "usage": "Highlighted data rows (Customer 2)"
+      },
+      "dataPlaceholder": {
+        "background": "gray.200",
+        "borderRadius": 86,
+        "height": 13,
+        "usage": "Placeholder data bars"
+      },
+      "widget": {
+        "background": "green.500",
+        "borderRadius": 6,
+        "textColor": "white",
+        "usage": "Dashboard widgets (PoP)"
+      },
+      "screenshot": {
+        "border": "gray.300",
+        "borderWidth": 1.4,
+        "borderRadius": 7,
+        "shadow": "0 5.6px 12px rgba(0,0,0,0.09)",
+        "usage": "UI screenshot styling"
+      },
+      "blurOverlay": {
+        "background": "rgba(120,119,119,0.3)",
+        "borderRadius": 7,
+        "usage": "Blur overlay on screenshots"
+      }
+    },
+    "textStyles": {
+      "sectionTitle": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 25,
+        "color": "gray.800",
+        "transform": "uppercase",
+        "usage": "Section headers (FRONT END, BACK END, HOLISTICS)"
+      },
+      "pageTitle": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 35,
+        "color": "blue.900",
+        "usage": "Main page titles (Row-level permissions in Holistics)"
+      },
+      "componentLabel": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 15,
+        "color": "green.600",
+        "usage": "Component labels (Embed Portal, iframe)"
+      },
+      "subsectionLabel": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 22,
+        "color": "gray.800",
+        "usage": "Subsection labels (Customer 1, Customer 2)"
+      },
+      "annotationText": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 12,
+        "color": "gray.800",
+        "usage": "Flow annotations (enable data exploration, prebuilt reports)"
+      },
+      "inputLabel": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 15,
+        "color": "gray.800",
+        "usage": "Form field labels (Key ID, Secret)"
+      },
+      "actionText": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 40,
+        "color": "gray.700",
+        "opacity": 0.8,
+        "usage": "Large action labels (Rename, Merged)"
+      },
+      "tableHeader": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 15,
+        "color": "green.800",
+        "usage": "Table column headers (Tenant ID)"
+      },
+      "tableHeaderBlue": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 15,
+        "color": "blue.800",
+        "usage": "Alternative table headers"
+      },
+      "widgetTitle": {
+        "font": "Inter",
+        "weight": "400",
+        "size": 19,
+        "color": "white",
+        "usage": "Widget labels"
+      },
+      "widgetValue": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 19,
+        "color": "white",
+        "lineHeight": 28,
+        "usage": "Widget metric names"
+      }
+    },
+    "codeStyles": {
+      "codeSnippet": {
+        "font": "JetBrains Mono",
+        "weight": "500",
+        "size": 10,
+        "lineHeight": 1.8,
+        "color": "gray.800",
+        "usage": "Code snippets in diagrams"
+      },
+      "codeSnippetLarge": {
+        "font": "JetBrains Mono",
+        "weight": "500",
+        "size": 18,
+        "lineHeight": 1.8,
+        "color": "gray.800",
+        "usage": "Larger code blocks (embed_payload)"
+      },
+      "codeHighlightGreen": {
+        "color": "green.800",
+        "usage": "Green code highlights (tenant_id: ['1'])"
+      },
+      "codeHighlightBlue": {
+        "color": "blue.700",
+        "usage": "Blue code highlights (JWT, tenant_id: [2])"
+      },
+      "codeHighlightPurple": {
+        "color": "purple.700",
+        "usage": "Purple code highlights (__ALL__)"
+      },
+      "codeComment": {
+        "font": "JetBrains Mono",
+        "weight": "500",
+        "color": "gray.600",
+        "usage": "Code comments"
+      },
+      "inlineCode": {
+        "font": "JetBrains Mono NL",
+        "weight": "500",
+        "size": 13,
+        "color": "gray.800",
+        "usage": "Inline code in URLs"
+      }
+    },
+    "formElements": {
+      "inputField": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 1.4,
+        "borderRadius": 4,
+        "usage": "Form input fields (Dataset, Model, Field)"
+      },
+      "dropdown": {
+        "iconSize": 22,
+        "iconColor": "gray.600",
+        "usage": "Dropdown indicators"
+      }
+    }
+  },
+  "colorMappings": {
+    "backgrounds": {
+      "section": "gray.50",
+      "sectionAlt": "gray.100",
+      "code": "white",
+      "highlightGreen": "green.50",
+      "highlightBlue": "blue.50",
+      "highlightPurple": "purple.100",
+      "frontend": "blue.50",
+      "dashboard": "green.50",
+      "widget": "green.500",
+      "blur": "rgba(120,119,119,0.3)"
+    },
+    "borders": {
+      "section": "gray.400",
+      "code": "gray.400",
+      "highlightGreen": "green.600",
+      "highlightBlue": "blue.600",
+      "frontend": "blue.200",
+      "table": "gray.300",
+      "tag": "green.200",
+      "tagAlt": "blue.300"
+    },
+    "text": {
+      "title": "blue.900",
+      "sectionTitle": "gray.800",
+      "label": "green.600",
+      "default": "gray.800",
+      "tableGreen": "green.800",
+      "tableBlue": "blue.800",
+      "onDark": "white",
+      "muted": "gray.700"
+    },
+    "indicators": {
+      "step": "green.600",
+      "connectionGreen": "green.600",
+      "connectionBlue": "blue.600"
+    }
+  },
+  "typography": {
+    "primary": "Inter",
+    "code": "JetBrains Mono",
+    "codeNL": "JetBrains Mono NL",
+    "weights": ["400", "500", "600", "700"]
+  },
+  "patterns": {
+    "embedFlow": {
+      "description": "Shows embed mechanism with numbered steps, code blocks, and flow arrows",
+      "components": ["sectionBackground", "codeBlock", "highlightedCode", "numberedSteps", "flowArrow"],
+      "frames": ["Embed Portal Mechanism", "Embed Portal's Data Permission (v2)", "Custom Chart Flow"]
+    },
+    "dataPermissions": {
+      "description": "Row-level data filtering visualization with SQL tooltips and highlighted tables",
+      "components": ["dataTable", "dataRowHighlightGreen", "dataRowHighlightBlue", "tooltip", "connectionDot"],
+      "frames": ["Embed Portal's Data Permission (v2)"]
+    },
+    "tagManagement": {
+      "description": "Tag rename/merge visualization with pill badges",
+      "components": ["greenTag", "blueTag", "flowArrow", "actionText"],
+      "frames": ["Rename Tag"]
+    },
+    "periodOverPeriod": {
+      "description": "PoP chart configuration with screenshot overlays and widget mapping",
+      "components": ["screenshot", "blurOverlay", "widget", "formElements", "flowArrow"],
+      "frames": ["Pop 1", "PoP 3", "PoP 2"]
+    }
+  },
+  "svgTemplates": {
+    "stepIndicators": {
+      "stepCircle": {
+        "file": "svg-templates/explainer-step-circle.svg",
+        "usage": "Numbered step circles (1, 2, 3, 3.1, 3.2, etc.)",
+        "cssVars": { "--fill-0": "green.600" }
+      }
+    },
+    "flowConnectors": {
+      "arrowCurvedLeft": {
+        "file": "svg-templates/explainer-arrow-curved-left.svg",
+        "usage": "Curved arrow pointing left (rename flow)"
+      },
+      "arrowCurvedRight": {
+        "file": "svg-templates/explainer-arrow-curved-right.svg",
+        "usage": "Curved arrow pointing right (rename flow)"
+      },
+      "arrowRight": {
+        "file": "svg-templates/explainer-arrow-right.svg",
+        "usage": "Horizontal arrow with tip"
+      },
+      "arrowRightAlt": {
+        "file": "svg-templates/explainer-arrow-right-alt.svg",
+        "usage": "Alternative horizontal arrow"
+      },
+      "arrowTip": {
+        "file": "svg-templates/explainer-arrow-tip.svg",
+        "usage": "Small arrow tip only"
+      },
+      "connectorHorizontal": {
+        "file": "svg-templates/explainer-connector-horizontal.svg",
+        "usage": "Horizontal line connector"
+      },
+      "connectorVertical": {
+        "file": "svg-templates/explainer-connector-vertical.svg",
+        "usage": "Vertical line connector"
+      },
+      "connectorVerticalAlt": {
+        "file": "svg-templates/explainer-connector-vertical-alt.svg",
+        "usage": "Alternative vertical connector"
+      },
+      "branchConnectorLeft": {
+        "file": "svg-templates/explainer-branch-connector-left.svg",
+        "usage": "Branching connector left (merge visualization)"
+      },
+      "branchConnectorRight": {
+        "file": "svg-templates/explainer-branch-connector-right.svg",
+        "usage": "Branching connector right (merge visualization)"
+      },
+      "flowConnectorHorizontal": {
+        "file": "svg-templates/explainer-flow-connector-horizontal.svg",
+        "usage": "Long horizontal flow connector"
+      },
+      "flowConnectorLShape": {
+        "file": "svg-templates/explainer-flow-connector-l-shape.svg",
+        "usage": "L-shaped flow connector"
+      },
+      "flowPathCurved": {
+        "file": "svg-templates/explainer-flow-path-curved.svg",
+        "usage": "Curved flow path"
+      },
+      "flowPathLarge": {
+        "file": "svg-templates/explainer-flow-path-large.svg",
+        "usage": "Large multi-segment flow path"
+      },
+      "flowPathVertical": {
+        "file": "svg-templates/explainer-flow-path-vertical.svg",
+        "usage": "Vertical flow path"
+      },
+      "flowPath1": {
+        "file": "svg-templates/explainer-flow-path-1.svg",
+        "usage": "Embed flow path variant 1"
+      },
+      "flowPath2": {
+        "file": "svg-templates/explainer-flow-path-2.svg",
+        "usage": "Embed flow path variant 2"
+      }
+    },
+    "dotIndicators": {
+      "dotGreen": {
+        "file": "svg-templates/explainer-dot-green.svg",
+        "usage": "Small green connection dot",
+        "cssVars": { "--fill-0": "green.600" }
+      },
+      "dotGreenAlt": {
+        "file": "svg-templates/explainer-dot-green-alt.svg",
+        "usage": "Alternative green dot"
+      },
+      "dotGreenLarge": {
+        "file": "svg-templates/explainer-dot-green-large.svg",
+        "usage": "Large green connection dot (8px)"
+      },
+      "dotBlue": {
+        "file": "svg-templates/explainer-dot-blue.svg",
+        "usage": "Small blue connection dot"
+      },
+      "dotBlueLarge": {
+        "file": "svg-templates/explainer-dot-blue-large.svg",
+        "usage": "Large blue connection dot (8px)"
+      },
+      "dotPurple": {
+        "file": "svg-templates/explainer-dot-purple.svg",
+        "usage": "Purple connection dot (global admin)"
+      },
+      "dotIndicator": {
+        "file": "svg-templates/explainer-dot-indicator.svg",
+        "usage": "Generic dot indicator"
+      }
+    },
+    "tooltips": {
+      "tooltipBeakRight": {
+        "file": "svg-templates/explainer-tooltip-beak-right.svg",
+        "usage": "Tooltip pointer facing right",
+        "cssVars": { "--fill-0": "gray.300" }
+      },
+      "tooltipBeakTop": {
+        "file": "svg-templates/explainer-tooltip-beak-top.svg",
+        "usage": "Tooltip pointer facing up",
+        "cssVars": { "--fill-0": "gray.300" }
+      }
+    },
+    "uiElements": {
+      "dividerVertical": {
+        "file": "svg-templates/explainer-divider-vertical.svg",
+        "usage": "Vertical divider line in dashboard UI"
+      },
+      "tableDivider": {
+        "file": "svg-templates/explainer-table-divider.svg",
+        "usage": "Horizontal table header divider"
+      },
+      "dropdownTriangle": {
+        "file": "svg-templates/explainer-dropdown-triangle.svg",
+        "usage": "Dropdown arrow indicator"
+      },
+      "barChart": {
+        "file": "svg-templates/explainer-bar-chart.svg",
+        "usage": "Horizontal bar chart visualization"
+      }
+    },
+    "icons": {
+      "iconCheckmark": {
+        "file": "svg-templates/explainer-icon-checkmark.svg",
+        "usage": "Checkmark icon"
+      },
+      "iconFile": {
+        "file": "svg-templates/explainer-icon-file.svg",
+        "usage": "File icon"
+      },
+      "iconFileAlt": {
+        "file": "svg-templates/explainer-icon-file-alt.svg",
+        "usage": "Alternative file icon"
+      }
+    },
+    "popElements": {
+      "popArrow": {
+        "file": "svg-templates/explainer-pop-arrow.svg",
+        "usage": "PoP diagram arrow"
+      },
+      "popContainer": {
+        "file": "svg-templates/explainer-pop-container.svg",
+        "usage": "PoP container shape"
+      },
+      "popEllipse": {
+        "file": "svg-templates/explainer-pop-ellipse.svg",
+        "usage": "PoP ellipse indicator"
+      },
+      "popPathCurved": {
+        "file": "svg-templates/explainer-pop-path-curved.svg",
+        "usage": "PoP curved path connector"
+      },
+      "popUnion": {
+        "file": "svg-templates/explainer-pop-union.svg",
+        "usage": "PoP union shape (combined UI element)"
+      }
+    }
+  }
+}

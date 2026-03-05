@@ -1,0 +1,205 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T15:50:00+07:00",
+  "sourcePage": "Docs - Illustrations",
+  "frames": [
+    {
+      "name": "Default Dashboard Template",
+      "nodeId": "1:2388",
+      "dimensions": { "width": 1920, "height": 1080 }
+    },
+    {
+      "name": "Canvas Dashboard",
+      "nodeId": "1:2559",
+      "dimensions": { "width": 1297, "height": 845 }
+    }
+  ],
+  "colorMappings": {
+    "background": {
+      "primary": "gray.200",
+      "secondary": "gray.300",
+      "card": "white",
+      "sidebar": "gray.300"
+    },
+    "text": {
+      "primary": "gray.800",
+      "secondary": "gray.600",
+      "muted": "gray.500",
+      "link": "blue.600",
+      "onDark": "white"
+    },
+    "accent": {
+      "primary": "blue.900",
+      "secondary": "green.600",
+      "highlight": "blue.600"
+    },
+    "border": {
+      "default": "gray.300",
+      "subtle": "gray.400"
+    },
+    "chart": {
+      "bar1": "gray.400",
+      "bar2": "blue.900",
+      "bar3": "green.600"
+    },
+    "code": {
+      "background": "blue.900",
+      "text": "gray.50",
+      "keyword": "green.500",
+      "lineNumber": "gray.500"
+    }
+  },
+  "gradients": [
+    {
+      "name": "dashboard-background",
+      "type": "linear",
+      "angle": 180,
+      "stops": [
+        { "position": 0.02, "color": "green.50" },
+        { "position": 0.88, "color": "blue.50" }
+      ],
+      "usage": "Dashboard main background"
+    },
+    {
+      "name": "header-dark",
+      "type": "linear",
+      "angle": 90,
+      "stops": [
+        { "position": 0, "color": "blue.900" },
+        { "position": 1, "color": "blue.900" }
+      ],
+      "usage": "Dashboard header"
+    },
+    {
+      "name": "text-fade",
+      "type": "linear",
+      "angle": 90,
+      "stops": [
+        { "position": 0, "color": "gray.400" },
+        { "position": 1, "color": "transparent" }
+      ],
+      "usage": "Placeholder text skeleton"
+    },
+    {
+      "name": "white-fade",
+      "type": "linear",
+      "angle": 132,
+      "stops": [
+        { "position": 0.38, "color": "white" },
+        { "position": 0.99, "color": "transparent" }
+      ],
+      "usage": "Overlay effect"
+    },
+    {
+      "name": "dropdown-highlight",
+      "type": "linear",
+      "angle": 121,
+      "stops": [
+        { "position": 0.01, "color": "blue.50" },
+        { "position": 0.49, "color": "blue.100" },
+        { "position": 0.97, "color": "white" }
+      ],
+      "usage": "Active dropdown item"
+    }
+  ],
+  "shadows": [
+    {
+      "name": "card-subtle",
+      "value": "0px 2.7px 13.5px rgba(0,0,0,0.08)",
+      "usage": "Dashboard cards, subtle elevation"
+    },
+    {
+      "name": "card-emphasis",
+      "value": "0px 2.7px 13.5px rgba(0,0,0,0.2)",
+      "usage": "Focused/active elements"
+    },
+    {
+      "name": "container",
+      "value": "5.1px 6.9px 34.3px rgba(0,0,0,0.1)",
+      "usage": "Floating containers"
+    },
+    {
+      "name": "glow",
+      "value": "0px 0px 46.8px rgba(0,0,0,0.1)",
+      "usage": "Large frame glow"
+    }
+  ],
+  "typography": {
+    "primary": "Inter",
+    "code": "JetBrains Mono",
+    "weights": ["400", "500", "600", "700"]
+  },
+  "borderRadius": {
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20
+  },
+  "patterns": {
+    "dashboardLayout": {
+      "sidebar": { "width": 577, "background": "gray.300" },
+      "header": { "height": 152, "background": "blue.900" },
+      "content": { "padding": 24 }
+    },
+    "cardStyle": {
+      "background": "white",
+      "border": "gray.300",
+      "borderWidth": 1.75,
+      "borderRadius": 12,
+      "shadow": "card-subtle"
+    },
+    "chartStyle": {
+      "background": "white",
+      "border": "blue.600",
+      "borderWidth": 2.7,
+      "shadow": "card-emphasis"
+    },
+    "codeBlock": {
+      "background": "blue.900",
+      "textColor": "gray.50",
+      "keywordColor": "green.500",
+      "lineNumberColor": "gray.500",
+      "borderRadius": 10,
+      "font": "JetBrains Mono"
+    }
+  },
+  "chartConstructionRules": {
+    "stackedBar": {
+      "type": "decomposed",
+      "description": "Stacked bar chart for docs - shows data breakdown by category",
+      "structure": "3-layer stacked bars",
+      "layers": [
+        { "name": "base", "fill": "gray.400", "position": "bottom" },
+        { "name": "primary", "fill": "blue.900", "position": "middle" },
+        { "name": "accent", "fill": "green.600", "position": "top" }
+      ],
+      "bar": {
+        "width": 60.916,
+        "gap": 20,
+        "borderRadius": 0
+      },
+      "usage": "Documentation explanatory charts showing data composition"
+    },
+    "lineChart": {
+      "type": "flattened-svg",
+      "svgTemplate": "svg-templates/docs-chart-area.svg",
+      "description": "Line chart with grid for trend visualization",
+      "structure": "grid + 2 curved lines",
+      "grid": {
+        "stroke": "gray.300",
+        "horizontalLines": 6
+      },
+      "lines": [
+        { "name": "primary", "stroke": "green.600" },
+        { "name": "secondary", "stroke": "blue.400" }
+      ]
+    }
+  },
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": [
+      "docs-chart-area.svg",
+      "icon-dashboard.svg"
+    ]
+  }
+}

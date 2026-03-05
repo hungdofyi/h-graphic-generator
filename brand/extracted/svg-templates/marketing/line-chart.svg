@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 246.405 114.871" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="line chart">
+<line id="Line 44" x1="6.50314" y1="0.5" x2="5.75284" y2="113.795" stroke="var(--stroke-0, #CBD0D7)"/>
+<path id="Vector" d="M6.745e-08 0.5L6.75268 0.5" stroke="var(--stroke-0, #CBD0D7)"/>
+<path id="Vector_2" d="M9.87845 0.526524H246.405" stroke="var(--stroke-0, #CBD0D7)" stroke-dasharray="3 3"/>
+<path id="Vector_3" d="M9.87845 57.7089H246.405" stroke="var(--stroke-0, #CBD0D7)" stroke-dasharray="3 3"/>
+<path id="Vector_4" d="M9.87845 114.371H246.405" stroke="var(--stroke-0, #CBD0D7)" stroke-dasharray="3 3"/>
+<path id="Vector_5" d="M6.745e-08 57.5238L6.75268 57.5238" stroke="var(--stroke-0, #CBD0D7)"/>
+<path id="Vector_6" d="M6.745e-08 113.795L6.75268 113.795" stroke="var(--stroke-0, #CBD0D7)"/>
+<g id="Container">
+<path id="Vector 113" d="M27.8412 100.337C33.9731 84.2404 45.4261 76.9556 78.8123 75.4259C102.41 74.3447 97.0577 41.4237 111.388 36.7185C124.243 32.4977 137.448 45.5331 151.245 45.5331C165.042 45.5331 168.874 30.9695 182.671 30.9695C196.467 30.9695 195.318 30.9695 205.665 30.9695C216.013 30.9695 226.743 25.6042 233.642 19.0891" stroke="url(#paint0_linear_10_5382)" stroke-width="2.59919"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_10_5382" x1="233.642" y1="59.7128" x2="27.8412" y2="59.7128" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D5F0E5"/>
+<stop offset="1" stop-color="#009F6F"/>
+</linearGradient>
+</defs>
+</svg>

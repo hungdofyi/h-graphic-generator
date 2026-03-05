@@ -1,0 +1,447 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T16:35:00+07:00",
+  "sourcePage": "Landing Page - Graphics",
+  "framesAnalyzed": 35,
+  "sections": [
+    { "name": "AML Final", "frames": 6, "description": "Data modeling & reusability graphics" },
+    { "name": "Git workflow_Final", "frames": 24, "description": "Git-like workflow step illustrations" },
+    { "name": "Pricing", "frames": 1, "description": "Pricing tier comparison cards" },
+    { "name": "Feature Grid", "frames": 1, "description": "Embedding feature showcase cards" },
+    { "name": "Semantic layer", "frames": 1, "description": "Semantic layer dashboard demo" }
+  ],
+  "frames": [
+    { "name": "Graphic 1", "nodeId": "1:43685", "section": "AML Final", "dimensions": { "width": 1920, "height": 1491 }, "type": "dataModelVisualization" },
+    { "name": "Graphic 2", "nodeId": "1:43741", "section": "AML Final", "dimensions": { "width": 1920, "height": 1491 }, "type": "dashboardReuse" },
+    { "name": "Graphic 3", "nodeId": "1:43867", "section": "AML Final", "dimensions": { "width": 1920, "height": 1491 }, "type": "dataModelVisualization" },
+    { "name": "Graphic 4", "nodeId": "1:43816", "section": "AML Final", "dimensions": { "width": 1920, "height": 1491 }, "type": "dataModelVisualization" },
+    { "name": "aml_hero banner_LP", "nodeId": "1:43921", "section": "AML Final", "dimensions": { "width": 2407, "height": 1476 }, "type": "heroBanner" },
+    { "name": "Frame 1", "nodeId": "1:45739", "section": "Git workflow_Final", "dimensions": { "width": 1088, "height": 1088 }, "type": "gitWorkflowStep" },
+    { "name": "Frame 2", "nodeId": "1:45844", "section": "Git workflow_Final", "dimensions": { "width": 1088, "height": 1088 }, "type": "gitWorkflowStep" },
+    { "name": "Pricing", "nodeId": "1:55807", "section": "Pricing", "dimensions": { "width": 1920, "height": 1080 }, "type": "pricingComparison" },
+    { "name": "Feature Grid", "nodeId": "1:55892", "section": "Feature Grid", "dimensions": { "width": 1440, "height": 1470 }, "type": "featureShowcase" },
+    { "name": "Semantic layer", "nodeId": "1:56088", "section": "Semantic layer", "dimensions": { "width": 1000, "height": 1000 }, "type": "semanticLayerDemo" }
+  ],
+  "illustrationStyles": {
+    "backgrounds": {
+      "amlGradient": {
+        "type": "linear-gradient",
+        "angle": 118,
+        "stops": [
+          { "color": "rgba(255, 255, 255, 0.1)", "position": "0%" },
+          { "color": "rgba(25, 122, 233, 0.15)", "position": "45.8%" },
+          { "color": "rgba(0, 159, 111, 0.024)", "position": "98.7%" }
+        ],
+        "baseColor": "white",
+        "usage": "AML graphics main background"
+      },
+      "gitWorkflowDarkBlue": {
+        "type": "linear-gradient",
+        "direction": "to-r",
+        "stops": [
+          { "color": "blue.900", "position": "0%" },
+          { "color": "blue.700", "position": "100%" }
+        ],
+        "usage": "Git workflow step cards, semantic layer"
+      },
+      "dashboardGreenHeader": {
+        "type": "linear-gradient",
+        "direction": "to-r",
+        "stops": [
+          { "color": "#002a19", "position": "0%" },
+          { "color": "#157569", "position": "100%" }
+        ],
+        "usage": "Dashboard preview header band"
+      },
+      "pricingGreenTint": {
+        "type": "linear-gradient",
+        "direction": "to-b",
+        "stops": [
+          { "color": "white", "position": "0%" },
+          { "color": "green.100", "position": "110.93%" }
+        ],
+        "borderColor": "green.200",
+        "usage": "Featured pricing card (Tier 2)"
+      },
+      "pricingBlueTint": {
+        "type": "linear-gradient",
+        "direction": "to-b",
+        "stops": [
+          { "color": "white", "position": "0%" },
+          { "color": "blue.100", "position": "110.24%" }
+        ],
+        "borderColor": "blue.200",
+        "usage": "AI pricing card (Tier 3)"
+      },
+      "mirrorGlassmorphism": {
+        "type": "backdrop-blur",
+        "blur": "5.125px",
+        "background": "linear-gradient(70deg, rgba(111, 156, 210, 0.1) 22.78%, rgba(251, 253, 255, 0.1) 99.24%)",
+        "usage": "Dashboard preview containers in Git workflow"
+      }
+    },
+    "decorativeElements": {
+      "codeBackgroundEllipse": {
+        "type": "ellipse",
+        "fill": "gradient-radial",
+        "blur": "soft-glow",
+        "opacity": 0.3,
+        "svgTemplate": "landing-page/code-bg-ellipse.svg",
+        "usage": "Behind code blocks in AML graphics"
+      },
+      "connectingLines": {
+        "type": "path",
+        "stroke": "blue.300",
+        "strokeWidth": 2,
+        "style": "curved-orthogonal",
+        "svgTemplate": "landing-page/connecting-lines.svg",
+        "usage": "Connect dataset cards to code blocks"
+      },
+      "orbitBackground": {
+        "type": "circular-path",
+        "stroke": "blue.200",
+        "opacity": 0.2,
+        "svgTemplate": "landing-page/git-workflow-bg.svg",
+        "usage": "Git workflow background decoration"
+      }
+    },
+    "containers": {
+      "datasetCard": {
+        "background": "rgba(129, 156, 189, 0.1)",
+        "backdropBlur": "11.369px",
+        "border": "2.5-3px solid rgba(25, 78, 190, 0.3)",
+        "borderRadius": "11px",
+        "usage": "Dataset group containers in AML graphics"
+      },
+      "codeBlock": {
+        "background": "transparent",
+        "backdropBlur": "4.959px",
+        "border": "3px solid #90cced",
+        "borderRadius": "11px",
+        "opacity": 0.8,
+        "usage": "Code display containers"
+      },
+      "syntaxHighlighter": {
+        "background": "#041b35",
+        "borderRadius": "20px",
+        "shadow": "3.494px 10.483px 27.955px rgba(0, 0, 0, 0.08)",
+        "usage": "Code editor panels"
+      },
+      "dashboardPreview": {
+        "background": "gray.100",
+        "border": "1.285px solid #d2d5df",
+        "borderRadius": "18-25px",
+        "shadow": "card",
+        "usage": "Dashboard mock containers"
+      },
+      "pricingCard": {
+        "background": "white",
+        "border": "3.5px solid gray.300",
+        "borderRadius": "19.22px",
+        "shadow": "0px 29.178px 58.357px -9.93px rgba(128, 130, 133, 0.15)",
+        "usage": "Pricing tier cards"
+      },
+      "featureCard": {
+        "background": "white",
+        "borderRadius": "24px",
+        "shadow": "0px 0px 0px 1px rgba(6, 38, 76, 0.08), 0px 4px 8px 0px rgba(6, 38, 76, 0.06), 0px 1px 2px 0px rgba(6, 38, 76, 0.12)",
+        "usage": "Feature grid cards"
+      },
+      "tenantBadge": {
+        "background": "linear-gradient(to-b, white, gray.100)",
+        "border": "1.2px solid #d4e1fa",
+        "borderRadius": "32px",
+        "shadow": "0px 3.324px 6.649px rgba(91, 109, 130, 0.12)",
+        "usage": "Tenant/security badges"
+      },
+      "workflowStepBadge": {
+        "background": "rgba(129, 156, 189, 0.1)",
+        "backdropBlur": "6.596px",
+        "border": "1.5px solid rgba(25, 78, 190, 0.3)",
+        "borderRadius": "20px",
+        "innerBadge": {
+          "background": "white",
+          "borderRadius": "32px"
+        },
+        "usage": "Git workflow step labels"
+      }
+    }
+  },
+  "typography": {
+    "codeText": {
+      "fontFamily": "IBM Plex Mono, JetBrains Mono",
+      "fontWeight": 500,
+      "fontSize": "35-42px",
+      "lineHeight": 1.6,
+      "color": "white",
+      "usage": "Code blocks in AML graphics"
+    },
+    "syntaxHighlighting": {
+      "keyword": "#f9fbfc",
+      "function": "#2cb67f",
+      "string": "#a46de9",
+      "variable": "#4896ea",
+      "type": "#009f6f",
+      "purple": "#af77f5"
+    },
+    "lineNumbers": {
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": 500,
+      "fontSize": "20px",
+      "opacity": 0.4,
+      "color": "white",
+      "textAlign": "right"
+    },
+    "datasetTitle": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": "35-45px",
+      "color": "#24292e",
+      "usage": "Dataset card titles"
+    },
+    "datasetLabel": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": "41px",
+      "color": "#24292e",
+      "usage": "Dataset type labels"
+    },
+    "dashboardTitle": {
+      "fontFamily": "Helvetica",
+      "fontWeight": 700,
+      "fontSize": "52.795px",
+      "color": "black",
+      "usage": "Dashboard section headers"
+    },
+    "chartLabel": {
+      "fontFamily": "Helvetica",
+      "fontWeight": 400,
+      "fontSize": "12.55px",
+      "color": "#91979f",
+      "usage": "Chart axis labels"
+    },
+    "kpiValue": {
+      "fontFamily": "Helvetica",
+      "fontWeight": 400,
+      "fontSize": "55.647px",
+      "color": "gray.800",
+      "usage": "KPI large numbers"
+    },
+    "pricingTier": {
+      "fontFamily": "Inter",
+      "fontWeight": 600,
+      "fontSize": "52px",
+      "color": "gray.800",
+      "usage": "Pricing tier names"
+    },
+    "pricingSubtitle": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": "36px",
+      "color": "gray.700",
+      "usage": "Pricing tier descriptions"
+    },
+    "featureCardTitle": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": "22px",
+      "lineHeight": "26px",
+      "letterSpacing": "-0.44px",
+      "color": "gray.800",
+      "usage": "Feature card headings"
+    },
+    "featureCardBody": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "color": "gray.700",
+      "usage": "Feature card descriptions"
+    },
+    "sectionTitle": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": "48px",
+      "lineHeight": 1.2,
+      "letterSpacing": "-0.96px",
+      "color": "blue.900",
+      "highlightColor": "green.600",
+      "usage": "Feature Grid section header"
+    }
+  },
+  "constructionPatterns": {
+    "dataModelVisualization": {
+      "structure": "Top metric card + 3 dataset cards + code block",
+      "layout": {
+        "metricCard": { "position": "top-center", "width": "525px", "height": "177px" },
+        "datasetCards": { "position": "row-below", "count": 3, "gap": "variable" },
+        "codeBlock": { "position": "bottom", "fullWidth": true }
+      },
+      "connections": "curved-orthogonal lines from datasets to code",
+      "elements": {
+        "metricCard": { "pattern": "datasetCard", "icon": "union-dataset-icon.svg" },
+        "datasetCard": { "pattern": "datasetCard", "icon": "union-dataset-small.svg" },
+        "codeBlock": { "pattern": "codeBlock", "decorator": "code-bg-ellipse.svg" }
+      }
+    },
+    "dashboardReuse": {
+      "structure": "2 dashboard panels + connecting lines + code",
+      "layout": {
+        "dashboards": { "position": "row", "count": 2, "gap": "136px" },
+        "connectionLines": { "style": "curved", "label": true },
+        "codeBlock": { "position": "bottom", "fullWidth": true }
+      },
+      "labels": ["Reuse within a dashboard", "Reuse across dashboards"],
+      "chartTypes": ["bar", "pie"]
+    },
+    "gitWorkflowStep": {
+      "structure": "Code panel + Dashboard preview",
+      "layout": {
+        "syntaxHighlighter": { "position": "left", "width": "500px" },
+        "dashboardPreview": { "position": "right", "width": "1278px" }
+      },
+      "effects": {
+        "dashboardBlur": { "active": false, "inactive": "2px" },
+        "codeOverlay": { "gradient": "to-bottom", "from": "transparent", "to": "#05264c" }
+      },
+      "elements": {
+        "dashboard": {
+          "header": "dashboardGreenHeader gradient",
+          "title": "Financial Dashboard",
+          "kpiCards": 2,
+          "charts": ["bar", "line"]
+        }
+      }
+    },
+    "pricingComparison": {
+      "structure": "3 pricing cards with overlapping layout",
+      "layout": {
+        "cards": { "count": 3, "overlap": "diagonal-stack" },
+        "cardOffsets": {
+          "tier1": { "y": 207 },
+          "tier2": { "y": 106 },
+          "tier3": { "y": 5 }
+        }
+      },
+      "cardVariants": {
+        "tier1": { "style": "neutral", "visual": "bar-chart-growth" },
+        "tier2": { "style": "greenTint", "visual": "drag-drop-builder" },
+        "tier3": { "style": "blueTint", "visual": "ai-character" }
+      },
+      "aiCharacter": {
+        "shape": "polygon-face",
+        "eyes": { "left": "ai-character-eye-l.svg", "right": "ai-character-eye-r.svg" },
+        "mouth": "ai-character-mouth.svg",
+        "body": "ai-character-polygon.svg"
+      }
+    },
+    "featureShowcase": {
+      "structure": "Section title + 4 feature cards grid",
+      "layout": {
+        "grid": { "columns": 2, "gap": "24px" },
+        "cards": { "width": "548px", "variableHeight": true }
+      },
+      "cardTypes": {
+        "codeSetup": {
+          "visual": "code-snippet",
+          "dots": "feature-code-dots.svg"
+        },
+        "security": {
+          "visual": "tenant-diagram",
+          "icon": "tenant-icon.svg",
+          "center": "holistics-logomark.svg",
+          "shield": "security-shield.svg",
+          "badges": ["HIPAA", "SOC2", "GDPR"]
+        },
+        "devops": {
+          "visual": "workflow-diagram",
+          "steps": ["Production", "Staging", "Develop", "Review", "Approve", "Deploy"]
+        },
+        "customization": {
+          "visual": "ui-preview-stack",
+          "layers": 3
+        }
+      }
+    },
+    "semanticLayerDemo": {
+      "structure": "Screenshot + code overlay + drag indicator",
+      "layout": {
+        "screenshot": { "position": "center", "glassmorphism": true },
+        "codePanel": { "position": "bottom-right", "width": "570px" },
+        "dragIndicator": { "position": "left", "rotation": "5deg" }
+      },
+      "elements": {
+        "table": {
+          "columns": ["City Name", "Total Users", "Total Sellers"],
+          "rows": 8,
+          "skeletonLoading": true
+        },
+        "chartSelector": { "icons": 5 },
+        "sidebar": { "buttons": 4, "activeFirst": true }
+      }
+    }
+  },
+  "svgTemplates": {
+    "directory": "svg-templates/landing-page/",
+    "icons": [
+      { "name": "union-dataset-icon.svg", "usage": "Large dataset icon in metric cards" },
+      { "name": "union-dataset-small.svg", "usage": "Small dataset icon in field rows" },
+      { "name": "holistics-logomark.svg", "usage": "Holistics logo in security diagrams" },
+      { "name": "tenant-icon.svg", "usage": "Tenant badge icon" },
+      { "name": "check-icon.svg", "usage": "Compliance checkmark badges" }
+    ],
+    "charts": [
+      { "name": "bar-chart.svg", "usage": "Bar chart visualization" },
+      { "name": "bar-chart-group.svg", "usage": "Grouped bar chart data" },
+      { "name": "pie-chart-bg.svg", "usage": "Pie chart with background" },
+      { "name": "chart-background.svg", "usage": "Chart container background" }
+    ],
+    "decorative": [
+      { "name": "code-bg-ellipse.svg", "usage": "Glowing ellipse behind code" },
+      { "name": "connecting-lines.svg", "usage": "Dataset to code connections" },
+      { "name": "git-workflow-bg.svg", "usage": "Orbital background decoration" },
+      { "name": "up-arrow-triangle.svg", "usage": "KPI growth indicator" }
+    ],
+    "pricing": [
+      { "name": "pricing-green-curve.svg", "usage": "Decorative curve on pricing card" },
+      { "name": "pricing-icon.svg", "usage": "Pricing feature icon" },
+      { "name": "ai-character-polygon.svg", "usage": "AI face body shape" },
+      { "name": "ai-character-eye-l.svg", "usage": "AI left eye" },
+      { "name": "ai-character-eye-r.svg", "usage": "AI right eye" },
+      { "name": "ai-character-mouth.svg", "usage": "AI mouth" }
+    ],
+    "security": [
+      { "name": "security-shield.svg", "usage": "Outer shield shape" },
+      { "name": "security-shield-inner.svg", "usage": "Inner shield pattern" },
+      { "name": "feature-code-dots.svg", "usage": "Code window dots (red/yellow/green)" }
+    ]
+  },
+  "colorMappings": {
+    "codeSyntax": {
+      "#f9fbfc": "white (code text)",
+      "#2cb67f": "green.500 (functions)",
+      "#a46de9": "purple (strings, decorators)",
+      "#4896ea": "blue.400 (variables)",
+      "#009f6f": "green.700 (types)",
+      "#af77f5": "purple.400 (keywords)",
+      "#49a7ef": "blue.300 (params)"
+    },
+    "glassmorphism": {
+      "rgba(129,156,189,0.1)": "blue.200 @ 10%",
+      "rgba(25,78,190,0.3)": "blue.700 @ 30%",
+      "rgba(111,156,210,0.1)": "blue.400 @ 10%"
+    },
+    "ui": {
+      "#24292e": "gray.900 (headings)",
+      "#505157": "gray.700 (body text)",
+      "#91979f": "gray.500 (muted labels)",
+      "#e1e8f1": "gray.200 (borders, dividers)",
+      "#d2d5df": "gray.300 (card borders)"
+    },
+    "dashboard": {
+      "#002a19": "green.950 (header start)",
+      "#157569": "green.700 (header end)",
+      "#041b35": "blue.950 (code bg)"
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "Docs - Diagrams",
+  "extractedAt": "2026-03-05T17:55:00+07:00",
+
+  "backgrounds": {
+    "transparent": {
+      "name": "Transparent Canvas",
+      "css": "transparent",
+      "usage": ["diagram backgrounds", "overlay diagrams"]
+    },
+    "graySubtle": {
+      "name": "Subtle Gray",
+      "css": "#edf1f5",
+      "usage": ["avatar containers", "step indicators", "neutral nodes"]
+    }
+  },
+
+  "shadows": {},
+
+  "containers": {
+    "iconBox": {
+      "name": "Icon Box",
+      "background": "white",
+      "border": "1.5px solid #cbd0d7",
+      "borderRadius": "8px",
+      "usage": ["icon containers", "data source nodes", "user avatars"]
+    },
+    "semanticBox": {
+      "name": "Semantic Box (Green)",
+      "background": "#eaf8f2",
+      "border": "1.5px solid #259b6c",
+      "borderRadius": "7.2px",
+      "usage": ["semantic layer components", "metrics", "dimensions", "relationships"]
+    },
+    "aiContainer": {
+      "name": "AI Container (Dashed)",
+      "background": "#e8f2fd",
+      "border": "2px dashed #104a89",
+      "borderRadius": "11px",
+      "usage": ["LLM/AI processing containers", "AI models"]
+    },
+    "codeBlockWithHeader": {
+      "name": "Code Block with Header",
+      "background": "white",
+      "border": "1.5px solid #cbd0d7",
+      "borderRadius": "8px",
+      "headerBackground": "#e8f2fd",
+      "headerBorderRadius": "7.5px 7.5px 0 0",
+      "usage": ["code examples", "SQL/AQL blocks", "query displays"]
+    },
+    "roleAvatar": {
+      "name": "Role Avatar",
+      "background": "#edf1f5",
+      "borderRadius": "11px",
+      "usage": ["user/role avatars", "data analyst icon", "business user icon"]
+    },
+    "stepIndicator": {
+      "name": "Step Indicator (Circle)",
+      "background": "#edf1f5",
+      "borderRadius": "50%",
+      "size": "37px",
+      "usage": ["numbered steps", "process indicators"]
+    },
+    "stepIndicatorGreen": {
+      "name": "Step Indicator Green",
+      "background": "#ccede0",
+      "borderRadius": "50%",
+      "size": "37px",
+      "usage": ["semantic layer steps", "highlighted steps"]
+    },
+    "highlightRegion": {
+      "name": "Highlight Region (Dashed)",
+      "background": "transparent",
+      "border": "2px dashed #259b6c",
+      "borderRadius": "9px",
+      "opacity": 0.7,
+      "usage": ["workflow regions", "validation boundaries"]
+    },
+    "logoContainer": {
+      "name": "Logo Container",
+      "background": "white",
+      "borderRadius": "4px",
+      "usage": ["brand logos", "partner logos"]
+    }
+  },
+
+  "typography": {
+    "diagramTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "35px",
+      "color": "#2d3238",
+      "usage": ["diagram section titles"]
+    },
+    "flowTitle": {
+      "name": "Flow Title (Green)",
+      "font": "Inter",
+      "weight": 500,
+      "size": "35px",
+      "color": "#1f815a",
+      "usage": ["semantic layer headings", "green titles"]
+    },
+    "nodeLabel": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "30px",
+      "color": "#2d3238",
+      "usage": ["node labels", "role names"]
+    },
+    "annotation": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "30px",
+      "lineHeight": "40px",
+      "color": "#2d3238",
+      "usage": ["step descriptions", "process labels"]
+    },
+    "contextLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "33px",
+      "color": "#4c5159",
+      "usage": ["context labels", "secondary labels"]
+    },
+    "emphasisLabel": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "40px",
+      "color": "#2d3238",
+      "usage": ["important labels", "LLM Model"]
+    },
+    "stepNumber": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "22px",
+      "lineHeight": "15px",
+      "color": "#2d3238",
+      "usage": ["numbers inside step indicators"]
+    },
+    "boxLabel": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "28px",
+      "color": "#2d3238",
+      "usage": ["box labels", "metrics/dimensions text"]
+    },
+    "codeTitle": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "30px",
+      "color": "#2d3238",
+      "usage": ["code block titles"]
+    },
+    "code": {
+      "font": "JetBrains Mono",
+      "weight": 600,
+      "size": "25px",
+      "lineHeight": "1.4",
+      "letterSpacing": "0.25px",
+      "color": "#13151a",
+      "usage": ["code content", "AQL/SQL"]
+    },
+    "nlqQuery": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "32px",
+      "lineHeight": "1.4",
+      "color": "#13151a",
+      "usage": ["natural language queries", "user questions"]
+    }
+  },
+
+  "syntaxHighlighting": {
+    "aqlTheme": {
+      "background": "white",
+      "default": "#13151a",
+      "keyword": "#2cb67f",
+      "function": "#2cb67f",
+      "identifier": "#1b7ce4",
+      "usage": ["AQL code blocks"]
+    },
+    "sqlTheme": {
+      "background": "white",
+      "default": "#13151a",
+      "keyword": "#104a89",
+      "note": "Original uses red (#e71f18) - use blue.800 for brand consistency",
+      "usage": ["SQL code blocks"]
+    }
+  },
+
+  "graphicElements": {
+    "connectionDot": {
+      "size": "20px",
+      "fill": "#8f99a3",
+      "usage": ["connection points", "flow endpoints"]
+    },
+    "connectionLine": {
+      "stroke": "#8f99a3",
+      "strokeWidth": "1.5px",
+      "usage": ["arrows", "flow lines", "connectors"]
+    },
+    "arrowDown": {
+      "svg": "svg-templates/diagram-arrow-horizontal.svg",
+      "stroke": "#8f99a3",
+      "usage": ["downward flow", "transformation arrows"]
+    },
+    "arrowCurved": {
+      "svg": "svg-templates/diagram-arrow-curved.svg",
+      "stroke": "#8f99a3",
+      "usage": ["curved connections", "feedback loops"]
+    },
+    "userAvatar": {
+      "description": "User icon with head and body",
+      "svgs": ["svg-templates/icon-user-head.svg", "svg-templates/icon-user-body.svg"],
+      "containerBg": "#edf1f5",
+      "usage": ["data analyst", "business user", "roles"]
+    },
+    "dataWarehouse": {
+      "svg": "svg-templates/icon-data-warehouse.svg",
+      "containerBg": "#edf1f5",
+      "usage": ["database icons", "data warehouse"]
+    },
+    "brainIcon": {
+      "svg": "svg-templates/brain-icon.svg",
+      "containerBg": "white",
+      "usage": ["AI/LLM models"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": {
+      "connectionDot": "diagram-connection-dot.svg",
+      "arrowHorizontal": "diagram-arrow-horizontal.svg",
+      "arrowCurved": "diagram-arrow-curved.svg",
+      "userHead": "icon-user-head.svg",
+      "userBody": "icon-user-body.svg",
+      "dataWarehouse": "icon-data-warehouse.svg",
+      "brainIcon": "brain-icon.svg",
+      "sqlIcon": "sql-icon.svg"
+    }
+  }
+}

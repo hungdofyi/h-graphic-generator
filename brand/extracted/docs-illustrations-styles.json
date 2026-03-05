@@ -1,0 +1,192 @@
+{
+  "$schema": "h-graphic-styles-v2",
+  "page": "Docs - Illustrations",
+  "extractedAt": "2026-03-05T17:50:00+07:00",
+
+  "backgrounds": {
+    "canvasGray": {
+      "name": "Canvas Gray",
+      "css": "#edf1f5",
+      "usage": ["main canvas", "page backgrounds", "neutral areas"]
+    },
+    "sidebarGray": {
+      "name": "Sidebar Gray",
+      "css": "#e3e7ed",
+      "usage": ["sidebars", "navigation panels", "secondary areas"]
+    },
+    "dashboardHeader": {
+      "name": "Dashboard Header (Dark Blue)",
+      "css": "#05264c",
+      "usage": ["dashboard headers", "dark sections", "brand emphasis"]
+    },
+    "dashboardContent": {
+      "name": "Dashboard Content Gradient",
+      "layers": [
+        "linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.5) 100%)",
+        "linear-gradient(180deg, #eaf8f2 2.27%, #e8f2fd 87.74%)"
+      ],
+      "usage": ["dashboard content areas", "main content backgrounds"]
+    },
+    "dropdownBlue": {
+      "name": "Dropdown Blue Gradient",
+      "css": "linear-gradient(120.89deg, #e8f2fd 0.71%, #d8eafd 48.89%, white 97.06%)",
+      "usage": ["dropdown menus", "selection states", "hover highlights"]
+    },
+    "fadeToTransparent": {
+      "name": "Fade to Transparent",
+      "css": "linear-gradient(132.14deg, white 37.55%, rgba(255,255,255,0) 99.32%)",
+      "usage": ["content fade", "overlay effects", "soft edges"]
+    },
+    "textPlaceholder": {
+      "name": "Text Placeholder Gradient",
+      "css": "linear-gradient(90deg, #cbd0d7 0%, rgba(227,231,237,0) 100%)",
+      "usage": ["text placeholders", "skeleton loading", "wireframe text"]
+    }
+  },
+
+  "shadows": {
+    "containerSoft": {
+      "name": "Container Soft Shadow",
+      "css": "5.14px 6.86px 34.29px rgba(0,0,0,0.1)",
+      "usage": ["floating containers", "dropdown panels", "modals"]
+    },
+    "dashboardGlow": {
+      "name": "Dashboard Glow",
+      "css": "0px 0px 46.8px rgba(0,0,0,0.1)",
+      "usage": ["dashboard frames", "large containers", "ambient glow"]
+    }
+  },
+
+  "containers": {
+    "containerCard": {
+      "name": "Container Card",
+      "background": "white",
+      "border": "1.71px solid #e3e7ed",
+      "borderRadius": "11px",
+      "shadow": "containerSoft",
+      "usage": ["floating panels", "dropdown containers", "modals"]
+    },
+    "chartCard": {
+      "name": "Chart Card",
+      "background": "white",
+      "border": "1.76px solid #cbd0d7",
+      "borderRadius": "13px",
+      "usage": ["chart containers", "data cards", "metric displays"]
+    },
+    "dashboardFrame": {
+      "name": "Dashboard Frame",
+      "border": "1.17px solid #cbd0d7",
+      "borderRadius": "19px 19px 0 0",
+      "shadow": "dashboardGlow",
+      "usage": ["dashboard mockups", "app frames", "window chrome"]
+    },
+    "dropdownPanel": {
+      "name": "Dropdown Panel",
+      "background": "dropdownBlue",
+      "backdropBlur": "26px",
+      "borderRadius": "8px",
+      "usage": ["dropdown menus", "autocomplete", "selection lists"]
+    },
+    "dashedPlaceholder": {
+      "name": "Dashed Placeholder",
+      "border": "3px dashed #e3e7ed",
+      "borderRadius": "20px",
+      "background": "fadeToTransparent",
+      "usage": ["drop zones", "placeholder areas", "empty states"]
+    }
+  },
+
+  "typography": {
+    "dashboardTitle": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "45px",
+      "color": "white",
+      "opacity": 0.85,
+      "usage": ["dashboard titles", "header text on dark bg"]
+    },
+    "mainTitle": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "55px",
+      "lineHeight": "77px",
+      "color": "#212327",
+      "usage": ["main headlines", "page titles"]
+    },
+    "fileInfo": {
+      "font": "Inter",
+      "weight": 600,
+      "size": "27px",
+      "lineHeight": "36px",
+      "color": "#05264c",
+      "opacity": 0.3,
+      "usage": ["file names", "metadata", "secondary info"]
+    },
+    "dropdownItem": {
+      "font": "Inter",
+      "weight": 500,
+      "size": "32px",
+      "lineHeight": "42px",
+      "color": "#1071cb",
+      "usage": ["dropdown items", "menu options", "interactive text"]
+    },
+    "logoText": {
+      "font": "Helvetica",
+      "weight": 700,
+      "size": "46px",
+      "color": "white",
+      "opacity": 0.85,
+      "usage": ["brand logos", "company names in mockups"]
+    }
+  },
+
+  "chartColors": {
+    "barPrimary": {
+      "color": "#05264c",
+      "usage": ["primary metric", "main data series"]
+    },
+    "barSecondary": {
+      "color": "#259b6c",
+      "usage": ["secondary metric", "comparison data"]
+    },
+    "barTertiary": {
+      "color": "#cbd0d7",
+      "usage": ["background/total", "reference data"]
+    }
+  },
+
+  "graphicElements": {
+    "treeItem": {
+      "description": "Navigation tree item with icon and text placeholder",
+      "iconSize": "41px",
+      "textGradient": "linear-gradient(90deg, #cbd0d7 0%, rgba(227,231,237,0) 100%)",
+      "borderRadius": "11px",
+      "usage": ["sidebar navigation", "file trees", "menu items"]
+    },
+    "stackedBarChart": {
+      "description": "Stacked bar chart with 3 color segments",
+      "colors": ["#cbd0d7", "#05264c", "#259b6c"],
+      "barWidth": "61px",
+      "gap": "20px",
+      "usage": ["bar charts", "comparison charts", "stacked metrics"]
+    },
+    "areaChart": {
+      "svg": "svg-templates/area-chart.svg",
+      "usage": ["area charts", "trend visualization"]
+    },
+    "dashboardIcon": {
+      "svg": "svg-templates/icon-dashboard.svg",
+      "usage": ["dashboard indicators", "navigation icons"]
+    }
+  },
+
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "files": {
+      "areaChart": "area-chart.svg",
+      "dashboardIcon": "icon-dashboard.svg",
+      "treeFolder": "tree-folder.svg",
+      "treeFile": "tree-file.svg"
+    }
+  }
+}

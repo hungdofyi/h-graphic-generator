@@ -1,0 +1,47 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 468.263 184.041" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bar chart">
+<g id="Bar Chart Background" filter="url(#filter0_d_10_9839)">
+<rect x="7.66806" y="7.66806" width="447.814" height="156.428" rx="4.08963" fill="var(--fill-0, white)"/>
+</g>
+<g id="Bar Chart Container">
+<line id="Line 44" x1="28.2043" y1="43.0301" x2="27.6372" y2="128.659" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083"/>
+<path id="Vector" d="M23.3839 43.0301L28.4876 43.0301" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083"/>
+<path id="Vector_2" d="M28.1166 42.9427H432.99" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083" stroke-dasharray="2.27 2.27"/>
+<path id="Vector_3" d="M31.1836 86.3935H432.99" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083" stroke-dasharray="2.27 2.27"/>
+<path id="Vector_4" d="M30.8491 129.094H209.618" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083" stroke-dasharray="2.27 2.27"/>
+<path id="Vector_5" d="M23.3839 86.1283L28.4876 86.1283" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083"/>
+<path id="Vector_6" d="M23.3839 128.659L28.4876 128.659" stroke="var(--stroke-0, #989CA6)" stroke-width="0.567083"/>
+<g id="Bar Chart Bars">
+<path id="Rectangle" d="M52.7062 94.5258C52.7062 93.7582 53.3284 93.136 54.0959 93.136H67.5302C68.2977 93.136 68.9199 93.7582 68.9199 94.5258V136.218H52.7062V94.5258Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_2" d="M79.7464 80.8643C79.7464 80.0968 80.3686 79.4746 81.1361 79.4746H94.7151C95.4827 79.4746 96.1049 80.0968 96.1049 80.8643V136.218H79.7464V80.8643Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_3" d="M106.931 57.349C106.931 56.5814 107.554 55.9592 108.321 55.9592H121.9C122.668 55.9592 123.29 56.5814 123.29 57.349V136.218H106.931V57.349Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_4" d="M134.116 72.1739C134.116 71.4063 134.739 70.7841 135.506 70.7841H149.085C149.853 70.7841 150.475 71.4063 150.475 72.1739V136.218H134.116V72.1739Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_5" d="M161.301 76.9223C161.301 76.1547 161.924 75.5325 162.691 75.5325H176.125C176.893 75.5325 177.515 76.1547 177.515 76.9223V136.218H161.301V76.9223Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_6" d="M188.341 65.8043C188.341 65.0367 188.964 64.4145 189.731 64.4145H203.165C203.933 64.4145 204.555 65.0367 204.555 65.8043V136.218H188.341V65.8043Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_7" d="M215.382 40.7888C215.382 40.0213 216.004 39.399 216.771 39.399H230.206C230.973 39.399 231.595 40.0213 231.595 40.7888V136.218H215.382V40.7888Z" fill="var(--fill-0, #CBE9FA)"/>
+</g>
+<g id="Bar Chart Content">
+<path id="Rectangle_8" d="M242.438 63.0452C242.438 62.2777 243.06 61.6555 243.827 61.6555H257.504C258.272 61.6555 258.894 62.2777 258.894 63.0452V142.204H242.438V63.0452Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_9" d="M269.72 34.8963C269.72 34.1288 270.342 33.5065 271.11 33.5065H284.786C285.554 33.5065 286.176 34.1288 286.176 34.8963V142.204H269.72V34.8963Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_10" d="M297.003 58.2811C297.003 57.5136 297.626 56.8914 298.393 56.8914H312.07C312.837 56.8914 313.46 57.5136 313.46 58.2811V141.771H297.003V58.2811Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_11" d="M324.286 51.7855C324.286 51.018 324.908 50.3958 325.675 50.3958H338.919C339.687 50.3958 340.309 51.018 340.309 51.7855V142.204H324.286V51.7855Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_12" d="M351.135 75.6037C351.135 74.8361 351.758 74.2139 352.525 74.2139H365.769C366.536 74.2139 367.158 74.8361 367.158 75.6037V142.204H351.135V75.6037Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_13" d="M377.985 63.0452C377.985 62.2777 378.607 61.6555 379.375 61.6555H392.618C393.386 61.6555 394.008 62.2777 394.008 63.0452V141.771H377.985V63.0452Z" fill="var(--fill-0, #CBE9FA)"/>
+<path id="Rectangle_14" d="M404.835 46.5887C404.835 45.8212 405.457 45.199 406.225 45.199H419.901C420.669 45.199 421.291 45.8212 421.291 46.5887V142.204H404.835V46.5887Z" fill="var(--fill-0, #CBE9FA)"/>
+</g>
+</g>
+<path id="Vector 116" d="M10.2668 137.568L36.2215 174.543C39.7591 179.583 46.916 180.375 51.4703 176.232L83.2113 147.352L118.423 112.242C119.226 111.442 120.156 110.781 121.176 110.285L147.399 97.5511C150.081 96.2483 152.062 93.8391 152.82 90.9549L155.524 80.6768C156.112 78.4399 157.442 76.4687 159.295 75.085L177.055 61.8257C181.503 58.5052 187.787 59.3398 191.214 63.706L225.701 107.645C230.057 113.195 238.593 112.769 242.375 106.812L257.84 82.4531C260.949 77.5568 267.503 76.224 272.277 79.5174L291.245 92.6022C293.888 94.426 297.236 94.9015 300.283 93.8861L333.761 82.7299C336.231 81.9068 338.922 82.057 341.285 83.15L375.681 99.0585L385.816 102.469C390.464 104.033 395.568 102.076 397.979 97.8055L411.712 73.4855" stroke="var(--stroke-0, #1663B6)" stroke-width="1.73223"/>
+</g>
+<defs>
+<filter id="filter0_d_10_9839" x="-1.03639e-07" y="-1.50205e-07" width="468.263" height="176.877" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="2.55602" dy="2.55602"/>
+<feGaussianBlur stdDeviation="5.11204"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.807843 0 0 0 0 0.898039 0 0 0 0 0.956863 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_9839"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_9839" result="shape"/>
+</filter>
+</defs>
+</svg>

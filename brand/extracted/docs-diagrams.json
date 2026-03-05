@@ -1,0 +1,299 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T15:54:00+07:00",
+  "sourcePage": "Docs - Diagrams",
+  "framesAnalyzed": 6,
+  "frames": [
+    { "name": "diagram AI", "nodeId": "1:1192", "dimensions": { "width": 2606, "height": 1466 }, "analyzed": true },
+    { "name": "Other BI tools", "nodeId": "1:1270", "dimensions": { "width": 1474, "height": 1090 }, "analyzed": true },
+    { "name": "Holistics Semantic Layer", "nodeId": "1:1340", "dimensions": { "width": 1758, "height": 1090 }, "analyzed": true },
+    { "name": "dbt-Holistics validation", "nodeId": "1:1619", "dimensions": { "width": 2589, "height": 708 }, "analyzed": true },
+    { "name": "Embed Pricing by Query", "nodeId": "1:1721", "dimensions": { "width": 2188, "height": 659 }, "analyzed": true },
+    { "name": "Pricing by Query Slots", "nodeId": "1:1848", "dimensions": { "width": 2626, "height": 1121 }, "analyzed": true }
+  ],
+  "diagramStyles": {
+    "nodes": {
+      "iconContainer": {
+        "background": "white",
+        "border": "gray.400",
+        "borderWidth": 1.5,
+        "borderRadius": 8,
+        "usage": "Icon placeholders, data sources, users (diagram AI)"
+      },
+      "roleContainer": {
+        "background": "gray.200",
+        "borderRadius": 11,
+        "usage": "User/role avatars with icons (Other BI tools)"
+      },
+      "roleContainerAlt": {
+        "background": "white",
+        "borderRadius": 11,
+        "usage": "User/role avatars on colored backgrounds (Holistics Semantic Layer, Pricing)"
+      },
+      "semanticBox": {
+        "background": "green.50",
+        "border": "green.600",
+        "borderWidth": 1.5,
+        "borderRadius": 7.2,
+        "usage": "Semantic layer components (metrics, dimensions, relationships)"
+      },
+      "aiContainer": {
+        "background": "blue.50",
+        "border": "blue.800",
+        "borderWidth": 2,
+        "borderStyle": "dashed",
+        "borderRadius": 11,
+        "usage": "LLM/AI processing containers"
+      },
+      "highlightRegion": {
+        "background": "transparent",
+        "border": "green.600",
+        "borderWidth": 2,
+        "borderStyle": "dashed",
+        "borderRadius": 9,
+        "opacity": 0.7,
+        "usage": "Highlighted workflow regions (dbt-Holistics validation)"
+      },
+      "dataContainer": {
+        "background": "white",
+        "borderRadius": 11,
+        "usage": "Data warehouse, database icons (dbt validation, pricing)"
+      },
+      "logoContainer": {
+        "background": "white",
+        "borderRadius": 4,
+        "usage": "Brand logo icons (Embed Pricing workers)"
+      },
+      "codeBlock": {
+        "background": "white",
+        "border": "gray.400",
+        "borderWidth": 1.5,
+        "borderRadius": 8,
+        "titleBar": {
+          "background": "blue.50",
+          "borderRadius": "7.5px 7.5px 0 0"
+        },
+        "usage": "Code examples (SQL, AQL, NLQ)"
+      },
+      "processStepGray": {
+        "background": "gray.200",
+        "textColor": "gray.800",
+        "borderRadius": "50%",
+        "size": 37,
+        "usage": "Numbered steps on light backgrounds (Other BI tools)"
+      },
+      "processStepGreen": {
+        "background": "green.100",
+        "textColor": "gray.800",
+        "borderRadius": "50%",
+        "size": 37,
+        "usage": "Numbered steps on colored backgrounds (Holistics Semantic Layer, Pricing)"
+      },
+      "connector": {
+        "stroke": "gray.600",
+        "strokeWidth": 1.5,
+        "usage": "Arrows and flow lines"
+      },
+      "connectorDot": {
+        "fill": "gray.600",
+        "size": 18,
+        "usage": "Connection points on flow lines"
+      }
+    },
+    "textStyles": {
+      "diagramTitle": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 35,
+        "color": "gray.800",
+        "usage": "Diagram section titles (Multiple Client, Single Job Queue)"
+      },
+      "flowTitle": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 30,
+        "color": "green.600",
+        "usage": "Process/flow titles (dbt to Holistics validation process)"
+      },
+      "sectionTitle": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 35,
+        "color": "green.700",
+        "usage": "Semantic layer headings"
+      },
+      "nodeLabel": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 30,
+        "color": "gray.800",
+        "usage": "Node/box labels (Data Analyst, Business User)"
+      },
+      "nodeLabelOnDark": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 30,
+        "color": "white",
+        "usage": "Labels on colored backgrounds (Holistics Semantic Layer)"
+      },
+      "annotation": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 30,
+        "lineHeight": 40,
+        "color": "gray.800",
+        "usage": "Flow annotations, step descriptions"
+      },
+      "emphasis": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 40,
+        "color": "gray.800",
+        "usage": "Important labels (LLM Model)"
+      },
+      "stepNumber": {
+        "font": "Inter",
+        "weight": "600",
+        "size": 22,
+        "color": "gray.800",
+        "usage": "Numbers inside step indicators"
+      },
+      "userBadge": {
+        "font": "Inter",
+        "weight": "700",
+        "size": 14,
+        "color": "white",
+        "usage": "User labels (A, B, C) on avatar icons"
+      },
+      "code": {
+        "font": "JetBrains Mono",
+        "weight": "500",
+        "size": 25,
+        "lineHeight": 1.4,
+        "color": "gray.900",
+        "usage": "Code snippets"
+      },
+      "codeTitle": {
+        "font": "Inter",
+        "weight": "500",
+        "size": 30,
+        "color": "gray.800",
+        "usage": "Code block title bar"
+      }
+    },
+    "codeSyntax": {
+      "keyword": "green.500",
+      "identifier": "blue.600",
+      "default": "gray.900",
+      "note": "SQL red keywords (#e71f18) should be replaced with blue.800 for brand consistency"
+    }
+  },
+  "colorMappings": {
+    "background": {
+      "canvas": "transparent",
+      "node": "white",
+      "nodeAlt": "gray.200",
+      "semantic": "green.50",
+      "ai": "blue.50",
+      "titleBar": "blue.50",
+      "stepIndicator": "green.100",
+      "stepIndicatorAlt": "gray.200"
+    },
+    "border": {
+      "default": "gray.400",
+      "semantic": "green.600",
+      "ai": "blue.800",
+      "highlight": "green.600"
+    },
+    "text": {
+      "title": "green.700",
+      "flowTitle": "green.600",
+      "default": "gray.800",
+      "muted": "gray.700",
+      "strong": "gray.900",
+      "onDark": "white"
+    }
+  },
+  "typography": {
+    "primary": "Inter",
+    "code": "JetBrains Mono",
+    "weights": ["500", "600", "700"]
+  },
+  "diagramConstructionRules": {
+    "flowDiagram": {
+      "description": "Process flow showing user → steps → data warehouse",
+      "elements": {
+        "userNode": {
+          "container": { "background": "gray.200", "borderRadius": 11, "size": [211, 176] },
+          "icon": "svg-templates/icon-user-head.svg + icon-user-body.svg",
+          "label": { "position": "below", "style": "nodeLabel" }
+        },
+        "dataNode": {
+          "container": { "background": "white", "borderRadius": 11, "size": [211, 176] },
+          "icon": "svg-templates/icon-data-warehouse.svg",
+          "label": { "position": "below", "style": "nodeLabel" }
+        },
+        "stepIndicator": {
+          "shape": "circle",
+          "size": 37,
+          "background": "gray.200",
+          "textStyle": "stepNumber"
+        },
+        "arrows": {
+          "stroke": "gray.600",
+          "strokeWidth": 1.5,
+          "types": ["straight", "curved", "elbow"]
+        },
+        "connectionDot": {
+          "size": 20,
+          "fill": "gray.600"
+        }
+      }
+    },
+    "semanticLayerDiagram": {
+      "description": "Holistics semantic layer with metrics/dimensions/relationships",
+      "elements": {
+        "semanticBox": {
+          "background": "green.50",
+          "border": "green.600",
+          "borderWidth": 1.5
+        },
+        "stepIndicator": {
+          "background": "green.100"
+        },
+        "connectionDot": {
+          "fill": "green.600"
+        }
+      }
+    },
+    "validationDiagram": {
+      "description": "dbt-Holistics validation workflow",
+      "elements": {
+        "highlightRegion": {
+          "border": "green.600",
+          "borderStyle": "dashed",
+          "borderWidth": 2,
+          "opacity": 0.7
+        },
+        "logoContainer": {
+          "background": "white",
+          "borderRadius": 11
+        }
+      }
+    }
+  },
+  "svgTemplates": {
+    "location": "svg-templates/",
+    "icons": [
+      { "name": "icon-user-head.svg", "usage": "User avatar - head portion" },
+      { "name": "icon-user-body.svg", "usage": "User avatar - body portion" },
+      { "name": "icon-data-warehouse.svg", "usage": "Data warehouse/database icon" },
+      { "name": "logo-holistics-full.svg", "usage": "Full Holistics logo" }
+    ],
+    "diagramElements": [
+      { "name": "diagram-connection-dot.svg", "usage": "Connection point dots" },
+      { "name": "diagram-arrow-horizontal.svg", "usage": "Horizontal arrow line" },
+      { "name": "diagram-arrow-curved.svg", "usage": "Curved arrow line" }
+    ]
+  }
+}

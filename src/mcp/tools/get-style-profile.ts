@@ -6,54 +6,46 @@ const GetStyleProfileSchema = z.object({});
 
 /**
  * Register the get_style_profile tool
- * Returns the style profile that teaches Claude HOW to apply brand tokens
+ * Returns the official brand guidelines from brand.json
  */
 export function registerGetStyleProfileTool(server: McpServer, brandContext: BrandContext): void {
   server.tool(
     'get_style_profile',
-    'Get the brand style profile that describes HOW to apply colors, typography, and design patterns. Use this to understand visual design rules before generating HTML/CSS.',
+    'Get official brand guidelines including color scales, typography, spacing, and design principles. Use this as the source of truth for brand tokens before generating graphics.',
     GetStyleProfileSchema.shape,
     async () => {
       try {
-        // Load style profile if not already loaded
-        const profile = await brandContext.loadStyleProfile();
+        const config = brandContext.getConfig();
 
-        if (!profile) {
-          return {
-            content: [
-              {
-                type: 'text' as const,
-                text: JSON.stringify({
-                  success: false,
-                  error:
-                    'No style profile found. Run `hgraphic brand extract-style` to generate one from reference images.',
-                }),
-              },
-            ],
-            isError: true,
-          };
-        }
-
-        // Return profile with usage guidance
         return {
           content: [
             {
               type: 'text' as const,
               text: JSON.stringify({
-                success: true,
-                profile: {
-                  global: profile.global,
-                  categories: profile.categories,
+                brand: config.name,
+                colors: {
+                  primary: config.colors.primary,
+                  secondary: config.colors.secondary,
+                  text: config.colors.text,
+                  muted: config.colors.muted,
+                  background: config.colors.background,
+                  scales: config.colors.scales,
+                  rules: config.colors.rules,
                 },
-                usage_guidance: {
-                  colorApplication:
-                    'Follow these patterns for how to use primary, accent, and background colors',
-                  typographyHierarchy: 'Apply these heading and body text styles',
-                  spacingRhythm: 'Use this spacing approach for consistent layouts',
-                  decorativeElements: 'Include these design elements where appropriate',
-                  illustrationStyle: 'Match this visual style for graphics and icons',
+                typography: config.typography,
+                spacing: config.spacing,
+                illustration: config.illustration,
+                diagram: config.diagram,
+                logo: {
+                  variants: config.logo?.variants,
+                  rules: config.logo?.rules,
                 },
-              }),
+                usage: {
+                  colors: 'Use scales (green.50-900, blue.50-900, gray.50-900) for consistent theming',
+                  typography: 'Inter for UI, JetBrains Mono for code',
+                  spacing: 'Base unit 8px, use scales (xs:4, sm:8, md:16, lg:24, xl:32)',
+                },
+              }, null, 2),
             },
           ],
         };
@@ -63,7 +55,6 @@ export function registerGetStyleProfileTool(server: McpServer, brandContext: Bra
             {
               type: 'text' as const,
               text: JSON.stringify({
-                success: false,
                 error: (error as Error).message,
               }),
             },

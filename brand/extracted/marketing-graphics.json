@@ -1,0 +1,487 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-05T16:30:00+07:00",
+  "sourcePage": "Marketing - Graphics",
+  "framesAnalyzed": 50,
+  "sections": [
+    { "name": "2025 Jan", "frames": 5 },
+    { "name": "2025 Apr", "frames": 3 },
+    { "name": "2025 May", "frames": 9 },
+    { "name": "2025 July", "frames": 10 },
+    { "name": "2026 Jan", "frames": 2 },
+    { "name": "2026 Feb", "frames": 9 },
+    { "name": "2026 Context AI", "frames": 4 },
+    { "name": "2026 UI Revamp", "frames": 8 }
+  ],
+  "frames": [
+    { "name": "Schema", "nodeId": "1:37642", "section": "2025 Jan", "dimensions": { "width": 1882, "height": 1342 }, "type": "featureExplainer" },
+    { "name": "UX Roundup Jan - IC Modal", "nodeId": "1:37781", "section": "2025 Jan", "dimensions": { "width": 1920, "height": 1280 }, "type": "uxRoundup" },
+    { "name": "css custom_launch", "nodeId": "1:37796", "section": "2025 Jan", "dimensions": { "width": 1920, "height": 916 }, "type": "featureAnnouncement" },
+    { "name": "Mobile layout", "nodeId": "1:37845", "section": "2025 Jan", "dimensions": { "width": 1920, "height": 1080 }, "type": "featureShowcase" },
+    { "name": "Referral Program", "nodeId": "1:38381", "section": "2025 May", "dimensions": { "width": 1920, "height": 1080 }, "type": "campaignBanner" },
+    { "name": "Referral Program $500", "nodeId": "1:38477", "section": "2025 May", "dimensions": { "width": 1920, "height": 1080 }, "type": "campaignBanner" },
+    { "name": "UX Roundup - July 2025", "nodeId": "1:38051", "section": "2025 July", "dimensions": { "width": 1920, "height": 1280 }, "type": "uxRoundup" },
+    { "name": "Mesh Green 05", "nodeId": "1:38148", "section": "2025 July", "dimensions": { "width": 1920, "height": 1080 }, "type": "featureScreenshot" },
+    { "name": "Blue Mesh 06", "nodeId": "1:38156", "section": "2025 July", "dimensions": { "width": 1920, "height": 1080 }, "type": "featureScreenshot" },
+    { "name": "Embed Portal", "nodeId": "1:38919", "section": "2025 May", "dimensions": { "width": 1920, "height": 1080 }, "type": "featureExplainer" },
+    { "name": "Dynamic Schema", "nodeId": "1:39027", "section": "2025 May", "dimensions": { "width": 1920, "height": 1080 }, "type": "featureExplainer" },
+    { "name": "Goal Compare", "nodeId": "1:38272", "section": "2026 Context AI", "dimensions": { "width": 1920, "height": 2166 }, "type": "beforeAfter" },
+    { "name": "Illustration + Icon", "nodeId": "1:39201", "section": "2026 UI Revamp", "dimensions": { "width": 1340, "height": 1104 }, "type": "componentShowcase" },
+    { "name": "App UI revamp", "nodeId": "1:39273", "section": "2026 UI Revamp", "dimensions": { "width": 1340, "height": 1512 }, "type": "uiShowcase" },
+    { "name": "New Chart Icon", "nodeId": "1:39368", "section": "2026 UI Revamp", "dimensions": { "width": 490, "height": 485 }, "type": "iconShowcase" },
+    { "name": "Create dashboard experience", "nodeId": "1:39843", "section": "2026 Feb", "dimensions": { "width": 3844, "height": 1080 }, "type": "beforeAfter" }
+  ],
+  "illustrationStyles": {
+    "backgrounds": {
+      "darkBlueGradient": {
+        "type": "linear-gradient",
+        "angle": 175,
+        "stops": [
+          { "color": "blue.900", "position": "5%" },
+          { "color": "blue.800", "position": "112%" }
+        ],
+        "usage": "Schema diagram, feature explainers"
+      },
+      "greenBlueDiagonal": {
+        "type": "linear-gradient",
+        "angle": -85,
+        "stops": [
+          { "color": "green.700", "position": "43%" },
+          { "color": "blue.900", "position": "80%" }
+        ],
+        "usage": "UX Roundup headers"
+      },
+      "greenGradient": {
+        "type": "linear-gradient",
+        "angle": 131,
+        "stops": [
+          { "color": "green.300", "position": "0%" },
+          { "color": "green.600", "position": "100%" }
+        ],
+        "usage": "CSS custom feature banner"
+      },
+      "darkNavyGradient": {
+        "type": "linear-gradient",
+        "angle": 120,
+        "stops": [
+          { "color": "#062549", "position": "5%" },
+          { "color": "#052233", "position": "92%" }
+        ],
+        "usage": "Referral program banner"
+      },
+      "blueNavyGradient": {
+        "type": "linear-gradient",
+        "angle": 250,
+        "stops": [
+          { "color": "blue.900", "position": "25%" },
+          { "color": "blue.800", "position": "82%" }
+        ],
+        "usage": "Embed Portal feature"
+      },
+      "softGreenBlue": {
+        "type": "linear-gradient",
+        "angle": 125,
+        "stops": [
+          { "color": "blue.50", "position": "2.5%" },
+          { "color": "#E0EEFD", "position": "31%" },
+          { "color": "green.50", "position": "75%" },
+          { "color": "#F2FCF8", "position": "110%" }
+        ],
+        "usage": "UI Revamp showcase, light backgrounds"
+      },
+      "beforeGray": {
+        "type": "linear-gradient",
+        "direction": "to-b",
+        "stops": [
+          { "color": "gray.400", "position": "82.5%" },
+          { "color": "gray.50", "position": "112%" }
+        ],
+        "usage": "Before state in comparisons"
+      },
+      "afterGreen": {
+        "type": "linear-gradient",
+        "angle": 132,
+        "stops": [
+          { "color": "blue.50", "position": "2.5%" },
+          { "color": "#E0EEFD", "position": "30%" },
+          { "color": "green.50", "position": "73%" },
+          { "color": "#F2FCF8", "position": "107%" }
+        ],
+        "usage": "After state in comparisons"
+      }
+    },
+    "decorativeElements": {
+      "gradientBlur": {
+        "type": "blurred-shape",
+        "blur": "100px",
+        "colors": ["blue.900", "blue.800", "#136baa"],
+        "opacity": [0.3, 0.4],
+        "rotation": [-49, 51],
+        "usage": "Background depth layers"
+      },
+      "gridPattern": {
+        "type": "svg-pattern",
+        "svgTemplate": "marketing/grid.svg",
+        "usage": "Referral program background texture"
+      },
+      "orbitCircle": {
+        "type": "svg-shape",
+        "svgTemplate": "marketing/circle-orbit.svg",
+        "usage": "Referral program client orbit"
+      },
+      "connectionLines": {
+        "type": "svg-shape",
+        "svgTemplate": "marketing/connection-line.svg",
+        "usage": "Connecting elements in diagrams"
+      },
+      "curvedArrow": {
+        "type": "svg-shape",
+        "svgTemplate": "marketing/polygon-arrow.svg",
+        "fill": "green.400",
+        "rotation": [-45, -39],
+        "usage": "Pointer/highlight arrows"
+      }
+    },
+    "containers": {
+      "featureCard": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 2,
+        "borderRadius": 8,
+        "shadow": "shadow-md",
+        "usage": "Feature screenshots, modals"
+      },
+      "dashboardPreview": {
+        "background": "white",
+        "border": "blue.200",
+        "borderWidth": 3,
+        "borderRadius": 8,
+        "blur": "backdrop-blur-sm",
+        "usage": "Dashboard screenshots in dark backgrounds"
+      },
+      "codeBlock": {
+        "background": "blue.900",
+        "border": "transparent",
+        "borderWidth": 3,
+        "borderRadius": 10,
+        "usage": "Code snippet containers"
+      },
+      "branchLabel": {
+        "background": "white",
+        "borderRadius": 8,
+        "usage": "Branch name labels in schema diagrams"
+      },
+      "alertSuccess": {
+        "background": "green.50",
+        "border": "green.300",
+        "borderWidth": 1,
+        "borderRadius": 8,
+        "shadow": "shadow-lg",
+        "usage": "Success notifications"
+      },
+      "clientNode": {
+        "background": {
+          "type": "linear-gradient",
+          "direction": "to-b",
+          "stops": [
+            { "color": "blue.800", "position": "0%" },
+            { "color": "#0c3f6f", "position": "114%" }
+          ]
+        },
+        "border": "#819ab3",
+        "borderWidth": 4,
+        "borderRadius": 11,
+        "usage": "Client avatar containers in referral"
+      }
+    },
+    "chartElements": {
+      "greenBars": {
+        "fills": ["green.100", "green.300", "green.600"],
+        "borderRadius": "1.4px 1.4px 0 0",
+        "usage": "Stacked bar charts in schema"
+      },
+      "grayBars": {
+        "fills": ["gray.300", "gray.400"],
+        "opacity": 0.8,
+        "usage": "Dashboard chart bars"
+      },
+      "blueBars": {
+        "fills": ["blue.100", "green.400"],
+        "borderRadius": 5,
+        "usage": "Column charts with green accent"
+      },
+      "pieChartRing": {
+        "fill": "green.200",
+        "segments": 3,
+        "usage": "Simple pie charts"
+      },
+      "lineChartArea": {
+        "stroke": "green.300",
+        "fill": "green.100",
+        "opacity": 0.5,
+        "usage": "Area charts"
+      }
+    },
+    "userIcons": {
+      "humanAvatar": {
+        "type": "svg-icon",
+        "svgTemplates": ["marketing/logomark-group.svg"],
+        "opacity": 0.3,
+        "colors": {
+          "head": "gray.600",
+          "body": "gray.600"
+        },
+        "usage": "User/client avatars in diagrams"
+      }
+    }
+  },
+  "typography": {
+    "heroHeading": {
+      "fontFamily": "Inter",
+      "fontWeight": 600,
+      "fontSize": [72, 85],
+      "lineHeight": 1.2,
+      "color": "gray.50",
+      "usage": "Main campaign headlines"
+    },
+    "subHeading": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": [36, 55],
+      "lineHeight": 1.4,
+      "color": "gray.500",
+      "usage": "Supporting text below headlines"
+    },
+    "featureTitle": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": [25, 38],
+      "lineHeight": 1.4,
+      "color": "gray.50",
+      "usage": "Feature explanation titles"
+    },
+    "codeText": {
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": 500,
+      "fontSize": [25, 34],
+      "lineHeight": 1.6,
+      "colors": {
+        "default": "gray.400",
+        "keyword": "green.400",
+        "value": "white"
+      },
+      "usage": "Code snippets"
+    },
+    "labelText": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": [28, 29],
+      "lineHeight": 1.4,
+      "color": "blue.900",
+      "usage": "Branch labels, chart labels"
+    },
+    "ctaButton": {
+      "fontFamily": "Inter",
+      "fontWeight": 600,
+      "fontSize": 44,
+      "color": "white",
+      "usage": "Call-to-action buttons"
+    },
+    "sectionLabel": {
+      "fontFamily": "Inter",
+      "fontWeight": 600,
+      "fontSize": [32, 80],
+      "color": {
+        "before": "gray.500",
+        "after": "green.500"
+      },
+      "usage": "Before/After section labels"
+    },
+    "gradientText": {
+      "fontFamily": "Inter",
+      "fontWeight": 600,
+      "fontSize": 221,
+      "gradient": {
+        "type": "linear-gradient",
+        "direction": "to-b",
+        "stops": [
+          { "color": "#67f8c7", "position": "0%" },
+          { "color": "green.600", "position": "100%" }
+        ]
+      },
+      "textShadow": "4px 4px 8.5px rgba(0,0,0,0.15)",
+      "letterSpacing": "-5%",
+      "usage": "Large price/number displays"
+    }
+  },
+  "buttons": {
+    "ctaPrimary": {
+      "background": {
+        "type": "linear-gradient",
+        "angle": 103,
+        "stops": [
+          { "color": "blue.600", "position": "15%" },
+          { "color": "blue.800", "position": "109%" }
+        ]
+      },
+      "border": "blue.200",
+      "borderWidth": 4,
+      "borderRadius": 63,
+      "padding": { "x": 48, "y": 24 },
+      "usage": "Main CTA buttons"
+    },
+    "ctaSecondary": {
+      "background": "blue.600",
+      "borderRadius": 4,
+      "padding": { "x": 21, "y": 10.5 },
+      "usage": "Secondary action buttons"
+    },
+    "iconButton": {
+      "background": "blue.100",
+      "border": "transparent",
+      "borderRadius": 3,
+      "padding": 17,
+      "usage": "Icon-only buttons"
+    }
+  },
+  "shadows": {
+    "shadowMd": {
+      "value": "0px 1px 2px rgba(19,21,26,0.06), 0px 2px 4px -1px rgba(19,21,26,0.06), 0px 8px 16px -4px rgba(19,21,26,0.12)",
+      "usage": "Cards, containers"
+    },
+    "shadowLg": {
+      "value": "0px 1px 2px -1px rgba(19,21,26,0.04), 0px 4px 8px -2px rgba(19,21,26,0.04), 0px 16px 32px -8px rgba(19,21,26,0.16)",
+      "usage": "Elevated modals, feature screenshots"
+    },
+    "shadowXl": {
+      "value": "0px 0.6px 1.2px rgba(19,21,26,0.08), 0px 2.4px 4.8px -2.4px rgba(19,21,26,0.08), 0px 7.3px 14.5px -4.8px rgba(19,21,26,0.12), 0px 19.4px 29px -4.8px rgba(19,21,26,0.2)",
+      "usage": "Hero screenshots"
+    }
+  },
+  "constructionPatterns": {
+    "referralProgram": {
+      "description": "Referral campaign banner with radial orbit illustration",
+      "layers": [
+        { "name": "background", "type": "gradient", "style": "darkNavyGradient" },
+        { "name": "grid", "type": "svg", "template": "marketing/grid.svg", "opacity": 1 },
+        { "name": "blurShapes", "type": "decorative", "style": "gradientBlur" },
+        { "name": "orbitCircle", "type": "svg", "template": "marketing/circle-orbit.svg" },
+        { "name": "connectionLines", "type": "svg", "template": "marketing/connection-line.svg" },
+        { "name": "clientNodes", "count": 5, "style": "clientNode", "positions": "radial" },
+        { "name": "logomark", "type": "svg", "template": "marketing/logomark-group.svg", "position": "center" },
+        { "name": "text", "style": "heroHeading", "position": "left" },
+        { "name": "cta", "style": "ctaPrimary" },
+        { "name": "cursor", "type": "svg", "template": "marketing/cursor.svg" }
+      ]
+    },
+    "featureExplainer": {
+      "description": "Feature explanation with code + dashboard preview",
+      "layers": [
+        { "name": "background", "type": "gradient", "style": "blueNavyGradient" },
+        { "name": "title", "style": "featureTitle", "position": "top-left" },
+        { "name": "codeBlock", "style": "codeBlock", "position": "left" },
+        { "name": "codeHighlight", "fill": "green.300", "mixBlendMode": "hard-light", "borderRadius": 4 },
+        { "name": "dashboardPreview", "style": "dashboardPreview", "position": "right" },
+        { "name": "chartElements", "type": "charts", "style": "grayBars" },
+        { "name": "connectionLine", "type": "svg", "template": "marketing/connection-line.svg" },
+        { "name": "labels", "style": "labelText" }
+      ]
+    },
+    "beforeAfter": {
+      "description": "Before/after comparison layout",
+      "layers": [
+        { "name": "beforeSection", "background": "beforeGray" },
+        { "name": "afterSection", "background": "afterGreen" },
+        { "name": "divider", "fill": "blue.200", "width": 8 },
+        { "name": "beforeLabel", "style": "sectionLabel", "color": "gray.500" },
+        { "name": "afterLabel", "style": "sectionLabel", "color": "green.500" },
+        { "name": "screenshots", "style": "featureCard" },
+        { "name": "highlightOverlay", "fill": ["#68ab79", "#656a72"], "mixBlendMode": "hard-light" },
+        { "name": "pointerArrows", "type": "svg", "template": "marketing/polygon-arrow.svg" }
+      ]
+    },
+    "uxRoundup": {
+      "description": "UX feature roundup with callout lines",
+      "layers": [
+        { "name": "background", "type": "gradient", "style": "greenBlueDiagonal" },
+        { "name": "blurShape", "type": "decorative", "style": "gradientBlur" },
+        { "name": "screenshot", "style": "featureCard", "shadow": "shadowMd" },
+        { "name": "bulletPoints", "style": "subHeading", "color": "white" },
+        { "name": "calloutLines", "stroke": "white", "strokeWidth": 3 }
+      ]
+    },
+    "meshScreenshot": {
+      "description": "Feature screenshot with mesh gradient background",
+      "layers": [
+        { "name": "background", "type": "gradient", "style": "greenBlueDiagonal" },
+        { "name": "meshBlur", "type": "decorative", "blur": 156, "color": "blue.900" },
+        { "name": "outerBorder", "border": "blue.100", "borderWidth": 3, "borderRadius": 20, "opacity": 0.3 },
+        { "name": "screenshotLarge", "borderRadius": 16, "overlay": "rgba(0,0,0,0.3)" },
+        { "name": "modalPopup", "style": "featureCard", "shadow": "shadowLg" }
+      ]
+    },
+    "schemaExplainer": {
+      "description": "Schema/data flow diagram",
+      "layers": [
+        { "name": "background", "type": "gradient", "style": "darkBlueGradient" },
+        { "name": "chartsPreview", "style": "dashboardPreview" },
+        { "name": "chartBars", "style": "greenBars" },
+        { "name": "pieChart", "type": "pie", "colors": ["green.100", "green.300", "green.600"] },
+        { "name": "branchLabels", "style": "branchLabel" },
+        { "name": "arrowConnectors", "fill": "blue.200", "strokeWidth": 2 },
+        { "name": "userNodes", "style": "humanAvatar" },
+        { "name": "dataContainer", "fill": "blue.100", "border": "blue.200", "borderStyle": "dashed" }
+      ]
+    }
+  },
+  "svgTemplates": {
+    "grid.svg": "Background grid pattern for dark backgrounds",
+    "circle-orbit.svg": "Orbital circle for radial layouts",
+    "connection-line.svg": "Curved connection lines between elements",
+    "logomark-group.svg": "Holistics logomark symbol",
+    "cursor.svg": "Mouse cursor pointer",
+    "logo-vector.svg": "Full logo vector",
+    "union-shape.svg": "Abstract union shape",
+    "polygon-arrow.svg": "Triangular arrow pointer",
+    "code-connector.svg": "Code block connector lines",
+    "chart-background.svg": "Chart container background",
+    "bar-columns.svg": "Bar chart column shapes",
+    "icon-data-model.svg": "Data model icon",
+    "icon-dataset.svg": "Dataset icon",
+    "icon-canvas.svg": "Canvas/dashboard icon",
+    "icon-verified.svg": "Verified badge icon",
+    "icon-favorite.svg": "Favorite star icon",
+    "type-custom.svg": "Custom type indicator",
+    "type-aggregated.svg": "Aggregated type indicator",
+    "type-date.svg": "Date type indicator",
+    "type-currency.svg": "Currency type indicator"
+  },
+  "colorMappings": {
+    "note": "All colors mapped to brand.json scales",
+    "mappings": {
+      "#05264C": "blue.900",
+      "#104A89": "blue.800",
+      "#1B7CE4": "blue.600",
+      "#BBD7F7": "blue.200",
+      "#D1E5FA": "blue.100",
+      "#E8F2FD": "blue.50",
+      "#259B6C": "green.600",
+      "#2CB67F": "green.500",
+      "#52C396": "green.400",
+      "#7AD1AE": "green.300",
+      "#A4E0C8": "green.200",
+      "#CCEDE0": "green.100",
+      "#EAF8F2": "green.50",
+      "#1F815A": "green.700",
+      "#13151A": "gray.900",
+      "#2D3238": "gray.800",
+      "#505157": "gray.700",
+      "#666970": "gray.600",
+      "#989CA6": "gray.500",
+      "#CBD0D7": "gray.400",
+      "#E3E7ED": "gray.300",
+      "#F9FBFC": "gray.50",
+      "#FFFFFF": "white"
+    }
+  }
+}
