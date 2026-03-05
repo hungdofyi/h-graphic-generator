@@ -416,6 +416,13 @@
       "onRequest": "Respect user's background choice (white, light, etc.)",
       "documentation": "White or light gray backgrounds preferred",
       "inApp": "White or light backgrounds"
+    },
+    "complexShapes": {
+      "cylinder": {
+        "reference": "brand/extracted/svg-templates/icon-data-warehouse.svg",
+        "note": "When drawing CSS cylinders, ensure body width is narrower than ellipse to account for border curves",
+        "avoid": "Body edges extending past ellipse edges"
+      }
     }
   }
 }
