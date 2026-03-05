@@ -190,6 +190,26 @@
   },
 
   "graphicElements": {
+    "IMPORTANT_ARROW_TECHNIQUE": {
+      "description": "DO NOT use text arrows (→, >, etc). Use CSS-drawn connectors instead.",
+      "horizontalArrow": {
+        "css": "display: flex; align-items: center;",
+        "line": "width: 40px; height: 2px; background: #8f99a3;",
+        "arrowhead": "width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 8px solid #8f99a3;",
+        "html": "<div style=\"display:flex;align-items:center;\"><div style=\"width:40px;height:2px;background:#8f99a3;\"></div><div style=\"width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:8px solid #8f99a3;\"></div></div>"
+      },
+      "verticalArrow": {
+        "css": "display: flex; flex-direction: column; align-items: center;",
+        "line": "width: 2px; height: 40px; background: #8f99a3;",
+        "arrowhead": "width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #8f99a3;",
+        "html": "<div style=\"display:flex;flex-direction:column;align-items:center;\"><div style=\"width:2px;height:40px;background:#8f99a3;\"></div><div style=\"width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #8f99a3;\"></div></div>"
+      },
+      "colors": {
+        "default": "#8f99a3",
+        "green": "#259b6c",
+        "blue": "#1b7ce4"
+      }
+    },
     "connectionDot": {
       "size": "20px",
       "fill": "#8f99a3",

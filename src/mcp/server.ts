@@ -1,9 +1,15 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { BrandContext } from '../core/brand-context.js';
 import { ExtractionLoader } from '../core/extraction-loader.js';
 import { registerTools } from './tools/index.js';
 import { registerResources } from './resources/brand-resources.js';
+
+// Get project root from module location (dist/mcp/server.js -> project root)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const PROJECT_ROOT = path.resolve(__dirname, '../..');
 
 async function main() {
   const server = new McpServer({
@@ -12,12 +18,14 @@ async function main() {
   });
 
   // Load brand config once at startup (shared across all handlers)
-  const brandContext = await BrandContext.load();
+  const brandConfigPath = path.join(PROJECT_ROOT, 'brand/brand.json');
+  const brandContext = await BrandContext.load(brandConfigPath);
 
   // Load Figma extractions (optional - gracefully handle if not present)
   let extractionLoader: ExtractionLoader | undefined;
   try {
-    extractionLoader = await ExtractionLoader.load();
+    const extractedDir = path.join(PROJECT_ROOT, 'brand/extracted');
+    extractionLoader = await ExtractionLoader.load(extractedDir);
   } catch {
     console.error('Warning: Could not load extractions from brand/extracted/');
   }

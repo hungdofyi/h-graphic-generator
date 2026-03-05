@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "h-graphic": {
+      "command": "node",
+      "args": ["/home/hungdoitbk/hung-repo/h-graphic-generator/dist/mcp/server.js"]
+    }
+  }
+}

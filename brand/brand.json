@@ -62,17 +62,52 @@
     },
     "rules": {
       "proportions": {
-        "green": 0.60,
-        "darkBlue": 0.20,
+        "navy": 0.60,
+        "green": 0.20,
         "purple": 0.05,
         "blue": 0.05,
         "white": 0.05,
         "gray": 0.05,
-        "context": "Landing page / Marketing"
+        "context": "Landing page / Marketing",
+        "note": "Navy (#05264C) dominates backgrounds (60%), green is accent (20%)"
+      },
+      "gradients": {
+        "technique": "Use layered mesh gradients, NOT direct color-to-color blends",
+        "meshGradient": {
+          "description": "Navy/blue gradient base + blurred green orbs on top",
+          "baseColors": ["#05264c", "#104a89", "#052540"],
+          "accentOrbs": {
+            "colors": ["rgba(37, 155, 108, 0.3)", "rgba(122, 209, 174, 0.25)"],
+            "blur": "60-100px",
+            "placement": "corners or edges, not center"
+          }
+        },
+        "safeGradients": [
+          "blue.900 to blue.700 (within same family)",
+          "green.400 to green.600 (within same family)",
+          "gray.100 to white (subtle)"
+        ],
+        "avoid": [
+          "Direct green-to-navy linear gradients (harsh transition)",
+          "Primary green (#259B6C) directly blending to navy (#05264C)",
+          "High saturation color stops without blur/softening"
+        ]
       },
       "avoid": [
-        "Low contrast pairings",
-        "Harsh gradients"
+        "Low contrast pairings (e.g. blue text on green background)",
+        "Harsh gradients between green and navy",
+        "Direct linear-gradient from green to navy without softening",
+        "Green-to-navy gradient as background (use mesh gradient instead)"
+      ],
+      "unsuccessfulExamples": [
+        {
+          "description": "Blue text on green background",
+          "reason": "Don't provide enough contrast"
+        },
+        {
+          "description": "Green-to-navy linear gradient background",
+          "reason": "Gradient too harsh"
+        }
       ]
     }
   },
@@ -169,16 +204,35 @@
         "relativeTo": "bodyTextSize"
       },
       "avoid": [
-        "Pairing too many fonts",
+        "Pairing too many fonts (stick to Inter + JetBrains Mono)",
         "Orphan text (single word at paragraph bottom)",
         "Line height too narrow",
-        "Line height and letter spacing too wide"
+        "Line height and letter spacing too wide",
+        "Script/handwriting fonts",
+        "Italic fonts for body text"
       ]
     }
   },
   "logo": {
     "elements": ["icon", "wordmark"],
     "logomarkUsage": ["app icons", "web favicons", "buttons", "social media avatars", "decorative accents"],
+    "files": {
+      "primary": "data/Logo Color.svg",
+      "primaryDark": "data/Logo Dark.svg",
+      "primaryLight": "data/Logo Light.svg",
+      "altDark": "data/Logo Alt Dark.svg",
+      "altLight": "data/Logo Alt Light.svg",
+      "logomarkColor": "data/Logomark - Color - Light BG.svg",
+      "logomarkColorDark": "data/Logomark - Color - Dark BG.svg",
+      "logomarkDark": "data/Logomark - Dark - Transpanrent.svg",
+      "logomarkLight": "data/Logomark - Light - Transpanrent.svg"
+    },
+    "usage": {
+      "onWhite": "Use Logo Color.svg or Logomark - Color - Light BG.svg",
+      "onNavy": "Use Logo Light.svg or Logomark - Light - Transpanrent.svg",
+      "onGreen": "Use Logo Light.svg or Logomark - Light - Transpanrent.svg",
+      "decorative": "Logomark only, positioned in corners as accent"
+    },
     "rules": {
       "lockup": "Symbol and wordmark should exist together when possible",
       "clearSpace": {
@@ -220,9 +274,20 @@
       "Have a clear purpose beyond mere decoration"
     ],
     "types": {
-      "hero": "For larger areas like landing page hero banners - full scenes",
-      "spot": "More elements than icons, but not full scenes like hero illustrations",
-      "icon": "Minimal, informed by round corners and medium stroke from logo"
+      "hero": {
+        "description": "For larger areas like landing page hero banners - full scenes",
+        "background": "Navy mesh gradient (navy base + soft green/blue orbs)",
+        "content": "Dashboard mockups, layered UI elements, product screenshots"
+      },
+      "spot": {
+        "description": "More elements than icons, but not full scenes like hero",
+        "background": "Green/teal gradient or solid light backgrounds",
+        "content": "Simplified UI elements, single feature focus"
+      },
+      "icon": {
+        "description": "Minimal, informed by round corners and medium stroke from logo",
+        "style": "Round corners, medium stroke weight"
+      }
     },
     "principles": {
       "innovative": "Showcasing brand's dynamic nature, reflecting proactive approach to staying ahead",
@@ -266,5 +331,39 @@
     },
     "edgeColor": "#8F99A3",
     "borderRadius": 8
+  },
+  "graphicElements": {
+    "arrows": {
+      "IMPORTANT": "DO NOT use text arrows (→, >, ➜). Use CSS-drawn connectors.",
+      "horizontal": {
+        "html": "<div style=\"display:flex;align-items:center;\"><div style=\"width:40px;height:2px;background:#8f99a3;\"></div><div style=\"width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:8px solid #8f99a3;\"></div></div>",
+        "description": "Line + CSS triangle arrowhead"
+      },
+      "vertical": {
+        "html": "<div style=\"display:flex;flex-direction:column;align-items:center;\"><div style=\"width:2px;height:40px;background:#8f99a3;\"></div><div style=\"width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #8f99a3;\"></div></div>",
+        "description": "Vertical line + downward arrowhead"
+      },
+      "colors": {
+        "default": "#8f99a3",
+        "green": "#259b6c",
+        "navy": "#05264c"
+      }
+    },
+    "backgrounds": {
+      "navy": {
+        "solid": "#05264C",
+        "note": "Use solid navy for dark backgrounds, NOT lighter blues"
+      },
+      "white": "#FFFFFF",
+      "lightGray": "#F9FBFC",
+      "lightBlue": "#E8F2FD",
+      "lightGreen": "#EAF8F2"
+    },
+    "backgroundUsage": {
+      "default": "Navy mesh gradient for marketing/hero graphics",
+      "onRequest": "Respect user's background choice (white, light, etc.)",
+      "documentation": "White or light gray backgrounds preferred",
+      "inApp": "White or light backgrounds"
+    }
   }
 }

@@ -5,27 +5,60 @@
 
   "backgrounds": {
     "meshGreenBlue": {
-      "name": "Mesh Green-Blue",
-      "css": "linear-gradient(-84.17deg, #1f815a 43.31%, #05264c 80.08%)",
-      "layers": [
-        "linear-gradient(-84.17deg, var(--light-green-700, #1f815a) 43.31%, var(--light-blue-900, #05264c) 80.08%)"
-      ],
-      "blurElement": {
-        "color": "#05264c",
-        "blur": "156.19px",
-        "rotation": "50.4deg"
+      "name": "Mesh Green-Blue (Layered)",
+      "description": "Navy base with blurred green orbs on top - NOT a direct green-to-navy gradient",
+      "technique": "layered",
+      "baseGradient": {
+        "colors": ["#05264c (navy/blue-900)", "#104a89 (blue-800)", "#052540 (darker navy)"],
+        "rules": {
+          "navyDominance": "Navy (#05264c) should cover 60-80% of the gradient",
+          "lighterAccent": "Blue-800 (#104a89) as subtle highlight, 20-40% max",
+          "angles": "Use 130-160deg for diagonal flow"
+        },
+        "examples": [
+          "linear-gradient(145deg, #05264c 0%, #104a89 60%, #05264c 100%)",
+          "linear-gradient(135deg, #05264c 0%, #05264c 50%, #104a89 80%, #052540 100%)",
+          "linear-gradient(160deg, #052540 0%, #05264c 30%, #104a89 70%, #05264c 100%)",
+          "radial-gradient(ellipse at 30% 70%, #104a89 0%, #05264c 60%)"
+        ]
       },
+      "greenOrbs": {
+        "purpose": "Add soft green accents as blurred overlays, NOT in the base gradient",
+        "colors": ["rgba(37, 155, 108, 0.3-0.5)", "rgba(122, 209, 174, 0.2-0.35)"],
+        "blur": "60-120px",
+        "placement": "Corners or edges, avoid center",
+        "size": "200-500px ellipses"
+      },
+      "avoid": [
+        "Direct green-to-navy linear gradient",
+        "Green taking more than 30% of visible area",
+        "Sharp color transitions without blur"
+      ],
       "usage": ["hero sections", "feature showcases", "premium announcements"]
     },
     "meshTealNavy": {
-      "name": "Mesh Teal-Navy",
-      "css": "linear-gradient(-85.05deg, #2a745d 38.02%, #052540 77.97%)",
-      "blurElement": {
-        "color": "#05264c",
-        "blur": "100px",
-        "rotation": "50.91deg"
+      "name": "Mesh Teal-Navy (Layered)",
+      "description": "Dark navy base with soft teal/green blurred accents",
+      "technique": "layered",
+      "baseGradient": {
+        "colors": ["#052540 (darkest)", "#05264c (navy)"],
+        "rules": {
+          "keepDark": "This variant is darker than meshGreenBlue",
+          "subtleTransition": "Gentle shift between dark tones"
+        },
+        "examples": [
+          "linear-gradient(160deg, #052540 0%, #05264c 100%)",
+          "linear-gradient(140deg, #05264c 0%, #052540 50%, #05264c 100%)",
+          "radial-gradient(ellipse at 80% 20%, #05264c 0%, #052540 70%)"
+        ]
       },
-      "usage": ["UX roundup graphics", "feature callouts"]
+      "tealOrbs": {
+        "colors": ["rgba(42, 116, 93, 0.25-0.4)"],
+        "blur": "80-120px",
+        "note": "More subtle than meshGreenBlue"
+      },
+      "avoid": "DO NOT blend green directly into navy gradient",
+      "usage": ["UX roundup graphics", "feature callouts", "darker mood"]
     },
     "solidNavy": {
       "name": "Solid Navy",
@@ -340,11 +373,21 @@
   "graphicElements": {
     "blurOrb": {
       "name": "Blur Orb (Mesh Effect)",
-      "color": "#05264c",
-      "blur": "100-156px",
-      "rotation": "50deg",
-      "blendMode": "normal",
-      "usage": ["mesh background depth", "gradient enhancement"]
+      "description": "Soft colored orbs for mesh gradient effect - place on top of navy base",
+      "greenOrb": {
+        "colors": ["rgba(37, 155, 108, 0.3)", "rgba(37, 155, 108, 0.4)"],
+        "css": "radial-gradient(ellipse, rgba(37, 155, 108, 0.35) 0%, transparent 70%)",
+        "blur": "60-100px",
+        "size": "300-500px"
+      },
+      "lightGreenOrb": {
+        "colors": ["rgba(122, 209, 174, 0.2)", "rgba(122, 209, 174, 0.3)"],
+        "css": "radial-gradient(ellipse, rgba(122, 209, 174, 0.25) 0%, transparent 60%)",
+        "blur": "50-80px",
+        "size": "200-400px"
+      },
+      "placement": "Position at corners/edges, avoid center. Multiple orbs should not overlap directly.",
+      "usage": ["mesh background depth", "gradient enhancement", "soft color accents on dark backgrounds"]
     },
     "radialGlow": {
       "name": "Radial Glow",
