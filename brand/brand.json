@@ -300,7 +300,23 @@
       "product": ["empty state", "onboarding", "educational content"]
     },
     "iconography": {
-      "style": "Round corners and medium stroke, informed by logo"
+      "style": "Round corners and medium stroke, informed by logo",
+      "sizing": {
+        "note": "Icons are SVG - scale to ANY size needed",
+        "small": "16-24px for UI/inline",
+        "medium": "32-64px for features",
+        "large": "80-200px for hero/decorative",
+        "noRestriction": true
+      },
+      "library": "brand/data/icons/",
+      "emojiRule": {
+        "IMPORTANT": "NEVER use OS/system emojis (🔒📊💡 etc.) - they look inconsistent",
+        "alternative": [
+          "1. First: Search brand/data/icons/ for a matching icon",
+          "2. If not found + simple need: Create simple SVG icon (round corners, medium stroke, brand colors)",
+          "3. If not found + complex/styled need: Create spot illustration with gradients, shadows, brand styling"
+        ]
+      }
     }
   },
   "spacing": {

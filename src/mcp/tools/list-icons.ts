@@ -107,7 +107,16 @@ export function registerListIconsTool(server: McpServer): void {
               totalIcons: icons.length,
               icons: icons.sort(),
               basePath: ICONS_DIR,
-              usage: 'Use icon names with .svg extension, e.g., "chart/bar-chart.svg"',
+              usage: {
+                path: 'Use icon names with .svg extension, e.g., "chart/bar-chart.svg"',
+                sizing: 'Icons are SVG and can be ANY size. Scale freely with width/height.',
+                examples: {
+                  small: '16-24px for inline/UI icons',
+                  medium: '32-64px for feature icons',
+                  large: '80-200px for hero/decorative icons',
+                  custom: 'Any size works - SVGs scale without quality loss',
+                },
+              },
             }, null, 2),
           }],
         };
