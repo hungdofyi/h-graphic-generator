@@ -22,6 +22,14 @@ const RenderGraphicSchema = z.object({
     .enum(['auto', 'satori', 'puppeteer'])
     .default('auto')
     .describe('Renderer: auto (detect), satori (simple), puppeteer (complex CSS)'),
+  // Optional reference parameters - accepts image data for schema validation
+  // Claude sees images in conversation context, these just prevent validation errors
+  reference_image: z
+    .string()
+    .optional()
+    .describe('Optional: base64 image or file path as visual reference (Claude analyzes in conversation)'),
+  image: z.string().optional().describe('Alias for reference_image'),
+  reference: z.string().optional().describe('Alias for reference_image'),
 });
 
 /**
