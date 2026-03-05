@@ -312,9 +312,9 @@
       "emojiRule": {
         "IMPORTANT": "NEVER use OS/system emojis (🔒📊💡 etc.) - they look inconsistent",
         "alternative": [
-          "1. First: Search brand/data/icons/ for a matching icon",
-          "2. If not found + simple need: Create simple SVG icon (round corners, medium stroke, brand colors)",
-          "3. If not found + complex/styled need: Create spot illustration with gradients, shadows, brand styling"
+          "Simple need: Create CSS/SVG shape (round corners, medium stroke, brand colors)",
+          "Complex/styled need: Create spot illustration with gradients, shadows, brand styling",
+          "Brand icons needed: Check brand/data/icons/ library"
         ]
       }
     }
@@ -418,9 +418,9 @@
       "inApp": "White or light backgrounds"
     },
     "complexShapes": {
+      "approach": "Design shapes with CSS/HTML creatively. Do NOT search icon library for every element.",
       "cylinder": {
-        "reference": "brand/extracted/svg-templates/icon-data-warehouse.svg",
-        "note": "When drawing CSS cylinders, ensure body width is narrower than ellipse to account for border curves",
+        "technique": "When drawing CSS cylinders, make body width narrower than ellipse to account for border curves",
         "avoid": "Body edges extending past ellipse edges"
       }
     }

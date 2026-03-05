@@ -9,9 +9,10 @@ When asked to create a graphic:
 1. **Get brand tokens** - Call `get_style_profile` for official brand guidelines (colors, typography, spacing)
 2. **Explore patterns** - Call `list_patterns` to discover Figma-extracted style libraries
 3. **Get context styles** - Call `get_pattern` for the relevant category (can mix multiple)
-4. **Find icons** - Call `list_icons` to discover available brand icons
-5. **Generate HTML/CSS** - Combine brand tokens + extraction styles creatively
-6. **Render to image** - Call `render_graphic` with the HTML
+4. **Generate HTML/CSS** - Design shapes creatively with CSS. Don't search icon library for every element.
+5. **Render to image** - Call `render_graphic` with the HTML
+
+**Optional:** Call `list_icons` only when you specifically need brand icons (logos, product icons). For shapes like boxes, arrows, cylinders - design with CSS.
 
 **Important:** Use brand.json as the source of truth for color scales (green.50-900, blue.50-900, gray.50-900). Extractions show how those colors are applied in specific contexts.
 
@@ -48,7 +49,7 @@ gray:  50→900 (#F9FBFC → #13151A) - Neutral, text
 
 1. **Start with brand tokens** - Use official color scales from `get_style_profile`
 2. **Apply extraction styles** - Use CSS gradients, shadows from `get_pattern`
-3. **Include icons** - Embed SVGs from `brand/data/icons/`
+3. **Design creatively** - Build shapes with CSS/HTML. Only use icon library for actual brand icons.
 4. **Mix freely** - Combine elements from different patterns for unique results
 
 ## Asset Locations
