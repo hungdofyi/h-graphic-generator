@@ -45,17 +45,27 @@ function generateDiagramHtml(input: DiagramInput, brand: BrandConfig): string {
   const direction = input.direction || 'horizontal';
   const isHorizontal = direction === 'horizontal';
 
+  // Generate node icon: use first letter if no icon provided (emojis don't render in Satori)
+  const getNodeIcon = (node: DiagramNode) => {
+    if (!node.icon) return node.label.charAt(0).toUpperCase();
+    // If icon is emoji (non-ASCII), use first letter instead
+    if (node.icon.charCodeAt(0) > 127) return node.label.charAt(0).toUpperCase();
+    return node.icon;
+  };
+
   const nodeHtml = input.nodes
     .map(
       (node) => `
     <div class="node" id="node-${escapeHtml(node.id)}">
-      ${node.icon ? `<div class="icon">${escapeHtml(node.icon)}</div>` : ''}
+      <div class="icon">${escapeHtml(getNodeIcon(node))}</div>
       <div class="label">${escapeHtml(node.label)}</div>
       ${node.description ? `<div class="desc">${escapeHtml(node.description)}</div>` : ''}
     </div>
   `
     )
-    .join(isHorizontal ? '<div class="arrow">→</div>' : '<div class="arrow">↓</div>');
+    .join(isHorizontal
+      ? '<div class="arrow"><div class="arrow-line"></div><div class="arrow-head-h"></div></div>'
+      : '<div class="arrow"><div class="arrow-line-v"></div><div class="arrow-head-v"></div></div>');
 
   return `
     <div class="diagram">
@@ -66,7 +76,7 @@ function generateDiagramHtml(input: DiagramInput, brand: BrandConfig): string {
     </div>
     <style>
       .diagram {
-        font-family: ${brand.typography['body']?.fontFamily || 'Inter'}, sans-serif;
+        font-family: ${brand.typography['body']?.family || 'Inter'}, sans-serif;
         background: ${brand.colors['background']?.value || '#ffffff'};
         padding: 48px;
         display: flex;
@@ -76,7 +86,8 @@ function generateDiagramHtml(input: DiagramInput, brand: BrandConfig): string {
         height: 100%;
       }
       .title {
-        font-family: ${brand.typography['heading']?.fontFamily || brand.typography['body']?.fontFamily || 'Inter'}, sans-serif;
+        display: flex;
+        font-family: ${brand.typography['heading']?.family || brand.typography['body']?.family || 'Inter'}, sans-serif;
         font-size: 32px;
         font-weight: 700;
         color: ${brand.colors['text']?.value || '#1a1a1a'};
@@ -93,6 +104,9 @@ function generateDiagramHtml(input: DiagramInput, brand: BrandConfig): string {
         flex-direction: column;
       }
       .node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background: ${brand.colors['surface']?.value || '#f8f9fa'};
         border: 2px solid ${brand.colors['primary']?.value || '#3b82f6'};
         border-radius: ${brand.spacing?.unit || 8}px;
@@ -101,23 +115,64 @@ function generateDiagramHtml(input: DiagramInput, brand: BrandConfig): string {
         min-width: 120px;
       }
       .icon {
-        font-size: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: ${brand.colors['primary']?.value || '#3b82f6'};
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
         margin-bottom: 8px;
       }
       .label {
+        display: flex;
         font-weight: 600;
         font-size: 16px;
         color: ${brand.colors['text']?.value || '#1a1a1a'};
       }
       .desc {
+        display: flex;
         font-size: 12px;
         color: ${brand.colors['muted']?.value || '#6b7280'};
         margin-top: 4px;
       }
       .arrow {
-        font-size: 24px;
-        color: ${brand.colors['primary']?.value || '#3b82f6'};
-        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 8px;
+      }
+      .arrow-line {
+        display: flex;
+        width: 24px;
+        height: 2px;
+        background-color: ${brand.colors['primary']?.value || '#3b82f6'};
+      }
+      .arrow-head-h {
+        display: flex;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 8px solid ${brand.colors['primary']?.value || '#3b82f6'};
+      }
+      .arrow-line-v {
+        display: flex;
+        width: 2px;
+        height: 24px;
+        background-color: ${brand.colors['primary']?.value || '#3b82f6'};
+      }
+      .arrow-head-v {
+        display: flex;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid ${brand.colors['primary']?.value || '#3b82f6'};
       }
     </style>
   `;

@@ -187,9 +187,14 @@ hgraphic brand extract-style --references <dir>  # Extract styles via Gemini
 hgraphic templates list     # Show all templates
 ```
 
-## Architecture
+## Documentation
 
-See [docs/architecture.md](./docs/architecture.md) for system design, component interactions, and data flow.
+| Doc | Audience | Purpose |
+|-----|----------|---------|
+| [Walkthrough](./docs/walkthrough.md) | Teammates | CLI + AI agent usage guide |
+| [Maintainer Guide](./docs/maintainer-guide.md) | Maintainers | Next steps, enhancements, maintenance |
+| [Architecture](./docs/architecture.md) | Developers | System design, components, data flow |
+| [Code Standards](./docs/code-standards.md) | Contributors | Coding conventions, patterns |
 
 ## Project Status
 

@@ -25,8 +25,8 @@ export const featureIllustration: Template = {
     icon: {
       type: 'string',
       required: false,
-      default: '✨',
-      description: 'Emoji or icon character',
+      default: '',
+      description: 'Single letter/symbol for icon (leave empty to use first letter of title)',
     },
     accentColor: {
       type: 'string',
@@ -37,7 +37,8 @@ export const featureIllustration: Template = {
   render: (props: Record<string, unknown>, brand: BrandConfig): string => {
     const title = escapeHtml(String(props['title'] || ''));
     const description = props['description'] ? escapeHtml(String(props['description'])) : '';
-    const icon = escapeHtml(String(props['icon'] || '✨'));
+    // Use provided icon or first letter of title (emojis don't render in Satori)
+    const iconChar = props['icon'] ? escapeHtml(String(props['icon'])) : title.charAt(0).toUpperCase();
     const accentColor = String(props['accentColor'] || brand.colors['secondary']?.value || '#FF6B35');
     const primaryColor = brand.colors['primary']?.value || '#0066CC';
     const bgColor = brand.colors['background']?.value || '#FFFFFF';
@@ -49,8 +50,8 @@ export const featureIllustration: Template = {
 
     return `
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; padding: ${spacing['2xl'] || 48}px; background-color: ${bgColor};">
-        <div style="display: flex; justify-content: center; align-items: center; width: 120px; height: 120px; border-radius: 24px; background-color: ${accentColor}20; margin-bottom: ${spacing['lg'] || 24}px;">
-          <div style="font-size: 64px;">${icon}</div>
+        <div style="display: flex; justify-content: center; align-items: center; width: 120px; height: 120px; border-radius: 24px; background-color: ${primaryColor}; margin-bottom: ${spacing['lg'] || 24}px;">
+          <div style="display: flex; font-family: ${fontFamily}; font-size: 48px; font-weight: 700; color: white;">${iconChar}</div>
         </div>
         <div style="display: flex; font-family: ${fontFamily}; font-weight: 700; font-size: 36px; color: ${textColor}; text-align: center; margin-bottom: ${spacing['md'] || 16}px;">
           ${title}

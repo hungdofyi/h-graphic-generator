@@ -36,6 +36,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@fontsource/noto-color-emoji": "^5.2.10",
     "@google/genai": "^1.0.0",
     "@mermaid-js/mermaid-cli": "^11.0.0",
     "@modelcontextprotocol/sdk": "^1.12.0",
