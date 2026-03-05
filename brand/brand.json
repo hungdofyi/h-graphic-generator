@@ -1,40 +1,241 @@
 {
   "$schema": "h-graphic-brand-v1",
-  "name": "Default Brand",
+  "name": "Holistics",
   "colors": {
     "primary": {
-      "value": "#0066CC",
-      "description": "Main brand color - used for primary actions and emphasis"
+      "value": "#05264C",
+      "description": "Primary Blue - Dark Blue derived from logo"
     },
     "secondary": {
-      "value": "#FF6B35",
-      "description": "Accent color - used for highlights and CTAs"
+      "value": "#259B6C",
+      "description": "Primary Green - derived from logo"
     },
     "background": {
       "value": "#FFFFFF",
       "description": "Background color"
     },
     "text": {
-      "value": "#1A1A2E",
-      "description": "Primary text color"
+      "value": "#13151A",
+      "description": "Primary text color (Gray-900)"
     },
     "muted": {
-      "value": "#6B7280",
-      "description": "Muted/secondary text color"
+      "value": "#8F99A3",
+      "description": "Muted/secondary text color (Gray-600)"
+    },
+    "scales": {
+      "green": {
+        "50": "#EAF8F2",
+        "100": "#CCEDE0",
+        "200": "#A4E0C8",
+        "300": "#7AD1AE",
+        "400": "#52C396",
+        "500": "#2CB67F",
+        "600": "#259B6C",
+        "700": "#1F815A",
+        "800": "#196848",
+        "900": "#145239"
+      },
+      "blue": {
+        "50": "#E8F2FD",
+        "100": "#D1E5FA",
+        "200": "#BBD7F7",
+        "300": "#8DBEF2",
+        "400": "#5EA3ED",
+        "500": "#4896EA",
+        "600": "#1B7CE4",
+        "700": "#1663B6",
+        "800": "#104A89",
+        "900": "#05264C"
+      },
+      "gray": {
+        "50": "#F9FBFC",
+        "100": "#F5F8FA",
+        "200": "#EDF1F5",
+        "300": "#E3E7ED",
+        "400": "#CBD0D7",
+        "500": "#B0B6BF",
+        "600": "#8F99A3",
+        "700": "#4C5159",
+        "800": "#2D3238",
+        "900": "#13151A"
+      }
+    },
+    "rules": {
+      "proportions": {
+        "green": 0.60,
+        "darkBlue": 0.20,
+        "purple": 0.05,
+        "blue": 0.05,
+        "white": 0.05,
+        "gray": 0.05,
+        "context": "Landing page / Marketing"
+      },
+      "avoid": [
+        "Low contrast pairings",
+        "Harsh gradients"
+      ]
     }
   },
   "typography": {
-    "display": {
-      "family": "Inter",
-      "weight": "700"
+    "fonts": {
+      "primary": "Inter",
+      "code": "JetBrains Mono",
+      "logo": "Museo Sans"
     },
-    "heading": {
-      "family": "Inter",
-      "weight": "600"
+    "weights": {
+      "regular": "400",
+      "medium": "500",
+      "semiBold": "600",
+      "bold": "700"
     },
-    "body": {
-      "family": "Inter",
-      "weight": "400"
+    "scales": {
+      "display": {
+        "size": 48,
+        "weight": "700",
+        "lineHeight": "120%",
+        "letterSpacing": "0%"
+      },
+      "title": {
+        "size": 42,
+        "weight": "700",
+        "lineHeight": "120%",
+        "letterSpacing": "0%"
+      },
+      "subtitle1": {
+        "size": 32,
+        "weight": "600",
+        "lineHeight": "120%",
+        "letterSpacing": "0%"
+      },
+      "subtitle2": {
+        "size": 28,
+        "weight": "700",
+        "lineHeight": "120%",
+        "letterSpacing": "0%"
+      },
+      "subtitle3": {
+        "size": 24,
+        "weight": "700",
+        "lineHeight": "140%",
+        "letterSpacing": "0%"
+      },
+      "subtitle4": {
+        "size": 20,
+        "weight": "600",
+        "lineHeight": "140%",
+        "letterSpacing": "0%"
+      },
+      "body": {
+        "size": 20,
+        "weight": "400",
+        "lineHeight": "160%",
+        "letterSpacing": "0%"
+      },
+      "microTitle": {
+        "size": 16,
+        "weight": "700",
+        "lineHeight": "160%",
+        "letterSpacing": "0%"
+      },
+      "default": {
+        "size": 16,
+        "weight": "400",
+        "lineHeight": "160%",
+        "letterSpacing": "0%"
+      },
+      "small": {
+        "size": 14,
+        "weight": "400",
+        "lineHeight": "160%",
+        "letterSpacing": "0%"
+      },
+      "tiny": {
+        "size": 12,
+        "weight": "400",
+        "lineHeight": "160%",
+        "letterSpacing": "0%"
+      }
+    },
+    "rules": {
+      "desktop": {
+        "charsPerLine": { "min": 50, "max": 75 }
+      },
+      "mobile": {
+        "charsPerLine": { "min": 30, "max": 50 }
+      },
+      "paragraphSpacing": {
+        "min": "50%",
+        "max": "100%",
+        "relativeTo": "bodyTextSize"
+      },
+      "avoid": [
+        "Pairing too many fonts",
+        "Orphan text (single word at paragraph bottom)",
+        "Line height too narrow",
+        "Line height and letter spacing too wide"
+      ]
+    }
+  },
+  "logo": {
+    "elements": ["icon", "wordmark"],
+    "logomarkUsage": ["app icons", "web favicons", "buttons", "social media avatars", "decorative accents"],
+    "rules": {
+      "lockup": "Symbol and wordmark should exist together when possible",
+      "clearSpace": {
+        "unit": "capHeight of 'o' letter",
+        "description": "Clear space around logo equals cap height and width of 'o' letter"
+      },
+      "partners": {
+        "spacing": "Clear space between logos using 'o' width",
+        "height": "Partnership logos font height should extend to line top of 'h'"
+      },
+      "propertyLogo": {
+        "typeface": "Museo Sans",
+        "weight": "500",
+        "examples": ["blog", "playground", "docs", "community"]
+      },
+      "avoid": [
+        "Reposition elements",
+        "Scale marks disproportionately",
+        "Alter the color of marks",
+        "Resize elements individually",
+        "Use wordmark alone",
+        "Change the typeface of wordmark"
+      ]
+    },
+    "variants": {
+      "primaryColor": "Default version with brand colors",
+      "primaryBlue": "Blue lockup",
+      "primaryWhiteOnGreen": "White logo on green background",
+      "primaryWhiteOnBlue": "White logo on blue background",
+      "primaryGreenWhite": "Green and white lockup"
+    }
+  },
+  "illustration": {
+    "purpose": "Simplify complex ideas and support storytelling across marketing touchpoints",
+    "should": [
+      "Reflect the user's context and emotional state",
+      "Represent brand personality and voice effectively",
+      "Support, not overshadow, the key message",
+      "Have a clear purpose beyond mere decoration"
+    ],
+    "types": {
+      "hero": "For larger areas like landing page hero banners - full scenes",
+      "spot": "More elements than icons, but not full scenes like hero illustrations",
+      "icon": "Minimal, informed by round corners and medium stroke from logo"
+    },
+    "principles": {
+      "innovative": "Showcasing brand's dynamic nature, reflecting proactive approach to staying ahead",
+      "straightforward": "Clear hierarchies and organized layouts for clear, reliable messaging",
+      "delightful": "Blend delightful touches and thoughtful considerations to connect emotionally",
+      "modular": "Utilize reusable components to maintain brand cohesion across channels"
+    },
+    "usage": {
+      "marketing": ["websites", "landing pages", "presentations", "social media", "video"],
+      "product": ["empty state", "onboarding", "educational content"]
+    },
+    "iconography": {
+      "style": "Round corners and medium stroke, informed by logo"
     }
   },
   "spacing": {
@@ -49,16 +250,21 @@
     }
   },
   "assets": {
-    "logo": "assets/logo.svg",
-    "icon": "assets/icon.svg",
-    "watermark": "assets/watermark.svg"
+    "logo": "data/Logo Color.svg",
+    "logoDark": "data/Logo Dark.svg",
+    "logoLight": "data/Logo Light.svg",
+    "logoAltDark": "data/Logo Alt Dark.svg",
+    "logoAltLight": "data/Logo Alt Light.svg",
+    "icon": "data/Logomark - Color - Light BG.svg",
+    "iconDark": "data/Logomark - Dark - Transpanrent.svg",
+    "iconLight": "data/Logomark - Light - Transpanrent.svg"
   },
   "diagram": {
     "nodeColors": {
-      "default": "#E8F0FE",
-      "accent": "#FFF3E0"
+      "default": "#EAF8F2",
+      "accent": "#E8F2FD"
     },
-    "edgeColor": "#6B7280",
+    "edgeColor": "#8F99A3",
     "borderRadius": 8
   }
 }
