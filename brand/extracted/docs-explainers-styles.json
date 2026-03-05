@@ -62,6 +62,51 @@
       "name": "Subtle Card Shadow",
       "css": "0px 4px 13px rgba(0,0,0,0.04)",
       "usage": ["sidebar panels", "subtle elevation"]
+    },
+    "elevated": {
+      "name": "Elevated",
+      "css": "0 4px 16px rgba(19, 21, 26, 0.1), 0 1px 4px rgba(19, 21, 26, 0.06)",
+      "usage": ["floating elements", "emphasis on light bg"]
+    }
+  },
+
+  "highlightEffects": {
+    "_guidelines": {
+      "borderMaxWidth": "2px - never exceed for emphasis",
+      "context": "Docs use light backgrounds - prefer elevation shadows over color glows",
+      "combinedApproach": "thin border (1-2px) + shadow for best results"
+    },
+    "onLight": {
+      "elevated": {
+        "name": "Elevated Shadow",
+        "css": "box-shadow: 0 4px 16px rgba(19, 21, 26, 0.1)",
+        "usage": ["floating elements", "callout emphasis"]
+      },
+      "tintGreen": {
+        "name": "Green Tint",
+        "css": "background: linear-gradient(135deg, #eaf8f2, #fff)",
+        "usage": ["success container", "highlight without border"]
+      },
+      "tintBlue": {
+        "name": "Blue Tint",
+        "css": "background: linear-gradient(135deg, #e8f2fd, #fff)",
+        "usage": ["info container", "highlight without border"]
+      },
+      "subtleBorderShadow": {
+        "name": "Subtle Border + Shadow",
+        "css": "border: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.05)",
+        "usage": ["cards", "containers with subtle emphasis"]
+      },
+      "emphasisGreen": {
+        "name": "Green Emphasis",
+        "css": "border: 1.5px solid #259b6c; background: #eaf8f2; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.06)",
+        "usage": ["selected state", "key highlight on light bg"]
+      },
+      "emphasisBlue": {
+        "name": "Blue Emphasis",
+        "css": "border: 1.5px solid #1b7ce4; background: #e8f2fd; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.06)",
+        "usage": ["focus state", "info highlight on light bg"]
+      }
     }
   },
 

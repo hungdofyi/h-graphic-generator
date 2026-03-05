@@ -89,7 +89,7 @@
     },
     "dashedPlaceholder": {
       "name": "Dashed Placeholder",
-      "border": "3px dashed #e3e7ed",
+      "border": "2px dashed #e3e7ed",
       "borderRadius": "20px",
       "background": "fadeToTransparent",
       "usage": ["drop zones", "placeholder areas", "empty states"]

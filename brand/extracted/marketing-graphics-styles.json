@@ -112,6 +112,74 @@
       "name": "Card Large",
       "css": "0px 16px 32px -8px rgba(19,21,26,0.16), 0px 4px 8px -2px rgba(19,21,26,0.04), 0px 1px 2px -1px rgba(19,21,26,0.04)",
       "usage": ["feature cards", "prominent elements"]
+    },
+    "elevated": {
+      "name": "Elevated",
+      "css": "0 4px 16px rgba(19, 21, 26, 0.1), 0 1px 4px rgba(19, 21, 26, 0.06)",
+      "usage": ["light bg emphasis", "floating elements"]
+    },
+    "elevatedProminent": {
+      "name": "Elevated Prominent",
+      "css": "0 8px 24px rgba(19, 21, 26, 0.12), 0 2px 6px rgba(19, 21, 26, 0.04)",
+      "usage": ["hero elements", "primary focus"]
+    }
+  },
+
+  "highlightEffects": {
+    "_guidelines": {
+      "borderMaxWidth": "2px - never exceed for emphasis",
+      "darkBgPrefer": "color glows (box-shadow with color)",
+      "lightBgPrefer": "elevation shadows + background tints",
+      "combinedApproach": "thin border (1-2px) + shadow for best results"
+    },
+    "onDark": {
+      "glowGreen": {
+        "name": "Green Glow",
+        "css": "box-shadow: 0 0 0 1px #52c396, 0 0 20px rgba(44, 182, 127, 0.3)",
+        "usage": ["success states", "selected items", "key emphasis on dark bg"]
+      },
+      "glowBlue": {
+        "name": "Blue Glow",
+        "css": "box-shadow: 0 0 0 1px #5ea3ed, 0 0 20px rgba(72, 150, 234, 0.25)",
+        "usage": ["focus states", "info emphasis on dark bg"]
+      },
+      "ambient": {
+        "name": "Ambient Glow",
+        "css": "box-shadow: 0 0 32px rgba(122, 209, 174, 0.2)",
+        "usage": ["soft background emphasis", "hero highlights"]
+      }
+    },
+    "onLight": {
+      "elevated": {
+        "name": "Elevated Shadow",
+        "css": "box-shadow: 0 4px 16px rgba(19, 21, 26, 0.1)",
+        "usage": ["floating elements", "card emphasis"]
+      },
+      "elevatedProminent": {
+        "name": "Elevated Prominent",
+        "css": "box-shadow: 0 8px 24px rgba(19, 21, 26, 0.12), 0 2px 6px rgba(19, 21, 26, 0.04)",
+        "usage": ["hero elements", "primary focus on light bg"]
+      },
+      "tintGreen": {
+        "name": "Green Tint",
+        "css": "background: linear-gradient(135deg, #eaf8f2, #fff)",
+        "usage": ["success container", "highlight without border"]
+      },
+      "tintBlue": {
+        "name": "Blue Tint",
+        "css": "background: linear-gradient(135deg, #e8f2fd, #fff)",
+        "usage": ["info container", "highlight without border"]
+      },
+      "subtleBorderShadow": {
+        "name": "Subtle Border + Shadow",
+        "css": "border: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.05)",
+        "usage": ["cards", "containers with subtle emphasis"]
+      },
+      "emphasisBorderShadow": {
+        "name": "Emphasis Border + Shadow",
+        "css": "border: 1.5px solid #52c396; box-shadow: 0 4px 12px rgba(19, 21, 26, 0.08)",
+        "usage": ["selected state", "active card on light bg"]
+      }
     }
   },
 
@@ -120,10 +188,11 @@
       "name": "Glass Chart Container",
       "background": "#0b3b73",
       "backdropBlur": "1.48px",
-      "border": "3px solid #bbd7f7",
+      "border": "2px solid #bbd7f7",
       "borderRadius": "8px",
+      "boxShadow": "0 0 20px rgba(187, 215, 247, 0.2)",
       "innerBackground": "white",
-      "innerBorder": "2px solid #8dbef2",
+      "innerBorder": "1.5px solid #8dbef2",
       "innerBorderRadius": "7px",
       "usage": ["chart displays", "data visualization containers"]
     },
@@ -179,29 +248,33 @@
     "tableContainer": {
       "name": "Table Container",
       "background": "white",
-      "border": "3px solid #e3e7ed",
+      "border": "1.5px solid #e3e7ed",
       "borderRadius": "10px",
+      "boxShadow": "0 4px 16px rgba(19, 21, 26, 0.08)",
       "usage": ["table mockups", "data displays"]
     },
     "chatContainer": {
       "name": "Chat Container",
       "background": "linear-gradient(180deg, white 70.36%, #e8f2fd 98.98%)",
-      "border": "3px solid #e3e7ed",
+      "border": "1.5px solid #e3e7ed",
       "borderRadius": "15px",
+      "boxShadow": "0 4px 16px rgba(19, 21, 26, 0.08)",
       "usage": ["chat UI mockups", "AI conversation displays"]
     },
     "answerHighlightGreen": {
       "name": "Answer Highlight (Green)",
-      "border": "3px solid #52c396",
+      "border": "2px solid #52c396",
       "borderRadius": "15px",
+      "boxShadow": "0 0 0 1px #52c396, 0 4px 12px rgba(44, 182, 127, 0.15)",
       "highlightColor": "#68ab79",
       "highlightBlendMode": "hard-light",
       "usage": ["AI answer highlights", "success states"]
     },
     "answerHighlightGray": {
       "name": "Answer Highlight (Gray)",
-      "border": "3px solid #e3e7ed",
+      "border": "1.5px solid #e3e7ed",
       "borderRadius": "15px",
+      "boxShadow": "0 4px 12px rgba(19, 21, 26, 0.06)",
       "highlightColor": "#656a72",
       "highlightBlendMode": "hard-light",
       "usage": ["before state highlights", "neutral highlights"]
@@ -452,8 +525,9 @@
     },
     "glassFrame": {
       "description": "Decorative frame around containers",
-      "border": "3px solid #d1e5fa",
+      "border": "2px solid #d1e5fa",
       "background": "linear-gradient(-75.99deg, #245791 10.54%, #193c64 94.55%)",
+      "boxShadow": "0 0 16px rgba(209, 229, 250, 0.2)",
       "opacity": 0.3,
       "borderRadius": "20px",
       "usage": ["container frames", "emphasis borders"]

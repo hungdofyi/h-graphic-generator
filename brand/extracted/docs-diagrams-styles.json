@@ -16,7 +16,53 @@
     }
   },
 
-  "shadows": {},
+  "shadows": {
+    "elevated": {
+      "name": "Elevated",
+      "css": "0 4px 16px rgba(19, 21, 26, 0.1), 0 1px 4px rgba(19, 21, 26, 0.06)",
+      "usage": ["floating nodes", "emphasis on diagram elements"]
+    },
+    "subtle": {
+      "name": "Subtle",
+      "css": "0 2px 8px rgba(19, 21, 26, 0.05)",
+      "usage": ["light elevation", "node hover"]
+    }
+  },
+
+  "highlightEffects": {
+    "_guidelines": {
+      "borderMaxWidth": "2px - never exceed for emphasis",
+      "context": "Diagrams use light/transparent backgrounds - prefer elevation shadows",
+      "combinedApproach": "thin border (1-2px) + shadow for best results"
+    },
+    "onLight": {
+      "elevated": {
+        "name": "Elevated Shadow",
+        "css": "box-shadow: 0 4px 16px rgba(19, 21, 26, 0.1)",
+        "usage": ["floating nodes", "callout emphasis"]
+      },
+      "tintGreen": {
+        "name": "Green Tint",
+        "css": "background: linear-gradient(135deg, #eaf8f2, #fff)",
+        "usage": ["semantic layer nodes", "success nodes"]
+      },
+      "tintBlue": {
+        "name": "Blue Tint",
+        "css": "background: linear-gradient(135deg, #e8f2fd, #fff)",
+        "usage": ["AI/LLM nodes", "info nodes"]
+      },
+      "subtleBorderShadow": {
+        "name": "Subtle Border + Shadow",
+        "css": "border: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.05)",
+        "usage": ["standard nodes", "containers"]
+      },
+      "emphasisGreen": {
+        "name": "Green Emphasis",
+        "css": "border: 1.5px solid #259b6c; background: #eaf8f2; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.06)",
+        "usage": ["selected node", "key component"]
+      }
+    }
+  },
 
   "containers": {
     "iconBox": {

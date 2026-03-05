@@ -3,6 +3,54 @@
   "page": "In-app Graphics",
   "extractedAt": "2026-03-05T18:05:00+07:00",
 
+  "shadows": {
+    "elevated": {
+      "name": "Elevated",
+      "css": "0 4px 16px rgba(19, 21, 26, 0.1), 0 1px 4px rgba(19, 21, 26, 0.06)",
+      "usage": ["floating cards", "emphasis on light bg"]
+    },
+    "subtle": {
+      "name": "Subtle",
+      "css": "0 2px 8px rgba(19, 21, 26, 0.05)",
+      "usage": ["light elevation", "card hover"]
+    }
+  },
+
+  "highlightEffects": {
+    "_guidelines": {
+      "borderMaxWidth": "2px - never exceed for emphasis",
+      "context": "In-app uses light backgrounds - prefer elevation shadows over color glows",
+      "combinedApproach": "thin border (1-2px) + shadow for best results"
+    },
+    "onLight": {
+      "elevated": {
+        "name": "Elevated Shadow",
+        "css": "box-shadow: 0 4px 16px rgba(19, 21, 26, 0.1)",
+        "usage": ["floating elements", "card emphasis"]
+      },
+      "tintGreen": {
+        "name": "Green Tint",
+        "css": "background: linear-gradient(135deg, #eaf8f2, #fff)",
+        "usage": ["success container", "highlight without border"]
+      },
+      "tintBlue": {
+        "name": "Blue Tint",
+        "css": "background: linear-gradient(135deg, #e8f2fd, #fff)",
+        "usage": ["info container", "highlight without border"]
+      },
+      "subtleBorderShadow": {
+        "name": "Subtle Border + Shadow",
+        "css": "border: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.05)",
+        "usage": ["cards", "containers with subtle emphasis"]
+      },
+      "emphasisBorderShadow": {
+        "name": "Emphasis Border + Shadow",
+        "css": "border: 1.5px solid #52c396; box-shadow: 0 4px 12px rgba(19, 21, 26, 0.08)",
+        "usage": ["selected card", "active state on light bg"]
+      }
+    }
+  },
+
   "backgrounds": {
     "cardGradientGrayBlue": {
       "name": "Card Gradient (Gray to Blue)",

@@ -348,6 +348,42 @@
     "edgeColor": "#8F99A3",
     "borderRadius": 8
   },
+  "highlightGuidelines": {
+    "borders": {
+      "maxWidth": "2px",
+      "structural": "1px - for containment (cards, regions)",
+      "emphasis": "1.5-2px - for highlight/selected states",
+      "avoid": "3px+ borders look dated and harsh"
+    },
+    "byBackground": {
+      "dark": {
+        "prefer": "Color glows (box-shadow with color)",
+        "examples": [
+          "box-shadow: 0 0 0 1px #52c396, 0 0 20px rgba(44, 182, 127, 0.3)",
+          "box-shadow: 0 0 32px rgba(122, 209, 174, 0.2)"
+        ],
+        "why": "Glows emit 'light' - pop well against dark backgrounds"
+      },
+      "light": {
+        "prefer": "Elevation shadows + background tints",
+        "examples": [
+          "box-shadow: 0 4px 16px rgba(19, 21, 26, 0.1)",
+          "background: linear-gradient(135deg, #eaf8f2, #fff)",
+          "border: 1.5px solid #52c396; box-shadow: 0 4px 12px rgba(19, 21, 26, 0.08)"
+        ],
+        "why": "Glows wash out on light - shadows create depth instead"
+      }
+    },
+    "bestPractice": {
+      "combine": "Thin border (1-2px) + shadow for best results",
+      "avoid": [
+        "Thick borders (3px+) as sole emphasis method",
+        "Color glows on light backgrounds",
+        "Multiple heavy effects stacked"
+      ]
+    }
+  },
+
   "graphicElements": {
     "arrows": {
       "IMPORTANT": "DO NOT use text arrows (→, >, ➜). Use CSS-drawn connectors.",

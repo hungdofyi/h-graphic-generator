@@ -71,10 +71,58 @@
       "name": "Code Container (Light, Blurred)",
       "background": "transparent",
       "backdropBlur": "5px",
-      "border": "3px solid #90cced",
+      "border": "2px solid #90cced",
       "borderRadius": "11px",
+      "boxShadow": "0 0 16px rgba(144, 204, 237, 0.2)",
       "opacity": 0.8,
       "usage": ["code blocks on light bg", "semi-transparent containers"]
+    }
+  },
+
+  "highlightEffects": {
+    "_guidelines": {
+      "borderMaxWidth": "2px - never exceed for emphasis",
+      "landingPageContext": "Mix of dark (hero) and light (content) backgrounds",
+      "combinedApproach": "thin border (1-2px) + shadow/glow for best results"
+    },
+    "onDark": {
+      "glowGreen": {
+        "name": "Green Glow",
+        "css": "box-shadow: 0 0 0 1px #52c396, 0 0 20px rgba(44, 182, 127, 0.3)",
+        "usage": ["success states", "CTA emphasis on dark hero"]
+      },
+      "glowBlue": {
+        "name": "Blue Glow",
+        "css": "box-shadow: 0 0 0 1px #5ea3ed, 0 0 20px rgba(72, 150, 234, 0.25)",
+        "usage": ["focus states", "feature emphasis on dark bg"]
+      },
+      "ambient": {
+        "name": "Ambient Glow",
+        "css": "box-shadow: 0 0 32px rgba(122, 209, 174, 0.2)",
+        "usage": ["soft background emphasis", "hero card highlights"]
+      }
+    },
+    "onLight": {
+      "elevated": {
+        "name": "Elevated Shadow",
+        "css": "box-shadow: 0 4px 16px rgba(19, 21, 26, 0.1)",
+        "usage": ["pricing cards", "feature cards"]
+      },
+      "elevatedProminent": {
+        "name": "Elevated Prominent",
+        "css": "box-shadow: 0 8px 24px rgba(19, 21, 26, 0.12), 0 2px 6px rgba(19, 21, 26, 0.04)",
+        "usage": ["highlighted pricing tier", "primary feature"]
+      },
+      "tintGreen": {
+        "name": "Green Tint",
+        "css": "background: linear-gradient(135deg, #eaf8f2, #fff)",
+        "usage": ["growth tier", "eco emphasis"]
+      },
+      "subtleBorderShadow": {
+        "name": "Subtle Border + Shadow",
+        "css": "border: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(19, 21, 26, 0.05)",
+        "usage": ["testimonial cards", "content cards"]
+      }
     }
   },
 
@@ -209,16 +257,18 @@
       "name": "Glass Container (Large)",
       "background": "rgba(129,156,189,0.1)",
       "backdropBlur": "11px",
-      "border": "3px solid rgba(25,78,190,0.3)",
+      "border": "2px solid rgba(25,78,190,0.3)",
       "borderRadius": "11px",
+      "boxShadow": "0 0 20px rgba(25, 78, 190, 0.1)",
       "usage": ["data model containers", "dataset groups", "feature wrappers"]
     },
     "glassContainerSmall": {
       "name": "Glass Container (Small)",
       "background": "rgba(129,156,189,0.1)",
       "backdropBlur": "11px",
-      "border": "2.5px solid rgba(25,78,190,0.3)",
+      "border": "1.5px solid rgba(25,78,190,0.3)",
       "borderRadius": "11px",
+      "boxShadow": "0 0 16px rgba(25, 78, 190, 0.08)",
       "usage": ["individual datasets", "smaller groups", "nested containers"]
     },
     "datasetCard": {
