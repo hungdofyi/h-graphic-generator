@@ -3,11 +3,13 @@ import { z } from 'zod';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { BrandContext } from '../../core/brand-context.js';
+import type { ExtractionLoader } from '../../core/extraction-loader.js';
 import { Engine } from '../../core/engine.js';
 import { PuppeteerRenderer } from '../../core/puppeteer-renderer.js';
 import { ExportPipeline } from '../../core/export-pipeline.js';
 import { validateOutputPath } from '../../core/sanitize.js';
 import type { OutputFormat } from '../../core/types.js';
+import { generatePatternCSS, injectCSS } from '../../core/pattern-css-generator.js';
 
 const RenderGraphicSchema = z.object({
   html: z.string().describe('HTML/CSS code to render. Should include inline <style> tags.'),
@@ -22,6 +24,10 @@ const RenderGraphicSchema = z.object({
     .enum(['auto', 'satori', 'puppeteer'])
     .default('auto')
     .describe('Renderer: auto (detect), satori (simple), puppeteer (complex CSS)'),
+  style_profile: z
+    .string()
+    .optional()
+    .describe('Pattern category to auto-inject brand CSS (e.g., "docs-diagrams", "marketing-graphics"). Injects shadows, containers, typography as utility classes.'),
   // Optional reference parameters - accepts image data for schema validation
   // Claude sees images in conversation context, these just prevent validation errors
   reference_image: z
@@ -37,7 +43,11 @@ const RenderGraphicSchema = z.object({
  * Claude generates HTML/CSS, this renders it to an image
  * Auto-detects complex CSS (gradients, shadows) and uses Puppeteer
  */
-export function registerRenderGraphicTool(server: McpServer, brandContext: BrandContext): void {
+export function registerRenderGraphicTool(
+  server: McpServer,
+  brandContext: BrandContext,
+  extractionLoader?: ExtractionLoader
+): void {
   server.tool(
     'render_graphic',
     'Render HTML/CSS to a branded image. Supports gradients, shadows, complex CSS. Auto-detects and uses best renderer.',
@@ -65,10 +75,23 @@ export function registerRenderGraphicTool(server: McpServer, brandContext: Brand
         // Validate output path (prevents directory traversal)
         const validatedPath = validateOutputPath(input.output_path);
 
+        // Inject pattern CSS if style_profile is specified
+        let htmlToRender = input.html;
+        let injectedProfile: string | undefined;
+
+        if (input.style_profile && extractionLoader) {
+          const pattern = extractionLoader.getPattern(input.style_profile);
+          if (pattern) {
+            const patternCSS = generatePatternCSS(pattern);
+            htmlToRender = injectCSS(htmlToRender, patternCSS);
+            injectedProfile = input.style_profile;
+          }
+        }
+
         // Determine which renderer to use
         const usePuppeteer =
           input.renderer === 'puppeteer' ||
-          (input.renderer === 'auto' && Engine.needsPuppeteer(input.html));
+          (input.renderer === 'auto' && Engine.needsPuppeteer(htmlToRender));
 
         let outputBuffer: Buffer;
 
@@ -78,7 +101,7 @@ export function registerRenderGraphicTool(server: McpServer, brandContext: Brand
           await renderer.init();
 
           try {
-            const pngBuffer = await renderer.renderToPng(input.html, {
+            const pngBuffer = await renderer.renderToPng(htmlToRender, {
               width: input.width,
               height: input.height,
             });
@@ -105,7 +128,7 @@ export function registerRenderGraphicTool(server: McpServer, brandContext: Brand
           const engine = new Engine(brandContext);
           await engine.initialize();
 
-          const svg = await engine.renderHtml(input.html, {
+          const svg = await engine.renderHtml(htmlToRender, {
             width: input.width,
             height: input.height,
           });
@@ -138,6 +161,7 @@ export function registerRenderGraphicTool(server: McpServer, brandContext: Brand
                 height: input.height,
                 bytes: outputBuffer.length,
                 renderer: usePuppeteer ? 'puppeteer' : 'satori',
+                ...(injectedProfile && { style_profile: injectedProfile }),
               }),
             },
           ],

@@ -16,7 +16,7 @@ export function registerTools(
   extractionLoader?: ExtractionLoader
 ): void {
   // PRIMARY tool - Claude generates HTML/CSS, we render to image
-  registerRenderGraphicTool(server, brandContext);
+  registerRenderGraphicTool(server, brandContext, extractionLoader);
 
   // Style profile - official brand guidelines from brand.json
   registerGetStyleProfileTool(server, brandContext);
