@@ -198,4 +198,4 @@ Opens web UI at `http://localhost:6274` to test tools interactively.
 
 ## License
 
-MIT
+Internal use only.
