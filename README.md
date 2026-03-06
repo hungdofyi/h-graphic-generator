@@ -31,24 +31,6 @@ npm install && npm run build
 }
 ```
 
-**Claude Desktop** - Add to config file:
-
-| Platform | Config Path |
-|----------|-------------|
-| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
-| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
-
-```json
-{
-  "mcpServers": {
-    "h-graphic": {
-      "command": "node",
-      "args": ["/path/to/h-graphic-generator/dist/mcp/server.js"]
-    }
-  }
-}
-```
-
 ### 3. Start Using
 
 Just ask Claude to create graphics:
