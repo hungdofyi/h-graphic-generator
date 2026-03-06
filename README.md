@@ -80,6 +80,8 @@ Claude follows this workflow automatically:
 4. **Generate HTML/CSS** - Design shapes with CSS (not icon library)
 5. **Render to image** - `render_graphic` with the HTML
 
+**Output:** Images are saved to the `output/` folder by default.
+
 ## Pattern Categories
 
 | Category | Examples |
