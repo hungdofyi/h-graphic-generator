@@ -95,11 +95,26 @@ export class BrandContext {
   }
 
   /**
-   * Resolve typography by role
-   * @returns Typography definition or undefined if not found
+   * Resolve typography by role (display, body, title, etc.)
+   * @returns Typography definition with family and weight
    */
   resolveFont(role: string): BrandTypography | undefined {
-    return this.config.typography[role];
+    const typo = this.config.typography as Record<string, unknown>;
+    const scales = typo['scales'] as Record<string, { weight?: string }> | undefined;
+    const fonts = typo['fonts'] as Record<string, string> | undefined;
+
+    const scale = scales?.[role];
+    if (!scale) return undefined;
+
+    // Default to primary font (Inter), use display font for large text roles
+    const displayRoles = ['display', 'title', 'subtitle1', 'subtitle2', 'subtitle3'];
+    const fontKey = displayRoles.includes(role) ? 'display' : 'primary';
+    const family = fonts?.[fontKey] || fonts?.['primary'] || 'Inter';
+
+    return {
+      family,
+      weight: scale.weight || '400',
+    };
   }
 
   /**

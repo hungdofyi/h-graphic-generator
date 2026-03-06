@@ -14,7 +14,7 @@ describe('BrandContext', () => {
 
       expect(context).toBeDefined();
       expect(context.getConfig()).toBeDefined();
-      expect(context.getConfig().name).toBe('Default Brand');
+      expect(context.getConfig().name).toBe('Holistics');
     });
 
     it('should throw error when file does not exist', async () => {
@@ -71,12 +71,12 @@ describe('BrandContext', () => {
 
     it('should resolve primary color', () => {
       const color = context.resolveColor('primary');
-      expect(color).toBe('#0066CC');
+      expect(color).toBe('#05264C');
     });
 
     it('should resolve secondary color', () => {
       const color = context.resolveColor('secondary');
-      expect(color).toBe('#FF6B35');
+      expect(color).toBe('#259B6C');
     });
 
     it('should return undefined for non-existent color', () => {
@@ -104,8 +104,8 @@ describe('BrandContext', () => {
     it('should resolve display font', () => {
       const font = context.resolveFont('display');
       expect(font).toBeDefined();
-      expect(font?.family).toBe('Inter');
-      expect(font?.weight).toBe('700');
+      expect(font?.family).toBe('Inter Display');
+      expect(font?.weight).toBe('600');
     });
 
     it('should resolve body font', () => {
@@ -161,7 +161,7 @@ describe('BrandContext', () => {
     it('should resolve logo asset path', () => {
       const assetPath = context.resolveAsset('logo');
       expect(assetPath).toBeDefined();
-      expect(assetPath).toContain('assets/logo.svg');
+      expect(assetPath).toContain('Logo Color.svg');
     });
 
     it('should return undefined for non-existent asset', () => {

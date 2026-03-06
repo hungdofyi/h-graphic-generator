@@ -114,25 +114,30 @@
   "typography": {
     "fonts": {
       "primary": "Inter",
+      "display": "Inter Display",
       "code": "JetBrains Mono",
       "logo": "Museo Sans"
+    },
+    "fontUsage": {
+      "Inter": "Body text, UI elements, small text",
+      "Inter Display": "Headings, titles, large text (24px+)",
+      "JetBrains Mono": "Code blocks, technical content, monospace"
     },
     "weights": {
       "regular": "400",
       "medium": "500",
-      "semiBold": "600",
-      "bold": "700"
+      "semiBold": "600"
     },
     "scales": {
       "display": {
         "size": 48,
-        "weight": "700",
+        "weight": "600",
         "lineHeight": "120%",
         "letterSpacing": "0%"
       },
       "title": {
         "size": 42,
-        "weight": "700",
+        "weight": "600",
         "lineHeight": "120%",
         "letterSpacing": "0%"
       },
@@ -144,13 +149,13 @@
       },
       "subtitle2": {
         "size": 28,
-        "weight": "700",
+        "weight": "600",
         "lineHeight": "120%",
         "letterSpacing": "0%"
       },
       "subtitle3": {
         "size": 24,
-        "weight": "700",
+        "weight": "600",
         "lineHeight": "140%",
         "letterSpacing": "0%"
       },
@@ -168,7 +173,7 @@
       },
       "microTitle": {
         "size": 16,
-        "weight": "700",
+        "weight": "600",
         "lineHeight": "160%",
         "letterSpacing": "0%"
       },
@@ -204,13 +209,29 @@
         "relativeTo": "bodyTextSize"
       },
       "avoid": [
+        "ALL CAPS text - use Sentence case only",
         "Pairing too many fonts (stick to Inter + JetBrains Mono)",
         "Orphan text (single word at paragraph bottom)",
         "Line height too narrow",
         "Line height and letter spacing too wide",
         "Script/handwriting fonts",
         "Italic fonts for body text"
-      ]
+      ],
+      "capitalization": {
+        "rule": "Sentence case only - never use ALL CAPS",
+        "properNouns": [
+          "AQL",
+          "AMQL",
+          "AML",
+          "Canal",
+          "Git",
+          "Holistics",
+          "Holistics Playground",
+          "SSO",
+          "2FA"
+        ],
+        "reference": "https://design.holistics.dev/content/word-list.html"
+      }
     }
   },
   "logo": {

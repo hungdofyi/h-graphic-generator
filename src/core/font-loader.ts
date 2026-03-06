@@ -1,62 +1,72 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { BrandConfig, SatoriFont } from './types.js';
+import type { BrandConfig, SatoriFont, FontWeight } from './types.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-/**
- * Default font paths (bundled Inter font)
- * Note: Satori does NOT support WOFF2 or variable fonts
- */
-const BUNDLED_FONT_PATHS = [
-  path.resolve(__dirname, '../../brand/assets/fonts/Inter-Regular.woff'),
-  path.resolve(__dirname, '../../brand/assets/fonts/Inter-Regular.ttf'),
-];
+/** Font directory paths */
+const FONT_DIR = path.resolve(process.cwd(), 'brand/assets/fonts');
+const STATIC_FONT_DIR = path.join(FONT_DIR, 'static');
+const BUNDLED_STATIC_DIR = path.resolve(__dirname, '../../brand/assets/fonts/static');
+
+/** Weight name to numeric value mapping */
+const WEIGHT_MAP: Record<string, FontWeight> = {
+  Regular: 400,
+  Medium: 500,
+  SemiBold: 600,
+};
+
+/** Font families and their file prefixes */
+const FONT_FAMILIES: Record<string, string> = {
+  Inter: 'Inter',
+  'Inter Display': 'InterDisplay',
+  'JetBrains Mono': 'JetBrainsMono',
+};
 
 /**
- * Load fonts for Satori rendering
- * Priority: brand/assets/fonts/ -> bundled Inter -> error
+ * Load fonts for Satori rendering with multiple weights
+ * Priority: brand/assets/fonts/static/ -> bundled -> error
  */
-export async function loadFonts(brandConfig: BrandConfig): Promise<SatoriFont[]> {
+export async function loadFonts(_brandConfig: BrandConfig): Promise<SatoriFont[]> {
   const fonts: SatoriFont[] = [];
-  const loadedFamilies = new Set<string>();
 
-  // Collect unique font families from brand config
-  const families = new Set<string>();
-  for (const typoDef of Object.values(brandConfig.typography)) {
-    families.add(typoDef.family);
+  // Load all font families
+  for (const family of Object.keys(FONT_FAMILIES)) {
+    const familyFonts = await loadFontFamily(family);
+    fonts.push(...familyFonts);
   }
 
-  // Try to load each font family
-  for (const family of families) {
-    const fontPath = await findFontFile(family);
+  if (fonts.length === 0) {
+    throw new Error(
+      'No fonts available. Place TTF files in brand/assets/fonts/static/ directory.'
+    );
+  }
 
+  return fonts;
+}
+
+/**
+ * Load all weight variants for a font family
+ */
+async function loadFontFamily(family: string): Promise<SatoriFont[]> {
+  const fonts: SatoriFont[] = [];
+  const prefix = FONT_FAMILIES[family] || family.replace(/\s+/g, '');
+
+  for (const [weightName, weightValue] of Object.entries(WEIGHT_MAP)) {
+    const fontPath = await findFontFile(prefix, weightName);
     if (fontPath) {
       try {
         const fontData = await fs.readFile(fontPath);
         fonts.push({
           name: family,
           data: fontData.buffer as ArrayBuffer,
-          weight: 400 as const,
+          weight: weightValue,
           style: 'normal',
         });
-        loadedFamilies.add(family);
       } catch (error) {
-        console.warn(`Failed to load font "${family}" from ${fontPath}: ${(error as Error).message}`);
+        console.warn(`Failed to load ${prefix}-${weightName}: ${(error as Error).message}`);
       }
-    }
-  }
-
-  // Ensure at least one font is available (use bundled Inter as fallback)
-  if (fonts.length === 0) {
-    const fallbackFont = await loadBundledFont();
-    if (fallbackFont) {
-      fonts.push(fallbackFont);
-    } else {
-      throw new Error(
-        'No fonts available. Place TTF/WOFF2 files in brand/assets/fonts/ or ensure bundled Inter font exists.'
-      );
     }
   }
 
@@ -64,55 +74,55 @@ export async function loadFonts(brandConfig: BrandConfig): Promise<SatoriFont[]>
 }
 
 /**
- * Find font file in brand/assets/fonts/ directory
+ * Find font file in static fonts directory
  */
-async function findFontFile(family: string): Promise<string | null> {
-  const fontDir = path.resolve(process.cwd(), 'brand/assets/fonts');
-  const normalizedFamily = family.replace(/\s+/g, '-');
+async function findFontFile(prefix: string, weight: string): Promise<string | null> {
+  const filename = `${prefix}-${weight}.ttf`;
 
-  // Try common font file patterns (TTF/WOFF only - Satori doesn't support WOFF2)
-  const patterns = [
-    `${normalizedFamily}-Regular.woff`,
-    `${normalizedFamily}.woff`,
-    `${normalizedFamily}-Regular.ttf`,
-    `${normalizedFamily}.ttf`,
-    `${family}-Regular.woff`,
-    `${family}.woff`,
-    `${family}-Regular.ttf`,
-    `${family}.ttf`,
-  ];
+  // Try project static fonts first
+  const projectPath = path.join(STATIC_FONT_DIR, filename);
+  try {
+    await fs.access(projectPath);
+    return projectPath;
+  } catch {
+    // Not found in project
+  }
 
-  for (const pattern of patterns) {
-    const fontPath = path.join(fontDir, pattern);
-    try {
-      await fs.access(fontPath);
-      return fontPath;
-    } catch {
-      // File doesn't exist, try next pattern
-    }
+  // Try bundled static fonts
+  const bundledPath = path.join(BUNDLED_STATIC_DIR, filename);
+  try {
+    await fs.access(bundledPath);
+    return bundledPath;
+  } catch {
+    // Not found
   }
 
   return null;
 }
 
 /**
- * Load bundled Inter font as fallback
+ * Get base64-encoded font data for CSS embedding (used by Puppeteer)
  */
-async function loadBundledFont(): Promise<SatoriFont | null> {
-  for (const fontPath of BUNDLED_FONT_PATHS) {
-    try {
-      await fs.access(fontPath);
-      const fontData = await fs.readFile(fontPath);
-      return {
-        name: 'Inter',
-        data: fontData.buffer as ArrayBuffer,
-        weight: 400 as const,
-        style: 'normal',
-      };
-    } catch {
-      // Try next path
+export async function getFontDataForCss(): Promise<{ family: string; weight: number; base64: string }[]> {
+  const fontData: { family: string; weight: number; base64: string }[] = [];
+
+  for (const [family, prefix] of Object.entries(FONT_FAMILIES)) {
+    for (const [weightName, weightValue] of Object.entries(WEIGHT_MAP)) {
+      const fontPath = await findFontFile(prefix, weightName);
+      if (fontPath) {
+        try {
+          const data = await fs.readFile(fontPath);
+          fontData.push({
+            family,
+            weight: weightValue,
+            base64: data.toString('base64'),
+          });
+        } catch {
+          // Skip
+        }
+      }
     }
   }
-  // No bundled font found
-  return null;
+
+  return fontData;
 }

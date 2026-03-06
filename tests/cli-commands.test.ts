@@ -53,22 +53,22 @@ describe('CLI Commands - Smoke Tests', () => {
       expect(config.name).toBeDefined();
       expect(config.colors.primary.value).toBeDefined();
       expect(config.colors.text.value).toBeDefined();
-      expect(config.typography.body).toBeDefined();
+      expect(context.resolveFont('body')).toBeDefined();
     });
 
     it('should report valid brand name', async () => {
       const brandPath = path.join(__dirname, '../brand/brand.json');
       const context = await BrandContext.load(brandPath);
 
-      expect(context.getConfig().name).toBe('Default Brand');
+      expect(context.getConfig().name).toBe('Holistics');
     });
 
     it('should resolve color tokens', async () => {
       const brandPath = path.join(__dirname, '../brand/brand.json');
       const context = await BrandContext.load(brandPath);
 
-      expect(context.resolveColor('primary')).toBe('#0066CC');
-      expect(context.resolveColor('secondary')).toBe('#FF6B35');
+      expect(context.resolveColor('primary')).toBe('#05264C');
+      expect(context.resolveColor('secondary')).toBe('#259B6C');
     });
   });
 

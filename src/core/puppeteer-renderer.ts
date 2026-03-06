@@ -1,6 +1,7 @@
 import puppeteer, { Browser } from 'puppeteer';
 import type { BrandConfig } from './types.js';
 import { validateDimensions, sanitizeHtmlForPuppeteer } from './sanitize.js';
+import { getFontDataForCss } from './font-loader.js';
 
 /**
  * Puppeteer-based renderer for complex CSS that Satori doesn't support
@@ -8,9 +9,10 @@ import { validateDimensions, sanitizeHtmlForPuppeteer } from './sanitize.js';
  */
 export class PuppeteerRenderer {
   private browser: Browser | null = null;
+  private fontCss: string | null = null;
 
   /**
-   * Initialize Puppeteer browser instance
+   * Initialize Puppeteer browser instance and load fonts
    */
   async init(): Promise<void> {
     if (this.browser) return;
@@ -19,6 +21,29 @@ export class PuppeteerRenderer {
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
+
+    // Pre-load font CSS for embedding
+    this.fontCss = await this.buildFontCss();
+  }
+
+  /**
+   * Build CSS @font-face rules from embedded fonts
+   */
+  private async buildFontCss(): Promise<string> {
+    const fontData = await getFontDataForCss();
+    if (fontData.length === 0) return '';
+
+    return fontData
+      .map(
+        ({ family, weight, base64 }) => `
+        @font-face {
+          font-family: '${family}';
+          font-weight: ${weight};
+          font-style: normal;
+          src: url(data:font/truetype;base64,${base64}) format('truetype');
+        }`
+      )
+      .join('\n');
   }
 
   /**
@@ -55,15 +80,21 @@ export class PuppeteerRenderer {
       // Sanitize HTML to prevent XSS
       const sanitizedHtml = sanitizeHtmlForPuppeteer(htmlString);
 
-      // Create full HTML document with the content
+      // Create full HTML document with embedded fonts
       const fullHtml = `
         <!DOCTYPE html>
         <html>
           <head>
             <meta charset="utf-8">
             <style>
+              ${this.fontCss || ''}
               * { margin: 0; padding: 0; box-sizing: border-box; }
-              html, body { width: ${size.width}px; height: ${size.height}px; overflow: hidden; }
+              html, body {
+                width: ${size.width}px;
+                height: ${size.height}px;
+                overflow: hidden;
+                font-family: 'Inter', sans-serif;
+              }
             </style>
           </head>
           <body>${sanitizedHtml}</body>
