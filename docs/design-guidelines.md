@@ -53,11 +53,14 @@ hgraphic generate --template hero --size 1200x630 --size 800x400
 ### Tools Exposed
 | Tool | Description | Parameters |
 |------|-------------|------------|
-| `generate_graphic` | Generate branded graphic | template, data, format, size |
-| `generate_diagram` | Generate branded diagram | input (DSL/description), style |
+| `get_style_profile` | Get brand tokens and usage examples | - |
+| `list_patterns` | Browse Figma-extracted design patterns | category (optional) |
+| `get_pattern` | Get detailed styling for a pattern | name |
+| `list_icons` | Browse 300+ brand icons | category (optional) |
+| `render_graphic` | Render HTML/CSS to image | html, width, height, format |
 | `list_templates` | List available templates | category (optional) |
-| `validate_brand` | Validate brand config | config path |
-| `export_graphic` | Export existing SVG to format | svg content, format, sizes[] |
+| `generate_from_template` | Create graphic from template | template, props, format, size |
+| `validate_brand` | Validate brand config | - |
 
 ### Resources Served
 | URI | Description |
@@ -82,9 +85,17 @@ hgraphic generate --template hero --size 1200x630 --size 800x400
     "muted": { "value": "#6B7280" }
   },
   "typography": {
-    "display": { "family": "Inter", "weight": "700" },
-    "heading": { "family": "Inter", "weight": "600" },
-    "body": { "family": "Inter", "weight": "400" }
+    "fonts": {
+      "primary": "Inter",
+      "display": "Inter Display",
+      "code": "JetBrains Mono"
+    },
+    "weights": { "regular": "400", "medium": "500", "semiBold": "600" },
+    "scales": {
+      "display": { "size": 48, "weight": "600" },
+      "heading": { "size": 32, "weight": "600" },
+      "body": { "size": 16, "weight": "400" }
+    }
   },
   "spacing": {
     "unit": 8,

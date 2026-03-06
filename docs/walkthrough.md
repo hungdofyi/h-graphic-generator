@@ -179,10 +179,13 @@ Use the diagram command with nodes.json format.
 
 | Tool | Purpose |
 |------|---------|
-| `render_graphic` | PRIMARY - HTML/CSS → image |
-| `generate_from_template` | Template → image |
+| `get_style_profile` | Get brand tokens (colors, typography, spacing) |
+| `list_patterns` | Browse Figma-extracted design patterns |
+| `get_pattern` | Get detailed styling for a pattern |
+| `list_icons` | Browse 300+ brand icons |
+| `render_graphic` | Render HTML/CSS → image |
 | `list_templates` | Show available templates |
-| `get_style_profile` | Get brand styling guidance |
+| `generate_from_template` | Template → image |
 | `validate_brand` | Check brand config |
 
 ### Example MCP Prompts
@@ -300,7 +303,7 @@ done
 |-------|----------|
 | `command not found: hgraphic` | Run `npm link` or use `npx tsx src/cli/index.ts` |
 | `Failed to read brand config` | Ensure `brand/brand.json` exists and is valid JSON |
-| `Font not found` | Default Inter font is bundled; custom fonts go in `brand/assets/fonts/` |
+| `Font not found` | Default fonts bundled (Inter, Inter Display, JetBrains Mono); custom fonts go in `brand/assets/fonts/static/` |
 | `GEMINI_API_KEY required` | Only needed for `brand extract-style` command |
 | `Output path outside allowed directory` | Security feature - output must be within project directory |
 | `Dimensions must be <= 4096px` | Max size is 4096x4096 to prevent DoS |

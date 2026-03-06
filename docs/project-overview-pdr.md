@@ -295,10 +295,10 @@ hgraphic templates list
 ## Constraints & Trade-offs
 
 ### Architectural Constraints
-1. **Satori Limitations**: No WOFF2, variable fonts, some CSS properties
-   - Mitigation: Puppeteer fallback for complex CSS
-2. **Font Registration**: Requires manual font file setup
-   - Rationale: Satori design decision
+1. **Satori Limitations**: Requires static TTF fonts (one per weight), limited CSS support
+   - Mitigation: Puppeteer fallback with variable font support via CSS embedding
+2. **Font Registration**: Static TTF files in `brand/assets/fonts/static/`
+   - Bundled: Inter, Inter Display, JetBrains Mono (weights 400/500/600)
 3. **Gemini Free Tier**: 15 req/min, 1500 req/day rate limit
    - Use Case: Suitable for style extraction, not high-volume
 
@@ -411,7 +411,7 @@ hgraphic templates list
 None (initial release)
 
 ### Known Issues
-1. Satori doesn't support WOFF2 fonts (use WOFF or TTF)
+1. Satori requires static TTF fonts (variable fonts use Puppeteer renderer)
 2. Some CSS properties not fully supported (fallback to Puppeteer)
 3. Gemini API calls are rate-limited (free tier)
 

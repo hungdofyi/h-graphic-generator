@@ -21,7 +21,7 @@
 ### 3. Brand Customization
 
 - [ ] Replace default brand colors in `brand/brand.json`
-- [ ] Add custom fonts to `brand/assets/fonts/` (WOFF format)
+- [ ] Add custom fonts to `brand/assets/fonts/static/` (TTF format, weights 400/500/600)
 - [ ] Run `hgraphic brand extract-style` with reference images
 - [ ] Review generated `brand/style-profile.json`
 
@@ -179,9 +179,10 @@ NODE_OPTIONS="--max-old-space-size=4096" hgraphic render ...
 
 ### Font Issues
 
-- Satori only supports WOFF/TTF (not WOFF2 or variable fonts)
-- Fonts must be static weight, not variable
-- Check `brand/assets/fonts/` has correct format
+- Satori requires static TTF files (one per weight)
+- Variable fonts work with Puppeteer renderer via CSS embedding
+- Static fonts location: `brand/assets/fonts/static/`
+- Variable fonts location: `brand/assets/fonts/variable/`
 
 ### Gemini Rate Limits
 

@@ -249,7 +249,7 @@ Design tokens in W3C format.
   "$schema": "h-graphic-brand-v1",
   "name": "Brand Name",
   "colors": { "primary": { "value": "#0066CC" }, ... },
-  "typography": { "display": { "family": "Inter", "weight": "700" }, ... },
+  "typography": { "fonts": { "primary": "Inter", "display": "Inter Display" }, "weights": {...}, "scales": {...} },
   "spacing": { "unit": 8, "scales": { "xs": 4, ... } },
   "assets": { "logo": "path/to/logo.svg" }
 }
@@ -259,9 +259,9 @@ Design tokens in W3C format.
 - `GOOGLE_GENAI_API_KEY` - Gemini API key (for style extraction)
 
 ### Font Files
-- Location: `brand/assets/fonts/`
-- Supported: WOFF, TTF
-- Default: Inter-Regular.woff (bundled)
+- Location: `brand/assets/fonts/static/` (for Satori), `brand/assets/fonts/variable/` (for Puppeteer)
+- Supported: TTF (static instances with weights 400, 500, 600)
+- Bundled: Inter, Inter Display, JetBrains Mono
 
 ## Data Flow Examples
 
@@ -442,8 +442,8 @@ npm run lint:fix       # Fix linting
 
 ## Known Limitations
 
-1. **Satori**: No support for WOFF2, variable fonts, some CSS properties
-2. **Fonts**: Manual registration required (no auto system font discovery)
+1. **Satori**: Requires static TTF fonts (variable fonts work via Puppeteer)
+2. **Fonts**: Static TTF files required in `brand/assets/fonts/static/`
 3. **Complex CSS**: Satori may not support all CSS features (Puppeteer fallback)
 4. **Gemini Free Tier**: 15 requests/minute, 1500/day (rate limited)
 5. **Diagram DSL**: Only Mermaid syntax supported (no custom DSL)

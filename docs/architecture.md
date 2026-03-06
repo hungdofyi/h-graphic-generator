@@ -74,7 +74,7 @@ Centralized brand token management.
 ```json
 {
   "colors": { "primary": { "value": "#0066CC" }, ... },
-  "typography": { "display": { "family": "Inter", "weight": "700" }, ... },
+  "typography": { "fonts": { "primary": "Inter", "display": "Inter Display" }, "scales": {...} },
   "spacing": { "unit": 8, "scales": { ... } },
   "assets": { "logo": "path/to/logo.svg" }
 }
@@ -179,18 +179,23 @@ HTML injection prevention.
 **Approach**: Whitelist-based filtering (only allow safe HTML/CSS).
 
 ### 7. Font Loader (src/core/font-loader.ts)
-Custom and system font integration.
+Custom font integration for Satori and Puppeteer.
 
-**Responsibility**: Register fonts with Satori renderer.
+**Responsibility**: Register fonts with renderers.
 
 **Features**:
-- Loads WOFF fonts from `brand/assets/fonts/`
-- Provides system fallback fonts
-- Satori requires explicit font registration (no automatic system font access)
-- Supports Inter (bundled default), custom WOFF files
+- Loads static TTF fonts from `brand/assets/fonts/static/`
+- Supports multiple weights per family (400, 500, 600)
+- Provides CSS @font-face generation for Puppeteer embedding
+- Bundled: Inter, Inter Display, JetBrains Mono
 
-**Supported Formats**: WOFF, TTF (via Sharp)
-**NOT Supported**: WOFF2, variable fonts (Satori limitation)
+**Font Families**:
+- `Inter` - Body text, UI elements
+- `Inter Display` - Headings, titles (24px+)
+- `JetBrains Mono` - Code blocks
+
+**Supported Formats**: TTF (static instances)
+**Variable Fonts**: Supported for Puppeteer via CSS, not for Satori
 
 ### 8. Image Validation (src/core/image-validation.ts)
 Safety checks for generated/imported images.
