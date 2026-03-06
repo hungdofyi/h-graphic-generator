@@ -29,7 +29,12 @@ npm install && npm run build
 }
 ```
 
-**Claude Desktop** - Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+**Claude Desktop** - Add to config file:
+
+| Platform | Config Path |
+|----------|-------------|
+| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
 
 ```json
 {
