@@ -12,7 +12,9 @@ npm install && npm run build
 
 ### 2. Configure Claude
 
-**Claude Code** - Add to `~/.claude.json`:
+**Working in this repo?** Claude Code auto-connects via `.mcp.json` — no config needed.
+
+**For other projects**, add to `~/.claude.json`:
 
 ```json
 {
