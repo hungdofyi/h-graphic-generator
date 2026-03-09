@@ -58,6 +58,18 @@
         "700": "#4C5159",
         "800": "#2D3238",
         "900": "#13151A"
+      },
+      "purple": {
+        "50": "#F4EEFD",
+        "100": "#E9DCFA",
+        "200": "#DECBF7",
+        "300": "#D0B5F4",
+        "400": "#C29EF1",
+        "500": "#A975EB",
+        "600": "#9250E5",
+        "700": "#7C2CE0",
+        "800": "#5F1BB4",
+        "900": "#38097A"
       }
     },
     "rules": {
@@ -438,6 +450,7 @@
       "documentation": "White or light gray backgrounds preferred",
       "inApp": "White or light backgrounds"
     },
+    "lightPurple": "#F4EEFD",
     "complexShapes": {
       "approach": "Design shapes with CSS/HTML creatively. Do NOT search icon library for every element.",
       "cylinder": {

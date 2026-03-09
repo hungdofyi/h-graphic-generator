@@ -2,7 +2,13 @@
   "mcpServers": {
     "h-graphic": {
       "command": "node",
-      "args": ["dist/mcp/server.js"]
+      "args": [
+        "dist/mcp/server.js"
+      ]
+    },
+    "figma-remote-mcp": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
     }
   }
 }
