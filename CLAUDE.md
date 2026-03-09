@@ -25,7 +25,32 @@ When asked to create a graphic:
 | `get_pattern` | Get detailed styles for a category (backgrounds, containers, typography, elements) |
 | `list_icons` | Browse 300+ brand icons by category (chart, ds, ai, onboarding, etc.) |
 | `render_graphic` | Render HTML/CSS to PNG/SVG |
+| `serve_preview` | Start local server for Figma export (returns URL for capture) |
+| `stop_preview` | Stop preview server when done |
 | `validate_brand` | Validate brand config |
+
+## Export to Figma
+
+To export generated graphics as editable Figma designs:
+
+1. **Generate HTML/CSS** as usual
+2. **Start preview server** - Call `serve_preview` with the HTML
+3. **Capture to Figma** - Use Figma MCP's `generate_figma_design` with the returned URL
+4. **Cleanup** - Call `stop_preview` when done
+
+**Requirements:**
+- Figma Remote MCP server configured (`https://mcp.figma.com/mcp`)
+- OAuth authentication with Figma
+
+**Example workflow:**
+```
+User: "Create a pricing card and export to Figma"
+1. Claude generates HTML/CSS for pricing card
+2. Claude calls serve_preview → http://localhost:3456
+3. Claude calls Figma MCP generate_figma_design with URL
+4. Claude calls stop_preview
+→ Result: Editable Figma layers
+```
 
 ## Pattern Categories
 

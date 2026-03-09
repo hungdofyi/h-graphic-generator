@@ -9,6 +9,7 @@ import { registerValidateBrandTool } from './validate-brand.js';
 import { registerListPatternsTool } from './list-patterns.js';
 import { registerGetPatternTool } from './get-pattern.js';
 import { registerListIconsTool } from './list-icons.js';
+import { registerServePreviewTool, registerStopPreviewTool } from './serve-preview.js';
 
 export function registerTools(
   server: McpServer,
@@ -30,6 +31,10 @@ export function registerTools(
 
   // Validation
   registerValidateBrandTool(server, brandContext);
+
+  // Preview server for Figma export
+  registerServePreviewTool(server);
+  registerStopPreviewTool(server);
 
   // Pattern discovery (requires extraction loader)
   if (extractionLoader) {

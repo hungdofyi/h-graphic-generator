@@ -184,23 +184,35 @@ Use the diagram command with nodes.json format.
 | `get_pattern` | Get detailed styling for a pattern |
 | `list_icons` | Browse 300+ brand icons |
 | `render_graphic` | Render HTML/CSS → image |
+| `serve_preview` | Start HTTP server for Figma export |
+| `stop_preview` | Stop preview server |
 | `list_templates` | Show available templates |
 | `generate_from_template` | Template → image |
 | `validate_brand` | Check brand config |
 
 ### Example MCP Prompts
 
+**Simple graphic:**
 ```
 Use the render_graphic tool to create a hero banner with:
 - Blue gradient background
 - White text "Welcome to Acme"
 - 1920x600 size
-- Save to output/hero.png
 ```
 
+**Styled with brand tokens:**
 ```
 First use get_style_profile to understand the brand colors,
 then use render_graphic to create a branded call-to-action button image.
+```
+
+**Export to Figma (requires Figma MCP):**
+```
+Create a pricing card using render_graphic, then:
+1. Call serve_preview with the HTML
+2. Use the returned URL with Figma MCP's generate_figma_design
+3. Call stop_preview when done
+This exports the design as editable Figma layers.
 ```
 
 ---

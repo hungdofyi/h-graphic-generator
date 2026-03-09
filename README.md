@@ -48,6 +48,8 @@ Create a pricing comparison graphic with 3 tiers
 | `get_pattern` | Get detailed styling for a pattern category |
 | `list_icons` | Browse 300+ brand icons by category |
 | `render_graphic` | Render HTML/CSS to image |
+| `serve_preview` | Start local server for Figma export |
+| `stop_preview` | Stop preview server |
 | `list_templates` | List pre-built templates |
 | `generate_from_template` | Create graphic from template |
 | `validate_brand` | Check brand config integrity |

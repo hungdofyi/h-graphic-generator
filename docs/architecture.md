@@ -298,6 +298,50 @@ Add to Claude Desktop config:
 4. ExportPipeline converts to requested format
 5. Image returned as base64 to Claude (Claude Desktop displays inline)
 
+#### serve_preview (src/mcp/tools/serve-preview.ts)
+**Preview server tool** - Start HTTP server for HTML export to Figma.
+
+**Parameters**:
+```typescript
+{
+  html: string;              // HTML/CSS content to preview
+  width?: number;            // Default: 1200
+  height?: number;           // Default: 630
+  port?: number;             // Default: 3456
+}
+```
+
+**Returns**:
+```typescript
+{
+  url: string;               // http://localhost:PORT with session ID
+  port: number;
+  message: string;           // "Preview server started"
+}
+```
+
+**Purpose**: Enables Figma MCP integration by serving HTML at a stable URL. Claude can pass the returned URL to Figma's `generate_figma_design` tool for converting the design to editable Figma layers.
+
+#### stop_preview (src/mcp/tools/stop-preview.ts)
+**Cleanup tool** - Stop running preview server.
+
+**Parameters**:
+```typescript
+{
+  sessionId?: string;        // Optional: stop specific session (default: all)
+}
+```
+
+**Returns**:
+```typescript
+{
+  success: boolean;
+  message: string;           // "Preview server stopped"
+}
+```
+
+**Purpose**: Cleanup HTTP server after Figma export is complete.
+
 #### generate_from_template (src/mcp/tools/generate-from-template.ts)
 **Secondary tool** - Use pre-built templates.
 
