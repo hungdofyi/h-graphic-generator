@@ -50,6 +50,14 @@ Create a pricing comparison graphic with 3 tiers
 >
 > If you provide dimensions, output path, and full content upfront, the AI assumes you've finalized requirements and skips the guided workflow.
 
+> **Exporting to Figma**
+>
+> To add graphics to an existing Figma file, provide the Figma URL in your prompt:
+> ```
+> Create a pricing card and add to figma.com/design/abc123/My-Design-System
+> ```
+> Without a URL, the AI creates a new Figma file. The `fileKey` is extracted from URLs like `figma.com/design/{fileKey}/...`
+
 ## MCP Tools
 
 | Tool | Purpose |

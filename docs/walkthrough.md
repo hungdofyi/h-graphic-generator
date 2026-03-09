@@ -262,12 +262,24 @@ Use these to create a feature announcement graphic.
 ```
 
 **Export to Figma (requires Figma MCP):**
+
+| Output Mode | Prompt Example |
+|-------------|----------------|
+| New file | "Create a pricing card and export to Figma" |
+| Existing file | "Create a pricing card and add to `figma.com/design/abc123/My-File`" |
+| Specific page | "Create a pricing card and add to `figma.com/design/abc123/My-File?node-id=1:234`" |
+
+> **Important**: To export to an existing Figma file, you must provide the Figma URL. The `fileKey` is extracted from URLs like `figma.com/design/{fileKey}/...`. Without a URL, a new Figma file is created.
+
 ```
-Create a pricing card using render_graphic, then:
-1. Call serve_preview with the HTML
-2. Use the returned URL with Figma MCP's generate_figma_design
-3. Call stop_preview when done
-This exports the design as editable Figma layers.
+# New file - no URL needed
+Create a hero banner and export to Figma
+
+# Existing file - provide Figma URL
+Create a hero banner and add to figma.com/design/XyZ789/Marketing-Assets
+
+# Specific page in file - include node-id
+Create a hero banner and add to figma.com/design/XyZ789/Marketing-Assets?node-id=42:100
 ```
 
 ---

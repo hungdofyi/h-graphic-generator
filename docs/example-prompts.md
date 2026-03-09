@@ -4,6 +4,30 @@ Realistic prompts for Holistics product graphics.
 
 ---
 
+## Exporting to Figma
+
+To add graphics to an existing Figma file, include the Figma URL in your prompt:
+
+| Output Mode | Prompt Style |
+|-------------|--------------|
+| New file | "Create X and export to Figma" |
+| Existing file | "Create X and add to `figma.com/design/{fileKey}/...`" |
+| Specific page | "Create X and add to `figma.com/design/{fileKey}/...?node-id=1:234`" |
+
+**Examples:**
+```
+# Creates new Figma file
+Create a semantic layer diagram and export to Figma
+
+# Adds to existing file
+Create a semantic layer diagram and add to figma.com/design/abc123/Holistics-Diagrams
+
+# Adds to specific page in file
+Create a semantic layer diagram and add to figma.com/design/abc123/Holistics-Diagrams?node-id=5:100
+```
+
+---
+
 ## Prompting Strategy
 
 > **Best practice**: Start with a minimal prompt. The AI asks clarifying questions which produce better-styled output than fully-specified prompts.
