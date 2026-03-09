@@ -2,9 +2,46 @@
 
 Generate branded graphics using MCP tools.
 
+## CRITICAL RULES (Read First!)
+
+### Typography
+- **Sentence case ONLY** - NEVER use ALL CAPS or `text-transform: uppercase`
+- Exception: Acronyms (API, SQL, APAC) are proper nouns
+
+### What NOT to Add
+- **No browser chrome** - Don't add macOS window dots (red/yellow/green), title bars, or fake browser UI
+- **No OS emojis** - Use brand icons from `brand/data/icons/` or CSS shapes
+- **No decorative elements** not specified in the brand system
+
+### Pre-render Checklist
+- [ ] Sentence case only (no ALL CAPS)
+- [ ] No browser chrome or fake window UI
+- [ ] Height calculated and fits canvas
+- [ ] Bottom padding ≥ 32px
+- [ ] No negative positioning on badges
+- [ ] Colors use brand tokens
+- [ ] **Cursors use brand SVG** - `get_pattern("component:decorative/cursors")` returns `svgContent`
+- [ ] **Icons from brand library** - Call `list_icons` first, embed from `brand/data/icons/`
+- [ ] **SVG viewBox has padding** - No elements at 0 or max edges
+
+---
+
 ## Graphic Generation Workflow
 
 When asked to create a graphic:
+
+### When to Ask Questions vs Proceed Directly
+
+| User Prompt Style | Action |
+|-------------------|--------|
+| Minimal ("Create a diagram for X") | **Ask 3-5 clarifying questions** |
+| Moderate ("Diagram showing A→B→C, 1200x630") | **Ask 1-2 style questions** (background, recipe preference) |
+| Fully specified (dimensions, colors, all content, output path) | **Proceed but still load recipe** for best practices |
+
+**Even with detailed prompts, ALWAYS:**
+1. Load the appropriate recipe via `get_pattern("recipe:...")`
+2. Follow recipe construction steps and layout safety rules
+3. Use brand tokens from `get_style_profile`
 
 ### Step 1: Clarify Intent
 Ask the user what type:
@@ -30,20 +67,85 @@ Use `get_pattern("recipe:category/name")` to get composition guide:
 - Call `get_pattern("category")` for style library context
 
 ### Step 5: Generate & Render
-- Generate HTML/CSS following recipe construction steps
+- **Calculate layout first** - Sum all sections to verify content fits canvas
+- Generate HTML/CSS following recipe construction steps AND layout safety rules
 - Call `render_graphic` with the HTML
 
 **Color hierarchy:** Green is PRIMARY, Blue/Purple are SECONDARY, Navy (blue.900) for dark backgrounds.
+
+## Layout Safety Rules (MANDATORY)
+
+Before writing HTML/CSS, you MUST verify:
+
+### Height Calculation
+```
+Canvas height: [X]px
+- Top padding:     32-48px
+- Header/title:    ~80-100px
+- Main content:    ~[calculate]px
+- Footer/labels:   ~50-60px
+- Bottom padding:  32-48px (MINIMUM)
+─────────────────────────────
+Total MUST be ≤ canvas height
+```
+
+### Positioning Rules
+| DO | DON'T |
+|----|-------|
+| `transform: translateY(-50%)` | `top: -12px` (clips outside parent) |
+| Explicit pixel heights | `flex: 1` for critical sections |
+| `margin-top` on parent for badge space | Negative offsets on badges |
+| Consistent panel heights in rows | Mixed heights causing misalignment |
+
+### Common Mistakes to Avoid
+- Content touching canvas edge (no bottom padding)
+- Badges/labels clipping outside container bounds
+- Using `flex: 1` causing unpredictable heights
+- Not accounting for absolute-positioned elements in height calc
+
+## SVG Asset Rules (CRITICAL)
+
+### ALWAYS Fetch Brand Assets First
+
+| Element | Fetch With | Never Do |
+|---------|------------|----------|
+| Cursor/pointer | `get_pattern("component:decorative/cursors")` → use `svgContent` | CSS tricks like `border-radius: 0 50% 50% 50%` |
+| Icons | `list_icons` → embed from `brand/data/icons/` | Generate tiny inline SVGs |
+| Arrows | `get_pattern("component:decorative/arrows")` | Hand-draw SVG paths |
+| Chart icons | `list_icons("chart")` → `brand/data/icons/chart/*.svg` | Draw charts from scratch |
+
+### SVG Rendering Rules
+
+| Rule | Good | Bad |
+|------|------|-----|
+| ViewBox padding | Elements at 10-290 in 300px viewBox | Elements at 0 or 300 (clips) |
+| Icon size | ≥16px (prefer 20px+) | 12px or smaller |
+| Small icons | Use `fill` | Use `stroke` (renders poorly) |
+| Curves | Points on actual visual path | Points at Bezier control points |
+
+### Example: Embedding Cursor
+
+```html
+<!-- 1. Call get_pattern("component:decorative/cursors") -->
+<!-- 2. Response includes svgContent with CSS variables -->
+<!-- 3. Embed with customization: -->
+<div style="width: 40px; height: 40px; --fill-0: #9250E5; --stroke-0: white;">
+  <svg viewBox="0 0 98.5 98.7" fill="none">
+    <path d="M26.75 30.78..." fill="var(--fill-0, #9250E5)" stroke="var(--stroke-0, white)"/>
+  </svg>
+</div>
+```
 
 ## Available MCP Tools
 
 | Tool | Purpose |
 |------|---------|
+| `create_graphic` | **RECOMMENDED** Start here - uses interactive forms for step-by-step input |
 | `get_style_profile` | Official brand guidelines (colors, typography, spacing, principles) |
 | `list_patterns` | List style libraries, components, and recipes |
 | `get_pattern` | Get styles, components (`component:nodes/box`), or recipes (`recipe:diagrams/architecture-flow`) |
 | `list_icons` | Browse 300+ brand icons by category (chart, ds, ai, onboarding, etc.) |
-| `render_graphic` | Render HTML/CSS to PNG/SVG |
+| `render_graphic` | Render HTML/CSS to PNG/SVG (use after gathering requirements) |
 | `serve_preview` | Start local server for Figma export (returns URL for capture) |
 | `stop_preview` | Stop preview server when done |
 | `validate_brand` | Validate brand config |

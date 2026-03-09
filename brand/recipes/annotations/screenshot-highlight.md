@@ -61,3 +61,25 @@
 - Alignment: top-aligned with screenshot content
 - Headline: white, Inter 600, 76px
 - Bullets: white, Inter 400, 36px, line-height 1.71
+
+## What to Avoid (CRITICAL)
+
+### Typography
+- **No ALL CAPS** - Use sentence case only, never `text-transform: uppercase`
+- Exception: Acronyms like UI, API are proper nouns
+
+### Decorative Elements
+- **No fake browser chrome** - Don't add macOS window dots unless they're part of the actual screenshot
+- **No OS emojis** - Use brand icons or CSS shapes instead
+- **No decorative elements over screenshots** - Keep focus on the content
+
+### Layout
+- **Calculate height before coding** - Sum all sections, must fit canvas
+- **Reserve bottom padding** - Minimum 32-48px, content must not touch edge
+- **No negative positioning** - `top: -12px` causes clipping
+- **Screenshot aspect ratio** - Maintain original proportions
+
+### Styling
+- **No raw hex colors** - Use brand tokens (green.700, blue.900, etc.)
+- **Consistent shadows** - Use the shadow styles defined above
+- **Match screenshot context** - If screenshot is light UI, use appropriate overlay contrast

@@ -54,3 +54,26 @@ Use `connectors/branch` component with appropriate variant.
 - Transform: green.50 background, green.600 border
 - Output: gray.200 background, no border
 - Connectors: gray.600 (default), green.600 (highlighted path)
+
+## What to Avoid (CRITICAL)
+
+### Typography
+- **No ALL CAPS** - Use sentence case only, never `text-transform: uppercase`
+- Exception: Acronyms like API, SQL, ETL are proper nouns
+
+### Decorative Elements
+- **No browser chrome** - Don't add macOS window dots (red/yellow/green)
+- **No fake window UI** - These are technical diagrams, not app screenshots
+- **No OS emojis** - Use brand icons or CSS shapes instead
+
+### Layout
+- **Calculate height before coding** - Sum all sections, must fit canvas
+- **Reserve bottom padding** - Minimum 32-48px, content must not touch edge
+- **No negative positioning** - `top: -12px` causes clipping
+- **Minimum 80px spacing** - Between major elements
+
+### Styling
+- **No raw hex colors** - Use brand tokens (gray.400, green.600, etc.)
+- **No mixed styles** - This is docs style, don't mix with marketing patterns
+- **No inconsistent radii** - Docs uses 6-8px, keep consistent
+- **No thick borders** - Docs uses 1px borders, not 2-3px

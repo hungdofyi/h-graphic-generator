@@ -50,7 +50,14 @@ export function registerRenderGraphicTool(
 ): void {
   server.tool(
     'render_graphic',
-    'Render HTML/CSS to a branded image. Supports gradients, shadows, complex CSS. Auto-detects and uses best renderer.',
+    `Render HTML/CSS to a branded image. Supports gradients, shadows, complex CSS. Auto-detects and uses best renderer.
+
+IMPORTANT: Before calling this tool, you MUST first:
+1. Identify the graphic type (diagram, annotation, or marketing)
+2. Ask clarifying questions ONE AT A TIME in a conversational flow - don't dump all questions at once
+3. Confirm the final requirements before generating
+
+Only call this tool after gathering and confirming requirements with the user.`,
     RenderGraphicSchema.shape,
     async (args) => {
       const input = RenderGraphicSchema.parse(args);

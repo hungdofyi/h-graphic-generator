@@ -39,6 +39,17 @@ Just ask Claude to create graphics:
 Create a pricing comparison graphic with 3 tiers
 ```
 
+> **Tip for Best Results**
+>
+> Start with a simple, high-level request. The AI will ask clarifying questions about style, layout, and details - this produces better output than providing all specifications upfront.
+>
+> | Approach | Example | Result |
+> |----------|---------|--------|
+> | **Better** | "Create a diagram showing user authentication flow" | AI asks about nodes, connections, style → tailored output |
+> | **Worse** | "Create a 1400x600 diagram with User→Auth→DB nodes, left-to-right, output/auth.png" | AI skips questions → may miss optimal styling |
+>
+> If you provide dimensions, output path, and full content upfront, the AI assumes you've finalized requirements and skips the guided workflow.
+
 ## MCP Tools
 
 | Tool | Purpose |

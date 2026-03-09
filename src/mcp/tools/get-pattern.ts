@@ -5,6 +5,22 @@ import type { ComponentLoader } from '../../core/component-loader.js';
 import type { PatternEntry } from '../../core/extraction-types.js';
 
 /**
+ * Extract CSS variable names from SVG content
+ * Looks for patterns like var(--fill-0, #default) or var(--stroke-0, white)
+ */
+function extractCssVariables(svgContent: string): string[] {
+  const varRegex = /var\(--([^,)]+)/g;
+  const variables = new Set<string>();
+  let match;
+  while ((match = varRegex.exec(svgContent)) !== null) {
+    if (match[1]) {
+      variables.add(`--${match[1].trim()}`);
+    }
+  }
+  return [...variables];
+}
+
+/**
  * Generate usage guidance for a style library
  */
 function generateUsageGuidance(pattern: PatternEntry): string {
@@ -71,7 +87,8 @@ export function registerGetPatternTool(
         }
 
         const componentKey = query.replace('component:', '');
-        const component = componentLoader.getComponent(componentKey);
+        // Use getComponentWithSvg to include SVG content if available
+        const component = await componentLoader.getComponentWithSvg(componentKey);
 
         if (!component) {
           const available = componentLoader.listComponents();
@@ -87,17 +104,29 @@ export function registerGetPatternTool(
           };
         }
 
+        // Build response with SVG usage guidance
+        const response: Record<string, unknown> = {
+          type: 'component',
+          ...component,
+          colorNotes: {
+            primary: 'Green scale (green.50-900) - main brand accent',
+            secondary: ['Blue scale (blue.50-800)', 'Purple scale (purple.50-900)'],
+          },
+        };
+
+        // Add SVG usage instructions if content is available
+        if (component.svgContent) {
+          response.svgUsage = {
+            instruction: 'Embed this SVG directly in your HTML. Use CSS variables for customization.',
+            cssVariables: extractCssVariables(component.svgContent),
+            example: `<div class="cursor" style="width: 40px; height: 40px;">\n  ${component.svgContent.split('\n')[0]}...\n</div>`,
+          };
+        }
+
         return {
           content: [{
             type: 'text',
-            text: JSON.stringify({
-              type: 'component',
-              ...component,
-              colorNotes: {
-                primary: 'Green scale (green.50-900) - main brand accent',
-                secondary: ['Blue scale (blue.50-800)', 'Purple scale (purple.50-900)'],
-              },
-            }, null, 2),
+            text: JSON.stringify(response, null, 2),
           }],
         };
       }

@@ -244,6 +244,41 @@ export class ComponentLoader {
   }
 
   /**
+   * Get SVG content for a component's svgTemplate
+   * Returns the raw SVG string that can be embedded in HTML
+   */
+  async getSvgContent(svgRef: string): Promise<string | null> {
+    try {
+      const svgPath = this.getSvgPath(svgRef);
+      const content = await fs.readFile(svgPath, 'utf-8');
+      return content.trim();
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Get component with embedded SVG content
+   * If component has svgTemplate, includes the actual SVG markup
+   */
+  async getComponentWithSvg(key: string): Promise<(Component & { svgContent?: string }) | null> {
+    const component = this.getComponent(key);
+    if (!component) return null;
+
+    // If component has svgTemplate, fetch the content
+    const svgTemplate = component['svgTemplate'];
+    if (svgTemplate && typeof svgTemplate === 'string') {
+      const svgContent = await this.getSvgContent(svgTemplate);
+      return {
+        ...component,
+        svgContent: svgContent || undefined,
+      };
+    }
+
+    return component;
+  }
+
+  /**
    * Check if components are loaded
    */
   hasComponents(): boolean {

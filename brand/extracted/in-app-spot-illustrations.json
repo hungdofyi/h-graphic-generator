@@ -108,13 +108,15 @@
         "background": "gradient: green.300 → white",
         "height": 8.6,
         "borderRadius": 17.2,
-        "usage": "Mini metric bar indicator"
+        "usage": "Horizontal pill-shaped progress indicator",
+        "warning": "NOT for bar/column charts - this creates oval shapes. Use chartConstructionRules.column for actual chart bars."
       },
       "miniBarBlue": {
         "background": "gradient: blue.300 → white",
         "height": 8.6,
         "borderRadius": 17.2,
-        "usage": "Alternative mini metric bar"
+        "usage": "Alternative pill-shaped progress indicator",
+        "warning": "NOT for bar/column charts - use chartConstructionRules.column instead."
       },
       "pieChartPreview": {
         "ringColor": "green.400",
@@ -269,7 +271,8 @@
         "borderRadius": "1.317px 1.317px 0 0",
         "width": 10.7
       },
-      "arrangement": "evenly spaced, heights vary to show data"
+      "arrangement": "evenly spaced, heights vary to show data",
+      "important": "Use small top-corner radius ONLY. Do NOT use miniBar/progressPill styling which creates oval shapes."
     },
     "bar": {
       "type": "decomposed",
@@ -280,7 +283,8 @@
         "borderRadius": "1.241px 1.241px 0 0",
         "height": 9.927
       },
-      "arrangement": "stacked vertically, widths increase top to bottom"
+      "arrangement": "stacked vertically, widths increase top to bottom",
+      "important": "Use small top-corner radius ONLY. Do NOT use miniBar/progressPill styling which creates oval shapes."
     },
     "pie": {
       "type": "flattened-svg",

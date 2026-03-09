@@ -98,18 +98,20 @@
 
   "graphicElements": {
     "miniBarGreen": {
-      "name": "Mini Bar (Green Gradient)",
+      "name": "Progress Pill (Green Gradient)",
       "background": "linear-gradient(90deg, #7ad1ae 17%, white 100%)",
       "height": "8.618px",
       "borderRadius": "17.235px",
-      "usage": ["mini metric bars", "progress indicators", "dashboard widgets"]
+      "usage": ["horizontal progress indicators", "dashboard metric pills"],
+      "warning": "PILL SHAPE - Do NOT use for bar/column charts. For charts, use chartElements.columnBar instead."
     },
     "miniBarBlue": {
-      "name": "Mini Bar (Blue Gradient)",
+      "name": "Progress Pill (Blue Gradient)",
       "background": "linear-gradient(90deg, #8dbef2 17%, white 100%)",
       "height": "8.618px",
       "borderRadius": "17.235px",
-      "usage": ["alternative metric bars", "secondary indicators"]
+      "usage": ["alternative progress indicators", "secondary metric pills"],
+      "warning": "PILL SHAPE - Do NOT use for bar/column charts. For charts, use chartElements.columnBar instead."
     },
     "connectionLine": {
       "name": "Connection Line (Relationship)",
@@ -150,7 +152,8 @@
       "gradient": "linear-gradient(180deg, #bbd7f7 0%, #e8f2fd 100%)",
       "borderRadius": "1.317px 1.317px 0 0",
       "width": "10.7px",
-      "usage": ["column chart bars", "bar chart elements"]
+      "usage": ["column chart bars", "bar chart elements", "data visualization bars"],
+      "note": "USE THIS for bar/column charts - small top-corner radius only. Do NOT use miniBar/progressPill which creates oval shapes."
     },
     "pieChart": {
       "name": "Pie Chart",

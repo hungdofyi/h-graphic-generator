@@ -98,3 +98,25 @@
 - Container: rgba(255,255,255,0.25) background
 - Border: green.300, 2px
 - Text: green.600, Inter 500, 25px
+
+## What to Avoid (CRITICAL)
+
+### Typography
+- **No ALL CAPS** - Use sentence case only, never `text-transform: uppercase`
+- Exception: Acronyms like API, SQL, CSS are proper nouns
+
+### Decorative Elements
+- **No browser chrome** - Don't add macOS window dots (red/yellow/green)
+- **No fake window title bars** - These are marketing graphics, not app screenshots
+- **No OS emojis** - Use brand icons or CSS shapes instead
+
+### Layout
+- **Calculate height before coding** - Sum all sections, must fit canvas
+- **Reserve bottom padding** - Minimum 32-48px, content must not touch edge
+- **No negative positioning** - `top: -12px` causes clipping, use `transform: translateY(-50%)`
+- **No `flex: 1`** - Use explicit pixel heights for predictable sizing
+
+### Styling
+- **No raw hex colors** - Use brand tokens (green.300, green.600, etc.)
+- **No mixed styles** - This is marketing style, don't mix with docs patterns
+- **No inconsistent radii** - Keep border radius consistent throughout

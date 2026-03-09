@@ -145,10 +145,13 @@ Use the diagram command with nodes.json format.
 
 ### Claude Code Tips
 
-1. **Be specific about output path** - Always specify `-o output/filename.png`
-2. **Use JSON for complex props** - Template props must be valid JSON
-3. **Check templates first** - Ask to run `hgraphic templates list` to see options
-4. **Validate brand** - Run `hgraphic brand validate` if styling looks wrong
+1. **Start simple** - Let Claude ask clarifying questions rather than specifying everything upfront
+2. **Be specific about output path** - Always specify `-o output/filename.png`
+3. **Use JSON for complex props** - Template props must be valid JSON
+4. **Check templates first** - Ask to run `hgraphic templates list` to see options
+5. **Validate brand** - Run `hgraphic brand validate` if styling looks wrong
+
+> **Pro tip**: Prompts like "Create a diagram for X" work better than "Create a 1200x630 left-to-right diagram with nodes A, B, C connected by arrows...". The former triggers Claude's guided workflow which considers brand patterns, styling rules, and layout safety.
 
 ---
 
@@ -205,6 +208,35 @@ The composable system provides reusable building blocks:
 - `diagrams/architecture-flow`, `diagrams/data-flow`
 - `annotations/screenshot-highlight`
 - `marketing/spotlight-feature`, `marketing/layered-showcase`, `marketing/config-preview`, `marketing/radial-network`
+
+### Prompting for Best Results
+
+> **Important**: The AI follows a guided workflow that asks clarifying questions about style, layout, and brand patterns. This produces significantly better output than detailed upfront specifications.
+
+| Prompt Style | What Happens | Output Quality |
+|--------------|--------------|----------------|
+| **Minimal** | AI asks 3-5 questions about type, style, layout | Best - tailored to brand patterns |
+| **Detailed** | AI assumes requirements are final, skips questions | Acceptable - may miss optimal styling |
+| **Over-specified** | AI bypasses workflow entirely | Risky - often misses brand guidelines |
+
+**When to provide details upfront:**
+- You've already been through the workflow once and want a variation
+- You have very specific technical requirements (exact dimensions for ad specs)
+- You're iterating on a previous output
+
+**Best practice prompts:**
+
+```
+# Good - triggers guided workflow
+Create a diagram showing how cross-filtering works in dashboards
+
+# Good - provides context but leaves room for questions
+I need a marketing graphic for our new API feature
+
+# Less ideal - over-specified, skips workflow
+Create a 1400x600 left-to-right diagram with nodes A→B→C using
+green.600 connectors, dark navy background, save to output/flow.png
+```
 
 ### Example MCP Prompts
 

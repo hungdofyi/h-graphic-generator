@@ -3,6 +3,7 @@ import type { BrandContext } from '../../core/brand-context.js';
 import type { ExtractionLoader } from '../../core/extraction-loader.js';
 import type { ComponentLoader } from '../../core/component-loader.js';
 import { registerRenderGraphicTool } from './render-graphic.js';
+import { registerCreateGraphicTool } from './create-graphic.js';
 import { registerGenerateFromTemplateTool } from './generate-from-template.js';
 import { registerListTemplatesTool } from './list-templates.js';
 import { registerGetStyleProfileTool } from './get-style-profile.js';
@@ -20,6 +21,9 @@ export function registerTools(
 ): void {
   // PRIMARY tool - Claude generates HTML/CSS, we render to image
   registerRenderGraphicTool(server, brandContext, extractionLoader);
+
+  // Guided workflow tool - uses elicitation for step-by-step input
+  registerCreateGraphicTool(server);
 
   // Style profile - official brand guidelines from brand.json
   registerGetStyleProfileTool(server, brandContext);
