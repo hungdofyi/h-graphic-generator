@@ -1,0 +1,64 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "section-headers",
+  "description": "Styled headers for major sections in diagrams",
+  "category": "annotations",
+  "variants": {
+    "numbered": {
+      "description": "Numbered section headers (1. HOLISTICS, 2. APPLICATION CODE)",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 25,
+      "color": "gray.800",
+      "textTransform": "uppercase",
+      "format": "Uses <ol start=\"N\"> for automatic numbering"
+    },
+    "component-label": {
+      "description": "Labels for components (embed_payload, dataset)",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 26,
+      "color": "green.600"
+    },
+    "page-title": {
+      "description": "Main title for the explainer graphic",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 35,
+      "color": "blue.900"
+    },
+    "feature-title": {
+      "description": "Marketing feature title",
+      "color": "white",
+      "font": "Roboto",
+      "fontWeight": 500,
+      "fontSize": 72
+    }
+  },
+  "panel-headers": {
+    "dark": {
+      "color": "#719ac6",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 30
+    },
+    "light": {
+      "background": "blue.100",
+      "height": 41,
+      "color": "gray.700",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 19
+    }
+  },
+  "inline-labels": {
+    "style": {
+      "background": "white",
+      "padding": 8,
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 31,
+      "color": "gray.900"
+    }
+  }
+}

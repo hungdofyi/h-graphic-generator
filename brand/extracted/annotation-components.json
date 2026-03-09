@@ -1,0 +1,314 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-09T12:00:00+07:00",
+  "description": "Reusable annotation and explainer components extracted from Figma docs-explainer frames",
+  "sourceFrames": [
+    { "name": "Embed Portal Mechanism", "nodeId": "1:1963" },
+    { "name": "Embed Portal's Data Permission (v2)", "nodeId": "1:2159" }
+  ],
+
+  "connectionLines": {
+    "description": "Curved and straight connectors showing data/control flow between elements",
+    "patterns": {
+      "straightHorizontal": {
+        "css": {
+          "width": "var(--length, 100px)",
+          "height": "2px",
+          "background": "var(--color, {{gray.600}})"
+        },
+        "usage": "Simple horizontal connections"
+      },
+      "straightVertical": {
+        "css": {
+          "width": "2px",
+          "height": "var(--length, 100px)",
+          "background": "var(--color, {{gray.600}})"
+        },
+        "usage": "Simple vertical connections"
+      },
+      "curvedSingleBend": {
+        "svg": "svg-templates/explainer-flow-connector-l-shape.svg",
+        "description": "L-shaped connector with rounded corner",
+        "customizable": ["stroke", "strokeWidth"],
+        "usage": "Connect elements at right angles"
+      },
+      "curvedMultiPath": {
+        "description": "Complex curved paths connecting multiple elements",
+        "svgFiles": [
+          "svg-templates/explainer-flow-path-curved.svg",
+          "svg-templates/explainer-flow-path-large.svg"
+        ],
+        "usage": "Multi-segment flows (embed → backend → frontend)"
+      },
+      "branchConnector": {
+        "description": "One-to-many or many-to-one connections",
+        "svgFiles": [
+          "svg-templates/explainer-branch-connector-left.svg",
+          "svg-templates/explainer-branch-connector-right.svg"
+        ],
+        "usage": "Merge/split visualizations, data filtering branches"
+      }
+    },
+    "connectionDots": {
+      "description": "Small dots marking connection points on lines",
+      "sizes": {
+        "small": 6,
+        "default": 8,
+        "large": 10
+      },
+      "colors": {
+        "green": "green.600",
+        "blue": "blue.600",
+        "purple": "purple.600",
+        "gray": "gray.600"
+      },
+      "svgFiles": {
+        "green": "svg-templates/explainer-dot-green.svg",
+        "greenLarge": "svg-templates/explainer-dot-green-large.svg",
+        "blue": "svg-templates/explainer-dot-blue.svg",
+        "blueLarge": "svg-templates/explainer-dot-blue-large.svg",
+        "purple": "svg-templates/explainer-dot-purple.svg"
+      }
+    },
+    "arrowStyles": {
+      "standard": {
+        "strokeWidth": 2,
+        "strokeColor": "gray.600",
+        "arrowheadSize": 8
+      },
+      "emphasized": {
+        "strokeWidth": 2.5,
+        "strokeColor": "green.600",
+        "arrowheadSize": 10
+      }
+    }
+  },
+
+  "stepIndicators": {
+    "description": "Numbered circles indicating sequence steps",
+    "primary": {
+      "size": 25,
+      "borderRadius": "50%",
+      "background": "green.600",
+      "textColor": "white",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 15,
+      "usage": "Main step numbers (1, 2, 3, 4, 5)"
+    },
+    "subStep": {
+      "size": 25,
+      "borderRadius": "50%",
+      "background": "green.600",
+      "textColor": "white",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 13,
+      "usage": "Sub-step numbers (3.1, 3.2)"
+    },
+    "variants": {
+      "blue": { "background": "blue.600" },
+      "purple": { "background": "purple.600" }
+    },
+    "svgTemplate": "svg-templates/explainer-step-circle.svg"
+  },
+
+  "containers": {
+    "description": "Box styles for grouping related content",
+    "sectionBox": {
+      "description": "Large dashed border section (Holistics BG, Application BG)",
+      "background": "gray.100",
+      "border": "gray.400",
+      "borderWidth": 1,
+      "borderStyle": "dashed",
+      "borderRadius": 8,
+      "padding": 24
+    },
+    "codeBlock": {
+      "description": "Container for code snippets",
+      "background": "white",
+      "border": "gray.500",
+      "borderWidth": 1,
+      "borderRadius": 7,
+      "padding": 16,
+      "font": "JetBrains Mono",
+      "fontSize": 18,
+      "lineHeight": 1.8
+    },
+    "nestedSection": {
+      "description": "Nested container (Back End, Front End inside Your Application)",
+      "background": "blue.50",
+      "border": "blue.200",
+      "borderWidth": 1.3,
+      "borderRadius": 8,
+      "opacity": 0.7
+    },
+    "tooltip": {
+      "description": "SQL query/code tooltip with beak pointer",
+      "background": "gray.300",
+      "borderRadius": 5,
+      "padding": 10,
+      "font": "JetBrains Mono",
+      "fontSize": 15,
+      "lineHeight": 20,
+      "textColor": "gray.700",
+      "beakSvg": {
+        "right": "svg-templates/explainer-tooltip-beak-right.svg",
+        "top": "svg-templates/explainer-tooltip-beak-top.svg"
+      }
+    }
+  },
+
+  "highlighting": {
+    "description": "Visual emphasis techniques for important values",
+    "codeHighlights": {
+      "green": {
+        "description": "Primary highlight (Customer 1, success, primary values)",
+        "background": "green.50",
+        "textColor": "green.800",
+        "borderRadius": 3,
+        "padding": "2px 4px",
+        "usage": "tenant_id: ['1'], ecommerce_portal, primary values"
+      },
+      "blue": {
+        "description": "Secondary highlight (Customer 2, alternative values)",
+        "background": "blue.50",
+        "textColor": "blue.800",
+        "borderRadius": 3,
+        "padding": "2px 4px",
+        "usage": "tenant_id: [2], embed_token, secondary values"
+      },
+      "purple": {
+        "description": "Special highlight (admin, global, special values)",
+        "background": "purple.100",
+        "textColor": "purple.800",
+        "borderRadius": 3,
+        "padding": "2px 4px",
+        "usage": "__ALL__, global admin, special permissions"
+      },
+      "neutral": {
+        "description": "Neutral highlight (generic values)",
+        "background": "gray.400",
+        "textColor": "gray.700",
+        "borderRadius": 3,
+        "padding": "2px 4px",
+        "usage": "tenant_id key name, neutral identifiers"
+      }
+    },
+    "columnHighlights": {
+      "description": "Full column background in data tables",
+      "green": {
+        "background": "green.50",
+        "headerColor": "green.800",
+        "cellColor": "green.800"
+      },
+      "blue": {
+        "background": "blue.50",
+        "headerColor": "blue.800",
+        "cellColor": "blue.800"
+      }
+    },
+    "borderEmphasis": {
+      "description": "Border-based highlighting for containers",
+      "green": {
+        "border": "green.600",
+        "borderWidth": 1
+      },
+      "blue": {
+        "border": "blue.600",
+        "borderWidth": 1
+      }
+    }
+  },
+
+  "simplifiedIllustrations": {
+    "description": "Abstract visual placeholders (not real data)",
+    "dataTable": {
+      "description": "Simplified table showing structure, not actual values",
+      "background": "white",
+      "border": "gray.300",
+      "borderWidth": 1.3,
+      "borderRadius": 6,
+      "header": {
+        "background": "white",
+        "borderBottom": "gray.300",
+        "height": 56,
+        "font": "Inter",
+        "fontWeight": 500,
+        "fontSize": 15
+      },
+      "dataPlaceholder": {
+        "description": "Gray pill shapes representing data values",
+        "background": "gray.200",
+        "borderRadius": 86,
+        "height": 13,
+        "width": 75
+      },
+      "highlightedColumn": {
+        "description": "Full-height colored column background",
+        "width": 150
+      }
+    },
+    "barChart": {
+      "description": "Abstract bar chart for illustration",
+      "svgTemplate": "svg-templates/explainer-bar-chart.svg"
+    },
+    "dashboardMockup": {
+      "description": "Simplified dashboard UI showing structure",
+      "elements": [
+        "navigation sidebar",
+        "search bar",
+        "data list items",
+        "dashboard tiles"
+      ]
+    }
+  },
+
+  "sectionHeaders": {
+    "description": "Styled headers for major sections",
+    "numbered": {
+      "description": "Numbered section headers (1. HOLISTICS, 2. APPLICATION CODE)",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 25,
+      "color": "gray.800",
+      "textTransform": "uppercase",
+      "format": "Uses <ol start=\"N\"> for automatic numbering"
+    },
+    "componentLabel": {
+      "description": "Labels for components (embed_payload, dataset)",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 26,
+      "color": "green.600"
+    },
+    "pageTitle": {
+      "description": "Main title for the explainer graphic",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 35,
+      "color": "blue.900"
+    }
+  },
+
+  "compositionPatterns": {
+    "threeColumnFlow": {
+      "description": "Left → Center → Right flow pattern",
+      "example": "Application Code → Holistics → Final Data",
+      "layout": "flex",
+      "gap": 24,
+      "columnWidth": "33%",
+      "usage": "Permission flows, data transformation pipelines"
+    },
+    "nestedArchitecture": {
+      "description": "Outer container with nested sections",
+      "example": "Your Application → [Back End, Front End]",
+      "usage": "System architecture, component hierarchy"
+    },
+    "parallelComparison": {
+      "description": "Multiple similar blocks showing variations",
+      "example": "Customer 1, Customer 2, Global Admin code blocks",
+      "usage": "Different configurations, user types, scenarios"
+    }
+  }
+}

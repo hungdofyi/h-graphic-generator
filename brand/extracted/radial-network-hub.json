@@ -1,0 +1,214 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-09T17:00:00+07:00",
+  "description": "Radial network hub - central element with connected satellites, concentric rings background",
+  "sourceFrames": [
+    { "name": "Referral Program", "nodeId": "1:38381" }
+  ],
+
+  "backgrounds": {
+    "navyGradient": {
+      "description": "Deep navy gradient base",
+      "css": "linear-gradient(120deg, {{blue.900}} 5%, #052233 92%)",
+      "usage": "Network diagrams, ecosystem graphics"
+    },
+    "blurOverlays": {
+      "description": "Diagonal blur shapes for depth",
+      "shapes": [
+        {
+          "color": "#136baa",
+          "blur": "100px",
+          "opacity": 0.3,
+          "rotation": "-49deg",
+          "skew": "18deg",
+          "size": { "width": 457, "height": 3062 }
+        },
+        {
+          "color": "{{blue.800}}",
+          "blur": "100px",
+          "opacity": 0.4,
+          "rotation": "-49deg",
+          "skew": "17.5deg",
+          "size": { "width": 493, "height": 3371 },
+          "mixBlendMode": "lighten"
+        }
+      ]
+    },
+    "gridPattern": {
+      "description": "Subtle grid lines in background",
+      "color": "rgba(255,255,255,0.05)",
+      "lineWidth": 1,
+      "spacing": 100,
+      "usage": "Adds structure without distraction"
+    }
+  },
+
+  "concentricRings": {
+    "description": "Multiple circular rings radiating from center",
+    "style": {
+      "stroke": "rgba(255,255,255,0.1)",
+      "strokeWidth": 1,
+      "fill": "none"
+    },
+    "rings": {
+      "count": "5-8 rings typically",
+      "spacing": "Even or logarithmic",
+      "maxSize": 1275,
+      "center": "Offset right of center (60% from left)"
+    },
+    "usage": "Creates 'radar' or 'ripple' effect from hub"
+  },
+
+  "centralHub": {
+    "description": "Central logo or icon as the hub of the network",
+    "container": {
+      "size": 292,
+      "positioning": "Center of concentric rings"
+    },
+    "content": {
+      "type": "logo or icon",
+      "example": "Holistics logomark",
+      "colors": ["{{green.400}}", "{{green.600}}", "white"]
+    },
+    "usage": "Platform, product, or data source being connected to"
+  },
+
+  "satelliteNodes": {
+    "description": "Connected elements around the hub (users, partners, etc.)",
+    "container": {
+      "background": "linear-gradient(to bottom, {{blue.800}}, #0c3f6f)",
+      "border": "#819ab3",
+      "borderWidth": 4,
+      "borderRadius": 11
+    },
+    "sizes": {
+      "large": 134,
+      "medium": 130,
+      "small": 108,
+      "tiny": 75
+    },
+    "icon": {
+      "type": "user silhouette",
+      "opacity": 0.3,
+      "color": "white"
+    },
+    "positioning": {
+      "technique": "Scattered around hub at varying distances",
+      "distribution": "Asymmetric, organic placement",
+      "depthEffect": "Smaller nodes appear farther away (lower opacity)"
+    },
+    "count": "4-6 nodes typically"
+  },
+
+  "connectionLines": {
+    "description": "Lines connecting satellites to hub",
+    "style": {
+      "color": "rgba(255,255,255,0.15)",
+      "width": 2,
+      "type": "straight"
+    },
+    "technique": "SVG paths from satellite center to hub center",
+    "usage": "Shows relationship/connection to central hub"
+  },
+
+  "typography": {
+    "headline": {
+      "description": "Main promotional text",
+      "font": "Inter",
+      "fontWeight": 600,
+      "colors": {
+        "default": "{{gray.50}}",
+        "emphasized": {
+          "type": "gradient",
+          "from": "#67f8c7",
+          "to": "{{green.600}}"
+        }
+      },
+      "sizes": {
+        "large": 221,
+        "medium": 79,
+        "small": 72
+      },
+      "textShadow": "4px 4px 8.5px rgba(0,0,0,0.15)"
+    },
+    "gradientText": {
+      "description": "Text with gradient fill (e.g., '$300')",
+      "technique": "background-clip: text with gradient",
+      "gradient": "linear-gradient(to bottom, #67f8c7, {{green.600}})",
+      "letterSpacing": "-11px for large numbers"
+    }
+  },
+
+  "ctaButton": {
+    "description": "Call-to-action button",
+    "container": {
+      "background": "linear-gradient(103deg, {{blue.600}} 15%, {{blue.800}} 109%)",
+      "border": "{{blue.200}}",
+      "borderWidth": 4,
+      "borderRadius": 63,
+      "height": 96,
+      "width": 350
+    },
+    "text": {
+      "color": "white",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 44
+    },
+    "cursor": {
+      "type": "pointer",
+      "size": 99,
+      "position": "Bottom-right of button"
+    }
+  },
+
+  "compositionPatterns": {
+    "leftTextRightNetwork": {
+      "description": "Text/CTA on left, network illustration on right",
+      "layout": {
+        "textColumn": "7-50%",
+        "networkColumn": "40-100%"
+      },
+      "textContent": ["headline", "subtext", "CTA button"],
+      "networkContent": ["concentric rings", "hub", "satellites", "connections"]
+    },
+    "centeredNetwork": {
+      "description": "Network centered with text overlay",
+      "layout": "Full-width network, text positioned over",
+      "usage": "Hero sections, full-bleed banners"
+    }
+  },
+
+  "useCases": [
+    "Partner/referral programs",
+    "Integration ecosystem diagrams",
+    "Multi-tenant architecture visualization",
+    "Data source connections",
+    "Community/user network graphics",
+    "Platform connectivity marketing"
+  ],
+
+  "colorUsage": {
+    "background": ["{{blue.900}}", "#052233", "#136baa"],
+    "rings": ["rgba(255,255,255,0.1)"],
+    "nodes": ["{{blue.800}}", "#0c3f6f", "#819ab3"],
+    "text": ["{{gray.50}}", "#67f8c7", "{{green.600}}"],
+    "cta": ["{{blue.600}}", "{{blue.800}}", "{{blue.200}}"],
+    "accents": ["{{green.400}}", "{{green.600}}"]
+  },
+
+  "animationPotential": {
+    "description": "Patterns that could be animated",
+    "rings": "Pulse outward from center",
+    "satellites": "Subtle float or orbit",
+    "connections": "Draw-in effect",
+    "hub": "Gentle glow pulse"
+  },
+
+  "differenceFromOtherPatterns": {
+    "vsSpotlight": "Network of elements vs single focus",
+    "vsLayered": "Radial layout vs stacked cards",
+    "vsConfig": "Abstract concept vs code-to-output",
+    "purpose": "Show connectivity, ecosystem, community"
+  }
+}

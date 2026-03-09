@@ -1,0 +1,50 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "frosted-card",
+  "description": "Glassmorphism cards with backdrop blur for marketing",
+  "category": "containers",
+  "variants": {
+    "default": {
+      "background": "rgba(129, 156, 189, 0.1)",
+      "backdropBlur": 11,
+      "border": "rgba(25, 78, 190, 0.3)",
+      "borderWidth": 2.5,
+      "borderRadius": 11
+    },
+    "dark-panel": {
+      "description": "Semi-transparent panel on dark background",
+      "background": "linear-gradient(155deg, rgba(9,52,101,1) 9%, rgba(21,70,124,0) 69%)",
+      "border": "blue.200",
+      "borderWidth": 5,
+      "borderRadius": {
+        "topLeft": 30,
+        "topRight": 30,
+        "bottomLeft": 0,
+        "bottomRight": 0
+      },
+      "outerGlow": {
+        "color": "#1c94f6",
+        "blur": "7.5px",
+        "borderWidth": 20
+      }
+    },
+    "label-card": {
+      "description": "White card with shadow for labels",
+      "background": "white",
+      "shadow": "3px 3px 17px rgba(0,0,0,0.1)",
+      "borderRadius": 5
+    },
+    "settings-panel": {
+      "description": "White floating panel with form fields",
+      "background": "white",
+      "shadow": "8px -4px 24px rgba(0,0,0,0.25)",
+      "borderRadius": 7
+    }
+  },
+  "usage": {
+    "grouping": "Dataset groups, metric containers",
+    "labels": "Revenue labels, field cards",
+    "marketing": "Floating panels, settings overlays"
+  },
+  "colorNotes": "Green is primary accent, navy (blue.900) for dark backgrounds"
+}

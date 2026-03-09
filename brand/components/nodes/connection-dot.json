@@ -1,0 +1,53 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "connection-dot",
+  "description": "Small dots marking connection points on lines",
+  "category": "nodes",
+  "variants": {
+    "green": {
+      "fill": "green.600",
+      "size": 20
+    },
+    "green-small": {
+      "fill": "green.600",
+      "size": 8
+    },
+    "green-large": {
+      "fill": "green.600",
+      "size": 10
+    },
+    "blue": {
+      "fill": "blue.600",
+      "size": 8
+    },
+    "blue-large": {
+      "fill": "blue.600",
+      "size": 10
+    },
+    "purple": {
+      "fill": "purple.600",
+      "size": 8
+    },
+    "gray": {
+      "fill": "gray.600",
+      "size": 20
+    },
+    "white": {
+      "fill": "white",
+      "size": 12
+    }
+  },
+  "sizes": {
+    "small": 6,
+    "default": 8,
+    "large": 10,
+    "marketing": 14
+  },
+  "svgTemplates": {
+    "green": "svg/diagram-nodes/dot-green.svg",
+    "greenLarge": "svg/diagram-nodes/dot-green-large.svg",
+    "blue": "svg/diagram-nodes/dot-blue.svg",
+    "blueLarge": "svg/diagram-nodes/dot-blue-large.svg",
+    "purple": "svg/diagram-nodes/dot-purple.svg"
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-09T16:00:00+07:00",
+  "description": "Screenshot-based graphics with highlight overlays, focus panels, and annotations",
+  "sourceFrames": [
+    { "name": "Error Validation (Mesh Green)", "nodeId": "1:38148", "type": "focusPanel" },
+    { "name": "Reporting Tree Navigation", "nodeId": "1:38128", "type": "annotatedScreenshot" }
+  ],
+
+  "backgrounds": {
+    "meshGreen": {
+      "description": "Green-to-blue mesh gradient with blur overlay",
+      "css": "linear-gradient(-84deg, {{green.700}} 43%, {{blue.900}} 80%)",
+      "blurOverlay": {
+        "color": "{{blue.900}}",
+        "blur": "156px",
+        "rotation": "50deg",
+        "size": "1164px x 2792px"
+      },
+      "usage": "Feature announcements, new capabilities"
+    },
+    "meshGreenAlt": {
+      "description": "Green-blue gradient with different rotation",
+      "css": "linear-gradient(256deg, {{green.700}} 23%, {{blue.900}} 61%)",
+      "blurOverlay": {
+        "color": "{{blue.900}}",
+        "blur": "156px",
+        "rotation": "108deg",
+        "size": "1159px x 2355px"
+      },
+      "usage": "Feature updates, navigation improvements"
+    }
+  },
+
+  "screenshotTreatments": {
+    "darkenedBackdrop": {
+      "description": "Full screenshot as backdrop with dark overlay",
+      "overlay": "rgba(0,0,0,0.3)",
+      "borderRadius": 16,
+      "usage": "Create focus on overlaid panel"
+    },
+    "clippedSections": {
+      "description": "Screenshot split into separate sections",
+      "technique": "Multiple images with different crop/position",
+      "sections": {
+        "header": {
+          "borderRadius": { "top": 16, "bottom": 0 },
+          "clipHeight": "varies"
+        },
+        "content": {
+          "borderRadius": 0,
+          "clipHeight": "varies"
+        }
+      },
+      "usage": "Show different parts of same screenshot separately"
+    },
+    "revealWithMask": {
+      "description": "Mask parts of screenshot to reveal sections",
+      "maskElements": {
+        "type": "rectangle",
+        "background": "#13151a or #2e3237",
+        "borderRadius": 6
+      },
+      "usage": "Hide sensitive/irrelevant content"
+    }
+  },
+
+  "focusPanels": {
+    "description": "Sharp screenshot panel overlaid on darkened backdrop",
+    "floatingPanel": {
+      "border": "{{gray.300}}",
+      "borderWidth": 1,
+      "borderRadius": 8,
+      "shadow": {
+        "lg": [
+          "0 1px 2px -1px rgba(19,21,26,0.04)",
+          "0 4px 8px -2px rgba(19,21,26,0.04)",
+          "0 16px 32px -8px rgba(19,21,26,0.16)"
+        ]
+      },
+      "usage": "Highlight specific UI element/dialog"
+    },
+    "contextMenuPanel": {
+      "border": "{{gray.300}}",
+      "borderWidth": 1,
+      "borderRadius": 12,
+      "shadow": {
+        "xl": [
+          "0 1px 2px 0 rgba(19,21,26,0.08)",
+          "0 4px 8px -4px rgba(19,21,26,0.08)",
+          "0 12px 24px -8px rgba(19,21,26,0.12)",
+          "0 32px 48px -8px rgba(19,21,26,0.2)"
+        ]
+      },
+      "usage": "Show dropdown menus, context menus"
+    }
+  },
+
+  "borderFrames": {
+    "description": "Semi-transparent border frames around screenshots",
+    "style": {
+      "border": "{{blue.100}}",
+      "borderWidth": 3,
+      "borderRadius": 20,
+      "background": "linear-gradient(-76deg, #245791 11%, #193c64 95%)",
+      "opacity": 0.3
+    },
+    "usage": "Frame darkened screenshot backdrop"
+  },
+
+  "rowHighlighting": {
+    "description": "Highlight specific row in screenshot",
+    "hover": {
+      "background": "{{gray.200}}",
+      "borderRadius": 12,
+      "mixBlendMode": "darken"
+    },
+    "selected": {
+      "background": "#f6f8fa",
+      "borderRadius": 0
+    },
+    "usage": "Draw attention to specific UI row/item"
+  },
+
+  "cursorOverlays": {
+    "greenCursor": {
+      "description": "Green/teal cursor for interaction indication",
+      "colors": {
+        "fill": "#2cb67f to #1f815a gradient",
+        "stroke": "white",
+        "shadow": "drop-shadow"
+      },
+      "size": 99,
+      "usage": "Point to clicked/selected element"
+    },
+    "positioning": {
+      "technique": "Absolute position near highlighted element",
+      "offset": "Slightly overlapping target"
+    }
+  },
+
+  "textAnnotations": {
+    "description": "Text callouts alongside screenshot",
+    "headline": {
+      "color": "white",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 76,
+      "lineHeight": 1.5,
+      "usage": "Feature name"
+    },
+    "bulletList": {
+      "color": "white",
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 36,
+      "lineHeight": 1.71,
+      "bulletChar": "–",
+      "bulletSpacing": "8px",
+      "usage": "Feature benefits/details"
+    },
+    "positioning": {
+      "layout": "screenshot left, text right",
+      "textWidth": "40-50%",
+      "alignment": "top-aligned with screenshot content"
+    }
+  },
+
+  "uiMasks": {
+    "description": "Solid rectangles masking parts of screenshot",
+    "header": {
+      "background": "#13151a",
+      "usage": "Hide app header/toolbar"
+    },
+    "searchBar": {
+      "background": "#2e3237",
+      "borderRadius": 6,
+      "usage": "Hide search input content"
+    },
+    "selectionHighlight": {
+      "background": "#f6f8fa",
+      "usage": "Show selected state"
+    }
+  },
+
+  "inlineLabels": {
+    "description": "Small inline labels on screenshot elements",
+    "style": {
+      "background": "white",
+      "padding": 8,
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 31,
+      "color": "{{gray.900}}"
+    },
+    "usage": "Label specific UI elements (e.g., 'Folder')"
+  },
+
+  "compositionPatterns": {
+    "focusPanelOverBackdrop": {
+      "description": "Darkened screenshot backdrop with sharp focus panel",
+      "layout": {
+        "backdropFrame": "Full width with border frame",
+        "focusPanel": "Overlaid at specific position",
+        "textAnnotations": "Optional, outside frame"
+      },
+      "example": "Error Validation - darkened UI with metric dialog focused"
+    },
+    "splitScreenWithAnnotations": {
+      "description": "Screenshot on one side, text on other",
+      "layout": {
+        "screenshotColumn": "8-42%",
+        "textColumn": "47-100%"
+      },
+      "screenshotTreatment": "Clipped sections, row highlight, context menu",
+      "example": "Reporting Tree - sidebar left, feature list right"
+    },
+    "layeredScreenshots": {
+      "description": "Multiple screenshot sections stacked",
+      "technique": "Header, content, overlay as separate layers",
+      "usage": "Show different UI states/sections"
+    }
+  },
+
+  "shadows": {
+    "lg": {
+      "description": "Large shadow for floating panels",
+      "css": "0 16px 32px -8px rgba(19,21,26,0.16), 0 4px 8px -2px rgba(19,21,26,0.04), 0 1px 2px -1px rgba(19,21,26,0.04)"
+    },
+    "xl": {
+      "description": "Extra-large shadow for menus/dropdowns",
+      "css": "0 32px 48px -8px rgba(19,21,26,0.2), 0 12px 24px -8px rgba(19,21,26,0.12), 0 4px 8px -4px rgba(19,21,26,0.08), 0 1px 2px 0 rgba(19,21,26,0.08)"
+    }
+  },
+
+  "colorUsage": {
+    "backgrounds": ["{{green.700}}", "{{blue.900}}"],
+    "overlays": ["rgba(0,0,0,0.3)", "#13151a", "#2e3237"],
+    "borders": ["{{blue.100}}", "{{gray.300}}"],
+    "text": ["white", "{{gray.900}}"],
+    "highlights": ["{{gray.200}}", "#f6f8fa"],
+    "cursor": ["{{green.500}}", "{{green.700}}"]
+  },
+
+  "differenceFromOtherPatterns": {
+    "vsSpotlight": "Full screenshots vs simplified UI",
+    "vsLayered": "Single focus vs multiple windows",
+    "content": "Real product UI, not mockups",
+    "purpose": "Feature documentation, release notes"
+  }
+}

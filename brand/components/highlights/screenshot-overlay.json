@@ -1,0 +1,67 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "screenshot-overlay",
+  "description": "Screenshot treatments with highlight overlays",
+  "category": "highlights",
+  "treatments": {
+    "darkened-backdrop": {
+      "description": "Full screenshot as backdrop with dark overlay",
+      "overlay": "rgba(0,0,0,0.3)",
+      "borderRadius": 16
+    },
+    "clipped-sections": {
+      "description": "Screenshot split into separate sections",
+      "header": {
+        "borderRadius": { "top": 16, "bottom": 0 }
+      },
+      "content": {
+        "borderRadius": 0
+      }
+    },
+    "reveal-mask": {
+      "description": "Mask parts to reveal sections",
+      "maskBackground": "#13151a",
+      "altMaskBackground": "#2e3237",
+      "borderRadius": 6
+    }
+  },
+  "focusPanels": {
+    "floating": {
+      "border": "gray.300",
+      "borderWidth": 1,
+      "borderRadius": 8,
+      "shadow": "0 16px 32px -8px rgba(19,21,26,0.16), 0 4px 8px -2px rgba(19,21,26,0.04)"
+    },
+    "contextMenu": {
+      "border": "gray.300",
+      "borderWidth": 1,
+      "borderRadius": 12,
+      "shadow": "0 32px 48px -8px rgba(19,21,26,0.2), 0 12px 24px -8px rgba(19,21,26,0.12)"
+    }
+  },
+  "rowHighlight": {
+    "hover": {
+      "background": "gray.200",
+      "borderRadius": 12,
+      "mixBlendMode": "darken"
+    },
+    "selected": {
+      "background": "#f6f8fa"
+    }
+  },
+  "borderFrame": {
+    "border": "blue.100",
+    "borderWidth": 3,
+    "borderRadius": 20,
+    "background": "linear-gradient(-76deg, #245791 11%, #193c64 95%)",
+    "opacity": 0.3
+  },
+  "cursor": {
+    "green": {
+      "colors": ["#2cb67f", "#1f815a"],
+      "stroke": "white",
+      "size": 99
+    }
+  },
+  "usage": "Feature documentation, release notes, UI tutorials"
+}

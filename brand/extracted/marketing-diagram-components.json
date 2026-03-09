@@ -1,0 +1,340 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-09T14:00:00+07:00",
+  "description": "Marketing diagram components - bolder, more decorative than docs diagrams",
+  "sourceFrames": [
+    { "name": "Schema", "nodeId": "1:37642", "background": "dark" },
+    { "name": "Dynamic Data Sources", "nodeId": "1:39027", "background": "dark" },
+    { "name": "CSV Before/After", "nodeId": "1:38156", "background": "dark" },
+    { "name": "Revenue Metric Reuse", "nodeId": "1:43685", "background": "light" },
+    { "name": "Adhoc Model", "nodeId": "1:43867", "background": "light" },
+    { "name": "Dashboard Reuse", "nodeId": "1:43741", "background": "light" },
+    { "name": "Customer Reuse", "nodeId": "1:43816", "background": "light" }
+  ],
+
+  "backgrounds": {
+    "dark": {
+      "navyGradient": {
+        "description": "Primary dark marketing background",
+        "css": "linear-gradient(175deg, {{blue.900}} 5%, {{blue.800}} 112%)",
+        "usage": "Schema diagrams, embedding graphics"
+      },
+      "navySolid": {
+        "description": "Solid navy with radial glow",
+        "base": "blue.900",
+        "glowOverlay": {
+          "type": "radial-gradient",
+          "blendMode": "lighten",
+          "size": "1800px",
+          "position": "center right",
+          "color": "rgba(16, 74, 137, 0.4)"
+        },
+        "usage": "Before/after comparisons"
+      }
+    },
+    "light": {
+      "frostedGradient": {
+        "description": "White base with blue-green tint",
+        "css": "linear-gradient(118deg, rgba(255,255,255,0.1) 0%, rgba(25,122,233,0.15) 46%, rgba(0,159,111,0.025) 99%), white",
+        "usage": "Concept diagrams, reuse patterns"
+      }
+    }
+  },
+
+  "containers": {
+    "dashboardMockup": {
+      "description": "Dashboard preview container with glow border",
+      "onDark": {
+        "outerBorder": "blue.200",
+        "outerBorderWidth": 3,
+        "innerBackground": "#0b3b73",
+        "innerBackdropBlur": "1.5px",
+        "contentBackground": "white",
+        "contentBorder": "blue.300",
+        "contentBorderWidth": 2,
+        "borderRadius": 8
+      },
+      "onLight": {
+        "background": "white",
+        "border": "gray.300",
+        "borderWidth": 1,
+        "borderRadius": 8,
+        "shadow": "0 4px 12px rgba(0,0,0,0.08)"
+      }
+    },
+    "frostedCard": {
+      "description": "Glassmorphism card for grouping elements",
+      "background": "rgba(129, 156, 189, 0.1)",
+      "backdropBlur": 11,
+      "border": "rgba(25, 78, 190, 0.3)",
+      "borderWidth": 2.5,
+      "borderRadius": 11,
+      "usage": "Dataset groups, metric containers"
+    },
+    "labelCard": {
+      "description": "White card with shadow for labels",
+      "background": "white",
+      "shadow": "3px 3px 17px rgba(0,0,0,0.1)",
+      "borderRadius": 5,
+      "usage": "Revenue labels, field cards"
+    },
+    "codeBlock": {
+      "description": "Dark code block for marketing",
+      "background": "blue.900",
+      "border": "#90cced",
+      "borderWidth": 3,
+      "borderRadius": 11,
+      "backdropBlur": 5,
+      "opacity": 0.8,
+      "font": "IBM Plex Mono",
+      "fontSize": 42,
+      "syntaxColors": {
+        "default": "white",
+        "keyword": "white",
+        "variable": "purple.400",
+        "value": "green.500",
+        "variableHex": "#af77f5",
+        "valueHex": "#009f6f"
+      }
+    },
+    "sourceButton": {
+      "description": "UI button shown as source element",
+      "background": "white",
+      "border": "gray.300",
+      "borderWidth": 1,
+      "borderRadius": 16,
+      "outerGlow": {
+        "border": "blue.100",
+        "borderWidth": 3,
+        "borderRadius": 20,
+        "opacity": 0.3,
+        "gradient": "linear-gradient(-45deg, #245791 10%, #193c64 95%)"
+      }
+    },
+    "beforeAfterLabel": {
+      "description": "Before/After pill labels on dark backgrounds",
+      "background": "radial-gradient at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.5) 100%)",
+      "backgroundOpacity": 0.6,
+      "border": "white",
+      "borderWidth": 1,
+      "borderRadius": 12,
+      "textColor": "green.50",
+      "textShadow": "0 1px 2px rgba(0,0,0,0.4)",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 45
+    }
+  },
+
+  "arrows": {
+    "description": "Marketing arrows are more decorative than docs arrows",
+    "greenGradient": {
+      "description": "Curved arrow with green gradient",
+      "colors": ["green.400", "green.600"],
+      "strokeWidth": 3,
+      "usage": "Flow connections, data paths"
+    },
+    "grayToGreen": {
+      "description": "Gradient from gray to green (before→after)",
+      "colors": ["gray.500", "green.500"],
+      "strokeWidth": 3,
+      "usage": "Transformation flows, before/after"
+    },
+    "branchingArrow": {
+      "description": "One-to-many or many-to-one curved paths",
+      "strokeWidth": 3,
+      "color": "green.500",
+      "svgTemplates": [
+        "svg-templates/marketing/arrow-t.svg",
+        "svg-templates/marketing/arrow-b.svg",
+        "svg-templates/marketing/arrow-rb.svg",
+        "svg-templates/marketing/arrow-lb.svg"
+      ]
+    },
+    "connectionDot": {
+      "size": 14,
+      "color": "green.500",
+      "usage": "Arrow origin/endpoint markers"
+    }
+  },
+
+  "illustrations": {
+    "databaseCylinder": {
+      "description": "3D cylinder for database visualization",
+      "technique": "SVG ellipses for top/bottom + union shape for body",
+      "style": {
+        "topEllipse": "semi-transparent gradient",
+        "body": "translucent with dashed outline",
+        "bottomEllipse": "slightly darker"
+      },
+      "colors": {
+        "fill": "rgba(16, 74, 137, 0.3)",
+        "stroke": "blue.300"
+      }
+    },
+    "userIcon": {
+      "description": "User silhouette in container",
+      "container": {
+        "background": "white",
+        "borderRadius": 8
+      },
+      "icon": {
+        "colors": ["green.400", "green.600"],
+        "style": "gradient silhouette"
+      }
+    },
+    "chartMockups": {
+      "barChart": {
+        "colors": ["green.100", "green.300", "green.600", "blue.700"],
+        "style": "Simple bars, no axes needed"
+      },
+      "pieChart": {
+        "colors": ["green.300", "green.600", "blue.300"],
+        "style": "Donut or full pie"
+      },
+      "lineChart": {
+        "strokeColor": "green.500",
+        "strokeWidth": 2,
+        "style": "Smooth curved line"
+      }
+    },
+    "fileIcon": {
+      "description": "Document/file icon (CSV, etc.)",
+      "style": "Folded corner, white background",
+      "labelColor": "blue.600",
+      "size": "large (180px+)"
+    }
+  },
+
+  "typography": {
+    "title": {
+      "onDark": {
+        "color": "gray.50",
+        "font": "Inter",
+        "fontWeight": 500,
+        "fontSize": 38,
+        "lineHeight": 1.4
+      },
+      "onLight": {
+        "color": "blue.900",
+        "font": "Inter",
+        "fontWeight": 500,
+        "fontSize": 45
+      }
+    },
+    "label": {
+      "onDark": {
+        "color": "white",
+        "font": "Inter",
+        "fontWeight": 500,
+        "fontSize": 28
+      },
+      "onLight": {
+        "color": "gray.900",
+        "font": "Inter",
+        "fontWeight": 500,
+        "fontSize": 35
+      }
+    },
+    "cardLabel": {
+      "color": "blue.900",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 28
+    },
+    "datasetLabel": {
+      "color": "gray.900",
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 41
+    },
+    "codeText": {
+      "font": "IBM Plex Mono",
+      "fontWeight": 500,
+      "fontSize": 42,
+      "lineHeight": 1.5
+    }
+  },
+
+  "icons": {
+    "sigmaMetric": {
+      "description": "Sigma symbol for metrics",
+      "color": "green.600",
+      "usage": "Revenue, aggregations"
+    },
+    "calendarDate": {
+      "description": "Calendar icon for date dimensions",
+      "color": "green.600"
+    },
+    "textAa": {
+      "description": "Aa text icon for string dimensions",
+      "color": "green.600"
+    },
+    "datasetGrid": {
+      "description": "Grid icon for datasets",
+      "color": "green.600"
+    }
+  },
+
+  "compositionPatterns": {
+    "hierarchyFlow": {
+      "description": "Top element branching to multiple children",
+      "example": "Revenue Metric → [Ops, Finance, Sales] Datasets",
+      "layout": "vertical with branching arrows",
+      "codeBlock": "bottom, showing implementation"
+    },
+    "multiToOneFlow": {
+      "description": "Multiple sources combining into one target",
+      "example": "[Metric, Dimension, Dimension] → Adhoc Model",
+      "layout": "left sources, right target container"
+    },
+    "beforeAfterComparison": {
+      "description": "Single source splitting to before/after outcomes",
+      "example": "CSV Download → Before (raw) / After (formatted)",
+      "layout": "left source, branching right to stacked outcomes"
+    },
+    "reusePattern": {
+      "description": "Show same component used in multiple places",
+      "example": "Bar chart reused in Dashboard A and B",
+      "annotations": "Curved arrow with 'Reuse' label"
+    },
+    "schemaRouting": {
+      "description": "Central project routing to multiple clients/schemas",
+      "example": "Holistics Project → [Client 1, 2, 3] → Schema DB",
+      "elements": ["dashboard mockup", "user icons", "database cylinder", "routing arrows"]
+    }
+  },
+
+  "colorUsageRules": {
+    "darkBackground": {
+      "text": ["white", "gray.50", "green.50"],
+      "borders": ["blue.100", "blue.200", "blue.300"],
+      "accents": ["green.400", "green.500", "green.600"],
+      "glows": "Use radial gradients with blue tones, mix-blend-lighten"
+    },
+    "lightBackground": {
+      "text": ["blue.900", "gray.900", "gray.800"],
+      "borders": ["gray.300", "rgba(25,78,190,0.3)"],
+      "accents": ["green.500", "green.600"],
+      "shadows": "Use soft shadows, no glows"
+    },
+    "codeBlocks": {
+      "background": "blue.900 or dark navy",
+      "border": "#90cced (light blue)",
+      "syntaxDefault": "white",
+      "syntaxVariable": "#af77f5 (purple)",
+      "syntaxValue": "#009f6f (green)"
+    }
+  },
+
+  "differenceFromDocs": {
+    "borders": "3px vs 1px - thicker borders",
+    "borderRadius": "11-20px vs 6-8px - more rounded",
+    "shadows": "Larger, softer shadows",
+    "colors": "More saturated, gradients common",
+    "typography": "Larger text (35-45px vs 18-25px)",
+    "effects": "Backdrop blur, glows, gradients vs flat",
+    "icons": "Larger, more decorative",
+    "arrows": "Gradient colors, thicker strokes"
+  }
+}

@@ -1,6 +1,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
 import type { ExtractionLoader } from '../../core/extraction-loader.js';
+import type { ComponentLoader } from '../../core/component-loader.js';
 import type { PatternEntry } from '../../core/extraction-types.js';
 
 /**
@@ -41,46 +42,183 @@ function generateUsageGuidance(pattern: PatternEntry): string {
 }
 
 /**
- * MCP tool to get detailed styling for a specific category
+ * MCP tool to get detailed styling, components, or recipes
  */
 export function registerGetPatternTool(
   server: McpServer,
-  extractionLoader: ExtractionLoader
+  extractionLoader?: ExtractionLoader,
+  componentLoader?: ComponentLoader
 ): void {
   server.tool(
     'get_pattern',
-    'Get detailed styling for a style library category. Returns backgrounds, containers, typography, graphic elements, chart elements, layout patterns, and SVG templates. Use after list_patterns to get full details.',
+    'Get detailed styling for a category, component, or recipe. For style libraries use category name (e.g., "marketing-graphics"). For components use "component:category/name" (e.g., "component:nodes/box"). For recipes use "recipe:category/name" (e.g., "recipe:diagrams/architecture-flow").',
     {
-      category: z.string().describe('Category name (e.g., "marketing-graphics", "docs-explainers")'),
+      category: z.string().describe('Category/component/recipe path. Prefix with "component:" or "recipe:" for composable system.'),
     },
     async (args) => {
-      const pattern = extractionLoader.getPattern(args.category);
+      const query = args.category;
+
+      // Handle component queries
+      if (query.startsWith('component:')) {
+        if (!componentLoader) {
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({ error: 'Component system not loaded' }),
+            }],
+            isError: true,
+          };
+        }
+
+        const componentKey = query.replace('component:', '');
+        const component = componentLoader.getComponent(componentKey);
+
+        if (!component) {
+          const available = componentLoader.listComponents();
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({
+                error: `Component "${componentKey}" not found`,
+                availableComponents: available.map(c => `${c.category}/${c.name}`),
+              }),
+            }],
+            isError: true,
+          };
+        }
+
+        return {
+          content: [{
+            type: 'text',
+            text: JSON.stringify({
+              type: 'component',
+              ...component,
+              colorNotes: {
+                primary: 'Green scale (green.50-900) - main brand accent',
+                secondary: ['Blue scale (blue.50-800)', 'Purple scale (purple.50-900)'],
+              },
+            }, null, 2),
+          }],
+        };
+      }
+
+      // Handle recipe queries
+      if (query.startsWith('recipe:')) {
+        if (!componentLoader) {
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({ error: 'Recipe system not loaded' }),
+            }],
+            isError: true,
+          };
+        }
+
+        const recipeKey = query.replace('recipe:', '');
+        const recipe = componentLoader.getRecipe(recipeKey);
+
+        if (!recipe) {
+          const available = componentLoader.listRecipes();
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({
+                error: `Recipe "${recipeKey}" not found`,
+                availableRecipes: available.map(r => `${r.category}/${r.name}`),
+              }),
+            }],
+            isError: true,
+          };
+        }
+
+        return {
+          content: [{
+            type: 'text',
+            text: JSON.stringify({
+              type: 'recipe',
+              name: recipe.name,
+              category: recipe.category,
+              content: recipe.content,
+            }, null, 2),
+          }],
+        };
+      }
+
+      // Handle style library queries (default, backward compatible)
+      if (!extractionLoader) {
+        // Try to find as component category
+        if (componentLoader) {
+          const components = componentLoader.listComponentsByCategory(query);
+          if (components.length > 0) {
+            return {
+              content: [{
+                type: 'text',
+                text: JSON.stringify({
+                  type: 'componentCategory',
+                  category: query,
+                  components: components,
+                  hint: 'Use "component:category/name" to get full component details',
+                }, null, 2),
+              }],
+            };
+          }
+        }
+
+        return {
+          content: [{
+            type: 'text',
+            text: JSON.stringify({ error: 'Extraction loader not available' }),
+          }],
+          isError: true,
+        };
+      }
+
+      const pattern = extractionLoader.getPattern(query);
 
       if (!pattern) {
         const categories = extractionLoader.getCategories();
+        const componentCategories = componentLoader?.getComponentCategories() || [];
+        const recipeCategories = componentLoader?.getRecipeCategories() || [];
+
         const suggestions = categories.filter(
-          c => c.includes(args.category) || args.category.includes(c.slice(0, 5))
+          c => c.includes(query) || query.includes(c.slice(0, 5))
         );
 
         return {
           content: [{
             type: 'text',
             text: JSON.stringify({
-              error: `Category "${args.category}" not found`,
-              availableCategories: categories,
+              error: `Category "${query}" not found`,
+              availableStyleCategories: categories,
+              availableComponentCategories: componentCategories,
+              availableRecipeCategories: recipeCategories,
               suggestions: suggestions.length > 0 ? suggestions : undefined,
+              hint: 'Use "component:category/name" for components or "recipe:category/name" for recipes',
             }),
           }],
           isError: true,
         };
       }
 
+      // Include related components if available
+      const relatedComponents = componentLoader
+        ? componentLoader.listComponents().filter(c =>
+            query.includes(c.category) || c.category.includes(query.split('-')[0])
+          )
+        : [];
+
       return {
         content: [{
           type: 'text',
           text: JSON.stringify({
+            type: 'styleLibrary',
             ...pattern,
             usageGuidance: generateUsageGuidance(pattern),
+            relatedComponents: relatedComponents.length > 0 ? relatedComponents : undefined,
+            colorNotes: {
+              primary: 'Green scale (green.50-900) - main brand accent',
+              secondary: ['Blue scale (blue.50-800)', 'Purple scale (purple.50-900)'],
+            },
           }, null, 2),
         }],
       };

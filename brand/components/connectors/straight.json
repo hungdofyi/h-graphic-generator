@@ -1,0 +1,47 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "straight-connector",
+  "description": "Simple straight line connectors (horizontal/vertical)",
+  "category": "connectors",
+  "patterns": {
+    "horizontal": {
+      "css": {
+        "width": "var(--length, 100px)",
+        "height": "2px",
+        "background": "var(--color, {{gray.600}})"
+      }
+    },
+    "vertical": {
+      "css": {
+        "width": "2px",
+        "height": "var(--length, 100px)",
+        "background": "var(--color, {{gray.600}})"
+      }
+    }
+  },
+  "variants": {
+    "default": {
+      "stroke": "gray.600",
+      "strokeWidth": 2
+    },
+    "green": {
+      "stroke": "green.600",
+      "strokeWidth": 2
+    },
+    "dashed": {
+      "stroke": "gray.600",
+      "strokeWidth": 2,
+      "strokeDasharray": "6 4"
+    },
+    "config-mapping": {
+      "description": "Lines connecting code to preview",
+      "stroke": "white",
+      "strokeWidth": 17,
+      "minLength": 230
+    }
+  },
+  "svgTemplates": {
+    "horizontalArrow": "svg/connectors/straight-h-arrow.svg",
+    "verticalArrow": "svg/connectors/straight-v-arrow.svg"
+  }
+}

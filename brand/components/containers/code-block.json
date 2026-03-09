@@ -1,0 +1,87 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "code-block",
+  "description": "Container for code snippets with optional title bar",
+  "category": "containers",
+  "variants": {
+    "docs": {
+      "description": "Light code block for documentation",
+      "container": {
+        "background": "white",
+        "border": "gray.400",
+        "borderWidth": 1.5,
+        "borderRadius": 8
+      },
+      "titleBar": {
+        "background": "blue.50",
+        "borderRadius": "7.5px 7.5px 0 0",
+        "height": 62
+      },
+      "syntaxColors": {
+        "keyword": "green.500",
+        "identifier": "blue.600",
+        "sqlKeyword": "blue.800",
+        "default": "gray.900"
+      },
+      "typography": {
+        "font": "JetBrains Mono",
+        "fontSize": 18,
+        "lineHeight": 1.8
+      }
+    },
+    "marketing-dark": {
+      "description": "Dark code block for marketing graphics",
+      "container": {
+        "background": "blue.900",
+        "border": "#90cced",
+        "borderWidth": 3,
+        "borderRadius": 11,
+        "backdropBlur": 5,
+        "opacity": 0.8
+      },
+      "syntaxColors": {
+        "default": "white",
+        "keyword": "white",
+        "variable": "purple.400",
+        "value": "green.500"
+      },
+      "typography": {
+        "font": "IBM Plex Mono",
+        "fontSize": 42
+      }
+    },
+    "config-preview": {
+      "description": "Dark editor for config-to-preview mapping",
+      "container": {
+        "background": "gray.800",
+        "borderRadius": 12
+      },
+      "highlightedLine": {
+        "background": "linear-gradient(to right, {{blue.600}}, {{green.600}})",
+        "height": 66,
+        "textColor": "white"
+      },
+      "placeholderLines": {
+        "background": "gray.600",
+        "opacity": 0.5,
+        "borderRadius": 27,
+        "height": 25
+      },
+      "typography": {
+        "font": "JetBrains Mono",
+        "fontWeight": 500,
+        "fontSize": 34,
+        "lineHeight": 1.6,
+        "colors": {
+          "default": "gray.600",
+          "highlighted": "white"
+        }
+      }
+    }
+  },
+  "usage": {
+    "docs": "Code snippets in documentation diagrams",
+    "marketing": "Large code displays in marketing graphics",
+    "config": "Configuration-to-preview mapping layouts"
+  }
+}

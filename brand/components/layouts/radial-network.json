@@ -1,0 +1,72 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "radial-network",
+  "description": "Central hub with connected satellites, concentric rings background",
+  "category": "layouts",
+  "concentricRings": {
+    "style": {
+      "stroke": "rgba(255,255,255,0.1)",
+      "strokeWidth": 1,
+      "fill": "none"
+    },
+    "rings": {
+      "count": "5-8 rings typically",
+      "spacing": "Even or logarithmic",
+      "maxSize": 1275,
+      "center": "Offset right of center (60% from left)"
+    },
+    "usage": "Creates 'radar' or 'ripple' effect from hub"
+  },
+  "centralHub": {
+    "container": {
+      "size": 292,
+      "positioning": "Center of concentric rings"
+    },
+    "content": {
+      "type": "logo or icon",
+      "colors": ["green.400", "green.600", "white"]
+    }
+  },
+  "satelliteNodes": {
+    "container": {
+      "background": "linear-gradient(to bottom, {{blue.800}}, #0c3f6f)",
+      "border": "#819ab3",
+      "borderWidth": 4,
+      "borderRadius": 11
+    },
+    "sizes": {
+      "large": 134,
+      "medium": 130,
+      "small": 108,
+      "tiny": 75
+    },
+    "icon": {
+      "type": "user silhouette",
+      "opacity": 0.3,
+      "color": "white"
+    },
+    "positioning": {
+      "technique": "Scattered around hub at varying distances",
+      "distribution": "Asymmetric, organic placement",
+      "depthEffect": "Smaller nodes appear farther away (lower opacity)"
+    },
+    "count": "4-6 nodes typically"
+  },
+  "connectionLines": {
+    "color": "rgba(255,255,255,0.15)",
+    "width": 2,
+    "type": "straight"
+  },
+  "composition": {
+    "leftTextRightNetwork": {
+      "textColumn": "7-50%",
+      "networkColumn": "40-100%"
+    }
+  },
+  "useCases": [
+    "Partner/referral programs",
+    "Integration ecosystem diagrams",
+    "Multi-tenant architecture",
+    "Data source connections"
+  ]
+}

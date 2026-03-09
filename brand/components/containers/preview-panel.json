@@ -1,0 +1,49 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "preview-panel",
+  "description": "Visual preview panel for config-to-preview mapping layouts",
+  "category": "containers",
+  "variants": {
+    "green-gradient": {
+      "description": "Nested dashed containers showing hierarchy",
+      "outer": {
+        "border": "green.200",
+        "borderWidth": 2.4,
+        "borderStyle": "dashed",
+        "borderRadius": 12,
+        "background": "linear-gradient(123deg, {{green.300}} 0%, transparent 108%)"
+      },
+      "inner": {
+        "background": "green.100",
+        "border": "green.200",
+        "borderWidth": 1.2,
+        "borderStyle": "dashed",
+        "borderRadius": 10,
+        "opacity": 0.85
+      },
+      "content": {
+        "background": "green.200",
+        "border": "green.200",
+        "borderWidth": 2.3,
+        "borderStyle": "dashed",
+        "borderRadius": 9
+      }
+    }
+  },
+  "titleLabel": {
+    "container": {
+      "background": "rgba(255,255,255,0.25)",
+      "border": "green.300",
+      "borderWidth": 2,
+      "borderRadius": 9,
+      "padding": "15px"
+    },
+    "text": {
+      "color": "green.600",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 25
+    }
+  },
+  "usage": "Show how config affects visual output (CSS theming, API results)"
+}

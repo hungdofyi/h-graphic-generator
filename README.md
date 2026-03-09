@@ -44,8 +44,8 @@ Create a pricing comparison graphic with 3 tiers
 | Tool | Purpose |
 |------|---------|
 | `get_style_profile` | Get brand tokens (colors, typography, spacing) |
-| `list_patterns` | Browse Figma-extracted design patterns |
-| `get_pattern` | Get detailed styling for a pattern category |
+| `list_patterns` | Browse style libraries, components, and recipes |
+| `get_pattern` | Get styles, components, or recipes |
 | `list_icons` | Browse 300+ brand icons by category |
 | `render_graphic` | Render HTML/CSS to image |
 | `serve_preview` | Start local server for Figma export |
@@ -66,7 +66,7 @@ Claude follows this workflow automatically:
 
 **Output:** Images are saved to the `output/` folder by default.
 
-## Pattern Categories
+## Pattern Categories (Style Libraries)
 
 | Category | Examples |
 |----------|----------|
@@ -77,6 +77,24 @@ Claude follows this workflow automatically:
 | `docs-illustrations` | Dashboard mockups, navigation trees |
 | `in-app-graphics` | Data connections, dashboard publishing |
 | `in-app-spot-illustrations` | Empty states, chart previews |
+
+## Components & Recipes (Composable System)
+
+**Components** (`brand/components/`): Reusable styling rules
+- `nodes/` - box, step-indicator, connection-dot
+- `connectors/` - elbow, straight, branch
+- `containers/` - code-block, tooltip, frosted-card, dashboard-mockup
+- `highlights/` - code-highlight, spotlight, screenshot-overlay
+- `backgrounds/` - gradients, mesh
+- `layouts/` - stacked-cards, layered-windows, radial-network
+- `typography/` - docs, marketing
+
+**Recipes** (`brand/recipes/`): Composition guides
+- `diagrams/` - architecture-flow, data-flow
+- `annotations/` - screenshot-highlight
+- `marketing/` - spotlight-feature, layered-showcase, config-preview, radial-network
+
+Access via MCP: `get_pattern("component:nodes/box")` or `get_pattern("recipe:marketing/spotlight-feature")`
 
 ## Brand Configuration
 
@@ -118,13 +136,24 @@ Configure your brand in `brand/brand.json`:
 
 ```
 brand/
-├── brand.json
+├── brand.json            # Source of truth
+├── components/           # 25 reusable component definitions
+├── recipes/              # 7 composition guides
+├── workflow/             # AI guidance (intake, creative, checklist)
+├── svg/                  # Organized SVG templates
 ├── assets/fonts/
 │   ├── static/           # For Satori (Inter, InterDisplay, JetBrainsMono)
 │   └── variable/         # For Puppeteer CSS
-├── data/                 # Logos, icons
-└── extracted/            # Figma-extracted patterns
+├── data/                 # Logos, icons (300+)
+└── extracted/            # Legacy Figma-extracted patterns
 ```
+
+### Color Hierarchy
+
+- **Green** (50-900): PRIMARY accent
+- **Blue** (50-800): Secondary; Navy (900) for dark backgrounds
+- **Purple** (50-900): Secondary accent
+- **Gray** (50-900): Neutral, text
 
 ## CLI (Secondary)
 

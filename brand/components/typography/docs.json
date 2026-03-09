@@ -1,0 +1,68 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "docs-typography",
+  "description": "Typography styles for documentation diagrams",
+  "category": "typography",
+  "variants": {
+    "page-title": {
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 35,
+      "color": "blue.900"
+    },
+    "section-header": {
+      "description": "Numbered section headers (1. HOLISTICS, 2. APPLICATION)",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 25,
+      "color": "gray.800",
+      "textTransform": "uppercase"
+    },
+    "component-label": {
+      "description": "Labels for components (embed_payload, dataset)",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 26,
+      "color": "green.600"
+    },
+    "body": {
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "color": "gray.800",
+      "lineHeight": 1.6
+    },
+    "annotation": {
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "color": "gray.700"
+    },
+    "code-inline": {
+      "font": "JetBrains Mono",
+      "fontSize": 15,
+      "color": "gray.800",
+      "background": "gray.100",
+      "padding": "2px 4px",
+      "borderRadius": 3
+    }
+  },
+  "textAnnotations": {
+    "headline": {
+      "color": "white",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 76,
+      "lineHeight": 1.5
+    },
+    "bulletList": {
+      "color": "white",
+      "font": "Inter",
+      "fontWeight": 400,
+      "fontSize": 36,
+      "lineHeight": 1.71,
+      "bulletChar": "–",
+      "bulletSpacing": "8px"
+    }
+  }
+}

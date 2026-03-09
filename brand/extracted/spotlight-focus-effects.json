@@ -1,0 +1,248 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-09T16:00:00+07:00",
+  "description": "Spotlight and focus effects - circle highlights, row emphasis, cursor interactions",
+  "sourceFrames": [
+    { "name": "CSV Import", "nodeId": "1:39108", "type": "iconSpotlight" },
+    { "name": "PDF Export to Slack", "nodeId": "1:38254", "type": "rowHighlight" }
+  ],
+
+  "backgrounds": {
+    "meshGradient": {
+      "description": "Navy mesh gradient with blur overlay - primary marketing background",
+      "css": "linear-gradient(-84deg, {{blue.700}} 43%, {{blue.900}} 80%)",
+      "blurOverlay": {
+        "color": "{{blue.900}}",
+        "blur": "156px",
+        "rotation": "50deg",
+        "size": "1164px x 2792px"
+      },
+      "usage": "Feature announcements, beta features"
+    },
+    "navyGradient": {
+      "description": "Simpler navy diagonal gradient",
+      "css": "linear-gradient(-84deg, {{blue.800}} 44%, {{blue.900}} 85%)",
+      "usage": "Form highlight graphics"
+    }
+  },
+
+  "spotlightEffects": {
+    "circleSpotlight": {
+      "description": "Circular spotlight highlighting a single element (icon, button)",
+      "structure": {
+        "outerGlow": {
+          "type": "radial-gradient",
+          "size": "406px",
+          "colors": ["rgba(255,255,255,0.15)", "transparent"],
+          "blur": "none"
+        },
+        "ring": {
+          "size": "336px",
+          "border": "{{blue.200}}",
+          "borderWidth": 4,
+          "background": "white",
+          "shadow": "0 0 60px rgba(255,255,255,0.3)"
+        },
+        "content": {
+          "description": "Icon or element inside spotlight",
+          "background": "{{green.500}}",
+          "borderRadius": 15,
+          "padding": 20
+        }
+      },
+      "cursor": {
+        "type": "pointer",
+        "rotation": "-45deg",
+        "position": "bottom-right of spotlight",
+        "svgPath": "Polygon arrow shape"
+      },
+      "usage": "Feature icons, action buttons, new capabilities"
+    },
+    "plusIndicator": {
+      "description": "Plus icon indicating add/new capability",
+      "size": 87,
+      "color": "white",
+      "position": "top-left of spotlight content",
+      "usage": "Combined with icon to show 'add X' action"
+    }
+  },
+
+  "rowHighlightEffect": {
+    "description": "Highlight a specific row in a form/table UI",
+    "technique": {
+      "step1": "Full screenshot as darkened backdrop",
+      "step2": "Dark overlay on screenshot (rgba(0,0,0,0.2))",
+      "step3": "Duplicate row with blur effect (blur 2px)",
+      "step4": "Sharp duplicate row on top",
+      "step5": "Cursor pointing to highlighted element"
+    },
+    "rowStyle": {
+      "border": "{{blue.800}}",
+      "borderWidth": "2-4px",
+      "borderRadius": 8,
+      "blur": {
+        "background": "2px blur",
+        "offset": "4px down"
+      },
+      "sharp": {
+        "offset": "0px",
+        "shadow": "none"
+      }
+    },
+    "cursor": {
+      "type": "figma-cursor",
+      "rotation": "-36deg",
+      "position": "pointing to checkbox/button",
+      "size": "125px"
+    },
+    "usage": "Highlighting specific UI controls, checkboxes, selections"
+  },
+
+  "simplifiedPanels": {
+    "description": "Semi-transparent UI panels with placeholder content",
+    "mainPanel": {
+      "description": "Large frosted panel containing simplified UI",
+      "background": "linear-gradient(155deg, rgba(9,52,101,1) 9%, rgba(21,70,124,0) 69%)",
+      "border": "{{blue.200}}",
+      "borderWidth": 5,
+      "borderRadius": {
+        "topLeft": 30,
+        "topRight": 30,
+        "bottomLeft": 0,
+        "bottomRight": 0
+      },
+      "outerGlow": {
+        "color": "#1c94f6",
+        "blur": "7.5px",
+        "borderWidth": 20
+      }
+    },
+    "sectionHeaders": {
+      "color": "#719ac6",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 30
+    },
+    "rowBackgrounds": {
+      "description": "Alternating row backgrounds",
+      "gradient": "linear-gradient(to right, #2c5c93, transparent)",
+      "height": 63,
+      "alternateOpacity": [1, 0.8]
+    },
+    "inputFields": {
+      "background": "transparent",
+      "border": "#3e6a9b",
+      "borderWidth": 5,
+      "borderRadius": 8,
+      "height": 66
+    },
+    "textPlaceholders": {
+      "description": "Rounded pills representing text content",
+      "background": ["#3a689d", "#2e619b"],
+      "opacity": 0.5,
+      "borderRadius": 12,
+      "height": [18, 20],
+      "widths": [96, 120, 179, 262]
+    },
+    "verticalDividers": {
+      "color": "#295891",
+      "width": 5
+    }
+  },
+
+  "formOverlay": {
+    "description": "White form panel overlaid on screenshot",
+    "background": "white",
+    "width": 1284,
+    "height": 455,
+    "positioning": {
+      "verticalCenter": true,
+      "rightAligned": false
+    },
+    "placeholderLines": {
+      "background": "{{gray.200}}",
+      "borderRadius": 9999,
+      "height": 30,
+      "widths": [457, 934, 1060, 1201]
+    }
+  },
+
+  "typography": {
+    "headline": {
+      "color": "white",
+      "font": "Inter",
+      "fontWeight": 600,
+      "fontSize": 85,
+      "letterSpacing": "-0.85px"
+    },
+    "subheadline": {
+      "color": "{{gray.500}}",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 55,
+      "letterSpacing": "1.1px",
+      "lineHeight": 1.3
+    },
+    "featureTitle": {
+      "color": "white",
+      "font": "Roboto",
+      "fontWeight": 500,
+      "fontSize": 72
+    }
+  },
+
+  "cursorStyles": {
+    "pointer": {
+      "description": "Simple arrow pointer",
+      "type": "polygon",
+      "color": "white",
+      "shadow": "drop-shadow",
+      "rotation": "-45deg"
+    },
+    "figmaCursor": {
+      "description": "Figma-style cursor with shadow",
+      "size": 125,
+      "colors": {
+        "fill": "white",
+        "stroke": "#333"
+      },
+      "rotation": "-36deg"
+    }
+  },
+
+  "compositionPatterns": {
+    "leftTextRightSpotlight": {
+      "description": "Text on left, spotlight focal point on right",
+      "layout": {
+        "textColumn": "5-35%",
+        "visualColumn": "35-100%"
+      },
+      "textContent": ["headline", "subheadline"],
+      "example": "CSV Import - headline left, spotlight on CSV icon right"
+    },
+    "leftTextRightForm": {
+      "description": "Text on left, form/UI highlight on right",
+      "layout": {
+        "textColumn": "5-45%",
+        "formColumn": "42-100%"
+      },
+      "example": "PDF Export - headline left, form with row highlight right"
+    }
+  },
+
+  "colorUsage": {
+    "backgrounds": ["{{blue.700}}", "{{blue.800}}", "{{blue.900}}"],
+    "borders": ["{{blue.200}}", "{{blue.800}}", "#3e6a9b", "#a8c6e7"],
+    "text": ["white", "{{gray.500}}", "#719ac6"],
+    "accents": ["{{green.500}}", "#1c94f6"],
+    "placeholders": ["#3a689d", "#2e619b", "{{gray.200}}"]
+  },
+
+  "differenceFromDocs": {
+    "purpose": "Feature highlight, not explanation",
+    "backgrounds": "Dark navy mesh gradients",
+    "UI": "Simplified/abstracted, not real data",
+    "focus": "Single focal element vs flow diagram",
+    "effects": "Glows, spotlights, blur layers"
+  }
+}

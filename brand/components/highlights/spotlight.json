@@ -1,0 +1,60 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "spotlight",
+  "description": "Circular spotlight highlighting a single element",
+  "category": "highlights",
+  "variants": {
+    "circle": {
+      "description": "Circular spotlight for icons/buttons",
+      "outerGlow": {
+        "type": "radial-gradient",
+        "size": 406,
+        "colors": ["rgba(255,255,255,0.15)", "transparent"]
+      },
+      "ring": {
+        "size": 336,
+        "border": "blue.200",
+        "borderWidth": 4,
+        "background": "white",
+        "shadow": "0 0 60px rgba(255,255,255,0.3)"
+      },
+      "content": {
+        "background": "green.500",
+        "borderRadius": 15,
+        "padding": 20
+      }
+    },
+    "row": {
+      "description": "Row highlight in form/table UI",
+      "technique": [
+        "Darkened backdrop (rgba(0,0,0,0.2))",
+        "Blur layer (2px blur, 4px offset)",
+        "Sharp duplicate on top"
+      ],
+      "border": "blue.800",
+      "borderWidth": "2-4px",
+      "borderRadius": 8
+    }
+  },
+  "cursor": {
+    "pointer": {
+      "type": "polygon",
+      "color": "white",
+      "rotation": "-45deg",
+      "position": "bottom-right of spotlight"
+    },
+    "figma": {
+      "size": 125,
+      "fill": "white",
+      "stroke": "#333",
+      "rotation": "-36deg"
+    }
+  },
+  "plusIndicator": {
+    "size": 87,
+    "color": "white",
+    "position": "top-left of spotlight content",
+    "usage": "Combined with icon to show 'add X' action"
+  },
+  "usage": "Feature icons, action buttons, new capabilities"
+}

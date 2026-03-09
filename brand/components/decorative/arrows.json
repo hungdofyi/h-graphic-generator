@@ -1,0 +1,41 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "marketing-arrows",
+  "description": "Decorative arrows for marketing diagrams - bolder than docs",
+  "category": "decorative",
+  "variants": {
+    "green-gradient": {
+      "description": "Curved arrow with green gradient",
+      "colors": ["green.400", "green.600"],
+      "strokeWidth": 3,
+      "usage": "Flow connections, data paths"
+    },
+    "gray-to-green": {
+      "description": "Gradient from gray to green (before→after)",
+      "colors": ["gray.500", "green.500"],
+      "strokeWidth": 3,
+      "usage": "Transformation flows, before/after"
+    },
+    "branching": {
+      "description": "One-to-many or many-to-one curved paths",
+      "strokeWidth": 3,
+      "color": "green.500",
+      "svgTemplates": [
+        "svg/arrows/arrow-t.svg",
+        "svg/arrows/arrow-b.svg",
+        "svg/arrows/arrow-rb.svg",
+        "svg/arrows/arrow-lb.svg"
+      ]
+    }
+  },
+  "connectionDot": {
+    "size": 14,
+    "color": "green.500",
+    "usage": "Arrow origin/endpoint markers"
+  },
+  "differenceFromDocs": {
+    "strokeWidth": "3px vs 2px",
+    "style": "Gradient colors vs solid",
+    "size": "Larger, more decorative"
+  }
+}

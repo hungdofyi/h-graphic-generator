@@ -1,0 +1,63 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "code-highlight",
+  "description": "Visual emphasis for code values and identifiers",
+  "category": "highlights",
+  "variants": {
+    "green": {
+      "description": "Primary highlight (Customer 1, success, primary values)",
+      "background": "green.50",
+      "textColor": "green.800",
+      "borderRadius": 3,
+      "padding": "2px 4px",
+      "usage": "tenant_id: ['1'], ecommerce_portal, primary values"
+    },
+    "blue": {
+      "description": "Secondary highlight (Customer 2, alternative values)",
+      "background": "blue.50",
+      "textColor": "blue.800",
+      "borderRadius": 3,
+      "padding": "2px 4px",
+      "usage": "tenant_id: [2], embed_token, secondary values"
+    },
+    "purple": {
+      "description": "Special highlight (admin, global, special values)",
+      "background": "purple.100",
+      "textColor": "purple.800",
+      "borderRadius": 3,
+      "padding": "2px 4px",
+      "usage": "__ALL__, global admin, special permissions"
+    },
+    "neutral": {
+      "description": "Neutral highlight (generic values)",
+      "background": "gray.400",
+      "textColor": "gray.700",
+      "borderRadius": 3,
+      "padding": "2px 4px",
+      "usage": "tenant_id key name, neutral identifiers"
+    }
+  },
+  "columnHighlight": {
+    "description": "Full column background in data tables",
+    "green": {
+      "background": "green.50",
+      "headerColor": "green.800",
+      "cellColor": "green.800"
+    },
+    "blue": {
+      "background": "blue.50",
+      "headerColor": "blue.800",
+      "cellColor": "blue.800"
+    }
+  },
+  "borderEmphasis": {
+    "green": {
+      "border": "green.600",
+      "borderWidth": 1
+    },
+    "blue": {
+      "border": "blue.600",
+      "borderWidth": 1
+    }
+  }
+}

@@ -12,3 +12,5 @@ export * from './style-profile-types.js';
 export * from './image-validation.js';
 export { ExtractionLoader } from './extraction-loader.js';
 export * from './extraction-types.js';
+export { ComponentLoader } from './component-loader.js';
+export type { Component, Recipe, ComponentSummary, RecipeSummary } from './component-loader.js';

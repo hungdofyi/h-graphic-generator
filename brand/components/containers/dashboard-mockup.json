@@ -1,0 +1,34 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "dashboard-mockup",
+  "description": "Dashboard preview container for marketing diagrams",
+  "category": "containers",
+  "variants": {
+    "on-dark": {
+      "description": "Dashboard preview on dark background with glow",
+      "outerBorder": "blue.200",
+      "outerBorderWidth": 3,
+      "innerBackground": "#0b3b73",
+      "innerBackdropBlur": "1.5px",
+      "contentBackground": "white",
+      "contentBorder": "blue.300",
+      "contentBorderWidth": 2,
+      "borderRadius": 8
+    },
+    "on-light": {
+      "description": "Dashboard preview on light background",
+      "background": "white",
+      "border": "gray.300",
+      "borderWidth": 1,
+      "borderRadius": 8,
+      "shadow": "0 4px 12px rgba(0,0,0,0.08)"
+    }
+  },
+  "simplifiedElements": {
+    "navigation": "Sidebar with placeholder icons",
+    "searchBar": "Gray pill placeholder",
+    "dataList": "Stacked gray bars",
+    "dashboardTiles": "Rectangles with chart placeholders"
+  },
+  "usage": "Dashboard previews in schema routing diagrams, feature showcases"
+}

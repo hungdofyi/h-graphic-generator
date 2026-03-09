@@ -1,0 +1,32 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "tooltip",
+  "description": "Tooltip/callout with beak pointer for annotations",
+  "category": "containers",
+  "variants": {
+    "default": {
+      "background": "gray.300",
+      "borderRadius": 5,
+      "padding": 10,
+      "textColor": "gray.700"
+    },
+    "code": {
+      "description": "SQL/code tooltip",
+      "background": "gray.300",
+      "borderRadius": 5,
+      "padding": 10,
+      "typography": {
+        "font": "JetBrains Mono",
+        "fontSize": 15,
+        "lineHeight": 20
+      }
+    }
+  },
+  "beak": {
+    "svgTemplates": {
+      "right": "svg/decorative/tooltip-beak-right.svg",
+      "top": "svg/decorative/tooltip-beak-top.svg"
+    }
+  },
+  "usage": "SQL query tooltips, code annotations, callout pointers"
+}

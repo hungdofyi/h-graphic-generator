@@ -1,0 +1,41 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "cursors",
+  "description": "Cursor overlays for interaction indication",
+  "category": "decorative",
+  "variants": {
+    "pointer-white": {
+      "type": "polygon",
+      "color": "white",
+      "shadow": "drop-shadow",
+      "rotation": "-45deg",
+      "usage": "General pointing"
+    },
+    "figma-cursor": {
+      "description": "Figma-style cursor with shadow",
+      "size": 125,
+      "fill": "white",
+      "stroke": "#333",
+      "rotation": "-36deg",
+      "usage": "UI element pointing"
+    },
+    "drag-cursor": {
+      "description": "Cursor showing drag interaction",
+      "type": "polygon",
+      "rotation": "-45deg",
+      "size": 65
+    },
+    "green-cursor": {
+      "description": "Green/teal cursor for interaction",
+      "colors": ["#2cb67f", "#1f815a"],
+      "stroke": "white",
+      "size": 99
+    },
+    "config-pointer": {
+      "rotation": "-39deg",
+      "size": 90,
+      "position": "Near highlighted line endpoint"
+    }
+  },
+  "svgTemplate": "svg/decorative/cursor.svg"
+}

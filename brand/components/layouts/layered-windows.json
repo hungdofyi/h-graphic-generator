@@ -1,0 +1,44 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "layered-windows",
+  "description": "Multiple window/panel layers with depth shadows",
+  "category": "layouts",
+  "layers": {
+    "background": {
+      "description": "Most recessed window layer",
+      "background": "linear-gradient(166deg, rgba(26,79,141,1) 33%, transparent 89%)",
+      "borderRadius": 13,
+      "positioning": "Rightmost, topmost"
+    },
+    "middle": {
+      "description": "Main content window",
+      "background": "linear-gradient(167deg, #2f65a1 36%, transparent 104%)",
+      "borderRadius": 13,
+      "positioning": "Center, overlapping background"
+    },
+    "foreground": {
+      "description": "Floating panel/sidebar on top",
+      "background": "white",
+      "shadow": "8px -4px 24px rgba(0,0,0,0.25)",
+      "borderRadius": 7,
+      "positioning": "Bottom-right, overlapping middle"
+    }
+  },
+  "windowHeaders": {
+    "placeholderBars": {
+      "background": "linear-gradient(to right, #6796ca 0%, transparent 110%)",
+      "opacity": 0.5,
+      "borderRadius": 10
+    }
+  },
+  "composition": {
+    "layout": {
+      "textColumn": "5-42%",
+      "windowsColumn": "42-100%"
+    },
+    "windowCount": 3,
+    "floatingPanel": true,
+    "example": "Embed Portal - background window, chart window, settings panel"
+  },
+  "usage": "Feature depth, embed portals, complex UI showcases"
+}

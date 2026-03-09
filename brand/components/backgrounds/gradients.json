@@ -1,0 +1,61 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "gradients",
+  "description": "Background gradients for marketing and docs graphics",
+  "category": "backgrounds",
+  "colorNotes": {
+    "primary": "Green scale (green.50-900) - main brand accent",
+    "secondary": ["Blue scale (blue.50-800)", "Purple scale (purple.50-900)"],
+    "darkBackground": "Navy (blue.900) - primary dark background for marketing"
+  },
+  "variants": {
+    "navy-gradient": {
+      "description": "Navy dark marketing background",
+      "css": "linear-gradient(175deg, {{blue.900}} 5%, {{blue.800}} 112%)",
+      "usage": "Schema diagrams, embedding graphics"
+    },
+    "navy-radial": {
+      "description": "Solid navy with radial glow",
+      "base": "blue.900",
+      "glowOverlay": {
+        "type": "radial-gradient",
+        "blendMode": "lighten",
+        "size": "1800px",
+        "position": "center right",
+        "color": "rgba(16, 74, 137, 0.4)"
+      },
+      "usage": "Before/after comparisons"
+    },
+    "frosted-light": {
+      "description": "White base with blue-green tint",
+      "css": "linear-gradient(118deg, rgba(255,255,255,0.1) 0%, rgba(25,122,233,0.15) 46%, rgba(0,159,111,0.025) 99%), white",
+      "usage": "Concept diagrams, reuse patterns"
+    },
+    "green-gradient": {
+      "description": "Light green gradient - fresh, positive feel",
+      "css": "linear-gradient(131deg, {{green.300}} 0%, {{green.600}} 100%)",
+      "borderRadius": 10,
+      "usage": "Configuration features, customization, theming"
+    },
+    "deep-navy": {
+      "description": "Deep navy for network diagrams",
+      "css": "linear-gradient(120deg, {{blue.900}} 5%, #052233 92%)",
+      "usage": "Network diagrams, ecosystem graphics"
+    },
+    "layered-navy": {
+      "description": "Navy gradient for layered compositions",
+      "css": "linear-gradient(250deg, {{blue.900}} 25%, {{blue.800}} 82%)",
+      "usage": "Embed portal, feature showcase"
+    }
+  },
+  "docs": {
+    "transparent": {
+      "name": "Transparent Canvas",
+      "css": "transparent"
+    },
+    "gray-subtle": {
+      "name": "Subtle Gray",
+      "css": "#edf1f5"
+    }
+  }
+}

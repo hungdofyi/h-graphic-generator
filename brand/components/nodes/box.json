@@ -1,0 +1,53 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "box",
+  "description": "Basic box/node for diagrams - rectangles with various styling",
+  "category": "nodes",
+  "variants": {
+    "default": {
+      "background": "white",
+      "border": "gray.400",
+      "borderWidth": 1.5,
+      "borderRadius": 8
+    },
+    "semantic": {
+      "background": "green.50",
+      "border": "green.600",
+      "borderWidth": 1.5,
+      "borderRadius": 7.2
+    },
+    "ai-container": {
+      "background": "blue.50",
+      "border": "blue.800",
+      "borderWidth": 2,
+      "borderStyle": "dashed",
+      "borderRadius": 11
+    },
+    "gray-fill": {
+      "background": "gray.200",
+      "border": "none",
+      "borderRadius": 11
+    },
+    "section-dashed": {
+      "description": "Large dashed border section (Holistics BG, Application BG)",
+      "background": "gray.100",
+      "border": "gray.400",
+      "borderWidth": 1,
+      "borderStyle": "dashed",
+      "borderRadius": 8,
+      "padding": 24
+    },
+    "nested-blue": {
+      "description": "Nested container (Back End, Front End sections)",
+      "background": "blue.50",
+      "border": "blue.200",
+      "borderWidth": 1.3,
+      "borderRadius": 8,
+      "opacity": 0.7
+    }
+  },
+  "usage": {
+    "docs": ["default", "semantic", "section-dashed", "nested-blue"],
+    "marketing": ["ai-container", "gray-fill"]
+  }
+}

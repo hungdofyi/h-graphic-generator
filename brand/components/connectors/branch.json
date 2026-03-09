@@ -1,0 +1,33 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "branch-connector",
+  "description": "One-to-many or many-to-one curved connection paths",
+  "category": "connectors",
+  "implementation": {
+    "type": "svg-reference",
+    "files": {
+      "left": "svg/connectors/branch-left.svg",
+      "right": "svg/connectors/branch-right.svg",
+      "1-to-3": "svg/connectors/branch-1-to-3.svg"
+    }
+  },
+  "variants": {
+    "default": {
+      "stroke": "gray.600",
+      "strokeWidth": 2
+    },
+    "green": {
+      "stroke": "green.600",
+      "strokeWidth": 2
+    },
+    "marketing": {
+      "stroke": "green.500",
+      "strokeWidth": 3
+    }
+  },
+  "usage": {
+    "merge": "Multiple sources combining into one target",
+    "split": "Single source branching to multiple destinations",
+    "examples": ["Data filtering branches", "Metric to datasets flow"]
+  }
+}

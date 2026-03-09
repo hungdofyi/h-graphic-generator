@@ -1,0 +1,197 @@
+{
+  "$schema": "h-graphic-extracted-v1",
+  "extractedAt": "2026-03-09T17:00:00+07:00",
+  "description": "Configuration-to-preview mapping - shows code/config on left connected to visual result on right",
+  "sourceFrames": [
+    { "name": "CSS Custom Launch", "nodeId": "1:37796" }
+  ],
+
+  "backgrounds": {
+    "greenGradient": {
+      "description": "Light green gradient background - fresh, positive feel",
+      "css": "linear-gradient(131deg, {{green.300}} 0%, {{green.600}} 100%)",
+      "borderRadius": 10,
+      "usage": "Configuration features, customization, theming"
+    }
+  },
+
+  "codeBlock": {
+    "description": "Dark code editor panel showing configuration",
+    "container": {
+      "background": "{{gray.800}}",
+      "borderRadius": 12,
+      "width": "30%",
+      "positioning": "left side, vertically centered"
+    },
+    "typography": {
+      "font": "JetBrains Mono",
+      "fontWeight": 500,
+      "fontSize": 34,
+      "lineHeight": 1.6,
+      "colors": {
+        "default": "{{gray.600}}",
+        "highlighted": "white",
+        "syntax": "{{gray.600}}"
+      }
+    },
+    "highlightedLine": {
+      "description": "Active/selected line with gradient background",
+      "background": "linear-gradient(to right, {{blue.600}}, {{green.600}})",
+      "height": 66,
+      "textColor": "white"
+    },
+    "placeholderLines": {
+      "description": "Gray pills representing code content",
+      "background": "{{gray.600}}",
+      "opacity": 0.5,
+      "borderRadius": 27,
+      "height": 25,
+      "widths": [93, 120, 179, 208, 273]
+    },
+    "codeStructure": {
+      "example": "PageTheme {\n  background { ... }\n  canvas { ... }\n  block { ... }\n  custom_css: @css\n}",
+      "usage": "Show hierarchical config with sections"
+    }
+  },
+
+  "connectionLines": {
+    "description": "Horizontal lines connecting code sections to preview elements",
+    "style": {
+      "color": "white or {{green.200}}",
+      "height": 17,
+      "minWidth": 230,
+      "maxWidth": 656
+    },
+    "endpoints": {
+      "dot": {
+        "size": 12,
+        "color": "white",
+        "position": "end of line"
+      }
+    },
+    "svgStructure": {
+      "description": "Line with rounded end and circle endpoint",
+      "technique": "SVG path or div with border-radius"
+    },
+    "usage": "Connect code property to visual representation"
+  },
+
+  "previewPanel": {
+    "description": "Visual result showing how config affects UI",
+    "outerContainer": {
+      "border": "{{green.200}}",
+      "borderWidth": 2.4,
+      "borderStyle": "dashed",
+      "borderRadius": 12,
+      "background": "linear-gradient(123deg, {{green.300}} 0%, transparent 108%)",
+      "width": "65%",
+      "positioning": "right side"
+    },
+    "innerContainer": {
+      "background": "{{green.100}}",
+      "border": "{{green.200}}",
+      "borderWidth": 1.2,
+      "borderStyle": "dashed",
+      "borderRadius": 10,
+      "opacity": 0.85
+    },
+    "contentArea": {
+      "background": "{{green.200}}",
+      "border": "{{green.200}}",
+      "borderWidth": 2.3,
+      "borderStyle": "dashed",
+      "borderRadius": 9
+    },
+    "nestedLayers": {
+      "description": "Multiple nested containers showing hierarchy",
+      "technique": "3 levels of dashed-border containers",
+      "colors": ["{{green.200}}", "{{green.100}}", "{{green.200}}"],
+      "usage": "Show page > canvas > block structure"
+    }
+  },
+
+  "simplifiedCharts": {
+    "barChart": {
+      "description": "Vertical bar chart mockup inside preview",
+      "bars": {
+        "color": "{{green.400}}",
+        "borderRadius": 5,
+        "width": 54,
+        "heights": [175, 298, 399, 477]
+      },
+      "positioning": "Inside content area"
+    },
+    "lineChart": {
+      "description": "Line chart area (rotated bar as placeholder)",
+      "color": "{{green.400}}",
+      "borderRadius": 5
+    }
+  },
+
+  "titleLabel": {
+    "description": "Label identifying the preview (e.g., 'Sale Dashboard')",
+    "container": {
+      "background": "rgba(255,255,255,0.25)",
+      "border": "{{green.300}}",
+      "borderWidth": 2,
+      "borderRadius": 9,
+      "padding": "15px"
+    },
+    "text": {
+      "color": "{{green.600}}",
+      "font": "Inter",
+      "fontWeight": 500,
+      "fontSize": 25
+    }
+  },
+
+  "cursor": {
+    "description": "Cursor pointing to active code line",
+    "type": "pointer",
+    "rotation": "-39deg",
+    "size": 90,
+    "position": "Near highlighted line endpoint"
+  },
+
+  "compositionPatterns": {
+    "splitView": {
+      "description": "Code left, preview right with connections",
+      "layout": {
+        "codeColumn": "5-35%",
+        "connectionArea": "35-45%",
+        "previewColumn": "40-100%"
+      },
+      "connectionCount": "3-5 lines typically",
+      "verticalAlignment": "Code sections align with preview elements"
+    },
+    "nestedPreview": {
+      "description": "Preview shows nested structure matching code hierarchy",
+      "technique": "Dashed border containers nested inside each other",
+      "example": "PageTheme > background/canvas/block > chart content"
+    }
+  },
+
+  "useCases": [
+    "CSS/theme customization preview",
+    "API configuration → result visualization",
+    "Model definition → schema diagram",
+    "Permission settings → filtered data view",
+    "Code → generated output mapping",
+    "Config file → runtime behavior"
+  ],
+
+  "colorUsage": {
+    "background": ["{{green.300}}", "{{green.600}}"],
+    "codeBlock": ["{{gray.800}}", "{{gray.600}}"],
+    "preview": ["{{green.100}}", "{{green.200}}", "{{green.300}}"],
+    "accents": ["{{green.400}}", "{{green.600}}", "{{blue.600}}"],
+    "text": ["white", "{{gray.600}}", "{{green.600}}"]
+  },
+
+  "differenceFromOtherPatterns": {
+    "vsSpotlight": "Shows relationship, not single focus",
+    "vsLayered": "Side-by-side, not stacked",
+    "vsScreenshot": "Simplified mockup, not real UI",
+    "purpose": "Explain how config affects visual output"
+  }
+}

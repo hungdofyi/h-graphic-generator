@@ -1,0 +1,62 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "mesh-backgrounds",
+  "description": "Mesh gradients with blur overlays for marketing",
+  "category": "backgrounds",
+  "variants": {
+    "blue-mesh": {
+      "description": "Navy mesh gradient with blur overlay",
+      "css": "linear-gradient(-84deg, {{blue.700}} 43%, {{blue.900}} 80%)",
+      "blurOverlay": {
+        "color": "blue.900",
+        "blur": "156px",
+        "rotation": "50deg",
+        "size": "1164px x 2792px"
+      },
+      "usage": "Feature announcements, beta features"
+    },
+    "green-mesh": {
+      "description": "Green-to-blue mesh gradient",
+      "css": "linear-gradient(-84deg, {{green.700}} 43%, {{blue.900}} 80%)",
+      "blurOverlay": {
+        "color": "blue.900",
+        "blur": "156px",
+        "rotation": "50deg"
+      },
+      "usage": "Feature announcements, new capabilities"
+    },
+    "green-mesh-alt": {
+      "description": "Green-blue gradient with different rotation",
+      "css": "linear-gradient(256deg, {{green.700}} 23%, {{blue.900}} 61%)",
+      "blurOverlay": {
+        "rotation": "108deg"
+      },
+      "usage": "Feature updates, navigation improvements"
+    }
+  },
+  "blurShapes": {
+    "description": "Diagonal blur shapes for depth",
+    "shapes": [
+      {
+        "color": "#136baa",
+        "blur": "100px",
+        "opacity": 0.3,
+        "rotation": "-49deg",
+        "skew": "18deg"
+      },
+      {
+        "color": "blue.800",
+        "blur": "100px",
+        "opacity": 0.4,
+        "rotation": "-49deg",
+        "skew": "17.5deg",
+        "mixBlendMode": "lighten"
+      }
+    ]
+  },
+  "gridPattern": {
+    "color": "rgba(255,255,255,0.05)",
+    "lineWidth": 1,
+    "spacing": 100
+  }
+}

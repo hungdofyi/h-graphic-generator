@@ -4,6 +4,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { BrandContext } from '../core/brand-context.js';
 import { ExtractionLoader } from '../core/extraction-loader.js';
+import { ComponentLoader } from '../core/component-loader.js';
 import { registerTools } from './tools/index.js';
 import { registerResources } from './resources/brand-resources.js';
 
@@ -30,8 +31,17 @@ async function main() {
     console.error('Warning: Could not load extractions from brand/extracted/');
   }
 
+  // Load composable component system (Option B architecture)
+  let componentLoader: ComponentLoader | undefined;
+  try {
+    const brandDir = path.join(PROJECT_ROOT, 'brand');
+    componentLoader = await ComponentLoader.load(brandDir);
+  } catch {
+    console.error('Warning: Could not load components from brand/components/');
+  }
+
   // Register all tools and resources
-  registerTools(server, brandContext, extractionLoader);
+  registerTools(server, brandContext, extractionLoader, componentLoader);
   registerResources(server, brandContext);
 
   // Start stdio transport

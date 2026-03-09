@@ -1,0 +1,42 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "elbow-connector",
+  "description": "L-shaped connectors with rounded corners for diagram connections",
+  "category": "connectors",
+  "implementation": {
+    "type": "svg-reference",
+    "files": {
+      "down-right": "svg/connectors/elbow-down-right.svg",
+      "right-down": "svg/connectors/elbow-right-down.svg",
+      "up-left": "svg/connectors/elbow-up-left.svg"
+    }
+  },
+  "variants": {
+    "default": {
+      "stroke": "gray.600",
+      "strokeWidth": 1.5
+    },
+    "green": {
+      "stroke": "green.600",
+      "strokeWidth": 1.5
+    },
+    "dashed": {
+      "stroke": "gray.600",
+      "strokeWidth": 1.5,
+      "strokeDasharray": "6 4"
+    },
+    "emphasized": {
+      "stroke": "green.600",
+      "strokeWidth": 2.5
+    }
+  },
+  "arrowHead": {
+    "type": "triangle",
+    "size": 8,
+    "fill": "currentColor"
+  },
+  "usage": {
+    "docs": "Connect elements at right angles in technical diagrams",
+    "multiPath": "For complex flows use curvedMultiPath patterns"
+  }
+}

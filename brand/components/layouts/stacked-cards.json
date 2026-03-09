@@ -1,0 +1,58 @@
+{
+  "$schema": "h-graphic-component-v1",
+  "name": "stacked-cards",
+  "description": "Multiple cards stacked with perspective offset creating depth",
+  "category": "layouts",
+  "technique": {
+    "positioning": "Each card offset by ~200px horizontally, ~200px vertically",
+    "zIndex": "Back cards lower z-index, front card highest",
+    "fadeOverlay": "Gradient overlay at bottom of back cards for depth"
+  },
+  "layers": {
+    "back": {
+      "opacity": 0.85,
+      "offset": { "x": 544, "y": 0 },
+      "fadeOverlay": "linear-gradient(180deg, transparent 15%, {{blue.800}} 67%)"
+    },
+    "middle": {
+      "opacity": 0.9,
+      "offset": { "x": 272, "y": 196 },
+      "fadeOverlay": "linear-gradient(181deg, rgba(29,91,162,0.1) 2%, {{blue.800}} 50%)"
+    },
+    "front": {
+      "opacity": 1,
+      "offset": { "x": 0, "y": 392 },
+      "fadeOverlay": "linear-gradient(191deg, transparent 13%, {{blue.800}} 96%)"
+    }
+  },
+  "tabStyle": {
+    "background": "linear-gradient(to bottom, #457ab9 30%, transparent 163%)",
+    "border": "#89b5df",
+    "borderWidth": 2.8,
+    "borderRadius": {
+      "topLeft": 14,
+      "topRight": 14,
+      "bottomLeft": 0,
+      "bottomRight": 0
+    },
+    "height": 80,
+    "width": 232
+  },
+  "cardBody": {
+    "background": "linear-gradient(to bottom, #457ab9 10%, #134882 74%)",
+    "border": "#8ab0d9",
+    "borderWidth": 2.8,
+    "borderRadius": 17,
+    "overflow": "clip"
+  },
+  "composition": {
+    "layout": {
+      "textColumn": "5-35%",
+      "stackColumn": "35-100%"
+    },
+    "stackDirection": "diagonal (top-right to bottom-left)",
+    "tabCount": 3,
+    "example": "Dashboard Tabs - Overview, By Region, By Merchant"
+  },
+  "usage": "Dashboard tab switching, feature depth showcase"
+}

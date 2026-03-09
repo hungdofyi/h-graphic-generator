@@ -180,8 +180,8 @@ Use the diagram command with nodes.json format.
 | Tool | Purpose |
 |------|---------|
 | `get_style_profile` | Get brand tokens (colors, typography, spacing) |
-| `list_patterns` | Browse Figma-extracted design patterns |
-| `get_pattern` | Get detailed styling for a pattern |
+| `list_patterns` | Browse style libraries, components, and recipes |
+| `get_pattern` | Get styles, components (`component:nodes/box`), or recipes (`recipe:diagrams/architecture-flow`) |
 | `list_icons` | Browse 300+ brand icons |
 | `render_graphic` | Render HTML/CSS → image |
 | `serve_preview` | Start HTTP server for Figma export |
@@ -189,6 +189,22 @@ Use the diagram command with nodes.json format.
 | `list_templates` | Show available templates |
 | `generate_from_template` | Template → image |
 | `validate_brand` | Check brand config |
+
+### Components & Recipes
+
+The composable system provides reusable building blocks:
+
+**Components** (styling rules):
+- `nodes/box`, `nodes/step-indicator`, `nodes/connection-dot`
+- `connectors/elbow`, `connectors/straight`, `connectors/branch`
+- `containers/code-block`, `containers/frosted-card`, `containers/dashboard-mockup`
+- `highlights/spotlight`, `highlights/screenshot-overlay`
+- `layouts/stacked-cards`, `layouts/layered-windows`, `layouts/radial-network`
+
+**Recipes** (composition guides):
+- `diagrams/architecture-flow`, `diagrams/data-flow`
+- `annotations/screenshot-highlight`
+- `marketing/spotlight-feature`, `marketing/layered-showcase`, `marketing/config-preview`, `marketing/radial-network`
 
 ### Example MCP Prompts
 
@@ -204,6 +220,13 @@ Use the render_graphic tool to create a hero banner with:
 ```
 First use get_style_profile to understand the brand colors,
 then use render_graphic to create a branded call-to-action button image.
+```
+
+**Using components and recipes:**
+```
+Get the spotlight-feature recipe with get_pattern("recipe:marketing/spotlight-feature"),
+then get the spotlight component with get_pattern("component:highlights/spotlight").
+Use these to create a feature announcement graphic.
 ```
 
 **Export to Figma (requires Figma MCP):**

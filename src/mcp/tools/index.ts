@@ -1,6 +1,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { BrandContext } from '../../core/brand-context.js';
 import type { ExtractionLoader } from '../../core/extraction-loader.js';
+import type { ComponentLoader } from '../../core/component-loader.js';
 import { registerRenderGraphicTool } from './render-graphic.js';
 import { registerGenerateFromTemplateTool } from './generate-from-template.js';
 import { registerListTemplatesTool } from './list-templates.js';
@@ -14,7 +15,8 @@ import { registerServePreviewTool, registerStopPreviewTool } from './serve-previ
 export function registerTools(
   server: McpServer,
   brandContext: BrandContext,
-  extractionLoader?: ExtractionLoader
+  extractionLoader?: ExtractionLoader,
+  componentLoader?: ComponentLoader
 ): void {
   // PRIMARY tool - Claude generates HTML/CSS, we render to image
   registerRenderGraphicTool(server, brandContext, extractionLoader);
@@ -36,9 +38,9 @@ export function registerTools(
   registerServePreviewTool(server);
   registerStopPreviewTool(server);
 
-  // Pattern discovery (requires extraction loader)
-  if (extractionLoader) {
-    registerListPatternsTool(server, extractionLoader);
-    registerGetPatternTool(server, extractionLoader);
+  // Pattern discovery (extraction loader and/or component loader)
+  if (extractionLoader || componentLoader) {
+    registerListPatternsTool(server, extractionLoader, componentLoader);
+    registerGetPatternTool(server, extractionLoader, componentLoader);
   }
 }
