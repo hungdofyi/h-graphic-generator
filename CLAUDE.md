@@ -204,7 +204,7 @@ User: "Create a pricing card and export to Figma"
 |----------|---------|
 | diagrams | architecture-flow, data-flow |
 | annotations | screenshot-highlight |
-| marketing | spotlight-feature, layered-showcase, config-preview, radial-network |
+| marketing | spotlight-feature, layered-showcase, config-preview, radial-network, before-after |
 
 Use `get_pattern("recipe:marketing/spotlight-feature")` to get full recipe.
 
@@ -230,5 +230,5 @@ gray:   50→900 (#F9FBFC → #13151A) - Neutral, text
 - **SVG templates**: `brand/svg/` (organized: connectors, arrows, diagram-icons, diagram-nodes, decorative)
 - **Logos**: `brand/data/` (Logo Color.svg, Logomark variants)
 - **Components**: `brand/components/` (25 JSON files)
-- **Recipes**: `brand/recipes/` (7 markdown guides)
+- **Recipes**: `brand/recipes/` (8 markdown guides)
 - **Workflow**: `brand/workflow/` (intake-brief, creative-guidance, output-checklist)
