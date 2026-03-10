@@ -56,12 +56,15 @@ async function getCategories(dir: string): Promise<{ name: string; count: number
 }
 
 /**
- * MCP tool to list available brand icons
+ * MCP tool to list available brand UI icons from brand/data/icons
+ *
+ * For diagram elements (cursors, arrows, shapes), use get_icon with semantic names
+ * or get_pattern("component:decorative/...") for styling guidance
  */
 export function registerListIconsTool(server: McpServer): void {
   server.tool(
     'list_icons',
-    'List available brand icons from the icon library. Returns icon names that can be used in graphics. Optionally filter by category.',
+    'List brand UI icons from brand/data/icons (300+ icons by category). For diagram elements (cursors, arrows, database shapes), use get_icon with semantic names like "cursor", "database", "arrow-right" instead.',
     {
       category: z.string().optional().describe(
         'Filter by category (e.g., "chart", "ds", "ai", "onboarding"). Omit to list all.'

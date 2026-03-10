@@ -49,11 +49,14 @@ function extractCssVariables(svgContent: string): string[] {
 /**
  * MCP tool to get actual SVG content for icons
  * Returns embeddable SVG markup, not just paths
+ *
+ * Searches both brand/data/icons (UI icons) and brand/svg (diagram elements)
+ * Use list_icons for UI icon discovery, this tool for fetching any SVG content
  */
 export function registerGetIconTool(server: McpServer): void {
   server.tool(
     'get_icon',
-    'Get actual SVG content for an icon. Use semantic names (database, cursor, arrow-right) or paths (chart/bar-chart). Returns embeddable SVG markup.',
+    'Get actual SVG content for an icon. Searches brand/data/icons (UI icons from list_icons) AND brand/svg (diagram elements like cursors, arrows, shapes). Use semantic names (database, cursor, arrow-right) or paths (chart/bar-chart). Returns embeddable SVG markup.',
     {
       name: z.string().describe('Icon name (e.g., "database", "cursor") or path (e.g., "chart/bar-chart")'),
     },
@@ -71,11 +74,9 @@ export function registerGetIconTool(server: McpServer): void {
           const searchPaths = [
             // Direct path in brand/data/icons/
             path.resolve(ICONS_DIR, `${args.name}.svg`),
-            // Category/name format in brand/data/icons/
-            path.resolve(ICONS_DIR, args.name.includes('/') ? `${args.name}.svg` : `${args.name}.svg`),
             // Direct path in brand/svg/
             path.resolve(SVG_DIR, `${args.name}.svg`),
-            // Category/name format in brand/svg/
+            // Category/name format in brand/svg/ (e.g., "diagram-icons/bar-chart")
             path.resolve(SVG_DIR, args.name.includes('/') ? `${args.name}.svg` : `diagram-icons/${args.name}.svg`),
           ];
 
