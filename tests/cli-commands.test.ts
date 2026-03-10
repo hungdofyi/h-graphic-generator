@@ -1,5 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { registry } from '../src/templates/registry.js';
 import { BrandContext } from '../src/core/brand-context.js';
 import { Engine } from '../src/core/engine.js';
 import { ExportPipeline } from '../src/core/export-pipeline.js';
@@ -9,33 +8,6 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 describe('CLI Commands - Smoke Tests', () => {
-  describe('templates list command', () => {
-    it('should list all templates', () => {
-      const templates = registry.list();
-      expect(templates).toBeInstanceOf(Array);
-      expect(templates.length).toBeGreaterThan(0);
-    });
-
-    it('should list templates with complete metadata', () => {
-      const templates = registry.list();
-      templates.forEach((template) => {
-        expect(template.name).toBeDefined();
-        expect(template.description).toBeDefined();
-        expect(template.category).toBeDefined();
-        expect(template.defaultSize).toBeDefined();
-      });
-    });
-
-    it('should support category filtering', () => {
-      const marketingTemplates = registry.list('marketing');
-      expect(marketingTemplates).toBeInstanceOf(Array);
-
-      if (marketingTemplates.length > 0) {
-        expect(marketingTemplates[0].category).toBe('marketing');
-      }
-    });
-  });
-
   describe('brand validate command', () => {
     it('should load and validate default brand config', async () => {
       const brandPath = path.join(__dirname, '../brand/brand.json');
@@ -69,54 +41,6 @@ describe('CLI Commands - Smoke Tests', () => {
 
       expect(context.resolveColor('primary')).toBe('#05264C');
       expect(context.resolveColor('secondary')).toBe('#259B6C');
-    });
-  });
-
-  describe('generate command', () => {
-    it('should generate graphic from template', async () => {
-      const template = registry.get('feature-illustration');
-      expect(template).toBeDefined();
-
-      const brandPath = path.join(__dirname, '../brand/brand.json');
-      const context = await BrandContext.load(brandPath);
-
-      if (template) {
-        const html = template.render(
-          { title: 'Generated Feature' },
-          context.getConfig()
-        );
-
-        expect(html).toBeDefined();
-        expect(html).toContain('Generated Feature');
-      }
-    });
-
-    it('should generate with custom props', async () => {
-      const template = registry.get('feature-illustration');
-      const brandPath = path.join(__dirname, '../brand/brand.json');
-      const context = await BrandContext.load(brandPath);
-
-      if (template) {
-        const html = template.render(
-          {
-            title: 'Custom Title',
-            description: 'Custom Description',
-            icon: '⭐',
-          },
-          context.getConfig()
-        );
-
-        expect(html).toContain('Custom Title');
-        expect(html).toContain('Custom Description');
-        expect(html).toContain('⭐');
-      }
-    });
-
-    it('should use template default size', () => {
-      const template = registry.get('feature-illustration');
-
-      expect(template?.defaultSize.width).toBe(800);
-      expect(template?.defaultSize.height).toBe(600);
     });
   });
 
@@ -163,28 +87,7 @@ describe('CLI Commands - Smoke Tests', () => {
     });
   });
 
-  describe('diagram command', () => {
-    it('should have diagram template available', () => {
-      const diagramTemplates = registry.list('diagram');
-      // Diagram templates may be available
-      expect(diagramTemplates).toBeInstanceOf(Array);
-    });
-  });
-
   describe('command error handling', () => {
-    it('should handle missing required template prop', () => {
-      const template = registry.get('feature-illustration');
-      const brandPath = path.join(__dirname, '../brand/brand.json');
-
-      // This should work but might need title
-      expect(template).toBeDefined();
-    });
-
-    it('should handle invalid template name', () => {
-      const template = registry.get('nonexistent-template-xyz');
-      expect(template).toBeUndefined();
-    });
-
     it('should handle invalid brand config path', async () => {
       const invalidPath = '/nonexistent/path/to/brand.json';
       await expect(BrandContext.load(invalidPath)).rejects.toThrow();
@@ -212,24 +115,18 @@ describe('CLI Commands - Smoke Tests', () => {
       const brandPath = path.join(__dirname, '../brand/brand.json');
       const context = await BrandContext.load(brandPath);
 
-      // 2. Get template
-      const template = registry.get('feature-illustration');
+      // 2. Create simple HTML
+      const html = '<div style="font-size: 32px; color: #05264C;">E2E Test</div>';
 
-      // 3. Render template to HTML
-      const html = template?.render(
-        { title: 'E2E Test' },
-        context.getConfig()
-      );
-
-      // 4. Initialize engine and render to SVG
+      // 3. Initialize engine and render to SVG
       const engine = new Engine(context);
       await engine.initialize();
-      const svg = await engine.renderHtml(html || '', {
+      const svg = await engine.renderHtml(html, {
         width: 800,
         height: 600,
       });
 
-      // 5. Export to multiple formats
+      // 4. Export to PNG
       const pipeline = new ExportPipeline();
       const pngBuffer = await pipeline.export(svg, 'png');
 
@@ -247,19 +144,6 @@ describe('CLI Commands - Smoke Tests', () => {
       expect(context.resolveColor('primary')).toBeDefined();
       expect(context.resolveFont('body')).toBeDefined();
       expect(context.resolveSpacing('md')).toBeDefined();
-
-      const template = registry.get('feature-illustration');
-      if (template) {
-        const html = template.render(
-          {
-            title: 'Branded Content',
-            accentColor: context.resolveColor('secondary'),
-          },
-          context.getConfig()
-        );
-
-        expect(html).toContain('Branded Content');
-      }
     });
   });
 });

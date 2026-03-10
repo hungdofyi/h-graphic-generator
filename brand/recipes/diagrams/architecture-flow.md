@@ -18,7 +18,7 @@
 | Element | Component | SVG |
 |---------|-----------|-----|
 | Service box | nodes/box (default) | - |
-| Database | nodes/box | svg/diagram-icons/database.svg |
+| Database | nodes/box | get_icon("database") |
 | Connection | connectors/elbow | svg/connectors/elbow-*.svg |
 | Step indicator | nodes/step-indicator | - |
 | Connection dot | nodes/connection-dot | - |

@@ -56,7 +56,7 @@ export function registerListPatternsTool(
           categories,
           libraries: patterns,
           totals,
-          svgBasePath: 'brand/extracted/svg-templates/',
+          svgBasePath: 'brand/svg/',
         };
       }
 

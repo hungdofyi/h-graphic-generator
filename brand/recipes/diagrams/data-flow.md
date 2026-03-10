@@ -16,7 +16,7 @@
 
 | Element | Component | SVG |
 |---------|-----------|-----|
-| Data source | nodes/box (default) | svg/diagram-icons/database.svg |
+| Data source | nodes/box (default) | get_icon("database") |
 | Transform step | nodes/box (semantic) | - |
 | Output | nodes/box (gray-fill) | - |
 | Flow line | connectors/straight | - |

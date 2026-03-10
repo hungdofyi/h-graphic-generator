@@ -38,7 +38,7 @@ export class ExtractionLoader {
   private async loadFiles(): Promise<void> {
     const entries = await fs.readdir(this.extractedDir, { withFileTypes: true });
     const jsonFiles = entries.filter(
-      e => e.isFile() && e.name.endsWith('-styles.json')
+      e => e.isFile() && e.name.endsWith('.json')
     );
 
     for (const file of jsonFiles) {
@@ -46,12 +46,22 @@ export class ExtractionLoader {
       const content = await fs.readFile(filePath, 'utf-8');
       const data = JSON.parse(content) as StyleLibrary;
 
-      // Only load v2 schema files
-      if (data.$schema !== 'h-graphic-styles-v2') continue;
+      // Load any h-graphic schema files (v1 and v2)
+      if (!data.$schema?.startsWith('h-graphic')) continue;
 
-      const category = file.name.replace('-styles.json', '');
+      // Normalize category name (remove -styles suffix if present)
+      const category = file.name.replace('.json', '').replace(/-styles$/, '');
+
+      // Prefer v2 files over v1 if both exist
+      const existing = this.libraries.get(category);
+      if (existing && existing.$schema === 'h-graphic-styles-v2' && data.$schema !== 'h-graphic-styles-v2') {
+        continue; // Keep v2, skip v1
+      }
+
       this.libraries.set(category, data);
-      this.categories.push(category);
+      if (!this.categories.includes(category)) {
+        this.categories.push(category);
+      }
     }
   }
 

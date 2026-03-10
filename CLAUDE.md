@@ -109,9 +109,10 @@ Total MUST be ≤ canvas height
 
 | Element | Fetch With | Never Do |
 |---------|------------|----------|
-| Cursor/pointer | `get_pattern("component:decorative/cursors")` → use `svgContent` | CSS tricks like `border-radius: 0 50% 50% 50%` |
-| Icons | `list_icons` → embed from `brand/data/icons/` | Generate tiny inline SVGs |
-| Arrows | `get_pattern("component:decorative/arrows")` | Hand-draw SVG paths |
+| Cursor/pointer | `get_icon("cursor")` or `get_pattern("component:decorative/cursors")` | CSS tricks like `border-radius: 0 50% 50% 50%` |
+| Database/cylinder | `get_icon("database")` | CSS shield shapes, rounded rectangles |
+| Icons | `get_icon("name")` or `list_icons` → embed from `brand/data/icons/` | Generate tiny inline SVGs |
+| Arrows | `get_icon("arrow-right")` or `get_pattern("component:decorative/arrows")` | Hand-draw SVG paths |
 | Chart icons | `list_icons("chart")` → `brand/data/icons/chart/*.svg` | Draw charts from scratch |
 
 ### SVG Rendering Rules
@@ -140,11 +141,12 @@ Total MUST be ≤ canvas height
 
 | Tool | Purpose |
 |------|---------|
-| `create_graphic` | **RECOMMENDED** Start here - uses interactive forms for step-by-step input |
+| `create_graphic` | **RECOMMENDED** Start here - guided workflow for step-by-step input |
 | `get_style_profile` | Official brand guidelines (colors, typography, spacing, principles) |
+| `get_icon` | **NEW** Get actual SVG content for icons (database, cursor, arrow-right, etc.) |
+| `list_icons` | Browse 300+ brand icons by category (chart, ds, ai, onboarding, etc.) |
 | `list_patterns` | List style libraries, components, and recipes |
 | `get_pattern` | Get styles, components (`component:nodes/box`), or recipes (`recipe:diagrams/architecture-flow`) |
-| `list_icons` | Browse 300+ brand icons by category (chart, ds, ai, onboarding, etc.) |
 | `render_graphic` | Render HTML/CSS to PNG/SVG (use after gathering requirements) |
 | `serve_preview` | Start local server for Figma export (returns URL for capture) |
 | `stop_preview` | Stop preview server when done |
@@ -226,7 +228,6 @@ gray:   50→900 (#F9FBFC → #13151A) - Neutral, text
 
 - **Brand icons**: `brand/data/icons/` (300+ SVGs)
 - **SVG templates**: `brand/svg/` (organized: connectors, arrows, diagram-icons, diagram-nodes, decorative)
-- **Legacy SVGs**: `brand/extracted/svg-templates/` (still available)
 - **Logos**: `brand/data/` (Logo Color.svg, Logomark variants)
 - **Components**: `brand/components/` (25 JSON files)
 - **Recipes**: `brand/recipes/` (7 markdown guides)

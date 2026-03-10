@@ -1,9 +1,7 @@
 import { Command } from 'commander';
 import { registerRenderCommand } from './commands/render.js';
-import { registerGenerateCommand } from './commands/generate.js';
 import { registerDiagramCommand } from './commands/diagram.js';
 import { registerBrandCommand } from './commands/brand.js';
-import { registerTemplatesCommand } from './commands/templates.js';
 
 const program = new Command();
 
@@ -15,12 +13,10 @@ program
 // Primary command - render HTML/CSS to image
 registerRenderCommand(program);
 
-// Template-based generation
-registerGenerateCommand(program);
+// Diagram generation from JSON
 registerDiagramCommand(program);
 
 // Brand management
 registerBrandCommand(program);
-registerTemplatesCommand(program);
 
 program.parse();

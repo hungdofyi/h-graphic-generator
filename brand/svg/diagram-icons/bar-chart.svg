@@ -1,0 +1,33 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 393.38 253.38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chart">
+<g id="Chart Background" filter="url(#filter0_d_10_9659)">
+<rect x="13.75" y="13.75" width="359" height="219" rx="8" fill="var(--fill-0, white)"/>
+</g>
+<line id="Line 44" x1="57.3657" y1="28.8947" x2="56.2864" y2="191.863" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926"/>
+<path id="Vector" d="M48.1921 28.8947L57.9054 28.8947" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926"/>
+<path id="Vector_2" d="M62.2214 28.8947H341.749" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926" stroke-dasharray="4.32 4.32"/>
+<path id="Vector_3" d="M62.2214 110.92H341.749" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926" stroke-dasharray="4.32 4.32"/>
+<path id="Vector_4" d="M62.2214 192.946H341.749" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926" stroke-dasharray="4.32 4.32"/>
+<path id="Vector_5" d="M48.1921 110.92L57.9054 110.92" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926"/>
+<path id="Vector_6" d="M48.1921 191.864L57.9054 191.864" stroke="var(--stroke-0, #D8DEE6)" stroke-width="1.07926"/>
+<g id="Chart Container">
+<path id="Rectangle" d="M82.7268 143.776C82.7268 141.988 84.1764 140.539 85.9646 140.539H105.889C107.677 140.539 109.127 141.988 109.127 143.776V193.339H82.7268V143.776Z" fill="var(--fill-0, #009F6F)"/>
+<path id="Rectangle_2" d="M141.127 70.1764C141.127 68.3883 142.576 66.9387 144.365 66.9387H163.489C165.277 66.9387 166.727 68.3883 166.727 70.1764V193.339H141.127V70.1764Z" fill="var(--fill-0, #009F6F)"/>
+<path id="Rectangle_3" d="M198.727 121.376C198.727 119.588 200.176 118.139 201.965 118.139H221.889C223.677 118.139 225.127 119.588 225.127 121.376V193.339H198.727V121.376Z" fill="var(--fill-0, #009F6F)"/>
+<path id="Rectangle_4" d="M257.127 96.5764C257.127 94.7883 258.576 93.3387 260.365 93.3387H279.489C281.277 93.3387 282.727 94.7883 282.727 96.5764V193.339H257.127V96.5764Z" fill="var(--fill-0, #009F6F)"/>
+<path id="Rectangle_5" d="M314.727 70.1764C314.727 68.3883 316.176 66.9387 317.965 66.9387H337.889C339.677 66.9387 341.127 68.3883 341.127 70.1764V193.339H314.727V70.1764Z" fill="var(--fill-0, #009F6F)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_10_9659" x="-4.76837e-07" y="-4.76837e-07" width="393.38" height="253.38" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="3.44" dy="3.44"/>
+<feGaussianBlur stdDeviation="8.595"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_9659"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_9659" result="shape"/>
+</filter>
+</defs>
+</svg>

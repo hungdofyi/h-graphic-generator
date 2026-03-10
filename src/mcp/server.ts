@@ -1,6 +1,5 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { z } from 'zod';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { BrandContext } from '../core/brand-context.js';
@@ -15,7 +14,17 @@ const PROJECT_ROOT = path.resolve(__dirname, '../..');
 
 // Server instructions - injected into AI context automatically
 const SERVER_INSTRUCTIONS = `
-Generate branded graphics using MCP tools. IMPORTANT: Always gather requirements before rendering.
+Generate branded graphics using MCP tools.
+
+## MANDATORY WORKFLOW (Always Follow)
+
+Before calling render_graphic, you MUST:
+1. Identify the graphic type (diagram/annotation/marketing)
+2. Ask 3-5 clarifying questions based on type
+3. Confirm requirements with user
+4. Only then proceed to render
+
+This applies even if the user provides detailed requirements - always confirm visual preferences.
 
 ## CRITICAL RULES (Read First!)
 
@@ -87,11 +96,12 @@ Before calling \`render_graphic\`, verify:
 - [ ] **SVG viewBox has padding** - elements not at 0 or max edges
 
 ## Available Tools
-- \`create_graphic\` - **RECOMMENDED** Start with this! Uses interactive forms for step-by-step input
+- \`create_graphic\` - **RECOMMENDED** Start here for guided workflow
 - \`get_style_profile\` - Official brand guidelines (colors, typography, spacing, creative guidance)
+- \`get_icon\` - **USE THIS** Get actual SVG content for icons (database, cursor, arrow-right, etc.)
+- \`list_icons\` - Browse 300+ brand icons by category
 - \`list_patterns\` - Discover style libraries, components, recipes
 - \`get_pattern\` - Get detailed styling for a category
-- \`list_icons\` - Browse 300+ brand icons
 - \`render_graphic\` - Render HTML/CSS to PNG/SVG (use after gathering requirements)
 - \`serve_preview\` / \`stop_preview\` - Preview server for Figma export
 
@@ -99,58 +109,43 @@ Before calling \`render_graphic\`, verify:
 - **Primary:** Green scale (green.50-900) - main brand accent
 - **Secondary:** Blue/Purple scales
 - **Dark backgrounds:** Navy (blue.900) for marketing graphics
-`.trim();
 
-// Workflow guidance as a tool annotation - this is what Claude actually sees
-const WORKFLOW_GUIDANCE = `
-WORKFLOW REQUIREMENT: Before calling render_graphic, you MUST:
-1. Identify the graphic type (diagram/annotation/marketing)
-2. Ask 3-5 clarifying questions based on type
-3. Confirm requirements with user
-4. Only then proceed to render
+## Quick Color Reference (use these hex values directly)
 
-This applies even if the user provides detailed requirements - always confirm visual preferences.
-`.trim();
+### Primary Colors
+- Green accent: #259B6C (green.600)
+- Navy background: #05264C (blue.900)
+- Text primary: #13151A (gray.900)
+- Text muted: #8F99A3 (gray.600)
 
-// Intake workflow content - returned when graphic_intake prompt is invoked
-const INTAKE_WORKFLOW_CONTENT = `
-## Graphic Intake Workflow
+### Green Scale (semantic elements)
+- green.50: #EAF8F2 (box backgrounds)
+- green.100: #CCEDE0 (light accents)
+- green.600: #259B6C (borders, emphasis)
 
-Before generating any graphic, gather requirements by asking the user:
+### Gray Scale (borders, connectors)
+- gray.200: #EDF1F5 (light fill)
+- gray.400: #CBD0D7 (default borders)
+- gray.600: #8F99A3 (connectors, muted text)
 
-### 1. Determine Type
-What type of graphic do you need?
-- **diagram** - Technical flows, architecture, data pipelines
-- **annotation** - Screenshot highlights, feature documentation
-- **marketing** - Feature showcases, promotional graphics
+### Common Patterns
+- Semantic box: \`background: #EAF8F2; border: 1.5px solid #259B6C;\`
+- Default node: \`background: white; border: 1.5px solid #CBD0D7; border-radius: 8px;\`
+- Connector: \`stroke: #8F99A3; stroke-width: 2px;\`
 
-### 2. Gather Inputs Based on Type
+## Common Shape Mistakes
 
-**For Diagrams, ask:**
-- What nodes/elements need to be shown?
-- How do they connect? (from → to relationships)
-- Flow direction? (left-to-right, top-to-bottom)
-- Any grouping or sections?
+### Database/Cylinder
+WRONG: CSS shapes that look like shields
+RIGHT: Use \`get_icon("database")\` for proper cylinder SVG
 
-**For Annotations, ask:**
-- Do you have a screenshot image to annotate?
-- What element(s) should be highlighted?
-- What text annotations are needed?
+### Cursor/Pointer
+WRONG: CSS triangles with border tricks
+RIGHT: Use \`get_icon("cursor")\` for brand cursor SVG
 
-**For Marketing, ask:**
-- What is the feature name/headline?
-- What should be the visual focus? (icon, dashboard, code)
-- Background style preference? (dark navy, green gradient, light)
-
-### 3. Confirm Before Generating
-Summarize the gathered requirements and confirm with the user before proceeding.
-
-### 4. Generate
-Once confirmed:
-1. Call \`get_style_profile\` for brand tokens
-2. Call \`get_pattern\` for recipe/component styles
-3. Generate HTML/CSS following brand guidelines
-4. Call \`render_graphic\` to output the image
+### Arrows
+WRONG: Text arrows (→, >, ➜)
+RIGHT: CSS line + triangle or \`get_icon("arrow-right")\`
 `.trim();
 
 async function main() {
@@ -160,35 +155,6 @@ async function main() {
   }, {
     instructions: SERVER_INSTRUCTIONS,
   });
-
-  // Register the graphic intake prompt
-  server.registerPrompt(
-    'graphic_intake',
-    {
-      title: 'Start Graphic Creation',
-      description: 'Begin the graphic creation workflow by gathering requirements. Use this before calling render_graphic.',
-      argsSchema: {
-        type: z.enum(['diagram', 'annotation', 'marketing']).optional().describe('Type of graphic'),
-        description: z.string().optional().describe('Initial description of what the user wants'),
-      },
-    },
-    async (args) => {
-      const typeInfo = args.type ? `\n\n**Selected type:** ${args.type}` : '';
-      const descInfo = args.description ? `\n**User request:** ${args.description}` : '';
-
-      return {
-        messages: [
-          {
-            role: 'user',
-            content: {
-              type: 'text',
-              text: `${INTAKE_WORKFLOW_CONTENT}${typeInfo}${descInfo}\n\nNow ask the user the relevant questions for their graphic type before proceeding to generate.`,
-            },
-          },
-        ],
-      };
-    }
-  );
 
   // Load brand config once at startup (shared across all handlers)
   const brandConfigPath = path.join(PROJECT_ROOT, 'brand/brand.json');
