@@ -17,12 +17,63 @@ const StopPreviewSchema = z.object({
 });
 
 /**
+ * Capture-ready script that ensures fonts are loaded before signaling ready
+ * This prevents race conditions where Figma captures before fonts render
+ */
+const CAPTURE_READY_SCRIPT = `
+<script>
+(function() {
+  // Wait for fonts to load, then signal ready
+  Promise.all([
+    document.fonts.ready,
+    // Also wait for any images
+    new Promise(function(resolve) {
+      var images = document.images;
+      if (images.length === 0) return resolve();
+      var loaded = 0;
+      for (var i = 0; i < images.length; i++) {
+        if (images[i].complete) {
+          loaded++;
+          if (loaded === images.length) resolve();
+        } else {
+          images[i].onload = images[i].onerror = function() {
+            loaded++;
+            if (loaded === images.length) resolve();
+          };
+        }
+      }
+    })
+  ]).then(function() {
+    // Add marker element for capture tools
+    var marker = document.createElement('div');
+    marker.id = 'capture-ready';
+    marker.setAttribute('data-ready', 'true');
+    marker.style.display = 'none';
+    document.body.appendChild(marker);
+    // Dispatch custom event
+    window.dispatchEvent(new CustomEvent('capture-ready'));
+  });
+})();
+</script>
+`;
+
+/**
  * Wrap HTML fragment in a complete document if needed
+ * Always injects capture-ready script for reliable Figma capture
  */
 function wrapHtml(html: string, width?: number, height?: number): string {
-  // If already a complete document, return as-is
+  // If already a complete document, inject capture script before </body>
   if (html.trim().toLowerCase().startsWith('<!doctype') || html.trim().toLowerCase().startsWith('<html')) {
-    return html;
+    // Inject capture script before closing body tag
+    if (html.includes('</body>')) {
+      return html.replace('</body>', `${CAPTURE_READY_SCRIPT}</body>`);
+    }
+    // Or before closing html tag
+    if (html.includes('</html>')) {
+      return html.replace('</html>', `${CAPTURE_READY_SCRIPT}</html>`);
+    }
+    // Append at end if no closing tags found
+    return html + CAPTURE_READY_SCRIPT;
   }
 
   // Wrap fragment in a minimal document with viewport sizing
@@ -49,6 +100,7 @@ function wrapHtml(html: string, width?: number, height?: number): string {
 </head>
 <body>
 ${html}
+${CAPTURE_READY_SCRIPT}
 </body>
 </html>`;
 }
@@ -143,7 +195,8 @@ export function registerServePreviewTool(server: McpServer): void {
                 success: true,
                 url: `http://localhost:${input.port}`,
                 port: input.port,
-                message: 'Preview server started. Use this URL with Figma MCP generate_figma_design to capture. Call stop_preview when done.',
+                captureReadySelector: '#capture-ready[data-ready="true"]',
+                message: 'Preview server started. Page includes capture-ready script that waits for fonts/images to load. Use this URL with Figma MCP generate_figma_design to capture. Call stop_preview when done.',
               }),
             }],
           });
