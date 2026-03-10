@@ -18,6 +18,7 @@ const ICON_ALIASES: Record<string, string> = {
   'user-head': 'brand/svg/diagram-icons/icon-user-head.svg',
   'user-body': 'brand/svg/diagram-icons/icon-user-body.svg',
   'dashboard': 'brand/svg/diagram-icons/icon-dashboard.svg',
+  'canvas': 'brand/svg/decorative/icon-canvas.svg',
   'cursor': 'brand/svg/decorative/cursor.svg',
   'pointer': 'brand/svg/decorative/cursor.svg',
   'arrow-right': 'brand/svg/arrows/diagram-arrow-horizontal.svg',
@@ -122,7 +123,8 @@ export function registerGetIconTool(server: McpServer): void {
               usage: cssVariables.length > 0
                 ? `Embed SVG directly. Customize with CSS variables: ${cssVariables.join(', ')}`
                 : 'Embed this SVG directly in your HTML.',
-              example: `<div style="width: 40px; height: 40px;">\n  <!-- paste svgContent here -->\n</div>`,
+              warning: 'CRITICAL: Use svgContent EXACTLY as provided. Do NOT simplify, round numbers, or modify path data - this will break the icon rendering.',
+              example: `<div style="width: 40px; height: 40px;">\n  <!-- paste svgContent EXACTLY as-is -->\n</div>`,
             }, null, 2),
           }],
         };

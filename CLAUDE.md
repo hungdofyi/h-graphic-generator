@@ -109,39 +109,67 @@ Total MUST be ≤ canvas height
 - Using `flex: 1` causing unpredictable heights
 - Not accounting for absolute-positioned elements in height calc
 
-## SVG Asset Rules (CRITICAL)
+## Brand Icon System (RECOMMENDED)
 
-### ALWAYS Fetch Brand Assets First
+Use `<brand-icon>` elements in HTML - they're auto-replaced with exact SVGs at render time.
 
-| Element | Fetch With | Never Do |
-|---------|------------|----------|
-| Cursor/pointer | `get_icon("cursor")` or `get_pattern("component:decorative/cursors")` | CSS tricks like `border-radius: 0 50% 50% 50%` |
-| Database/cylinder | `get_icon("database")` | CSS shield shapes, rounded rectangles |
-| Icons | `get_icon("name")` or `list_icons` → embed from `brand/data/icons/` | Generate tiny inline SVGs |
-| Arrows | `get_icon("arrow-right")` or `get_pattern("component:decorative/arrows")` | Hand-draw SVG paths |
-| Chart icons | `list_icons("chart")` → `brand/data/icons/chart/*.svg` | Draw charts from scratch |
-
-### SVG Rendering Rules
-
-| Rule | Good | Bad |
-|------|------|-----|
-| ViewBox padding | Elements at 10-290 in 300px viewBox | Elements at 0 or 300 (clips) |
-| Icon size | ≥16px (prefer 20px+) | 12px or smaller |
-| Small icons | Use `fill` | Use `stroke` (renders poorly) |
-| Curves | Points on actual visual path | Points at Bezier control points |
-
-### Example: Embedding Cursor
+### Basic Usage
 
 ```html
-<!-- 1. Call get_pattern("component:decorative/cursors") -->
-<!-- 2. Response includes svgContent with CSS variables -->
-<!-- 3. Embed with customization: -->
-<div style="width: 40px; height: 40px; --fill-0: #9250E5; --stroke-0: white;">
-  <svg viewBox="0 0 98.5 98.7" fill="none">
-    <path d="M26.75 30.78..." fill="var(--fill-0, #9250E5)" stroke="var(--stroke-0, white)"/>
-  </svg>
-</div>
+<brand-icon name="database" size="48"/>
+<brand-icon name="dashboard" size="40" color="#52C396"/>
+<brand-icon name="cursor" width="32" height="40" color="#9250E5"/>
 ```
+
+### Attributes
+
+| Attribute | Description |
+|-----------|-------------|
+| `name` | **Required.** Icon name or path (e.g., `database`, `chart/bar-chart`) |
+| `size` | Sets both width and height |
+| `width` | Icon width (overrides size) |
+| `height` | Icon height (overrides size) |
+| `color` | Apply color via CSS variables (--fill-0, --stroke-0) |
+
+### Available Aliases
+
+| Alias | Icon |
+|-------|------|
+| `database`, `data-warehouse` | Cylinder/data warehouse |
+| `dashboard` | Presentation board |
+| `canvas` | Monitor on stand |
+| `cursor`, `pointer` | Cursor arrow |
+| `arrow-right`, `arrow-down`, `arrow-up` | Directional arrows |
+| `checkmark`, `file` | UI elements |
+
+For all 570+ icons, use paths like `chart/bar-chart`, `ds/postgres`, etc.
+
+### Why Use This?
+
+- **Prevents broken SVGs** - Exact paths injected at render time
+- **No manual copying** - Just specify name and attributes
+- **Auto color support** - Color attribute sets CSS variables
+- **Removes distortion** - Strips `preserveAspectRatio="none"` automatically
+
+### Response Info
+
+`render_graphic` returns:
+- `injected_icons`: List of icons that were injected
+- `icon_errors`: Any icons that failed to resolve
+
+---
+
+## SVG Asset Rules (Legacy)
+
+If you need raw SVG content (rare), use `get_icon()`:
+
+| Element | Fetch With |
+|---------|------------|
+| Cursor/pointer | `get_icon("cursor")` |
+| Database/cylinder | `get_icon("database")` |
+| Arrows | `get_icon("arrow-right")` |
+
+**WARNING:** When using raw SVG, copy content EXACTLY - do not simplify or modify paths.
 
 ## Available MCP Tools
 

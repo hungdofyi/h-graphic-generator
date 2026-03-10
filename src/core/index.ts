@@ -14,3 +14,4 @@ export { ExtractionLoader } from './extraction-loader.js';
 export * from './extraction-types.js';
 export { ComponentLoader } from './component-loader.js';
 export type { Component, Recipe, ComponentSummary, RecipeSummary } from './component-loader.js';
+export { injectBrandIcons } from './brand-icon-injector.js';

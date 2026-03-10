@@ -10,6 +10,7 @@ import { ExportPipeline } from '../../core/export-pipeline.js';
 import { validateOutputPath } from '../../core/sanitize.js';
 import type { OutputFormat } from '../../core/types.js';
 import { generatePatternCSS, injectCSS } from '../../core/pattern-css-generator.js';
+import { injectBrandIcons } from '../../core/brand-icon-injector.js';
 
 const RenderGraphicSchema = z.object({
   html: z.string().describe('HTML/CSS code to render. Should include inline <style> tags.'),
@@ -95,6 +96,12 @@ Only call this tool after gathering and confirming requirements with the user.`,
           }
         }
 
+        // Inject brand icons - replaces <brand-icon name="..."/> with actual SVGs
+        const iconResult = await injectBrandIcons(htmlToRender);
+        htmlToRender = iconResult.html;
+        const injectedIcons = iconResult.injectedIcons;
+        const iconErrors = iconResult.errors;
+
         // Determine which renderer to use
         const usePuppeteer =
           input.renderer === 'puppeteer' ||
@@ -169,6 +176,8 @@ Only call this tool after gathering and confirming requirements with the user.`,
                 bytes: outputBuffer.length,
                 renderer: usePuppeteer ? 'puppeteer' : 'satori',
                 ...(injectedProfile && { style_profile: injectedProfile }),
+                ...(injectedIcons.length > 0 && { injected_icons: injectedIcons }),
+                ...(iconErrors.length > 0 && { icon_errors: iconErrors }),
               }),
             },
           ],
