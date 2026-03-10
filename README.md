@@ -36,7 +36,7 @@ npm install && npm run build
 Just ask Claude to create graphics:
 
 ```
-Create a pricing comparison graphic with 3 tiers
+Create a diagram showing the data flow from warehouse to dashboard
 ```
 
 > **Tip for Best Results**
@@ -62,15 +62,15 @@ Create a pricing comparison graphic with 3 tiers
 
 | Tool | Purpose |
 |------|---------|
+| `create_graphic` | **Recommended** - Guided workflow with step-by-step input |
 | `get_style_profile` | Get brand tokens (colors, typography, spacing) |
 | `list_patterns` | Browse style libraries, components, and recipes |
 | `get_pattern` | Get styles, components, or recipes |
-| `list_icons` | Browse 300+ brand icons by category |
+| `list_icons` | Browse 300+ brand UI icons by category |
+| `get_icon` | Get SVG content for icons (database, cursor, arrow-right, etc.) |
 | `render_graphic` | Render HTML/CSS to image |
 | `serve_preview` | Start local server for Figma export |
 | `stop_preview` | Stop preview server |
-| `list_templates` | List pre-built templates |
-| `generate_from_template` | Create graphic from template |
 | `validate_brand` | Check brand config integrity |
 
 ## Generation Workflow
@@ -183,11 +183,8 @@ For scripting and automation:
 hgraphic render --html "<div style='background:blue'>Hello</div>" -o output.png
 hgraphic render --file template.html -o output.png --format png --size 1200x630
 
-# Generate from template
-hgraphic generate -t feature-illustration --props '{"title":"My Feature"}' -o feature.png
-
-# List templates
-hgraphic templates list
+# Generate diagram from JSON
+hgraphic diagram -i nodes.json -o diagram.png
 
 # Validate brand
 hgraphic brand validate

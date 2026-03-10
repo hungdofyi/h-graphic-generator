@@ -45,10 +45,8 @@ hgraphic --help
 | Command | Purpose | Example |
 |---------|---------|---------|
 | `render` | HTML/CSS → Image (PRIMARY) | `hgraphic render --html "<div>Hello</div>" -o out.png` |
-| `generate` | Template → Image | `hgraphic generate -t feature-illustration --props '{"title":"X"}'` |
 | `diagram` | JSON nodes → Diagram | `hgraphic diagram -i nodes.json -o diagram.png` |
 | `brand validate` | Check brand.json | `hgraphic brand validate` |
-| `templates list` | Show all templates | `hgraphic templates list` |
 
 ### Render HTML (Primary Workflow)
 
@@ -64,28 +62,6 @@ hgraphic render --html "..." -o banner.webp --format webp --size 1920x1080
 
 # JSON output (for scripts)
 hgraphic render --html "..." -o out.png --json
-```
-
-### Generate from Template
-
-```bash
-# List available templates first
-hgraphic templates list
-
-# Feature illustration
-hgraphic generate -t feature-illustration \
-  --props '{"title":"Lightning Fast","description":"Build in seconds","icon":"⚡"}' \
-  -o feature.png
-
-# Process steps
-hgraphic generate -t process-steps \
-  --props '{"steps":[{"number":"1","title":"Install"},{"number":"2","title":"Build"},{"number":"3","title":"Deploy"}]}' \
-  -o steps.png
-
-# Concept comparison
-hgraphic generate -t concept-comparison \
-  --props '{"leftTitle":"Before","leftItems":["Slow","Complex"],"rightTitle":"After","rightItems":["Fast","Simple"]}' \
-  -o compare.png
 ```
 
 ### Diagram from JSON
@@ -147,9 +123,8 @@ Use the diagram command with nodes.json format.
 
 1. **Start simple** - Let Claude ask clarifying questions rather than specifying everything upfront
 2. **Be specific about output path** - Always specify `-o output/filename.png`
-3. **Use JSON for complex props** - Template props must be valid JSON
-4. **Check templates first** - Ask to run `hgraphic templates list` to see options
-5. **Validate brand** - Run `hgraphic brand validate` if styling looks wrong
+3. **Use diagram command for flows** - Use `hgraphic diagram -i nodes.json` for structured diagrams
+4. **Validate brand** - Run `hgraphic brand validate` if styling looks wrong
 
 > **Pro tip**: Prompts like "Create a diagram for X" work better than "Create a 1200x630 left-to-right diagram with nodes A, B, C connected by arrows...". The former triggers Claude's guided workflow which considers brand patterns, styling rules, and layout safety.
 
@@ -182,15 +157,15 @@ Use the diagram command with nodes.json format.
 
 | Tool | Purpose |
 |------|---------|
+| `create_graphic` | **Recommended** - Guided workflow with step-by-step input |
 | `get_style_profile` | Get brand tokens (colors, typography, spacing) |
 | `list_patterns` | Browse style libraries, components, and recipes |
 | `get_pattern` | Get styles, components (`component:nodes/box`), or recipes (`recipe:diagrams/architecture-flow`) |
-| `list_icons` | Browse 300+ brand icons |
+| `list_icons` | Browse 300+ brand UI icons by category |
+| `get_icon` | Get SVG content for diagram elements (database, cursor, arrow-right) |
 | `render_graphic` | Render HTML/CSS → image |
 | `serve_preview` | Start HTTP server for Figma export |
 | `stop_preview` | Stop preview server |
-| `list_templates` | Show available templates |
-| `generate_from_template` | Template → image |
 | `validate_brand` | Check brand config |
 
 ### Components & Recipes
@@ -295,16 +270,8 @@ You have access to a CLI tool called `hgraphic` for generating branded graphics.
 
 COMMANDS:
 - `hgraphic render --html "<HTML>" -o <output.png>` - Render HTML to image
-- `hgraphic generate -t <template> --props '<JSON>' -o <output.png>` - From template
-- `hgraphic diagram -i <nodes.json> -o <output.png>` - Create diagram
-- `hgraphic templates list` - List available templates
+- `hgraphic diagram -i <nodes.json> -o <output.png>` - Create diagram from JSON
 - `hgraphic brand validate` - Validate brand configuration
-
-TEMPLATES AVAILABLE:
-- feature-illustration: {title, description?, icon?}
-- process-steps: {steps: [{number, title, description?}]}
-- concept-comparison: {leftTitle, leftItems[], rightTitle, rightItems[]}
-- linear-flow: {nodes: [{id, label}], edges: [{from, to}]}
 
 OUTPUT FORMATS: png (default), svg, jpg, webp
 DEFAULT SIZE: 1200x630 (override with --size WxH)
@@ -315,12 +282,9 @@ Always use --json flag when you need to parse the output programmatically.
 ### API-Style Usage (for scripts)
 
 ```bash
-# All commands support --json for machine-readable output
+# Commands support --json for machine-readable output
 hgraphic render --html "..." -o out.png --json
 # Returns: {"success":true,"output":"/path/to/out.png","format":"png","width":1200,"height":630,"size":12345}
-
-hgraphic templates list --json
-# Returns: {"count":4,"templates":[...]}
 ```
 
 ---
@@ -338,15 +302,7 @@ hgraphic render --html '
 ' -o social-post.png --size 1080x1080
 ```
 
-### 2. Blog Header Image
-
-```bash
-hgraphic generate -t feature-illustration \
-  --props '{"title":"Getting Started Guide","description":"Everything you need to know","icon":"📚"}' \
-  -o blog-header.png --size 1200x630
-```
-
-### 3. Documentation Diagram
+### 2. Documentation Diagram
 
 ```bash
 # Create nodes.json with your architecture
@@ -361,17 +317,6 @@ echo '{
 }' > arch.json
 
 hgraphic diagram -i arch.json -o architecture.png
-```
-
-### 4. Batch Generation (Shell Script)
-
-```bash
-#!/bin/bash
-for feature in "Fast" "Secure" "Reliable"; do
-  hgraphic generate -t feature-illustration \
-    --props "{\"title\":\"$feature\",\"icon\":\"✨\"}" \
-    -o "output/${feature,,}-feature.png"
-done
 ```
 
 ---
@@ -400,7 +345,6 @@ DEBUG=* hgraphic render --html "..." -o out.png
 # Quick smoke test
 npm run build
 hgraphic brand validate
-hgraphic templates list
 hgraphic render --html '<div style="background:green;height:100%">Test</div>' -o test.png
 ls -la test.png  # Should exist with size > 0
 ```
@@ -412,4 +356,4 @@ ls -la test.png  # Should exist with size > 0
 - **Docs**: See `docs/architecture.md` for technical details
 - **Examples**: Check `output/` directory for sample outputs
 - **Brand config**: Edit `brand/brand.json` to customize colors/fonts
-- **Templates**: Run `hgraphic templates list --json` for full schema
+- **Components/Recipes**: Use `list_patterns` MCP tool to discover available options
