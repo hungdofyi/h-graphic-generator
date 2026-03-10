@@ -55,18 +55,24 @@ Based on type, ask:
 - **Annotations**: Screenshot provided? What to highlight?
 - **Marketing**: Feature name? Visual focus? Dark or light?
 
-### Step 3: Match to Recipe
-Use `get_pattern("recipe:category/name")` to get composition guide:
-- `recipe:diagrams/architecture-flow` or `recipe:diagrams/data-flow`
-- `recipe:annotations/screenshot-highlight`
-- `recipe:marketing/spotlight-feature`, `layered-showcase`, `config-preview`, `radial-network`
+### Step 3: Suggest Patterns (IMPORTANT)
+Call `suggest_patterns` with the user's request to get ALL relevant patterns:
+```
+suggest_patterns({ request: "comparison graphic for traditional BI vs Holistics" })
+→ Returns: recipes + components + icons needed
+```
+This ensures you don't miss diagram elements for marketing graphics or vice versa.
 
-### Step 4: Get Components & Styles
-- Call `get_style_profile` for brand tokens
-- Call `get_pattern("component:category/name")` for specific styling rules
-- Call `get_pattern("category")` for style library context
+### Step 4: Get Recipes & Components
+For each suggestion from Step 3:
+- Call `get_pattern("recipe:category/name")` for composition guides
+- Call `get_pattern("component:category/name")` for styling rules
+- Call `get_icon("name")` for SVG icons
 
-### Step 5: Generate & Render
+### Step 5: Get Brand Tokens
+- Call `get_style_profile` for official brand colors, typography, spacing
+
+### Step 6: Generate & Render
 - **Calculate layout first** - Sum all sections to verify content fits canvas
 - Generate HTML/CSS following recipe construction steps AND layout safety rules
 - Call `render_graphic` with the HTML
@@ -141,14 +147,15 @@ Total MUST be ≤ canvas height
 
 | Tool | Purpose |
 |------|---------|
-| `create_graphic` | **RECOMMENDED** Start here - guided workflow for step-by-step input |
+| `suggest_patterns` | **CALL FIRST** Analyze request and suggest ALL relevant recipes, components, icons |
+| `create_graphic` | Guided workflow for step-by-step input |
 | `get_style_profile` | Official brand guidelines (colors, typography, spacing, principles) |
-| `get_icon` | **NEW** Get actual SVG content for icons (database, cursor, arrow-right, etc.) |
+| `get_icon` | Get actual SVG content for icons (database, cursor, arrow-right, etc.) |
 | `list_icons` | Browse 300+ brand icons by category (chart, ds, ai, onboarding, etc.) |
 | `list_patterns` | List style libraries, components, and recipes |
 | `get_pattern` | Get styles, components (`component:nodes/box`), or recipes (`recipe:diagrams/architecture-flow`) |
 | `render_graphic` | Render HTML/CSS to PNG/SVG (use after gathering requirements) |
-| `serve_preview` | Start local server for Figma export (returns URL for capture) |
+| `serve_preview` | Start local server for Figma export (auto-injects Figma capture.js) |
 | `stop_preview` | Stop preview server when done |
 | `validate_brand` | Validate brand config |
 

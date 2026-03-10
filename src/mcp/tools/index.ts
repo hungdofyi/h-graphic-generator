@@ -11,6 +11,7 @@ import { registerGetPatternTool } from './get-pattern.js';
 import { registerListIconsTool } from './list-icons.js';
 import { registerGetIconTool } from './get-icon.js';
 import { registerServePreviewTool, registerStopPreviewTool } from './serve-preview.js';
+import { registerSuggestPatternsTool } from './suggest-patterns.js';
 
 export function registerTools(
   server: McpServer,
@@ -43,4 +44,7 @@ export function registerTools(
     registerListPatternsTool(server, extractionLoader, componentLoader);
     registerGetPatternTool(server, extractionLoader, componentLoader);
   }
+
+  // Smart pattern suggestion - analyzes request and suggests ALL relevant patterns
+  registerSuggestPatternsTool(server);
 }

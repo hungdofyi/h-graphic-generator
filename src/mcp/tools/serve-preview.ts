@@ -17,10 +17,17 @@ const StopPreviewSchema = z.object({
 });
 
 /**
- * Capture-ready script that ensures fonts are loaded before signaling ready
+ * Figma MCP capture script - required for generate_figma_design to work
+ * This is the official script from Figma that enables HTML-to-Figma capture
+ */
+const FIGMA_CAPTURE_SCRIPT = `<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>`;
+
+/**
+ * Additional script that ensures fonts/images are loaded before capture
  * This prevents race conditions where Figma captures before fonts render
  */
 const CAPTURE_READY_SCRIPT = `
+${FIGMA_CAPTURE_SCRIPT}
 <script>
 (function() {
   // Wait for fonts to load, then signal ready
@@ -107,12 +114,12 @@ ${CAPTURE_READY_SCRIPT}
 
 /**
  * Register serve_preview tool - serves HTML via local HTTP server
- * for Figma MCP capture
+ * for Figma MCP capture. Auto-injects Figma capture.js script.
  */
 export function registerServePreviewTool(server: McpServer): void {
   server.tool(
     'serve_preview',
-    'Start a local HTTP server to preview HTML. Returns URL for Figma MCP generate_figma_design to capture. Call stop_preview when done.',
+    'Start a local HTTP server to preview HTML. Auto-injects Figma capture script (capture.js) - no need to add it manually. Returns captureUrl ready for Figma MCP generate_figma_design. Call stop_preview when done.',
     ServePreviewSchema.shape,
     async (args) => {
       const input = ServePreviewSchema.parse(args);
@@ -188,15 +195,16 @@ export function registerServePreviewTool(server: McpServer): void {
         httpServer.listen(input.port, '127.0.0.1', () => {
           activeServers.set(input.port, httpServer);
 
+          const baseUrl = `http://localhost:${input.port}`;
           resolve({
             content: [{
               type: 'text' as const,
               text: JSON.stringify({
                 success: true,
-                url: `http://localhost:${input.port}`,
+                url: baseUrl,
+                captureUrl: `${baseUrl}#figmacapture&figmadelay=1000`,
                 port: input.port,
-                captureReadySelector: '#capture-ready[data-ready="true"]',
-                message: 'Preview server started. Page includes capture-ready script that waits for fonts/images to load. Use this URL with Figma MCP generate_figma_design to capture. Call stop_preview when done.',
+                message: 'Preview server started. Figma capture script (capture.js) is already included. Use captureUrl with Figma MCP generate_figma_design or open directly in browser. Call stop_preview when done.',
               }),
             }],
           });

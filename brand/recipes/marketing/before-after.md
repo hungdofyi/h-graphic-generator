@@ -64,39 +64,84 @@ Best for: Detailed comparisons with multiple UI elements, long-form content
 Best for: Direct side-by-side comparison, feature toggle demonstrations
 
 ```
-┌────────────────────┬────────────────────┐
-│     Before         │▐│     After        │
-│  ┌──────────────┐  │▐│  ┌────────────┐  │
-│  │              │  │▐│  │            │  │
-│  │  Screenshot  │  │▐│  │ Screenshot │  │
-│  │              │  │▐│  │            │  │
-│  └──────────────┘  │▐│  └────────────┘  │
-│   (gray bg)        │▐│   (green tint)   │
-└────────────────────┴────────────────────┘
-                      ↑
-                   Divider
+┌─────────────────────────────────────────┐
+│ Before                         After    │
+│ ┌────────────────┐▐┌────────────────┐   │
+│ │                │▐│                │   │
+│ │  Screenshot    │▐│  Screenshot    │   │
+│ │  (gray bg)     │▐│  (green tint)  │   │
+│ └────────────────┘▐└────────────────┘   │
+└─────────────────────────────────────────┘
+                    ↑
+         Divider at frame center
+```
+
+**IMPORTANT: Overlapping Layers Architecture**
+
+This is NOT two side-by-side columns. It's two **overlapping full-width layers** where each shows only half:
+
+```css
+/* Container */
+.split-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Before layer - full width, offset to show left half */
+.before-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -50%;  /* Offset so right edge aligns with center */
+  overflow: hidden;
+}
+
+/* After layer - full width, centered to show right half */
+.after-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+/* Divider - exactly at frame center */
+.divider {
+  position: absolute;
+  left: calc(50% - 16px);  /* 32px wide, centered */
+  top: 0;
+  width: 32px;
+  height: 100%;
+  background: #BBD7F7;  /* blue.200 */
+  z-index: 10;
+}
 ```
 
 **Construction:**
-1. **Before half** (left):
-   - Background: gray gradient (gray.400 82.5% → gray.50) or white
-   - Label: "Before" or "Without AI" (64-70px, Inter 600, gray #666970)
-   - Position: top-left
-   - Screenshot: full-width, 12px border-radius
-2. **After half** (right):
-   - Background: green tint gradient (blue → green.50)
-   - Label: "After" or "With AI" (64-70px, Inter 600, green.500 #2CB67F)
-   - Position: top-right
-   - Screenshot: full-width, 12px border-radius
-3. **Divider bar** (center):
-   - Simple: solid blue.200 (#BBD7F7), 32px wide
-   - Gradient: blue.800 → green.300 → blue.100, 13px wide
+1. **Container**: `position: relative; overflow: hidden`
+2. **Before layer** (full width, offset left):
+   - Position: `left: -50%` or `left: -[half of frame width]px`
+   - Background: gray gradient (gray.400 82.5% → gray.50)
+   - Label: "Before" (70px, Inter 600, #666970) - positioned in visible area
+   - Screenshot: centered within layer, 12px border-radius
+3. **After layer** (full width, showing right half):
+   - Position: `left: 50%; transform: translateX(-50%)`
+   - Background: green tint gradient
+   - Label: "After" (70px, Inter 600, green.500) - positioned in visible area
+   - Screenshot: centered within layer, 12px border-radius
+4. **Divider bar** (at exact frame center):
+   - Position: `left: calc(50% - 16px)` for 32px bar
+   - Background: blue.200 (#BBD7F7)
+   - Height: 100%
+   - z-index: 10 (above both layers)
 
 **Background Gradients:**
 ```css
 /* Before side - gray */
 background: linear-gradient(to bottom, #CBD0D7 82.5%, #F9FBFC 112%);
-/* or white for cleaner look */
 
 /* After side - green tint */
 background: linear-gradient(
@@ -107,7 +152,9 @@ background: linear-gradient(
   #F2FCF8 107%
 );
 
-/* Divider - gradient variant */
+/* Divider - solid or gradient */
+background: #BBD7F7;  /* solid blue.200 */
+/* OR gradient variant (13px wide): */
 background: linear-gradient(to bottom, #205B98, #7AD1AE 50%, #D1E5FA);
 ```
 
